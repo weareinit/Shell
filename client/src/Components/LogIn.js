@@ -1,12 +1,44 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { withFormik, Form, Field } from 'formik'
+import { LogInSchema } from '../Validator/ValidationSchema'
 
-class LogIn extends Component {
+const LogIn = ({ touched, errors, isSubmitting, componentChange }) => {
+    return (
+        <>
+            <h1>SIGN IN TO YOUR SHELL ACCOUNT</h1>
+            <Form>
+                <div>
+                    <Field type="email" name="email" placeholder="Email Address" />
+                    {touched.email && errors.email && <p>{errors.email}</p>}
+                </div>
+                <div>
+                    <Field type="password" name="password" placeholder="Password" />
+                    {touched.password && errors.password && <p>{errors.password}</p>}
+                </div>
+                <div>
+                    <button type="submit" disabled={isSubmitting}>Submit</button>
+                    <button type="button" onClick={componentChange}>Sign Up</button>
+                </div>
+            </Form>
+        </>
+    )
+}
 
-    render() {
-      return (
-          <div>Log In</div>
-      );
+export const LogInForm = withFormik({
+    mapPropsToValues() {
+        return {
+            email: "",
+            password: ""
+        }
+    },
+    validationSchema: LogInSchema,
+    handleSubmit(values, { resetForm, setSubmitting }) {
+        setTimeout(() => {
+            alert(JSON.stringify(values, null, 2))
+            setSubmitting(false)
+            resetForm()
+        }, 1000)
     }
-  }
-  
-  export default LogIn;
+})(LogIn)
+
+export default LogInForm

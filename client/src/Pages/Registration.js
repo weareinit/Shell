@@ -1,17 +1,33 @@
-import React, { Component, Fragment } from 'react'
-import SignUp from '../Components/SignUp'
-import LogIn from '../Components/LogIn'
+import React, { Component } from 'react'
+import { LogInForm } from '../Components/LogIn';
+import { SignUpForm } from '../Components/SignUp';
 
 class Registration extends Component {
 
-    render() {
-      return (
-          <Fragment>
-                <SignUp />
-                <LogIn />
-          </Fragment>
-      );
+    constructor(props){
+        super(props)
+        this.switchComponent = this.switchComponent.bind(this)
+        this.state = {
+            showLogIn: true
+        }
     }
-  }
-  
-  export default Registration;
+
+    switchComponent(){
+        this.setState({
+            showLogIn: !this.state.showLogIn
+        })
+    }
+    
+    render(){
+        let component = this.state.showLogIn ? 
+        <LogInForm componentChange={this.switchComponent}/> : 
+        <SignUpForm componentChange={this.switchComponent}/>
+        return(
+            <div>
+                {component}
+            </div>
+        )
+    }
+}
+
+export default Registration
