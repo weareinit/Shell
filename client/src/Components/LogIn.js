@@ -5,7 +5,6 @@ import { LogInSchema } from '../Validator/ValidationSchema'
 const LogIn = ({ touched, errors, isSubmitting, componentChange }) => {
     return (
         <>
-            <h1>SIGN IN TO YOUR SHELL ACCOUNT</h1>
             <Form>
                 <div>
                     <Field type="email" name="email" placeholder="Email Address" />
@@ -15,9 +14,10 @@ const LogIn = ({ touched, errors, isSubmitting, componentChange }) => {
                     <Field type="password" name="password" placeholder="Password" />
                     {touched.password && errors.password && <p>{errors.password}</p>}
                 </div>
-                <div>
+                <div style={{
+                    marginTop: '20px'
+                }}>
                     <button type="submit" disabled={isSubmitting}>Submit</button>
-                    <button type="button" onClick={componentChange}>Sign Up</button>
                 </div>
             </Form>
         </>

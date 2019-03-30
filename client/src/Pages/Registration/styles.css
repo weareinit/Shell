@@ -1,0 +1,153 @@
+/* Page style */
+
+#registration{
+    display: flex;
+}
+
+#registration .greeting{
+    display: inline-block;
+    width: 40vw;
+    background: rgb(238, 238, 238);
+    height: 100vh;
+    position: relative;
+    margin: 0px;
+}
+
+#registration .greeting .headline{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#registration .forms{
+    position: relative;
+    width: 60vw;
+    background: rgb(221, 221, 221);
+    height: 100vh;
+    display: inline-block;
+}
+
+#registration .form-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#registration .button-container button:nth-child(1){
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 40px;
+}
+
+#registration .button-container button:nth-child(2){
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+    
+#registration .button-container button{
+    padding: 20px 40px;
+    border: none;
+    color: #fff;
+    font-weight: 800;
+}
+
+@media(max-width: 800px){
+    #registration{
+        flex-direction: column;
+    }
+    #registration .greeting{
+        width: 100%;
+        background: rgb(238, 238, 238);
+        height: 70vh;
+        margin: 0px;
+        position: relative;
+        flex-shrink: 0;
+    }
+    #registration .greeting h3{
+        font-size: 20px;
+    }
+    #registration .greeting p{
+        font-size: 15px;
+    }
+    
+    #registration .forms{
+        width: 100%;
+        flex-shrink: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #registration .form-container input{
+        width: 200px !important;
+    }
+
+    #registration .button-container button {
+        padding: 17px 38px;
+    }
+
+    #registration .form-container form button{
+        padding: 23px 99px;
+        border: none;
+        color: #fff;
+        font-weight: 800;
+        background: #aaa;
+        border-radius: 20px;
+        margin-top: 0px !important;
+    }
+    #registration .form-container input{
+        margin: 5px !important;
+    }
+    #registration .button-container button:nth-child(1) {
+        margin-bottom: 20px;
+        margin-right: -2px;
+    }
+    #registration .button-container button:nth-child(2) {
+        margin-bottom: 20px;
+        margin-left: -2px;
+    }
+    #registration .form-container input + p{
+        font-weight: 600;
+        font-size: 11px;
+        text-align: left;
+        margin: 5px 0px 0px 13px;
+    }
+}
+
+/* Form styles */
+
+#registration .form-container input{
+    width: 324px;
+    border: none;
+    border-radius: 7px;
+    padding: 19px 20px;
+    font-weight: 800;
+    margin: 10px;
+    margin-bottom: 12px;
+
+}
+
+#registration .form-container input::placeholder{
+    text-align: left;
+    color: #bbb;
+}
+
+#registration .form-container input + p{
+    font-weight: 600;
+    font-size: 13px;
+    text-align: left;
+    margin: -8px 0px 0px 13px;
+}
+
+#registration .form-container form button{
+    padding: 23px 99px;
+    border: none;
+    color: #fff;
+    font-weight: 800;
+    background: #aaa;
+    border-radius: 20px;
+    margin-top: 15px;
+}
