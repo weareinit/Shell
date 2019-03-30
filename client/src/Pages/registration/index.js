@@ -4,6 +4,7 @@ import { SignUpForm } from '../../Components/signUp';
 import "./styles.css" 
 import { ReactComponent as Logo } from '../../shellhacks.svg';
 
+
 class Registration extends Component {
 
     constructor(props){
@@ -26,25 +27,28 @@ class Registration extends Component {
         let details = this.state.showLogIn ? <p>Please sign in</p> : <p>Please fill out the form</p>
         return(
             <div className = "regContainer">
+                
                 <div className = "detailContainer">
                     <Logo className = "logoStyle" id = "siteLogo"/>
                     <h1>Welcome!</h1>
                     {details}
                 </div>
                 <div className = "formContainer">
-                    <div>
+                   
 
                         <Logo className= "logoStyle" id = "mobileLogo"/>
+                        <div  style={!this.state.showLogIn ? {position:'relative',top:25.5}: null}className= "buttons">
+                            <button style ={{
+                                backgroundColor: this.state.showLogIn ? '#968e9e' : '#d7cce2'
+                            }}
+                            id = "signUpBtn" type="button" onClick={() => this.setState({showLogIn: true})}>Log In</button>
+                            <button style ={{
+                                backgroundColor: !this.state.showLogIn ? '#968e9e' : '#d7cce2'
+                            }}
+                            id = "logInBtn" type="button" onClick={() => this.setState({showLogIn: false})}>Sign Up</button>
+                        </div>
                         
-                        <button style ={{
-                            backgroundColor: this.state.showLogIn ? '#968e9e' : '#d7cce2'
-                        }}
-                        id = "signUpBtn" type="button" onClick={() => this.setState({showLogIn: true})}>Log In</button>
-                        <button style ={{
-                            backgroundColor: !this.state.showLogIn ? '#968e9e' : '#d7cce2'
-                        }}
-                        id = "logInBtn" type="button" onClick={() => this.setState({showLogIn: false})}>Sign Up</button>
-                    </div>
+                    
                     {splash}
                     
                     <button id = "submitBtn" type="submit">Submit</button>

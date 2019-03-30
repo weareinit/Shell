@@ -1,13 +1,17 @@
 .regContainer{
     display:  flex;
-    flex-direction: row
+    flex-direction: row;
+    background-image: url("../../imgs/frontpage/Background_Sand.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .detailContainer{
     display: flex;
     flex-direction: column;
     width:40%;
-    background-image: linear-gradient(pink, #E94F86);
+    /* background-image: linear-gradient(pink, #E94F86); */
+    background-color: (rgba(211, 211, 211, 0.5));
     height: 100vh;
     justify-content: center;
     align-items: center;
@@ -17,7 +21,8 @@
     display: flex;
     flex-direction: column;
     width: 60%;
-    background-image: linear-gradient(lightblue, #22C3D5);
+    /* background-image: linear-gradient(lightblue, #22C3D5); */
+    background-color: (rgba(128, 128, 128, 0.5));
     height: 100vh;
     justify-content: space-around;
     align-items: center;
@@ -28,6 +33,7 @@
     border-bottom-left-radius: 20px;
     padding: 10px;
     width: 120px;
+    
 }
 
 #logInBtn{
@@ -37,6 +43,7 @@
     width: 120px;
     
 }
+
 
 #submitBtn{
     border-radius: 20px;
@@ -53,12 +60,19 @@
    display:none;
 }
 
+.formContainer.buttons{
+    margin-right: auto;
+    margin-left: auto;
+    position: fixed;
+    display: block;
+}
 
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
     .regContainer{
         display:  flex;
         flex-direction: column;
+        background: auto;
     }
 
     .formContainer{
@@ -67,6 +81,7 @@
 
     .detailContainer{
         display: none;
+        background: none;
     }
 
     #mobileLogo{
