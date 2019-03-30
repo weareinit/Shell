@@ -1,0 +1,78 @@
+.regContainer{
+    display:  flex;
+    flex-direction: row
+}
+
+.detailContainer{
+    display: flex;
+    flex-direction: column;
+    width:40%;
+    background-image: linear-gradient(pink, #E94F86);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-image: linear-gradient(lightblue, #22C3D5);
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#signUpBtn{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 10px;
+    width: 120px;
+}
+
+#logInBtn{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    width: 120px;
+    
+}
+
+#submitBtn{
+    border-radius: 20px;
+    padding: 10px;
+    width: 240px;
+}
+
+.logoStyle{
+    width: 80%;
+    margin-bottom: 80px;
+}
+
+#mobileLogo{
+   display:none;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .regContainer{
+        display:  flex;
+        flex-direction: column;
+    }
+
+    .formContainer{
+        width: 100%;
+    }
+
+    .detailContainer{
+        display: none;
+    }
+
+    #mobileLogo{
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+    }
+}
