@@ -2,9 +2,21 @@
     width: 100%;
     border-radius: 10px;
     padding: 10px;
-  
 }
 
+.fieldDiv{
+    margin-bottom: 20px;
+}
 
+.buttonDiv{
+    text-align: center;
+}
 
-
+#submitBtn{
+    border-radius: 20px;
+    padding: 10px;
+    width: 240px;
+    background-color: #bbb;
+    font-family: "Montserrat", sans-serif;
+    font-size: 120%;
+}

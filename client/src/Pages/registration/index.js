@@ -1,33 +1,23 @@
 import React, { Component } from 'react'
-import { LogInForm } from '../../Components/login';
-import { SignUpForm } from '../../Components/signUp';
-import "./styles.css"
-import { ReactComponent as Logo } from '../../shellhacks.svg';
-
+import LogIn from '../../Components/login'
+import SignUp from '../../Components/signUp'
+import { ReactComponent as Logo } from '../../shellhacks.svg'
+import './styles.css'
 
 class Registration extends Component {
 
     constructor(props) {
         super(props);
-        this.switchComponent = this.switchComponent.bind(this);
         this.state = {
             showLogIn: true
         }
     }
 
-
-    switchComponent() {
-        this.setState({
-            showLogIn: !this.state.showLogIn
-        })
-    }
-
     render() {
-        let splash = this.state.showLogIn ? <LogInForm componentChange={this.switchComponent} /> : <SignUpForm componentChange={this.switchComponent} />
+        let form = this.state.showLogIn ? <LogIn /> : <SignUp />
         let details = this.state.showLogIn ? <p>Please sign in</p> : <p>Please fill out the form</p>
         return (
             <div className="regContainer">
-
                 <div className="detailContainer">
                     <Logo className="logoStyle" id="siteLogo" />
                     <h1>Welcome!</h1>
@@ -35,40 +25,27 @@ class Registration extends Component {
                 </div>
                 <Logo className="logoStyle" id="mobileLogo" />
                 <div className="formContainer">
-                    
-                   
-                        <div
-                            // style={!this.state.showLogIn ? {position:'relative',top:25.5}: null}
-                            className="buttons">
-                            <button style={{
-                                backgroundColor: this.state.showLogIn ? '#968e9e' : '#d7cce2'
-                            }}
-                                id="signUpBtn" type="button" onClick={() => this.setState({ showLogIn: true })}>Log In</button>
-                            <button style={{
-                                backgroundColor: !this.state.showLogIn ? '#968e9e' : '#d7cce2'
-                            }}
-                                id="logInBtn" type="button" onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
-                        </div>
-
-                        <div className="forms">
-                            {splash}
-                        </div>
-
-                        <div id="submitStyle">
-                            <button id="submitBtn" type="submit">Submit</button>
-                        </div>
-                    
-
-
-
-
-
+                    <div className="buttons">
+                        <button 
+                            style={ { backgroundColor: this.state.showLogIn ? '#968e9e' : '#d7cce2' } }
+                            id="signUpBtn" 
+                            type="button" 
+                            onClick={ () => this.setState({ showLogIn: true })}>Log In</button>
+                        <button 
+                            style={{ backgroundColor: !this.state.showLogIn ? '#968e9e' : '#d7cce2' } }
+                            id="logInBtn" 
+                            type="button" 
+                            onClick={ () => this.setState({ showLogIn: false }) }>Sign Up</button>
+                    </div>
+                    <div className="forms">
+                        {form}
+                    </div>
+                    <div id="submitStyle">
+                    </div>
                 </div>
-
             </div>
-
         )
     }
 }
 
-export default Registration;
+export default Registration

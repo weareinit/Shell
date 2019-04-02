@@ -1,4 +1,4 @@
-let Yup = require("yup");
+import * as Yup from 'yup'
 
 export const LogInValidation = Yup.object().shape({
   email: Yup.string()
@@ -7,7 +7,7 @@ export const LogInValidation = Yup.object().shape({
   password: Yup.string()
     .min(8, "Password must be 8 characters or longer")
     .required("Password is required")
-});
+})
 
 export const SignUpValidation = Yup.object().shape({
   firstName: Yup.string()
@@ -23,4 +23,4 @@ export const SignUpValidation = Yup.object().shape({
     .min(8, "Password must be at least 8 characters long")
     .required("Password is required"),
   confirmPassword: Yup.string().required("Please confirm your password")
-});
+})
