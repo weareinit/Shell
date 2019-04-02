@@ -6,13 +6,13 @@ import "./styles.css"
 
 const LogIn = ({ touched, errors, isSubmitting, componentChange }) => {
     return (
-        <Form>
+        <Form >
            
-            <div>
+            <div className = "fieldDiv">
                 <Field className = "field" type="email" name="email" placeholder="Email" />
-                {touched.email && errors.email && <div className = "notWanted">{errors.email}</div>}
+                {touched.email && errors.email && <p>{errors.email}</p>}
             </div>
-            <div>
+            <div className = "fieldDiv">
                 <Field className = "field" type="password" name="password" placeholder="Password" />
                 {touched.password && errors.password && <p>{errors.password}</p>}
             </div>

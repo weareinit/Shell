@@ -1,6 +1,12 @@
 #field{
-    width: 50vw;
+    width: 100%;
     border-radius: 10px;
     padding: 10px;
-    margin: 10px;
+ 
+}
+
+.fieldDiv{
+    margin-bottom: 20px;
+ 
+
 }

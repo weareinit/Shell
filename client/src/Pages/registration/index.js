@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { LogInForm } from '../../Components/login';
 import { SignUpForm } from '../../Components/signUp';
-import "./styles.css" 
+import "./styles.css"
 import { ReactComponent as Logo } from '../../shellhacks.svg';
 
 
 class Registration extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.switchComponent = this.switchComponent.bind(this);
         this.state = {
@@ -16,46 +16,57 @@ class Registration extends Component {
     }
 
 
-    switchComponent(){
+    switchComponent() {
         this.setState({
             showLogIn: !this.state.showLogIn
         })
     }
-    
-    render(){
-        let splash = this.state.showLogIn ? <LogInForm componentChange={this.switchComponent}/> : <SignUpForm componentChange={this.switchComponent}/>
+
+    render() {
+        let splash = this.state.showLogIn ? <LogInForm componentChange={this.switchComponent} /> : <SignUpForm componentChange={this.switchComponent} />
         let details = this.state.showLogIn ? <p>Please sign in</p> : <p>Please fill out the form</p>
-        return(
-            <div className = "regContainer">
-                
-                <div className = "detailContainer">
-                    <Logo className = "logoStyle" id = "siteLogo"/>
+        return (
+            <div className="regContainer">
+
+                <div className="detailContainer">
+                    <Logo className="logoStyle" id="siteLogo" />
                     <h1>Welcome!</h1>
                     {details}
                 </div>
-                <div className = "formContainer">
+                <Logo className="logoStyle" id="mobileLogo" />
+                <div className="formContainer">
+                    
                    
-
-                        <Logo className= "logoStyle" id = "mobileLogo"/>
-                        <div  style={!this.state.showLogIn ? {position:'relative',top:25.5}: null}className= "buttons">
-                            <button style ={{
+                        <div
+                            // style={!this.state.showLogIn ? {position:'relative',top:25.5}: null}
+                            className="buttons">
+                            <button style={{
                                 backgroundColor: this.state.showLogIn ? '#968e9e' : '#d7cce2'
                             }}
-                            id = "signUpBtn" type="button" onClick={() => this.setState({showLogIn: true})}>Log In</button>
-                            <button style ={{
+                                id="signUpBtn" type="button" onClick={() => this.setState({ showLogIn: true })}>Log In</button>
+                            <button style={{
                                 backgroundColor: !this.state.showLogIn ? '#968e9e' : '#d7cce2'
                             }}
-                            id = "logInBtn" type="button" onClick={() => this.setState({showLogIn: false})}>Sign Up</button>
+                                id="logInBtn" type="button" onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
                         </div>
-                        
+
+                        <div className="forms">
+                            {splash}
+                        </div>
+
+                        <div id="submitStyle">
+                            <button id="submitBtn" type="submit">Submit</button>
+                        </div>
                     
-                    {splash}
-                    
-                    <button id = "submitBtn" type="submit">Submit</button>
+
+
+
+
+
                 </div>
-                
+
             </div>
-        
+
         )
     }
 }

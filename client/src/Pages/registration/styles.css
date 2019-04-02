@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
+
 .regContainer{
     display:  flex;
     flex-direction: row;
@@ -24,7 +26,7 @@
     /* background-image: linear-gradient(lightblue, #22C3D5); */
     background-color: (rgba(128, 128, 128, 0.5));
     height: 100vh;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -33,7 +35,9 @@
     border-bottom-left-radius: 20px;
     padding: 10px;
     width: 120px;
-    
+    font-family: "Montserrat", sans-serif;
+    font-size: 120%;
+
 }
 
 #logInBtn{
@@ -41,6 +45,8 @@
     border-bottom-right-radius: 20px;
     padding: 10px;
     width: 120px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 120%;
     
 }
 
@@ -49,34 +55,56 @@
     border-radius: 20px;
     padding: 10px;
     width: 240px;
+    background-color: #bbb;
+    font-family: "Montserrat", sans-serif;
+    font-size: 120%;
+   
 }
 
+.buttons{
+    margin-top: 10%
+}
+
+.forms{
+    
+    width: 50%;
+}
 .logoStyle{
     width: 80%;
-    margin-bottom: 80px;
+    margin-bottom: 20%;
 }
 
 #mobileLogo{
    display:none;
 }
 
-.formContainer.buttons{
-    margin-right: auto;
-    margin-left: auto;
-    position: fixed;
-    display: block;
+#submitStyle{
+
+   margin-bottom: 10%;
+
+}
+
+h1{
+    font-family: "Montserrat", sans-serif;
+}
+
+p{
+    font-family: "Montserrat", sans-serif;
 }
 
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 1024px){
     .regContainer{
         display:  flex;
         flex-direction: column;
         background: auto;
+
     }
 
     .formContainer{
+        height: 100vh;
         width: 100%;
+        
     }
 
     .detailContainer{
@@ -85,9 +113,30 @@
     }
 
     #mobileLogo{
-        margin-bottom: 40px;
-        margin-left: auto;
-        margin-right: auto;
+     
         display: flex;
     }
+    .logoStyle{
+        width: 80%;
+        margin-left: auto;
+        margin-right:auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .buttons{
+        margin-top: 5%;
+        margin-bottom: 5%
+     
+    }
+    #submitStyle{
+
+        margin-top: 10%;
+     
+     }
+     .forms{
+        margin-left: -5%;
+        width: 50%;
+    }
+    
 }
+

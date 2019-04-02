@@ -1,19 +1,10 @@
 .field{
-    width: 50vw;
+    width: 100%;
     border-radius: 10px;
     padding: 10px;
-    margin: 10px;
+  
 }
 
-.notWanted{
-    display: none;
-}
 
-/* @media only screen and (max-width: 600px){
-    .field{
-        width: 70vw;
-        border-radius: 10px;
-        padding: 10px;
-        margin: 10px;
-    }
-} */
+
+

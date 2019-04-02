@@ -7,15 +7,15 @@ const SignUp = ({ touched, errors, isSubmitting, componentChange }) => {
     return (
         <Form>
             
-            <div>
+            <div className = "fieldDiv">
                 <Field id = "field" type="text" name="firstName" placeholder="Enter first name" />
                 {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}
             </div>
-            <div>
+            <div className = "fieldDiv">
                 <Field id = "field" type="text" name="lastName" placeholder="Enter last name" />
                 {touched.lastName && errors.lastName && <p>{errors.lastName}</p>}
             </div>
-            <div>
+            <div className = "fieldDiv">
                 <Field id = "field"
                     type="email"
                     name="email"
@@ -23,11 +23,11 @@ const SignUp = ({ touched, errors, isSubmitting, componentChange }) => {
                 />
                 {touched.email && errors.email && <p>{errors.email}</p>}
             </div>
-            <div>
+            <div className = "fieldDiv">
                 <Field id = "field" type="password" name="password" placeholder="Enter password" />
                 {touched.password && errors.password && <p>{errors.password}</p>}
             </div>
-            <div>
+            <div className = "fieldDiv">
                 <Field 
                     id = "field" 
                     type="password"
