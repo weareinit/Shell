@@ -30,7 +30,7 @@
 }
 
 .formContainer {
-    background-color: #22C3D5;
+    /* background-color: #22C3D5; */
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -97,15 +97,14 @@ p {
 @media only screen and (max-width: 1024px) {
     .container {
         
-        margin-left: 10px;
-        margin-right: 10px;
-        height: 100vh;
-        width: 100vw;
+       
+        height: 100%;
+        width: 100%;
     }
     .regContainer {
         display: flex;
         flex-direction: column;
-        background: auto;
+       height: 100%;
     }
     .formContainer {
         height: 100vh;
