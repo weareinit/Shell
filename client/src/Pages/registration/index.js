@@ -25,50 +25,41 @@ class Registration extends Component {
     render() {
         let splash = this.state.showLogIn ? <LogInForm componentChange={this.switchComponent} /> : <SignUpForm componentChange={this.switchComponent} />
         let details = this.state.showLogIn ? <p>Please sign in</p> : <p>Please fill out the form</p>
-        return (
-            <div className="regContainer">
 
-                <div className="detailContainer">
-                    <Logo className="logoStyle" id="siteLogo" />
-                    <h1>Welcome!</h1>
-                    {details}
-                </div>
-                <Logo className="logoStyle" id="mobileLogo" />
-                <div className="formContainer">
-                    
-                   
-                        <div
-                            // style={!this.state.showLogIn ? {position:'relative',top:25.5}: null}
-                            className="buttons">
-                            <button style={{
-                                backgroundColor: this.state.showLogIn ? '#968e9e' : '#d7cce2'
-                            }}
-                                id="signUpBtn" type="button" onClick={() => this.setState({ showLogIn: true })}>Log In</button>
-                            <button style={{
-                                backgroundColor: !this.state.showLogIn ? '#968e9e' : '#d7cce2'
-                            }}
-                                id="logInBtn" type="button" onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
+        return (
+            <div className="container">
+                <div className="regContainer">
+
+                    <div className="detailContainer">
+                        <Logo className="logoStyle" id="siteLogo" />
+                        <h1>Welcome!</h1>
+                        {details}
+                    </div>
+
+
+                    <div className="formContainer">
+                        <Logo className="logoStyle" id="mobileLogo" />
+
+                        <div className="buttons">
+
+                            <button id="signUpBtn" type="button" onClick={() => this.setState({ showLogIn: true })}>Log In</button>
+
+                            <button id="logInBtn" type="button" onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
                         </div>
 
                         <div className="forms">
                             {splash}
                         </div>
 
-                        <div id="submitStyle">
-                            <button id="submitBtn" type="submit">Submit</button>
-                        </div>
-                    
-
-
-
-
+                    </div>
 
                 </div>
-
             </div>
+
 
         )
     }
 }
 
 export default Registration;
+

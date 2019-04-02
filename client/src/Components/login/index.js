@@ -10,11 +10,15 @@ const LogIn = ({ touched, errors, isSubmitting, componentChange }) => {
            
             <div className = "fieldDiv">
                 <Field className = "field" type="email" name="email" placeholder="Email" />
-                {touched.email && errors.email && <p>{errors.email}</p>}
+               
             </div>
-            <div className = "fieldDiv">
+            <div className = "fieldDiv" id = "bottomField">
                 <Field className = "field" type="password" name="password" placeholder="Password" />
-                {touched.password && errors.password && <p>{errors.password}</p>}
+                
+            </div>
+
+            <div id = "loginStyle">
+                <button id = "loginBtn" type="submit" disabled={isSubmitting}>Log In</button>
             </div>
            
         </Form>

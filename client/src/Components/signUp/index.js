@@ -9,11 +9,11 @@ const SignUp = ({ touched, errors, isSubmitting, componentChange }) => {
             
             <div className = "fieldDiv">
                 <Field id = "field" type="text" name="firstName" placeholder="Enter first name" />
-                {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}
+                
             </div>
             <div className = "fieldDiv">
                 <Field id = "field" type="text" name="lastName" placeholder="Enter last name" />
-                {touched.lastName && errors.lastName && <p>{errors.lastName}</p>}
+               
             </div>
             <div className = "fieldDiv">
                 <Field id = "field"
@@ -25,18 +25,19 @@ const SignUp = ({ touched, errors, isSubmitting, componentChange }) => {
             </div>
             <div className = "fieldDiv">
                 <Field id = "field" type="password" name="password" placeholder="Enter password" />
-                {touched.password && errors.password && <p>{errors.password}</p>}
+                
             </div>
-            <div className = "fieldDiv">
+            <div className = "fieldDiv" id = "bottomFieldS">
                 <Field 
                     id = "field" 
                     type="password"
                     name="confirmPassword"
                     placeholder="Confirm password"
                 />
-                {touched.confirmPassword && errors.confirmPassword && (
-                    <p>{errors.confirmPassword}</p>
-                )}
+                
+            </div>
+            <div id = "submitStyle">
+                <button id = "submitBtn" type="submit" disabled={isSubmitting}>Submit</button>
             </div>
             
         </Form>
