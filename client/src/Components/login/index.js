@@ -9,8 +9,6 @@ class LogIn extends Component {
 
     handleSubmit(values, { resetForm }) {
         axios.post("https://jsonplaceholder.typicode.com/posts", {
-            firstName: values.firstName,
-            lastName: values.lastName,
             email: values.email,
             password: values.password
         })
