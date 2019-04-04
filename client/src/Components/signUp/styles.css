@@ -15,6 +15,12 @@
     font: 500;
 }
 
+#field:focus{
+    background-color: #cec09c;
+    color: white;
+
+}
+
 #submitBtn {
     border: none;
     outline-style: none;

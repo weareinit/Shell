@@ -44,9 +44,9 @@ class Registration extends Component {
 
                         <div className="buttonSwitch">
 
-                            <button id="signUpBtn" type="button" onClick={() => this.setState({ showLogIn: true })}>Log In</button>
+                            <button className = "switchButtons" id="logInBtn" type="button" onClick={() => this.setState({ showLogIn: true })}>Log In</button>
 
-                            <button id="logInBtn" type="button" onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
+                            <button className = "switchButtons" id="signUpBtn" type="button" onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
                         </div>
 
                         <div className="forms">

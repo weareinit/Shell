@@ -12,7 +12,7 @@ const LogIn = ({ touched, errors, isSubmitting, componentChange }) => {
                 <Field className = "field" type="email" name="email" placeholder="Email" />
                
             </div>
-            <div className = "fieldDiv" id = "bottomField">
+            <div className = "fieldDiv">
                 <Field className = "field" type="password" name="password" placeholder="Password" />
                 
             </div>

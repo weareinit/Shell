@@ -48,22 +48,8 @@
 
 }
 
-#signUpBtn {
-    border: none;
-    outline-style: none;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 10px;
-    width: 50%;
-    font-family: "Montserrat", sans-serif;
-    font-size: 100%;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    color: white;
-    font-weight: 700;
-    max-width: 167.5px;
-}
 
-#logInBtn {
+#signUpBtn {
     border: none;
     outline-style: none;
     border-top-right-radius: 20px;
@@ -72,10 +58,37 @@
     width: 50%;
     font-family: "Montserrat", sans-serif;
     font-size: 100%;
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.5) ;
     color: white;
     font-weight: 700;
     max-width: 167.5px;
+}
+
+#signUpBtn:focus{
+    background-color: #cec09c;
+    color: white;
+
+}
+
+#logInBtn {
+    border: none;
+    outline-style: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 10px;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: 700;
+    max-width: 167.5px;
+}
+
+#logInBtn:focus{
+    background-color: #cec09c;
+    color: white;
+
 }
 
 .buttonSwitch{

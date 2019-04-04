@@ -21,7 +21,7 @@ const SignUp = ({ touched, errors, isSubmitting, componentChange }) => {
                     name="email"
                     placeholder="Enter your school email"
                 />
-                {touched.email && errors.email && <p>{errors.email}</p>}
+                
             </div>
             <div className = "fieldDiv">
                 <Field id = "field" type="password" name="password" placeholder="Enter password" />
