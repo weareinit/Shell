@@ -48,8 +48,16 @@ class Registration extends Component {
                         <div className="formContainer">
                             <Logo className="logoStyle" id="mobileLogo" />
                             <div className="buttonSwitch">
-                                <button className="switchButtons" id="logInBtn" type="button" onClick={ () => this.setState({ showLogIn: true }) }>Log In</button>
-                                <button className="switchButtons" id="signUpBtn" type="button" onClick={ () => this.setState({ showLogIn: false }) }>Sign Up</button>
+                                <button 
+                                    className="switchButtons" 
+                                    id="logInBtn" 
+                                    type="button" 
+                                    onClick={ () => this.setState({ showLogIn: true }) }>Log In</button>
+                                <button 
+                                    className="switchButtons" 
+                                    id="signUpBtn" 
+                                    type="button" 
+                                    onClick={ () => this.setState({ showLogIn: false }) }>Sign Up</button>
                             </div>
                             <div className="forms">
                                 {form}
