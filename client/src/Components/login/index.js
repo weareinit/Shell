@@ -16,7 +16,7 @@ class LogIn extends Component {
             console.log(response.data)
         })
         .catch(error => {
-            console.log(error);
+            console.log(error)
         })
     }
 

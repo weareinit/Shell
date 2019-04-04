@@ -8,7 +8,7 @@ class SignUp extends Component {
 
     handleSubmit(values, { resetForm, setErrors }) {
         if (values.password !== values.confirmPassword) {
-            setErrors({ confirmPassword: "Passwords do not match" });
+            setErrors({ confirmPassword: "Passwords do not match" })
         }
         else {
             axios.post("https://jsonplaceholder.typicode.com/posts", {
@@ -22,7 +22,7 @@ class SignUp extends Component {
                 console.log(response.data)
             })
             .catch(error => {
-                console.log(error);
+                console.log(error)
             })
         }
     }

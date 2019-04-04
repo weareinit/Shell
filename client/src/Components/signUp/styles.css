@@ -15,7 +15,7 @@
     font: 500;
 }
 
-.field:focus{
+.field:focus {
     background-color: #cec09c;
     color: white;
 }

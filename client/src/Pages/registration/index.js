@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import LogIn from '../../Components/login'
-import SignUp from '../../Components/signUp'
-import { ReactComponent as Logo } from '../../shellhacks.svg'
+import LogIn from '../../Components/Login'
+import SignUp from '../../Components/SignUp'
+import { ReactComponent as Logo } from '../../imgs/shellhacks.svg'
 import './styles.css'
 
 class Registration extends Component {

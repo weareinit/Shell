@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Field } from 'formik'
-import '../Components/login/styles.css'
+import '../Components/Login/styles.css'
 
 const LogInForm = ({ handleSubmit }) => (
     <Form>

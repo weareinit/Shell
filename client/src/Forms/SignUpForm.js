@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Field } from 'formik'
-import '../Components/signUp/styles.css'
+import '../Components/SignUp/styles.css'
 
 const SignUpForm = ({ handleSubmit }) => (
     <Form>
@@ -45,7 +45,7 @@ const SignUpForm = ({ handleSubmit }) => (
             />
         </div>
         <div id="submitStyle">
-            <button id="submitBtn" type="submit" onClick={handleSubmit}>Submit</button>
+            <button id="submitBtn" type="submit" onClick={ handleSubmit }>Submit</button>
         </div>
     </Form>
 )

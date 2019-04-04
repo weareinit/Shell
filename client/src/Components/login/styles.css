@@ -13,7 +13,7 @@
     max-width: 335px;
 }
 
-.fieldDiv{
+.fieldDiv {
     display: flex;
     justify-content: center;
     margin-top: 5%;
@@ -42,7 +42,6 @@
 
 #loginStyle {
     display: flex;
-    justify-content: center;
-    
+    justify-content: center; 
     margin-bottom: 10%;
 }
