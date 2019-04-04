@@ -1,22 +1,43 @@
-.field{
-    width: 100%;
+.field {
+    width: 70%;
     border-radius: 10px;
     padding: 10px;
+    border: none;
+    outline-style: none;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    color: white;
+    font-weight: 500;
+    max-width: 335px;
 }
 
-.fieldDiv{
-    margin-bottom: 20px;
+.field::placeholder {
+    color: #c4baa2;
+    font: 500;
 }
 
-.buttonDiv{
-    text-align: center;
+.field:focus{
+    background-color: #cec09c;
+    color: white;
+
 }
 
-#submitBtn{
-    border-radius: 20px;
+#submitBtn {
+    border: none;
+    outline-style: none;
+    border-radius: 30px;
     padding: 10px;
-    width: 240px;
-    background-color: #bbb;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.5) !important;
     font-family: "Montserrat", sans-serif;
-    font-size: 120%;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    max-width: 335px;
+}
+
+#submitStyle {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%
 }

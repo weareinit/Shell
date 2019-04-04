@@ -1,135 +1,161 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
 
-.regContainer{
-    display:  flex;
-    flex-direction: row;
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
     background-image: url("../../imgs/frontpage/Background_Sand.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
 }
 
-.detailContainer{
+.regContainer {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    /* height: 70%; */
+    /* max-height: 500px; */
+    max-width: 750px;
+    min-width: 300px;
+    background-color: #F2E2B8;
+    border-radius: 30px;
+}
+.Logo {
     display: flex;
     flex-direction: column;
-    width:40%;
+    width: 40%;
     /* background-image: linear-gradient(pink, #E94F86); */
-    background-color: (rgba(211, 211, 211, 0.5));
-    height: 100vh;
+    
+    /* height: 100%; */
     justify-content: center;
     align-items: center;
+    
+
 }
 
-.formContainer{
+.formContainer {
     display: flex;
     flex-direction: column;
     width: 60%;
-    /* background-image: linear-gradient(lightblue, #22C3D5); */
     background-color: (rgba(128, 128, 128, 0.5));
-    height: 100vh;
-    justify-content: space-between;
+    height: 100%;
+    justify-content: center;
     align-items: center;
+    
+
 }
 
-#signUpBtn{
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 10px;
-    width: 120px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 120%;
-}
 
-#logInBtn{
+#signUpBtn {
+    border: none;
+    outline-style: none;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 10px;
-    width: 120px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 120%; 
-}
-
-
-#submitBtn{
-    border-radius: 20px;
-    padding: 10px;
-    width: 240px;
-    background-color: #bbb;
-    font-family: "Montserrat", sans-serif;
-    font-size: 120%;
-}
-
-.buttons{
-    margin-top: 10%
-}
-
-.forms{
-    
     width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    background-color: rgba(0, 0, 0, 0.5) ;
+    color: white;
+    font-weight: 700;
+    max-width: 167.5px;
 }
 
-.logoStyle{
+#signUpBtn:focus{
+    background-color: #cec09c;
+    color: white;
+
+}
+
+#logInBtn {
+    border: none;
+    outline-style: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 10px;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: 700;
+    max-width: 167.5px;
+}
+
+#logInBtn:focus{
+    background-color: #cec09c;
+    color: white;
+
+}
+
+.buttonSwitch{
+    margin-top: 10%;
+    width: 70%;
+    margin-bottom: 5%;
+    display:flex;
+    justify-content: center;
+}
+
+.forms {
+    width: 100%;
+}
+
+.logoStyle {
     width: 80%;
-    margin-bottom: 20%;
+    /* margin-bottom: 20%; */
 }
 
-#mobileLogo{
-   display:none;
+#mobileLogo {
+    display: none;
 }
 
-#submitStyle{
-   margin-bottom: 10%;
-}
-
-h1{
+h1 {
     font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
 }
 
-p{
+p {
     font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+    font-weight: 300;
+    line-height: 0em;
+}
+.welcomeMessage{
+    text-align:center;
 }
 
-
-@media only screen and (max-width: 1024px){
-    .regContainer{
-        display:  flex;
-        flex-direction: column;
-        background: auto;
-
-    }
-
-    .formContainer{
+@media only screen and (max-width: 1024px) {
+    .container {
         height: 100vh;
-        width: 100%;
+        width: 100vw;
     }
-
-    .detailContainer{
+    .regContainer {
+        display: flex;
+        flex-direction: column;
+       background: none !important;
+       width: 100%;
+       height: 100%;
+    }
+    .formContainer {
+        height: 100%;
+        width: 100%;
+       
+    }
+    .Logo {
         display: none;
         background: none;
     }
-
-    #mobileLogo{
+    #mobileLogo {
         display: flex;
     }
-
-    .logoStyle{
+    .logoStyle {
         width: 80%;
         margin-left: auto;
-        margin-right:auto;
+        margin-right: auto;
         margin-top: 5%;
         margin-bottom: 5%;
-    }
-
-    .buttons{
-        margin-top: 5%;
-        margin-bottom: 5%
-    }
-
-    #submitStyle{
-        margin-top: 10%;
-     }
-
-    .forms{
-        margin-left: -5%;
-        width: 50%;
     }
 }

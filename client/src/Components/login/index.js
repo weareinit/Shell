@@ -3,7 +3,6 @@ import { Formik } from 'formik'
 import { LogInValidation } from '../../Forms/ValidationSchema'
 import LogInForm from '../../Forms/LogInForm'
 import axios from 'axios'
-import './styles.css'
 
 class LogIn extends Component {
 

@@ -1,31 +1,27 @@
 import React from 'react'
-import { Form, Field, ErrorMessage } from 'formik'
+import { Form, Field } from 'formik'
+import '../Components/login/styles.css'
 
-const LogInForm = ({ errors, touched, handleSubmit }) => (
+const LogInForm = ({ handleSubmit }) => (
     <Form>
         <div className="fieldDiv">
             <Field
                 className="field"
                 type="email"
                 name="email"
-                style={{ borderColor: errors.email && touched.email ? 'red' : null }}
-                placeholder="Enter your school email"
+                placeholder="Email"
             />
-            <ErrorMessage component="p" name="email" />
         </div>
         <div className="fieldDiv">
             <Field
                 className="field"
                 type="password"
                 name="password"
-                style={{ borderColor: errors.password && touched.password ? 'red' : null }}
-                placeholder="Enter password"
+                placeholder="Password"
             />
-            <ErrorMessage component="p" name="password" />
         </div>
-        <br /><br />
-        <div className="buttonDiv">
-            <button id="submitBtn" type="submit" onClick={handleSubmit}>Submit</button>
+        <div id="loginStyle">
+            <button id="loginBtn" type="submit" onClick={ handleSubmit }>Log In</button>
         </div>
     </Form>
 )
