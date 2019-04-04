@@ -1,59 +1,40 @@
-import React from 'react'
-import { withFormik, Form, Field } from 'formik'
-import { LogInValidation } from '../../Validator/ValidationSchema'
+import React, { Component } from 'react'
+import { Formik } from 'formik'
+import { LogInValidation } from '../Forms/ValidationSchema'
+import LogInForm from '../Forms/LogInForm'
 import axios from 'axios'
-import "./styles.css"
 
-const LogIn = ({ touched, errors, isSubmitting, componentChange }) => {
-    return (
-        <Form >
-           
-            <div className = "fieldDiv">
-                <Field className = "field" type="email" name="email" placeholder="Email" />
-               
-            </div>
-            <div className = "fieldDiv">
-                <Field className = "field" type="password" name="password" placeholder="Password" />
-                
-            </div>
+class LogIn extends Component {
 
-            <div id = "loginStyle">
-                <button id = "loginBtn" type="submit" disabled={isSubmitting}>Log In</button>
-            </div>
-           
-        </Form>
-    )
+    handleSubmit(values, { resetForm }) {
+        axios.post("https://jsonplaceholder.typicode.com/posts", {
+            email: values.email,
+            password: values.password
+        })
+        .then(response => {
+            resetForm()
+            console.log(response.data)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    render() {
+        return (
+            <Formik
+                initialValues={{
+                    email: '',
+                    password: ''
+                }}
+                validationSchema={ LogInValidation }
+                onSubmit={ this.handleSubmit }
+                render={ props => (
+                    <LogInForm {...props}/>
+                )}
+            />
+        )
+    }
 }
 
-export const LogInForm = withFormik({
-    mapPropsToValues() {
-        return {
-            email: "",
-            password: ""
-        }
-    },
-    validationSchema: LogInValidation,
-    handleSubmit(values, { resetForm, setSubmitting }) {
-        axios.post("https://jsonplaceholder.typicode.com/posts", {
-                email: values.email,
-                password: values.password
-              })
-              .then(response => {
-                resetForm()
-                console.log(response.data)
-              })
-              .catch(error => {
-                console.log(error)
-                setSubmitting(true)
-                let promise = new Promise(resolve => {
-                    setTimeout(() => resolve(true), 1000);
-                })
-                promise.then(value => {
-                    setSubmitting(value)
-                    resetForm()
-                })
-            })
-    }
-})(LogIn)
-
-export default LogInForm;
+export default LogIn
