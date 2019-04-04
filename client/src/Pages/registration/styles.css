@@ -1,39 +1,226 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
+:root {
+    --primary-color: #ff1d8e;
+    --secondary-color: #fbedca;
+    --tertiary-color: #9e8d7d;
+    --waves-speed: 3s;
+    --gradient-bg: linear-gradient(270deg, #58d8e6, #f3b3b3, #b4c4f9, #86db91, #b4c4f9, #f3b3b3, #58d8e6);
+}
 
+
+/*----------------------- ANIMATIONS --------------------------*/
+
+@keyframes GradientBackground {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 100%
+    }
+}
+
+
+/* vvvvvv this needs to be moved to a global css file */
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    background: var(--secondary-color);
+}
+
+
+/*^^^^^^ this needs to be moved to a global css file */
+
+#backgroundObjects {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#seat1 {
+    left: 0;
+    width: 400px;
+}
+
+#seat2 {
+    right: 0;
+    width: 320px;
+}
+
+#shore {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1920px;
+    min-width: 100%;
+    z-index: 0;
+}
+
+#wetsand,
+#surf {
+    position: relative;
+}
+
+#wetsand>*,
+#surf>* {
+    position: absolute;
+    bottom: -57px;
+    left: 0;
+    min-width: 100%;
+}
+
+@keyframes wetsand3 {
+    from {
+        bottom: -50px;
+    }
+    to {
+        bottom: -45px;
+    }
+}
+
+#wetsand3 {
+    animation: wetsand3 var(--waves-speed) ease 1.6s infinite alternate;
+    bottom: -50px;
+}
+
+@keyframes wetsand2 {
+    from {
+        bottom: -370px;
+    }
+    to {
+        bottom: -40px;
+    }
+}
+
+#wetsand2 {
+    animation: wetsand2 var(--waves-speed) ease 1.5s infinite alternate;
+    bottom: -370px;
+}
+
+@keyframes wetsand1 {
+    from {
+        bottom: -390px;
+    }
+    to {
+        bottom: -10px;
+    }
+}
+
+#wetsand1 {
+    animation: wetsand1 var(--waves-speed) ease 1.2s infinite alternate;
+    bottom: -390px;
+}
+
+@keyframes surf3 {
+    from {
+        bottom: -280px;
+    }
+    to {
+        bottom: 75px;
+    }
+}
+
+#surf3 {
+    animation: surf3 var(--waves-speed) ease 0.5s infinite alternate;
+    bottom: -280px;
+}
+
+@keyframes surf2 {
+    from {
+        bottom: -250px;
+    }
+    to {
+        bottom: 20px;
+    }
+}
+
+#surf2 {
+    animation: surf2 var(--waves-speed) ease 0.3s infinite alternate;
+    bottom: -250px;
+}
+
+@keyframes surf1 {
+    from {
+        bottom: -200px;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+
+#surf1 {
+    animation: surf1 var(--waves-speed) ease 0s infinite alternate;
+    bottom: 0px;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 1800px) {
+    #seat1 {
+        width: 290px;
+    }
+    #seat2 {
+        width: 220px;
+    }
+    #seat1 {
+        width: 300px;
+    }
+    #shore {
+        margin-bottom: -30px;
+        left: -50%;
+    }
+    #starfish {
+        left: 350px;
+        width: 100px;
+    }
+}
+
+
+/*----------------------- CONTENTS STYLES --------------------------*/
 
 .container {
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    background-image: url("../../imgs/frontpage/Background_Sand.svg");
-    background-repeat: no-repeat;
-    background-size: cover; 
+    align-items: center;
+    z-index: 2;
+    /* ^^^^IMPORTANT!!! */
 }
 
 .regContainer {
     display: flex;
     flex-direction: row;
     width: 60%;
-    /* height: 70%; */
-    /* max-height: 500px; */
     max-width: 750px;
     min-width: 300px;
-    background-color: #F2E2B8;
+    background-color: rgba(206, 188, 143, 0.4);
     border-radius: 30px;
+    z-index: 8;
 }
+
 .Logo {
     display: flex;
     flex-direction: column;
     width: 40%;
-    /* background-image: linear-gradient(pink, #E94F86); */
-    
-    /* height: 100%; */
     justify-content: center;
     align-items: center;
-    
-
 }
 
 .formContainer {
@@ -44,10 +231,7 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-    
-
 }
-
 
 #signUpBtn {
     border: none;
@@ -58,16 +242,15 @@
     width: 50%;
     font-family: "Montserrat", sans-serif;
     font-size: 100%;
-    background-color: rgba(0, 0, 0, 0.5) ;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-weight: 700;
     max-width: 167.5px;
 }
 
-#signUpBtn:focus{
+#signUpBtn:focus {
     background-color: #cec09c;
     color: white;
-
 }
 
 #logInBtn {
@@ -85,17 +268,16 @@
     max-width: 167.5px;
 }
 
-#logInBtn:focus{
+#logInBtn:focus {
     background-color: #cec09c;
     color: white;
-
 }
 
-.buttonSwitch{
+.buttonSwitch {
     margin-top: 10%;
     width: 70%;
     margin-bottom: 5%;
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -122,8 +304,9 @@ p {
     font-weight: 300;
     line-height: 0em;
 }
-.welcomeMessage{
-    text-align:center;
+
+.welcomeMessage {
+    text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -134,14 +317,13 @@ p {
     .regContainer {
         display: flex;
         flex-direction: column;
-       background: none !important;
-       width: 100%;
-       height: 100%;
+        background: none !important;
+        width: 100%;
+        height: 100%;
     }
     .formContainer {
         height: 100%;
         width: 100%;
-       
     }
     .Logo {
         display: none;
