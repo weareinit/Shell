@@ -30,17 +30,19 @@ class Registration extends Component {
             <div className="container">
                 <div className="regContainer">
 
-                    <div className="detailContainer">
+                    <div className="Logo">
                         <Logo className="logoStyle" id="siteLogo" />
-                        <h1>Welcome!</h1>
-                        {details}
+                        <span className="welcomeMessage">
+                            <h1>Welcome!</h1>
+                            {details}
+                        </span>
                     </div>
 
 
                     <div className="formContainer">
                         <Logo className="logoStyle" id="mobileLogo" />
 
-                        <div className="buttons">
+                        <div className="buttonSwitch">
 
                             <button id="signUpBtn" type="button" onClick={() => this.setState({ showLogIn: true })}>Log In</button>
 

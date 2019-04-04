@@ -10,11 +10,14 @@
     font-size: 100%;
     color: black;
     font-weight: 500;
+    max-width: 335px;
 }
 
-.fieldDiv {
+.fieldDiv{
     display: flex;
     justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .field::placeholder {
@@ -27,26 +30,22 @@
     outline-style: none;
     border-radius: 30px;
     padding: 7px;
-    width: 16em;
+    width: 70%;
     background-color: rgba(0, 0, 0, 0.5) !important;
     font-family: "Montserrat", sans-serif;
     font-size: 120%;
     color: white;
     font-weight: 900;
+    max-width: 335px;
+    margin-top: 5%;
 }
 
 #loginStyle {
     display: flex;
     justify-content: center;
-    margin-bottom: 15%;
+    
+    margin-bottom: 10%;
 }
 
-#bottomField {
-    margin-bottom: 40%;
-}
 
-@media only screen and (max-width: 1024px) {
-    #bottomField {
-        margin-bottom: 30%;
-    }
-}
+

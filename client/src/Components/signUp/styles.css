@@ -7,11 +7,7 @@
     background-color: rgba(0, 0, 0, 0.5) !important;
     color: white;
     font-weight: 500;
-}
-
-.fieldDiv {
-    display: flex;
-    justify-content: center;
+    max-width: 335px;
 }
 
 #field::placeholder {
@@ -19,35 +15,23 @@
     font: 500;
 }
 
-.fieldDiv {
-    margin-bottom: 20px;
-}
-
 #submitBtn {
     border: none;
     outline-style: none;
     border-radius: 30px;
     padding: 10px;
-    width: 16em;
+    width: 70%;
     background-color: rgba(0, 0, 0, 0.5) !important;
     font-family: "Montserrat", sans-serif;
     font-size: 100%;
     color: white;
     font-weight: 700;
+    max-width: 335px;
 }
 
 #submitStyle {
     display: flex;
     justify-content: center;
-    margin-bottom: 15%
-}
-
-#bottomFieldS {
-    margin-bottom: 10%;
-}
-
-@media only screen and (max-width: 1024px) {
-    #bottomFieldS {
-        margin-bottom: 15%;
-    }
+    margin-top: 10%;
+    margin-bottom: 10%
 }
