@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Formik } from 'formik'
-import { SignUpValidation } from '../../Forms/ValidationSchema'
-import SignUpForm from '../../Forms/SignUpForm'
+import { SignUpValidation } from '../Forms/ValidationSchema'
+import SignUpForm from '../Forms/SignUpForm'
 import axios from 'axios'
 
 class SignUp extends Component {

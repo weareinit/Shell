@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Registration from './Pages/Registration'
+import Registration from './Pages/registration'
 
 class App extends Component {
   render() {
