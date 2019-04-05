@@ -247,11 +247,6 @@ body {
     max-width: 167.5px;
 }
 
-#signUpBtn:focus {
-    background-color: #cec09c;
-    color: white;
-}
-
 #logInBtn {
     border: none;
     outline-style: none;
@@ -265,11 +260,6 @@ body {
     color: white;
     font-weight: 700;
     max-width: 167.5px;
-}
-
-#logInBtn:focus {
-    background-color: #cec09c;
-    color: white;
 }
 
 .buttonSwitch {

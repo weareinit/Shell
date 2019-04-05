@@ -6,9 +6,9 @@ import axios from 'axios'
 
 class SignUp extends Component {
 
-    handleSubmit(values, { resetForm, setErrors }) {
+    handleSubmit(values, { resetForm }) {
         if (values.password !== values.confirmPassword) {
-            setErrors({ confirmPassword: "Passwords do not match" })
+            alert("Passwords do not match!")
         }
         else {
             axios.post("https://jsonplaceholder.typicode.com/posts", {

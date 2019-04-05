@@ -51,12 +51,14 @@ class Registration extends Component {
                                 <button 
                                     className="switchButtons" 
                                     id="logInBtn" 
-                                    type="button" 
+                                    type="button"
+                                    style={ this.state.showLogIn ? { backgroundColor: '#cec09c' } : null }
                                     onClick={ () => this.setState({ showLogIn: true }) }>Log In</button>
                                 <button 
                                     className="switchButtons" 
                                     id="signUpBtn" 
-                                    type="button" 
+                                    type="button"
+                                    style={ !this.state.showLogIn ? { backgroundColor: '#cec09c' } : null }
                                     onClick={ () => this.setState({ showLogIn: false }) }>Sign Up</button>
                             </div>
                             <div className="forms">
