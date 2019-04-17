@@ -77,9 +77,11 @@ header{
         margin-bottom: 40px;
     }
     .nav{
+        position: inherit;
         display: flex !important;
-        width: 30vw;
+        padding: 20px;
         flex-direction: column;
+        height: 100vh;
     }
     .toggle{
         display: none;

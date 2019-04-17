@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react'
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
-import NavBar from '../Components/NavBar'
+import React, { Component } from 'react'
+import { Route,  Switch } from 'react-router-dom'
+//import NavBar from '../Components/NavBar'
 import Dashboard from '../pages/dashboard';
 import Registration from '../pages/registration'
 import Application from '../pages/application'
@@ -13,10 +13,8 @@ class Navigation extends Component {
 
     render() {
         return (
-
-            <BrowserRouter>
                 <div className="navPageContainer">
-                    <NavBar className="navbar" />
+                    {/* <NavBar className="navbar" /> */}
                     {/* DO NOT REMOVE APP CLASS */}
                     <div className="pages">
                         <Switch>
@@ -29,9 +27,6 @@ class Navigation extends Component {
                         </Switch>
                     </div>
                 </div>
-            </BrowserRouter>
-
-
         )
     }
 }
