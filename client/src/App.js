@@ -11,9 +11,10 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      loggedIn: !false
+      loggedIn: false
     }
   }
+
   render() {
     const nav = this.state.loggedIn ? <NavBar /> : <span></span>
     const showNav = !this.state.loggedIn ? {width: '100vw !important',margin: '0px'} : {};
@@ -24,7 +25,7 @@ class App extends Component {
           {/* DO NOT REMOVE APP CLASS */}
           <div className="App" style={showNav}> 
             <Navigation />
-          </div>
+          </div>  
         </BrowserRouter>
       </Fragment>
     )

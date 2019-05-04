@@ -18,7 +18,7 @@ class Navigation extends Component {
                     {/* DO NOT REMOVE APP CLASS */}
                     <div className="pages">
                         <Switch>
-                            <Route exact path="/registration" component={Registration} />
+                            <Route exact path="/" component={Registration} />
                             <Route exact path="/dashboard" component={Dashboard} />
                             <Route exact path="/application" component={Application} />
                             <Route exact path="/faq" component={Faq} />
