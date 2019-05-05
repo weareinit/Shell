@@ -11,4 +11,4 @@ class Live extends Component {
     }
 }
 
-export default Faq;
+export default Live;
