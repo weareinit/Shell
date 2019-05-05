@@ -4,7 +4,7 @@ import SignUp from '../../components/signup'
 import { ReactComponent as Logo } from '../../assets/frontpage/shellhacks.svg'
 import './styles.css'
 
-class Registration extends Component {
+class Auth extends Component {
 
     constructor(props) {
         super(props);
@@ -72,4 +72,4 @@ class Registration extends Component {
     }
 }
 
-export default Registration
+export default Auth;
