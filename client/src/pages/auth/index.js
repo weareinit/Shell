@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import LogIn from '../../Components/login'
-import SignUp from '../../Components/signUp'
-import { ReactComponent as Logo } from '../../imgs/shellhacks.svg'
+import LogIn from '../../components/login'
+import SignUp from '../../components/signup'
+import { ReactComponent as Logo } from '../../assets/frontpage/shellhacks.svg'
 import './styles.css'
 
 class Registration extends Component {
@@ -23,14 +23,14 @@ class Registration extends Component {
                 <div className="container" id="backgroundObjects">
                     <div id="shore">
                         <div id="wetsand">
-                            <img id="wetsand3" className="decor" alt="placeholder" src={require('../../imgs/frontpage/wetsand3.svg')} />
-                            <img id="wetsand2" className="decor" alt="placeholder" src={require('../../imgs/frontpage/wetsand2.svg')} />
-                            <img id="wetsand1" className="decor" alt="placeholder" src={require('../../imgs/frontpage/wetsand1.svg')} />
+                            <img id="wetsand3" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand3.svg')} />
+                            <img id="wetsand2" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand2.svg')} />
+                            <img id="wetsand1" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand1.svg')} />
                         </div>
                         <div id="surf">
-                            <img id="surf3" className="decor" alt="placeholder" src={require('../../imgs/frontpage/surf3.svg')} />
-                            <img id="surf2" className="decor" alt="placeholder" src={require('../../imgs/frontpage/surf2.svg')} />
-                            <img id="surf1" className="decor" alt="placeholder" src={require('../../imgs/frontpage/surf1.svg')} />
+                            <img id="surf3" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf3.svg')} />
+                            <img id="surf2" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf2.svg')} />
+                            <img id="surf1" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf1.svg')} />
                         </div>
                     </div>
                 </div>
@@ -48,18 +48,18 @@ class Registration extends Component {
                         <div className="formContainer">
                             <Logo className="logoStyle" id="mobileLogo" />
                             <div className="buttonSwitch">
-                                <button 
-                                    className="switchButtons" 
-                                    id="logInBtn" 
+                                <button
+                                    className="switchButtons"
+                                    id="logInBtn"
                                     type="button"
-                                    alt="placeholder" 
-                                    onClick={ () => this.setState({ showLogIn: true }) }>Log In</button>
-                                <button 
-                                    className="switchButtons" 
-                                    id="signUpBtn" 
+                                    alt="placeholder"
+                                    onClick={() => this.setState({ showLogIn: true })}>Log In</button>
+                                <button
+                                    className="switchButtons"
+                                    id="signUpBtn"
                                     type="button"
-                                    style={ !this.state.showLogIn ? { backgroundColor: '#cec09c' } : null }
-                                    onClick={ () => this.setState({ showLogIn: false }) }>Sign Up</button>
+                                    style={!this.state.showLogIn ? { backgroundColor: '#cec09c' } : null}
+                                    onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
                             </div>
                             <div className="forms">
                                 {form}

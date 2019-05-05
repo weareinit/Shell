@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import { Formik, Form, Field } from 'formik'
-import { LogInValidation } from '../Forms/ValidationSchema'
-// import LogInForm from '../Forms/LogInForm'
-import '../login/styles.css'
+import { LogInValidation } from '../../utils/ValidationSchema'
+import './styles.css'
 import axios from 'axios'
 
-class LogIn extends Component {
+export default class LogIn extends Component {
 
     nextPath(path) {
         this.props.history.push(path);
     }
 
-    
+
     handleSubmit(values, { resetForm }) {
         axios.post("https://jsonplaceholder.typicode.com/posts", {
             email: values.email,
@@ -57,7 +56,7 @@ class LogIn extends Component {
                             />
                         </div>
                         <div id="loginStyle">
-                                <button id="loginBtn" type="submit" onClick={{handleSubmit}}>Log In</button>
+                            <button id="loginBtn" type="submit" onClick={{ handleSubmit }}>Log In</button>
                         </div>
                     </Form>
 
@@ -66,5 +65,3 @@ class LogIn extends Component {
         )
     }
 }
-
-export default LogIn

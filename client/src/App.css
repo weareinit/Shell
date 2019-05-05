@@ -1,10 +1,11 @@
-.App{
-  padding-top: 60px;
+.App {
+    padding-top: 60px;
 }
-@media(min-width: 650px){
-  .App {
-    padding-top: 0px !important;
-    width: 71vw;
-    margin-left: 30vw;
-  }
+
+@media(min-width: 650px) {
+    .App {
+        padding-top: 0px !important;
+        width: 71vw;
+        margin-left: 30vw;
+    }
 }
