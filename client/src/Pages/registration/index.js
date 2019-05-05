@@ -23,14 +23,14 @@ class Registration extends Component {
                 <div className="container" id="backgroundObjects">
                     <div id="shore">
                         <div id="wetsand">
-                            <img id="wetsand3" className="decor" src={require('../../imgs/frontpage/wetsand3.svg')} />
-                            <img id="wetsand2" className="decor" src={require('../../imgs/frontpage/wetsand2.svg')} />
-                            <img id="wetsand1" className="decor" src={require('../../imgs/frontpage/wetsand1.svg')} />
+                            <img id="wetsand3" className="decor" alt="placeholder" src={require('../../imgs/frontpage/wetsand3.svg')} />
+                            <img id="wetsand2" className="decor" alt="placeholder" src={require('../../imgs/frontpage/wetsand2.svg')} />
+                            <img id="wetsand1" className="decor" alt="placeholder" src={require('../../imgs/frontpage/wetsand1.svg')} />
                         </div>
                         <div id="surf">
-                            <img id="surf3" className="decor" src={require('../../imgs/frontpage/surf3.svg')} />
-                            <img id="surf2" className="decor" src={require('../../imgs/frontpage/surf2.svg')} />
-                            <img id="surf1" className="decor" src={require('../../imgs/frontpage/surf1.svg')} />
+                            <img id="surf3" className="decor" alt="placeholder" src={require('../../imgs/frontpage/surf3.svg')} />
+                            <img id="surf2" className="decor" alt="placeholder" src={require('../../imgs/frontpage/surf2.svg')} />
+                            <img id="surf1" className="decor" alt="placeholder" src={require('../../imgs/frontpage/surf1.svg')} />
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ class Registration extends Component {
                                     className="switchButtons" 
                                     id="logInBtn" 
                                     type="button"
-                                    style={ this.state.showLogIn ? { backgroundColor: '#cec09c' } : null }
+                                    alt="placeholder" 
                                     onClick={ () => this.setState({ showLogIn: true }) }>Log In</button>
                                 <button 
                                     className="switchButtons" 
