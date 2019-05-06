@@ -1,11 +1,12 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+import Navbar from '../../components/navbar'
+import './styles.css'
+class Dashboard extends Component {
 
-class Dashboard extends Component{
-
-    render(){
-        return(
-            <div>
-                D A S H B O A R D
+    render() {
+        return (
+            <div id="dashboard">
+                <Navbar />
             </div>
         )
     }
