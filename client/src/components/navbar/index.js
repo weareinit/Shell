@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './styles.css'
 class Navbar extends Component {
 
@@ -22,11 +22,16 @@ class Navbar extends Component {
         return (
             <Fragment>
                 <header className='menu'>
-                    <div className='mobile-logo'>ShellHacks</div>
+                    <div className='mobile-logo'>
+
+                    </div>
                     <div onClick={this.toggle} class='mobile-btn'>☰</div>
                 </header>
                 <div className={`nav ` + (this.state.open ? '' : ' hide')}>
-                    <div className='desktop-logo'>ShellHacks</div>
+                    <div className='desktop-logo'>
+                        <img id="dashboard-logo" className="" alt="placeholder" src={require('../../assets/frontpage/shellhacks.svg')} />
+                        <img id="dashboard-shell" className="" alt="placeholder" src={require('../../assets/frontpage/shell.svg')} />
+                    </div>
                     <ul>
                         <li className='toggle'><div onClick={this.toggle} >X</div></li>
                         <li><Link to="/dashboard">Dashboard</Link></li>

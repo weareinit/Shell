@@ -16,20 +16,17 @@ class Navigation extends Component {
 
     render() {
         return (
-            <div className="navPageContainer">
-                {/* DO NOT REMOVE APP CLASS */}
-                <div className="pages">
-                    <Switch>
-                        <Route exact path="/" component={Landing} />
-                        <Route exact path="/auth" component={Auth} />
-                        <Route exact path="/live" component={Live} />
-                        <Route exact path="/sponsor" component={Sponsor} />
-                        <Route path="/dashboard"
-                            render={({ match: { url } }) => (
-                                <Dashboard url={url} />
-                            )} />
-                    </Switch>
-                </div>
+            <div className="pages">
+                <Switch>
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/auth" component={Auth} />
+                    <Route exact path="/live" component={Live} />
+                    <Route exact path="/sponsor" component={Sponsor} />
+                    <Route path="/dashboard"
+                        render={({ match: { url } }) => (
+                            <Dashboard url={url} />
+                        )} />
+                </Switch>
             </div>
         )
     }
