@@ -1,109 +1,132 @@
-header {
-    top: 0;
-    background: rgba(73, 73, 73, 0.3);
-    color: #fff;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    overflow: hidden;
-}
-
-.hide {
-    display: none !important;
-}
-
-.mobile-logo {
-    margin-left: 20px;
-}
-
-.desktop-logo {
-    display: none;
-}
-
-.mobile-btn {
-    margin-right: 20px;
-}
-
-.nav {
-    position: fixed;
-    /* background: rgba(0, 0, 0, 0.8); */
-    background: #58d8e6;
-    z-index: 1000;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    transition: all 0.4s ease-in-out !important;
-}
-
-.nav ul {
-    margin: auto;
-    text-align: center;
-    padding: 0;
-}
-
-.nav ul {
-    list-style: none;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 50px;
-}
-
-.toggle {
-    color: #fff;
-    font-weight: 600;
-    font-size: 20px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
-
-@media(min-width: 650px) {
     header {
+        top: 0;
+        background: none;
+        color: #fff;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .hide {
+        display: none !important;
+    }
+    
+    .mobile-logo {
+        margin-left: 20px;
+    }
+    
+    .desktop-logo {
         display: none;
     }
-    .desktop-logo {
+    
+    .mobile-btn {
+        margin-right: 20px;
+        font-size: 2em;
+        color: #8E8271;
+    }
+    
+    .nav {
+        position: fixed;
+        /* background: rgba(0, 0, 0, 0.8); */
+        background: var(--secondary-color);
+        z-index: 1000;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        transition: all 0.4s ease-in-out !important;
     }
-    #dashboard-logo {
-        width: 80%;
-    }
-    #dashboard-shell {
-        width: 40%;
-    }
-    .nav {
-        display: flex !important;
-        width: 20%;
-        flex-direction: column;
-    }
-    .toggle {
-        display: none;
-    }
+    
     .nav ul {
-        width: 100%;
-        margin: 40px auto 0px auto;
+        margin: auto;
         text-align: center;
         padding: 0;
-        line-height: 40px;
     }
-    .nav ul li:hover {
-        background: var(--primary-color);
+    
+    .nav ul {
+        list-style: none;
     }
+    
     .nav ul li a {
-        color: var(--ternary-color);
-        width: 100%;
-        font-size: 1.2em;
+        text-decoration: none;
+        color: #fff;
+        font-size: 50px;
     }
-}
+    
+    .toggle {
+        color: #fff;
+        font-weight: 600;
+        font-size: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    
+    .user {
+        color: #8E8271;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    
+    .nav ul li a {
+        color: #8E8271;
+        width: 100%;
+        font-size: 1em;
+        font-weight: 500;
+    }
+    
+    @media(min-width: 650px) {
+        header {
+            display: none;
+        }
+        .desktop-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 30px;
+            padding-bottom: 0px;
+        }
+        #dashboard-logo {
+            width: 70%;
+        }
+        #dashboard-shell {
+            width: 30%;
+        }
+        .nav {
+            display: flex !important;
+            width: 20%;
+            flex-direction: column;
+        }
+        .toggle {
+            display: none;
+        }
+        .nav ul {
+            width: 100%;
+            margin: 40px auto 0px auto;
+            text-align: center;
+            padding: 0;
+            line-height: 40px;
+        }
+        .nav #options li:hover {
+            background: #665b50;
+        }
+        .nav #options li:hover a {
+            color: white;
+        }
+        .nav #options li a {
+            color: #8E8271;
+            width: 100%;
+            font-size: 1em;
+            font-weight: 500;
+        }
+        .nav #logout li :hover {
+            color: rgb(92, 88, 84);
+        }
+    }
