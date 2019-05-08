@@ -7,6 +7,11 @@
     padding-bottom: 30px;
 }
 
+.dashboard-page-title {
+    font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+}
+
 .page-title {
     line-height: 300%;
 }

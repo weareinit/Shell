@@ -5,7 +5,7 @@ class Faq extends Component {
     render() {
         return (
             <div>
-                FAQ
+                <h1 className="dashboard-page-title">Essentials</h1>
             </div>
         )
     }
