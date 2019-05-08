@@ -1,0 +1,9 @@
+#application-container {}
+
+.page-title {
+    margin: 0!important;
+    padding-top: 20px;
+    padding-bottom: 30x;
+    margin-left: auto;
+    margin-right: auto;
+}
