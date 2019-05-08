@@ -398,6 +398,7 @@ body {
     margin-bottom: 15px;
     width: 500px;
     color: var(--tertiary-color);
+    line-height: 1.2em;
     font-size: 23px;
     display: block;
     font-weight: 500;
@@ -432,8 +433,8 @@ body {
     background-color: var(--gradient-bg);
     background-color: rgba(0, 0, 0, 0.5) !important;
     background-size: 1000% 1000%;
-    height: 70px;
-    width: 320px;
+    height: 50px;
+    width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -448,9 +449,9 @@ body {
 }
 
 .buttonsContainer>.buttons>* {
-    margin-bottom: -2px;
-    font-size: 33px;
-    font-weight: 800;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 0;
 }
 
 
@@ -458,45 +459,14 @@ body {
 	cursor: not-allowed;
 } */
 
-#register>* {
+
+/* #register>* {
     width: 79%;
 }
 
 #sponsor>* {
     width: 54%;
-}
-
-@media only screen and (max-width: 1800px) {
-    #seat1 {
-        width: 290px;
-    }
-    #seat2 {
-        width: 220px;
-    }
-    #beachball {
-        left: 40%;
-        top: 60px;
-        width: 90px;
-    }
-    #sandals {
-        right: 10%;
-        top: 370px;
-        width: 115px;
-    }
-    #starfish {
-        left: 5%;
-        width: 100px;
-        margin-bottom: 255px;
-    }
-    #surfboard {
-        width: 230px;
-        height: 325px;
-    }
-    #shell {
-        left: 15%;
-        width: 60px;
-    }
-}
+}*/
 
 @media only screen and (max-width: 1200px) {
     .buttonsContainer {
@@ -505,89 +475,25 @@ body {
 }
 
 @media only screen and (max-width: 769px) {
-    #seat2,
-    #beachball {
-        display: none;
-    }
-    #brand {
-        margin-bottom: -7px;
-    }
-    .featuring {
-        padding-right: 15px;
-        width: 20vw;
-    }
-    .spotify {
-        padding-right: 10px;
-        width: 25vw;
-    }
-    #seat1 {
-        width: 300px;
-    }
-    #sandals {
-        top: 170px;
-        right: 60px;
-        width: 110px;
-    }
-    #shell {
-        left: 420px;
-    }
-    #surfboard {
-        width: 200px;
-        height: 260px;
-    }
     .buttonsContainer>.buttons {
         height: 40px;
         width: 190px;
         padding: 0px;
     }
-    #shore {
-        margin-bottom: -30px;
-        left: -50%;
-    }
     #details {
         font-size: 15px;
         margin-bottom: 15px;
     }
-    #starfish {
-        left: 350px;
-        width: 100px;
-    }
-    #countDown {
-        font-size: 30px;
-        margin: 20px 0;
-    }
-    #sandals {
-        right: 30px;
-        top: 80px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    #starfish {
-        left: 200px;
-    }
-    #surfboard {
-        width: 150px;
-        height: 213px;
-    }
-    #sandals {
-        right: 2px;
-        top: 180px;
-    }
 }
 
 .buttonsContainer>.buttons:hover>* {
-    margin-bottom: -2px;
+    margin-bottom: -1px;
 }
 
 .buttons {
     margin: 10px;
-    height: 45px;
-    width: 200px;
     -webkit-border-radius: 30px;
     border-radius: 50px;
-    font-size: 15px;
-    font-weight: 700;
     background-color: black;
     color: white;
     border: solid 3px transparent;
@@ -604,7 +510,7 @@ body {
     margin-top: 20px;
     margin-bottom: 15px;
     color: var(--tertiary-color);
-    font-size: 30px;
+    font-size: 1.8em;
     display: block;
     font-weight: 900;
     font-family: "Montserrat", sans-serif!important;

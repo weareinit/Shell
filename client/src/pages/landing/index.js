@@ -13,26 +13,10 @@ class Landing extends Component {
     render() {
         return (
             <div className="background">
-                {/* BACKGROUND ANIMATIONS  */}
-                <div className="container" id="backgroundObjects">
-                    <div id="shore">
-                        <div id="wetsand">
-                            <img id="wetsand3" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand3.svg')} />
-                            <img id="wetsand2" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand2.svg')} />
-                            <img id="wetsand1" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand1.svg')} />
-                        </div>
-                        <div id="surf">
-                            <img id="surf3" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf3.svg')} />
-                            <img id="surf2" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf2.svg')} />
-                            <img id="surf1" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf1.svg')} />
-                        </div>
-                    </div>
-                </div>
-                {/* ANIMATIONS ENDS */}
 
                 <div class="container" id="main">
 
-                    <h1 id="brand" class="fade-in one"  >ShellHacks</h1>
+                    <img id="brand" class="fade-in one" src={require('../../assets/frontpage/shellhacks.svg')} />
 
                     <div class="cohost fade-in two">
                         <h3 id="creed"><b>Florida's Largest Hackathon</b></h3>
