@@ -15,7 +15,7 @@ class Dashboard extends Component {
         return (
             <div id="dashboard">
                 <Navbar />
-                <div>
+                <div className="dashboard-container">
                     <Route path={`${url}/`} component={Home} exact />
                     <Route path={`${url}/application`} component={Application} />
                     <Route path={`${url}/schedule`} component={Schedule} />

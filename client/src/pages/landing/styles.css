@@ -27,7 +27,7 @@ body {
     padding: 0;
     border: 0;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     position: relative;
     background: var(--secondary-color);
 }

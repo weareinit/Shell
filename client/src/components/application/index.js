@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Formik } from 'formik'
 import { PersonalInfoValidation } from '../../utils/ValidationSchema'
-import PersonalInfo from './personalInfo'
+import PersonalInfo from './personalInfo.js'
+import ProfetionalInfo from './profetionalInfo.js'
+import SchoolInfo from './schoolInfo.js'
+import AditionalInfo from './additionalInfo.js'
 import axios from 'axios'
 import './style.css'
 class Application extends Component {
@@ -29,7 +32,7 @@ class Application extends Component {
 
     render() {
         return (
-            <div id="application-container">
+            <div id="application">
                 <h1 className="page-title">Application</h1>
                 <Formik
                     initialValues={{
@@ -44,7 +47,13 @@ class Application extends Component {
                     validationSchema={PersonalInfoValidation}
                     onSubmit={this.handleSubmit}
                     render={props => (
-                        <PersonalInfo {...props} />
+                        <div id="application-container">
+                            <PersonalInfo {...props} />
+                            <SchoolInfo {...props} />
+                            <ProfetionalInfo {...props} />
+                            <AditionalInfo {...props} />
+                            <button className="submit-button" type="submit" >Submit</button>
+                        </div>
                     )}
                 />
             </div>

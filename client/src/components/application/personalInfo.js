@@ -28,29 +28,30 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
 
     <Form>
         <h3>Personal Information</h3>
-        <div>
+        <div className="half-field-container">
+
             <Field
-                className="application-input"
+                className="application-input-half"
                 name="firstName"
                 type="text"
                 //className="field"
                 style={touched.firstName && errors.firstName ? { border: '2px solid red' } : null}
                 placeholder="First name"
             />
-        </div>
-        <div>
+
             <Field
-            className="application-input"
+                className="application-input-half"
                 name="lastName"
                 type="text"
                 //className="field"
                 style={touched.lastName && errors.lastName ? { border: '2px solid red' } : null}
                 placeholder="Last name"
             />
+
         </div>
-        <div>
+        <div className="full-field-container">
             <Field
-            className="application-input"
+                className="application-input-full"
                 name="email"
                 type="email"
                 //className="field"
@@ -58,9 +59,9 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 placeholder="Email"
             />
         </div>
-        <div>
+        <div className="full-field-container">
             <Field
-            className="application-input"
+                className="application-input-full"
                 name="dob"
                 type="date"
                 min="1900-01-01"
@@ -70,9 +71,10 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
             //placeholder="Email"
             />
         </div>
-        <div>
+        <div className="half-field-container">
+
             <Field
-            className="application-input"
+                className="application-input-half"
                 component="select"
                 name="gender"
                 style={touched.gender && errors.gender ? { border: '2px solid red' } : null} >
@@ -81,10 +83,9 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 <option value="female">Female</option>
                 <option value="nb">Other/Non-Binary</option>
             </Field>
-        </div>
-        <div>
+
             <Field
-            className="application-input"
+                className="application-input-half"
                 component="select"
                 name="race"
                 style={touched.race && errors.race ? { border: '2px solid red' } : null} >
@@ -96,10 +97,11 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 <option value="asian">Asian</option>
                 <option value="other">Other</option>
             </Field>
+
         </div>
-        <div>
+        <div className="full-field-container">
             <Field
-            className="application-input"
+                className="application-input-full"
                 name="phoneNumber"
                 type="text"
                 //className="field"
@@ -107,9 +109,9 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 placeholder="Phone Number"
             />
         </div>
-        <div>
+        {/* <div>
             <button type="submit" onClick={handleSubmit}>Submit</button>
-        </div>
+        </div> */}
     </Form>
 )
 
