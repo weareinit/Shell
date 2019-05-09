@@ -8,8 +8,16 @@ class Landing extends Component {
         this.state = {
 
         }
+        this.goToAuth = this.goToAuth.bind(this);
+        this.goToSponsor = this.goToSponsor.bind(this);
     }
 
+    goToAuth = () => {
+        this.props.history.push('/auth')
+    }
+    goToSponsor = () => {
+        this.props.history.push('/sponsor')
+    }
     render() {
         return (
             <div className="landing-container">
@@ -26,10 +34,10 @@ class Landing extends Component {
                     {/* <!-- A unicode space is in this ^ element so that the logo doesnt shift upon the javascript loading --> */}
 
                     <div class="buttonsContainer fade-in three">
-                        <button onclick="location.href = 'form.html';" class="buttons" id="register" type="button">
+                        <button onClick={this.goToSponsor} class="buttons" id="register" type="button">
                             <h3>Sponsor</h3>
                         </button>
-                        <button onClick="window.location.href='mailto:upe@fiu.edu?Subject=ShellHacks%20Sponsorship'" class="buttons" id="sponsor" type="button">
+                        <button onClick={this.goToAuth} class="buttons" id="sponsor" type="button">
                             <h3>Register</h3> {/**ignore these for now */}
                         </button>
                     </div>
