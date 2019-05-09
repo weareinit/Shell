@@ -10,7 +10,7 @@ const ProfetionalInfo = ({ touched, errors, handleSubmit }) => (
             <Field
                 className="application-input-full"
                 component="select"
-                name="Which best describe you"
+                name="occupation"
                 style={touched.gender && errors.gender ? { border: '2px solid red' } : null} >
                 <option value=""></option>
                 <option value="male">Developer</option>
