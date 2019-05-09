@@ -12,33 +12,17 @@ class Landing extends Component {
 
     render() {
         return (
-            <div className="background">
-                {/* BACKGROUND ANIMATIONS  */}
-                <div className="container" id="backgroundObjects">
-                    <div id="shore">
-                        <div id="wetsand">
-                            <img id="wetsand3" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand3.svg')} />
-                            <img id="wetsand2" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand2.svg')} />
-                            <img id="wetsand1" className="decor" alt="placeholder" src={require('../../assets/frontpage/wetsand1.svg')} />
-                        </div>
-                        <div id="surf">
-                            <img id="surf3" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf3.svg')} />
-                            <img id="surf2" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf2.svg')} />
-                            <img id="surf1" className="decor" alt="placeholder" src={require('../../assets/frontpage/surf1.svg')} />
-                        </div>
-                    </div>
-                </div>
-                {/* ANIMATIONS ENDS */}
+            <div className="landing-container">
 
-                <div class="container" id="main">
+                <div className="landing-section" id="main">
 
-                    <h1 id="brand" class="fade-in one"  >ShellHacks</h1>
+                    <img id="brand" class="fade-in one" src={require('../../assets/frontpage/shellhacks.svg')} />
 
                     <div class="cohost fade-in two">
                         <h3 id="creed"><b>Florida's Largest Hackathon</b></h3>
                     </div>
 
-                    <p id="details" class="fade-in three">September 20-22, 2019<br />Florida International University<br />Ocean Bank Arena</p>
+                    <p id="details" class="fade-in three">September 20-22, 2019<br />Florida International University<br />Ocean Bank Convention Center</p>
                     {/* <!-- A unicode space is in this ^ element so that the logo doesnt shift upon the javascript loading --> */}
 
                     <div class="buttonsContainer fade-in three">
@@ -50,14 +34,49 @@ class Landing extends Component {
                         </button>
                     </div>
                 </div>
-                {/* <!-- Main End -->
-                                    
-                 <!-- Footer--> */}
 
-                <div id="footer">
-                    <div id="copyright">
-                        ©
-                        <a href="https://upe.cs.fiu.edu/">Upsilon Pi Epsilon at FIU</a>
+
+                <div className="landing-section" id="main">
+                    <div className="left-section-details">
+                        <h1 className="landing-section-title">What is ShellHacks?</h1>
+                        <p className="landing-section-content-text"> is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap
+                            into electronic typesetting, remaining essentially unchanged</p>
+                    </div>
+                </div>
+
+                <div className="landing-section" id="main">
+                    <div className="landing-section-deatils">
+                        <h1 className="landing-section-title">Learning tracks</h1>
+                        <p className="landing-section-content-text"> is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley.</p>
+                    </div>
+                </div>
+
+                <div className="landing-section" id="main">
+                    <div className="landing-section-deatils">
+                        <h1 className="landing-section-title">Tentative Schedule</h1>
+                    </div>
+                </div>
+
+                <div className="landing-section" id="main">
+                    <div className="landing-section-deatils">
+                        <h1 className="landing-section-title">Frequently asked Questions (FAQ)</h1>
+                    </div>
+                </div>
+
+                <div className="landing-section" id="main">
+                    <div className="landing-section-deatils">
+                        <h1 className="landing-section-title">Sponsors</h1>
+                    </div>
+                </div>
+
+                <div className="landing-section" id="main">
+                    <div className="landing-section-deatils">
+                        <h1 className="landing-section-title">Thank you for love ShellHacks!</h1>
                     </div>
                 </div>
             </div>

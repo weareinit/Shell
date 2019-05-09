@@ -24,3 +24,32 @@ export const SignUpValidation = Yup.object().shape({
   confirmPassword: Yup.string()
     .required("Please confirm your password")
 })
+
+export const PersonalInfoValidation = Yup.object().shape({
+  firstName: Yup.string().required(),
+  lastName: Yup.string().required(),
+  email: Yup.string().email().required(),
+  dob: Yup.string().required(),
+  gender: Yup.string().required(),
+  race: Yup.string().required(),
+  phoneNumber: Yup.string().required()
+})
+
+export const ProfetionalInfoValidation = Yup.object().shape({
+  description: Yup.string().required(),
+  resume: Yup.string().required(),
+  linkedin: Yup.string().email().required(),
+  github: Yup.string().required(),
+  potfolio: Yup.string().required(),
+  race: Yup.string().required(),
+})
+export const AditionalInfoValidation = Yup.object().shape({
+  travelLocation: Yup.string().required(),
+  reinbursement: Yup.string().required(),
+})
+export const SchoolInfoValidation = Yup.object().shape({
+  schoolName: Yup.string().required(),
+  major: Yup.string().required(),
+  level: Yup.string().email().required(),
+  year: Yup.string().required(),
+})

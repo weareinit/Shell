@@ -38,9 +38,9 @@ class Navbar extends Component {
                         <li className='toggle'><div onClick={this.toggle} >X</div></li>
                         <li><Link to="/dashboard">Dashboard</Link></li>
                         <li><Link to="/dashboard/application">Application</Link></li>
-                        <li><Link to="/dashboard/schedule">Schedule</Link></li>
                         <li><Link to="/dashboard/profile">Profile</Link></li>
-                        <li><Link to="/dashboard/faq">FAQ</Link></li>
+                        <li><Link to="/dashboard/schedule">Schedule</Link></li>
+                        <li><Link to="/dashboard/faq">Enssentials</Link></li>
                     </ul>
                     <ul id="logout">
                         <li><Link to="/">Logout <FontAwesomeIcon icon="sign-out-alt" /></Link></li>
