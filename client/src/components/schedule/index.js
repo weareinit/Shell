@@ -5,7 +5,7 @@ class Schedule extends Component {
     render() {
         return (
             <div>
-                Schedule
+                <h1 className="dashboard-page-title">Schedule</h1>
             </div>
         )
     }

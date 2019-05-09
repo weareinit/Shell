@@ -15,11 +15,13 @@ class Dashboard extends Component {
         return (
             <div id="dashboard">
                 <Navbar />
-                <Route path={`${url}/`} component={Home} exact />
-                <Route path={`${url}/application`} component={Application} />
-                <Route path={`${url}/schedule`} component={Schedule} />
-                <Route path={`${url}/profile`} component={Profile} />
-                <Route path={`${url}/faq`} component={Faq} />
+                <div className="dashboard-container">
+                    <Route path={`${url}/`} component={Home} exact />
+                    <Route path={`${url}/application`} component={Application} />
+                    <Route path={`${url}/schedule`} component={Schedule} />
+                    <Route path={`${url}/profile`} component={Profile} />
+                    <Route path={`${url}/faq`} component={Faq} />
+                </div>
             </div>
         )
     }
