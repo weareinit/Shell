@@ -55,8 +55,8 @@ export default class LogIn extends Component {
                                 placeholder="Password"
                             />
                         </div>
-                        <div id="loginStyle">
-                            <button id="loginBtn" type="submit" onClick={{ handleSubmit }}>Log In</button>
+                        <div className="auth-submit-button-container">
+                            <button className="auth-submit-button"  type="submit" onClick={{ handleSubmit }}>Log In</button>
                         </div>
                     </Form>
 

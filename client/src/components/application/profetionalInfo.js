@@ -12,7 +12,7 @@ const ProfetionalInfo = ({ touched, errors, handleSubmit }) => (
                 component="select"
                 name="occupation"
                 style={touched.gender && errors.gender ? { border: '2px solid red' } : null} >
-                <option value=""></option>
+                <option className="placeholder-option" default value={false}>What role best describe you?</option>
                 <option value="male">Developer</option>
                 <option value="female">Designer</option>
                 <option value="nb">Engineer</option>
@@ -20,49 +20,40 @@ const ProfetionalInfo = ({ touched, errors, handleSubmit }) => (
         </div>
         <div className="half-field-container">
             <Field
-                className="application-input-half"
-                component="select"
-                name="School name"
-                style={touched.gender && errors.gender ? { border: '2px solid red' } : null} >
-                <option value=""></option>
-                <option value="male">Developer</option>
-                <option value="female">Designer</option>
-                <option value="nb">Engineer</option>
-            </Field>
+                className="application-input-half input-file"
+                name="file"
+                type="file"
+                style={touched.email && errors.email ? { border: '2px solid red' } : null}
+                placeholder="Resume"
+            />
 
             <Field
                 className="application-input-half"
-                component="select"
-                name="Major"
-                style={touched.gender && errors.gender ? { border: '2px solid red' } : null} >
-                <option value=""></option>
-                <option value="male">Developer</option>
-                <option value="female">Designer</option>
-                <option value="nb">Engineer</option>
-            </Field>
+                name="email"
+                type="link"
+                //className="field"
+                style={touched.email && errors.email ? { border: '2px solid red' } : null}
+                placeholder="LinkedIn"
+            />
         </div>
         <div className="half-field-container">
             <Field
                 className="application-input-half"
-                component="select"
-                name="Level of study"
-                style={touched.gender && errors.gender ? { border: '2px solid red' } : null} >
-                <option value=""></option>
-                <option value="male">Developer</option>
-                <option value="female">Designer</option>
-                <option value="nb">Engineer</option>
-            </Field>
+                name="email"
+                type="link"
+                //className="field"
+                style={touched.email && errors.email ? { border: '2px solid red' } : null}
+                placeholder="Github"
+            />
 
             <Field
                 className="application-input-half"
-                component="select"
-                name="Graduation year"
-                style={touched.gender && errors.gender ? { border: '2px solid red' } : null} >
-                <option value=""></option>
-                <option value="male">Developer</option>
-                <option value="female">Designer</option>
-                <option value="nb">Engineer</option>
-            </Field>
+                name="email"
+                type="link"
+                //className="field"
+                style={touched.email && errors.email ? { border: '2px solid red' } : null}
+                placeholder="Potfolio"
+            />
         </div>
     </Form>
 )

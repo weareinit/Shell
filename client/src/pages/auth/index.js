@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import LogIn from '../../components/login'
-import SignUp from '../../components/signup'
+import LogIn from '../../components/auth/login'
+import SignUp from '../../components/auth/signup'
 import { ReactComponent as Logo } from '../../assets/frontpage/shellhacks.svg'
 import './styles.css'
 

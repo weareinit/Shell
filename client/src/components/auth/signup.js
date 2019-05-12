@@ -41,7 +41,7 @@ class SignUp extends Component {
                 onSubmit={this.handleSubmit}
                 render={({ touched, errors, handleSubmit }) => (
                     // <SignUpForm {...props} />
-                    <Form>
+                    <Form className="auth-form">
                         <div className="fieldDiv">
                             <Field
                                 name="firstName"
@@ -87,8 +87,8 @@ class SignUp extends Component {
                                 placeholder="Confirm password"
                             />
                         </div>
-                        <div id="submitStyle">
-                            <button id="submitBtn" type="submit" onClick={handleSubmit}>Submit</button>
+                        <div className="auth-submit-button-container">
+                            <button className="auth-submit-button" type="submit" onClick={handleSubmit}>Submit</button>
                         </div>
                     </Form>
                 )}

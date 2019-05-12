@@ -208,14 +208,13 @@
     outline-style: none;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 10px;
+    padding: 11px;
     width: 50%;
     font-family: "Montserrat", sans-serif;
     font-size: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #665B50;
     color: white;
     font-weight: 700;
-    max-width: 167.5px;
 }
 
 #logInBtn {
@@ -223,26 +222,26 @@
     outline-style: none;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding: 10px;
+    padding: 11px;
     width: 50%;
     font-family: "Montserrat", sans-serif;
     font-size: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #665B50;
     color: white;
     font-weight: 700;
-    max-width: 167.5px;
 }
 
 .buttonSwitch {
     margin-top: 10%;
-    width: 70%;
+    width: 65%;
     margin-bottom: 5%;
     display: flex;
     justify-content: center;
+    max-width: 335px;
 }
 
 .forms {
-    width: 100%;
+    width: 82%;
 }
 
 .logoStyle {

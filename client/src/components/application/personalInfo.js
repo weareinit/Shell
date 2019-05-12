@@ -36,7 +36,7 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 type="text"
                 //className="field"
                 style={touched.firstName && errors.firstName ? { border: '2px solid red' } : null}
-                placeholder="First name"
+                placeholder="First Name"
             />
 
             <Field
@@ -45,7 +45,7 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 type="text"
                 //className="field"
                 style={touched.lastName && errors.lastName ? { border: '2px solid red' } : null}
-                placeholder="Last name"
+                placeholder="Last Name"
             />
 
         </div>
@@ -56,7 +56,7 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 type="email"
                 //className="field"
                 style={touched.email && errors.email ? { border: '2px solid red' } : null}
-                placeholder="Email"
+                placeholder="School Email"
             />
         </div>
         <div className="full-field-container">
@@ -65,10 +65,10 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 name="dob"
                 type="date"
                 min="1900-01-01"
+                placeholder="DOB "
                 max={max()}
                 //className="field"
                 style={touched.dob && errors.dob ? { border: '2px solid red' } : null}
-            //placeholder="Email"
             />
         </div>
         <div className="half-field-container">
@@ -77,8 +77,9 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 className="application-input-half"
                 component="select"
                 name="gender"
+                placeholder="Gender"
                 style={touched.gender && errors.gender ? { border: '2px solid red' } : null} >
-                <option value=""></option>
+                <option className="placeholder-option" value={false} default="true" >Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="nb">Other/Non-Binary</option>
@@ -89,10 +90,10 @@ const PersonalInfo = ({ touched, errors, handleSubmit }) => (
                 component="select"
                 name="race"
                 style={touched.race && errors.race ? { border: '2px solid red' } : null} >
-                <option value=""></option>
+                <option className="placeholder-option" default value={false}>Race/Ethnicity</option>
                 <option value="white">White</option>
                 <option value="black">Black or African American</option>
-                <option value="hispanic">Hispanic or Latinx</option>
+                <option value="hispanic">Hispanic or Latin</option>
                 <option value="native">Native American</option>
                 <option value="asian">Asian</option>
                 <option value="other">Other</option>
