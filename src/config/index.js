@@ -1,5 +1,9 @@
 const config = {
-    API_URL: 'https://immense-reef-66486.herokuapp.com/',
+    API_URL: '',
+    REGISTER_PATH: 'application',
+    LOGIN_PATH: 'application/login',
+    APPLICATION_PATH: 'application/apply',
+    
 };
 
 export default config;

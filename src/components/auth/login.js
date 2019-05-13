@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik'
 import { LogInValidation } from '../../utils/ValidationSchema'
 import './style.css'
 import axios from 'axios'
-
+import client from '../../services/request'
 export default class LogIn extends Component {
 
     nextPath(path) {
@@ -56,7 +56,7 @@ export default class LogIn extends Component {
                             />
                         </div>
                         <div className="auth-submit-button-container">
-                            <button className="auth-submit-button"  type="submit" onClick={{ handleSubmit }}>Log In</button>
+                            <button className="auth-submit-button" type="submit" onClick={{ handleSubmit }}>Log In</button>
                         </div>
                     </Form>
 
