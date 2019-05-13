@@ -2,27 +2,32 @@ import React, { Component } from 'react'
 import { Formik, Form, Field } from 'formik'
 import { LogInValidation } from '../../utils/ValidationSchema'
 import './style.css'
-import axios from 'axios'
-import client from '../../services/request'
+import { LOGIN_PATH } from '../../config/api_paths'
+import request from '../../services/request'
+
 export default class LogIn extends Component {
 
-    nextPath(path) {
+    nextPath = (path) => {
         this.props.history.push(path);
     }
 
-
     handleSubmit(values, { resetForm }) {
-        axios.post("https://jsonplaceholder.typicode.com/posts", {
+
+        const data = {
             email: values.email,
             password: values.password
+        }
+
+        request({
+            method: 'POST',
+            url: LOGIN_PATH,
+            data
+        }).then((resp) => {
+            console.log(resp);
+            resetForm()
+            this.nextPath('/dashboard');
         })
-            .then(response => {
-                resetForm()
-                console.log(response.data)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+
     }
 
     render() {

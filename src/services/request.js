@@ -3,7 +3,7 @@
  */
 
 import axios from 'axios'
-import { API_URL } from '../config';
+import { API_URL } from '../config/api_paths';
 
 const client = axios.create({
     baseURL: API_URL

@@ -1,29 +1,37 @@
 import React, { Component } from 'react'
 import { Formik, Form, Field } from 'formik'
 import { SignUpValidation } from '../../utils/ValidationSchema'
-import axios from 'axios'
+import { REGISTER_PATH } from '../../config/api_paths'
+import request from '../../services/request'
 import './style.css'
 
 class SignUp extends Component {
 
+
+    nextPath(path) {
+        this.props.history.push(path);
+    }
+
     handleSubmit(values, { resetForm }) {
+        const data = {
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            password: values.password
+        }
+
         if (values.password !== values.confirmPassword) {
             alert("Passwords do not match!")
-        }
-        else {
-            axios.post("https://jsonplaceholder.typicode.com/posts", {
-                firstName: values.firstName,
-                lastName: values.lastName,
-                email: values.email,
-                password: values.password
+        } else {
+            request({
+                method: 'POST',
+                url: REGISTER_PATH,
+                data
+            }).then((resp) => {
+                console.log(resp);
+                resetForm()
+                this.nextPath('/dashboard');
             })
-                .then(response => {
-                    resetForm()
-                    console.log(response.data)
-                })
-                .catch(error => {
-                    console.log(error)
-                })
         }
     }
 
