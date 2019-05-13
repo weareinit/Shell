@@ -33,7 +33,7 @@ class Application extends Component {
     render() {
         return (
             <div id="application">
-               <h1 className="dashboard-page-title">Application</h1>
+               <h1 className="page-title">Application</h1>
                 <Formik
                     initialValues={{
                         firstName: '',

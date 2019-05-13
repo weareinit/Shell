@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import LogIn from '../../components/auth/login'
-import SignUp from '../../components/auth/signup'
+import LogIn from './login'
+import SignUp from './signup'
 import { ReactComponent as Logo } from '../../assets/frontpage/shellhacks.svg'
-import './styles.css'
+import './style.css'
 
 class Auth extends Component {
 

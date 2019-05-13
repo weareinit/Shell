@@ -1,163 +1,64 @@
-@keyframes GradientBackground {
-    0% {
-        background-position: 0% 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0% 100%
-    }
+.field {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    outline-style: none;
+    padding: 10px;
+    background-color: white !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: black;
+    font-weight: 500;
+    max-width: 555px;
 }
 
-#backgroundObjects {
-    display: block;
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
+.fieldDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-.decor {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
+.field::placeholder {
+    color: #c4baa2;
+    font-weight: 500;
 }
 
-#seat1 {
-    left: 0;
-    width: 400px;
+.auth-submit-button {
+    border: none;
+    outline-style: none;
+    border-radius: 30px;
+    padding: 11px;
+    width: 50%;
+    background-color: #665B50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    max-width: 250px;
 }
 
-#seat2 {
-    right: 0;
-    width: 320px;
+#loginStyle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
 }
 
-#shore {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 1920px;
-    min-width: 100%;
-    z-index: 0;
+.auth-submit-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
-#wetsand,
-#surf {
-    position: relative;
+.auth-submit-button {
+    transition: .2s ease-in;
 }
 
-#wetsand>*,
-#surf>* {
-    position: absolute;
-    bottom: -57px;
-    left: 0;
-    min-width: 100%;
-}
-
-@keyframes wetsand3 {
-    from {
-        bottom: -50px;
-    }
-    to {
-        bottom: -45px;
-    }
-}
-
-#wetsand3 {
-    animation: wetsand3 var(--waves-speed) ease 1.6s infinite alternate;
-    bottom: -50px;
-}
-
-@keyframes wetsand2 {
-    from {
-        bottom: -370px;
-    }
-    to {
-        bottom: -40px;
-    }
-}
-
-#wetsand2 {
-    animation: wetsand2 var(--waves-speed) ease 1.5s infinite alternate;
-    bottom: -370px;
-}
-
-@keyframes wetsand1 {
-    from {
-        bottom: -390px;
-    }
-    to {
-        bottom: -10px;
-    }
-}
-
-#wetsand1 {
-    animation: wetsand1 var(--waves-speed) ease 1.2s infinite alternate;
-    bottom: -390px;
-}
-
-@keyframes surf3 {
-    from {
-        bottom: -280px;
-    }
-    to {
-        bottom: 75px;
-    }
-}
-
-#surf3 {
-    animation: surf3 var(--waves-speed) ease 0.5s infinite alternate;
-    bottom: -280px;
-}
-
-@keyframes surf2 {
-    from {
-        bottom: -250px;
-    }
-    to {
-        bottom: 20px;
-    }
-}
-
-#surf2 {
-    animation: surf2 var(--waves-speed) ease 0.3s infinite alternate;
-    bottom: -250px;
-}
-
-@keyframes surf1 {
-    from {
-        bottom: -200px;
-    }
-    to {
-        bottom: 0px;
-    }
-}
-
-#surf1 {
-    animation: surf1 var(--waves-speed) ease 0s infinite alternate;
-    bottom: 0px;
-    z-index: 2;
-}
-
-@media only screen and (max-width: 1800px) {
-    #seat1 {
-        width: 290px;
-    }
-    #seat2 {
-        width: 220px;
-    }
-    #seat1 {
-        width: 300px;
-    }
-    #shore {
-        margin-bottom: -30px;
-    }
-    #starfish {
-        left: 350px;
-        width: 100px;
-    }
+.auth-submit-button:hover {
+    cursor: pointer;
+    background: rgba(73, 73, 73, 0.5) !important;
 }
 
 

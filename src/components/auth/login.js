@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Formik, Form, Field } from 'formik'
 import { LogInValidation } from '../../utils/ValidationSchema'
-import './styles.css'
+import './style.css'
 import axios from 'axios'
 
 export default class LogIn extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Formik, Form, Field } from 'formik'
 import { SignUpValidation } from '../../utils/ValidationSchema'
 import axios from 'axios'
-import './styles.css'
+import './style.css'
 
 class SignUp extends Component {
 
