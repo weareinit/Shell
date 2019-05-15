@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Dashboard from '../pages/dashboard';
-import Auth from '../pages/auth'
-import Live from '../pages/live'
-import Landing from '../pages/landing'
-import Sponsor from '../pages/sponsor'
+
+import DashboardRoutes from './dashboardRoutes';
+
+import Auth from '../components/auth'
+import Live from '../components/live'
+import Landing from '../components/landing'
+import Sponsor from '../components/sponsor'
 import './style.css'
 class Navigation extends Component {
     constructor(props) {
@@ -19,12 +21,16 @@ class Navigation extends Component {
             <div className="pages">
                 <Switch>
                     <Route exact path="/" component={Landing} />
-                    <Route exact path="/auth" component={Auth} />
+                    <Route exact path="/auth" render={
+                        (props) => (
+                            <Auth props={props} />
+                        )
+                    } component={Auth} />
                     <Route exact path="/live" component={Live} />
                     <Route exact path="/sponsor" component={Sponsor} />
                     <Route path="/dashboard"
                         render={({ match: { url } }) => (
-                            <Dashboard url={url} />
+                            <DashboardRoutes url={url} />
                         )} />
                 </Switch>
             </div>

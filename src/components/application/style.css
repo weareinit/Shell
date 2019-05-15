@@ -7,8 +7,14 @@
     padding-bottom: 30px;
 }
 
+<<<<<<< HEAD
 .page-title {
     line-height: 300%;
+=======
+.dashboard-page-title {
+    font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+>>>>>>> dev
 }
 
 #application #application-container h3 {

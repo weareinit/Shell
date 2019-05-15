@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
-import LogIn from '../../components/auth/login'
-import SignUp from '../../components/auth/signup'
+import LogIn from './login'
+import SignUp from './signup'
 import { ReactComponent as Logo } from '../../assets/frontpage/shellhacks.svg'
-import './styles.css'
+import './style.css'
 
 class Auth extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            showLogIn: true
+            showLogIn: true,
         }
+
     }
 
+
+
     render() {
-        let form = this.state.showLogIn ? <LogIn /> : <SignUp />
+        let form = this.state.showLogIn ? <LogIn nextPath={this.nextPath} /> : <SignUp nextPath={this.nextPath} />
         let details = this.state.showLogIn ? <p>Please sign in</p> : <p>Please fill out the form</p>
 
         return (

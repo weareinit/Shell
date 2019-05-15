@@ -1,7 +1,9 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import Navigation from './navigation'
+
 import './App.css'
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCheckSquare, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 library.add(faCheckSquare, faSignOutAlt)
@@ -18,14 +20,14 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
+      <React.Fragment>
         <BrowserRouter>
           {/* DO NOT REMOVE APP CLASS */}
           <div className="App">
             <Navigation />
           </div>
         </BrowserRouter>
-      </Fragment>
+      </React.Fragment>
     )
   }
 }
