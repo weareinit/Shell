@@ -3,7 +3,7 @@
 }
 
 .buttonInfo{
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
@@ -28,4 +28,3 @@
     font-family: "Montserrat", sans-serif;
     color: #9E8D7D;
 }
-

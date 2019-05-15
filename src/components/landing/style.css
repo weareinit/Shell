@@ -206,6 +206,11 @@
     font-family: "Montserrat", sans-serif!important;
 }
 
+.scrollFAQ{
+    overflow-y: scroll;
+    box-sizing: border-box
+}
+
 *[type="button"] {
     cursor: pointer;
 }

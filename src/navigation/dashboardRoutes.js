@@ -4,9 +4,9 @@ import { Route } from 'react-router-dom'
 import Navbar from '../components/navbar'
 
 import Application from '../components/application'
-import Home from '../components/home'
-import Schedule from '../components/schedule'
-import Faq from '../components/faq'
+import Home from '../components/dashboard'
+import Support from '../components/support'
+import Essentials from '../components/essentials'
 import Profile from '../components/profile'
 import './style.css'
 class Dashboard extends Component {
@@ -19,9 +19,9 @@ class Dashboard extends Component {
                 <div className="dashboard-container">
                     <Route path={`${url}/`} component={Home} exact />
                     <Route path={`${url}/application`} component={Application} />
-                    <Route path={`${url}/schedule`} component={Schedule} />
+                    <Route path={`${url}/support`} component={Support} />
                     <Route path={`${url}/profile`} component={Profile} />
-                    <Route path={`${url}/faq`} component={Faq} />
+                    <Route path={`${url}/essentials`} component={Essentials} />
                 </div>
             </div>
         )

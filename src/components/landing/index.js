@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FAQ from './faq'
 import './style.css'
 
 class Landing extends Component {
@@ -73,6 +74,10 @@ class Landing extends Component {
                 <div className="landing-section" id="main">
                     <div className="landing-section-deatils">
                         <h1 className="landing-section-title">Frequently asked Questions (FAQ)</h1>
+                        <div className='scrollFAQ'>
+                            <FAQ/>
+                        </div>
+                        
                     </div>
                 </div>
 
