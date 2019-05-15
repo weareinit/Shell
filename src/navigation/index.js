@@ -21,7 +21,11 @@ class Navigation extends Component {
             <div className="pages">
                 <Switch>
                     <Route exact path="/" component={Landing} />
-                    <Route exact path="/auth" component={Auth} />
+                    <Route exact path="/auth" render={
+                        (props) => (
+                            <Auth props={props} />
+                        )
+                    } component={Auth} />
                     <Route exact path="/live" component={Live} />
                     <Route exact path="/sponsor" component={Sponsor} />
                     <Route path="/dashboard"

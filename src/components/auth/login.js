@@ -1,17 +1,22 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik'
 import { LogInValidation } from '../../utils/ValidationSchema'
 import './style.css'
+
 import { LOGIN_PATH } from '../../config/api_paths'
 import request from '../../services/request'
 
 export default class LogIn extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
 
-    nextPath = (path) => {
-        this.props.history.push(path);
+        }
     }
 
-    handleSubmit(values, { resetForm }) {
+
+    handleSubmit(values, history) {
 
         const data = {
             email: values.email,
@@ -24,8 +29,8 @@ export default class LogIn extends Component {
             data
         }).then((resp) => {
             console.log(resp);
-            resetForm()
-            this.nextPath('/dashboard');
+            // resetForm()
+            history.push('/')
         })
 
     }
@@ -61,7 +66,7 @@ export default class LogIn extends Component {
                             />
                         </div>
                         <div className="auth-submit-button-container">
-                            <button className="auth-submit-button" type="submit" onClick={{ handleSubmit }}>Log In</button>
+                            <button className="auth-submit-button" type="submit" onClick={this.handleSubmit}>Log In</button>
                         </div>
                     </Form>
 

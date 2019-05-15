@@ -6,13 +6,13 @@ import request from '../../services/request'
 import './style.css'
 
 class SignUp extends Component {
+    constructor(props) {
+        super(props)
 
-
-    nextPath(path) {
-        this.props.history.push(path);
     }
 
-    handleSubmit(values, { resetForm }) {
+
+    handleSubmit = (values, { resetForm }) => {
         const data = {
             firstName: values.firstName,
             lastName: values.lastName,
@@ -30,7 +30,7 @@ class SignUp extends Component {
             }).then((resp) => {
                 console.log(resp);
                 resetForm()
-                this.nextPath('/dashboard');
+                this.props.nextPath();
             })
         }
     }

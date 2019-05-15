@@ -9,12 +9,15 @@ class Auth extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showLogIn: true
+            showLogIn: true,
         }
+
     }
 
+
+
     render() {
-        let form = this.state.showLogIn ? <LogIn /> : <SignUp />
+        let form = this.state.showLogIn ? <LogIn nextPath={this.nextPath} /> : <SignUp nextPath={this.nextPath} />
         let details = this.state.showLogIn ? <p>Please sign in</p> : <p>Please fill out the form</p>
 
         return (
