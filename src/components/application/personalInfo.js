@@ -1,9 +1,9 @@
 import React from 'react'
 import { Form, Field } from 'formik'
 import './style.css'
-const min = () => {
-    let date = new Date()
-}
+// const min = () => {
+//     let date = new Date()
+// }
 
 const max = () => {
     let date = new Date()

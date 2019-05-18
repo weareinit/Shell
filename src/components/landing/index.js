@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FAQ from './faq'
+import Tracks from './tracks'
 import './styles.css'
 import Schedule from './scheduleItem';
 
@@ -26,7 +27,7 @@ class Landing extends Component {
 
                 <div className="landing-section" id="main">
 
-                    <img id="brand" class="fade-in one" src={require('../../assets/frontpage/shellhacks.svg')} />
+                    <img id="brand" alt="brand" class="fade-in one" src={require('../../assets/frontpage/shellhacks.svg')} />
 
                     <div class="cohost fade-in two">
                         <h3 id="creed"><b>Florida's Largest Hackathon</b></h3>
@@ -60,9 +61,7 @@ class Landing extends Component {
                 <div className="landing-section" id="main">
                     <div className="landing-section-deatils">
                         <h1 className="landing-section-title">Learning tracks</h1>
-                        <p className="landing-section-content-text"> is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley.</p>
+                        <Tracks/>
                     </div>
                 </div>
 

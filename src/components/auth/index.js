@@ -55,12 +55,13 @@ class Auth extends Component {
                                     id="logInBtn"
                                     type="button"
                                     alt="placeholder"
+                                    style={!this.state.showLogIn ? { backgroundColor: '#cec09c' } : null}
                                     onClick={() => this.setState({ showLogIn: true })}>Log In</button>
                                 <button
                                     className="switchButtons"
                                     id="signUpBtn"
                                     type="button"
-                                    style={!this.state.showLogIn ? { backgroundColor: '#cec09c' } : null}
+                                    style={this.state.showLogIn ? { backgroundColor: '#cec09c' } : null}
                                     onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
                             </div>
                             <div className="forms">
