@@ -1,6 +1,6 @@
 //work in progress...want to create a reusable button
 import React from 'react';
-import './style.css'
+import './styles.css'
 
 const Button = (props) => {
     const { callback, title, id } = props;
@@ -9,8 +9,8 @@ const Button = (props) => {
             className="submit-button"
             id={id}
             type="button"
-        
-            onClick={callback()}>{title}</button>
+            // onClick={callback()}
+        >{title}</button>
     )
 }
 
