@@ -38,7 +38,7 @@
 }
 
 .landing-section-deatils p {
-    margin-top: 50px;
+    margin-top: 0px;
     line-height: 1.5em;
     text-align: left;
     font-size: 1.2em;
@@ -47,6 +47,9 @@
 
 .landing-section-title{
     padding-bottom: 5%;
+}
+.landing-section-content-text{
+    padding-bottom:5%
 }
 #brand {
     width: 550px;
@@ -220,7 +223,23 @@
 .faqCardContainer{
     width:80vw;
 }
-
+.trackDesc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+.holder-circle{
+    height:360px;
+}
+.shell{
+    height:30px;
+    margin-right: 40px;
+}
+.shell-and-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 *[type="button"] {
     cursor: pointer;
 }
