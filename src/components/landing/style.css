@@ -205,10 +205,16 @@
     font-weight: 900;
     font-family: "Montserrat", sans-serif!important;
 }
-
-.scrollFAQ{
-    overflow-y: scroll;
+.scrollContainer{
+    height: 5oopx;
+}
+/* .scrollFAQ{
+    overflow: auto;
     box-sizing: border-box
+} */
+
+.pageContainer{
+    height:100vh;
 }
 
 *[type="button"] {

@@ -28,68 +28,20 @@ export default Schedule;
 // Dummy Data
 const data = [
     {
-        title: 'HTML Workshop',
+        title: 'What is a Hackathon?',
         description: 'Insert description here'
 
     },
     {
-        title: 'Javascript Workshop',
+        title: 'DO you have to hack to participate?',
         description: 'Insert description here'
     },
     {
-        title: 'Typescript Workshop',
+        title: 'Will there be food?',
         description: 'Insert description here'
     },
     {
-        title: 'HTML Workshop',
-        description: 'Insert description here'
-
-    },
-    {
-        title: 'Javascript Workshop',
-        description: 'Insert description here'
-    },
-    {
-        title: 'Typescript Workshop',
-        description: 'Insert description here'
-    },
-    {
-        title: 'HTML Workshop',
-        description: 'Insert description here'
-
-    },
-    {
-        title: 'Javascript Workshop',
-        description: 'Insert description here'
-    },
-    {
-        title: 'Typescript Workshop',
-        description: 'Insert description here'
-    },
-    {
-        title: 'HTML Workshop',
-        description: 'Insert description here'
-
-    },
-    {
-        title: 'Javascript Workshop',
-        description: 'Insert description here'
-    },
-    {
-        title: 'Typescript Workshop',
-        description: 'Insert description here'
-    },
-    {
-        title: 'HTML Workshop',
-        description: 'Insert description here'
-
-    },
-    {
-        title: 'Javascript Workshop',
-        description: 'Insert description here'
-    },
-    {
-        title: 'Typescript Workshop',
+        title: 'Will there be Travel Reimbersement?',
         description: 'Insert description here'
     }
 ]
