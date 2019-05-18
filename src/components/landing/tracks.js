@@ -30,10 +30,10 @@ class Tracks extends Component {
         let { title, path, details, trackDetails } = trackParams;
         return (
             <div>
-                <div>{title}</div>
+                <p>{title}</p>
                 <img className="holder-circle" alt="cirlcePlaceholder"
                     src={path} />
-                <p>{details}</p>
+                <p style={{textAlign:"center"}}>{details}</p>
                 <div>
                     {trackDetails.map(techDetails =>(
                         <div className='shell-and-info'>
@@ -49,9 +49,9 @@ class Tracks extends Component {
     render() {
         return (
             <Fragment>
-                <div className="landing-section-content-text"> is simply dummy text of the printing and typesetting industry.
+                <p className="landing-section-content-text"> is simply dummy text of the printing and typesetting industry.
                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley.</div>
+                            when an unknown printer took a galley.</p>
                 <div className='trackDesc'>
                     <div>
                         {this.trackCard(frontEnd)}
