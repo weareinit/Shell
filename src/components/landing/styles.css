@@ -45,12 +45,14 @@
     font-weight: 500;
 }
 
-.landing-section-title{
+.landing-section-title {
     padding-bottom: 5%;
 }
-.landing-section-content-text{
-    padding-bottom:5%
+
+.landing-section-content-text {
+    padding-bottom: 5%
 }
+
 #brand {
     width: 550px;
     max-width: 80%;
@@ -211,32 +213,38 @@
     font-weight: 900;
     font-family: "Montserrat", sans-serif!important;
 }
-.scrollContainer{
+
+.scrollContainer {
     height: 500px;
-    
 }
+
+
 /* .scrollFAQ{
     overflow: auto;
     box-sizing: border-box
 } */
 
-.faqCardContainer{
-    width:80vw;
+.faqCardContainer {
+    width: 80vw;
 }
-.trackDesc{
+
+.trackDesc {
     display: flex;
     flex-direction: row;
     justify-content: space-between
 }
-.holder-circle{
-    height:360px;
+
+.holder-circle {
+    height: 360px;
 }
-.shell{
-    height:30px;
+
+.shell {
+    height: 30px;
     margin-right: 10%;
-    margin-left:20%
+    margin-left: 20%
 }
-.shell-and-info{
+
+.shell-and-info {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
