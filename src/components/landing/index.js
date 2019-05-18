@@ -3,6 +3,7 @@ import FAQ from './faq'
 import Tracks from './tracks'
 import Sponsors from './sponsors'
 import './styles.css'
+import Schedule from './scheduleItem';
 
 class Landing extends Component {
 
@@ -68,6 +69,7 @@ class Landing extends Component {
                 <section className="landing-section" id="main">
                     <div className="landing-section-deatils">
                         <h1 className="landing-section-title">Tentative Schedule</h1>
+                        <Schedule />
                     </div>
                 </section>
 

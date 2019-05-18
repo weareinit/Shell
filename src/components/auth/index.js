@@ -14,10 +14,10 @@ class Auth extends Component {
 
     }
 
-
+    goToDashboard = () => (this.props.history.push("/dashboard"))
 
     render() {
-        let form = this.state.showLogIn ? <LogIn nextPath={this.nextPath} /> : <SignUp nextPath={this.nextPath} />
+        let form = this.state.showLogIn ? <LogIn nextPath={this.goToDashboard.bind(this)} /> : <SignUp nextPath={this.nextPath} />
         let details = this.state.showLogIn ? <p>Please sign in</p> : <p>Please fill out the form</p>
 
         return (
@@ -38,7 +38,6 @@ class Auth extends Component {
                     </div>
                 </div>
                 {/* ANIMATIONS ENDS */}
-
                 <div className="container">
                     <div className="regContainer">
                         <div className="Logo">
@@ -56,12 +55,13 @@ class Auth extends Component {
                                     id="logInBtn"
                                     type="button"
                                     alt="placeholder"
+                                    style={!this.state.showLogIn ? { backgroundColor: '#cec09c' } : null}
                                     onClick={() => this.setState({ showLogIn: true })}>Log In</button>
                                 <button
                                     className="switchButtons"
                                     id="signUpBtn"
                                     type="button"
-                                    style={!this.state.showLogIn ? { backgroundColor: '#cec09c' } : null}
+                                    style={this.state.showLogIn ? { backgroundColor: '#cec09c' } : null}
                                     onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
                             </div>
                             <div className="forms">

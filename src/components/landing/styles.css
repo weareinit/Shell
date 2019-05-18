@@ -216,6 +216,10 @@
     font-family: "Montserrat", sans-serif!important;
 }
 
+.scrollContainer {
+    height: 500px;
+}
+
 
 /* .scrollFAQ{
     overflow: auto;
@@ -247,9 +251,9 @@
 }
 
 .shell {
-    height: 20px;
-    margin-right: 5px;
-    margin-left: 30px
+    height: 30px;
+    margin-right: 10%;
+    margin-left: 20%
 }
 
 .shell-and-info {
