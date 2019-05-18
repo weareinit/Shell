@@ -258,10 +258,22 @@
     justify-content: flex-start;
 }
 
+.sponsors-container {
+    width: 100%;
+    height: 100%
+}
+
 .host-section-detail-container {
     display: flex;
     flex-direction: row;
     justify-content: left
+}
+
+.sponsor-logo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center
 }
 
 *[type="button"] {
