@@ -12,7 +12,7 @@ class Schedule extends Component {
 
     render() {
         return (
-            <div className='pageContainer'>
+            <div className='faqCardContainer'>
                 {data.map(card => {
                     const { location, title, time, description } = card;
                     return (<Card description={description} title={this.title(title, location, time)} />)
@@ -27,6 +27,23 @@ export default Schedule;
 
 // Dummy Data
 const data = [
+    {
+        title: 'What is a Hackathon?',
+        description: 'Insert description here'
+
+    },
+    {
+        title: 'DO you have to hack to participate?',
+        description: 'Insert description here'
+    },
+    {
+        title: 'Will there be food?',
+        description: 'Insert description here'
+    },
+    {
+        title: 'Will there be Travel Reimbersement?',
+        description: 'Insert description here'
+    },
     {
         title: 'What is a Hackathon?',
         description: 'Insert description here'

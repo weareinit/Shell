@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FAQ from './faq'
-import './style.css'
+import './styles.css'
 
 class Landing extends Component {
 
