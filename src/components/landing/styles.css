@@ -1,0 +1,226 @@
+.landing-container {
+    height: auto;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 7;
+}
+
+.landing-section {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+}
+
+.left-section-details {
+    width: 63.333%;
+    align-self: flex-end;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.left-section-details p {
+    margin-top: 50px;
+    line-height: 1.5em;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.landing-section-deatils {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.landing-section-deatils p {
+    margin-top: 50px;
+    line-height: 1.5em;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.landing-section-title{
+    padding-bottom: 5%;
+}
+#brand {
+    width: 550px;
+    max-width: 80%;
+    margin-bottom: -10px;
+    z-index: 3;
+}
+
+.featuring {
+    padding-right: 25px;
+    color: #252628;
+    height: 60px;
+    max-width: 160px;
+}
+
+.spotify {
+    height: 60px;
+    width: auto;
+}
+
+.cohost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#copyright {
+    text-align: center;
+    color: white !important;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+#copyright a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+#details {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 500px;
+    color: var(--tertiary-color);
+    line-height: 1.2em;
+    font-size: 23px;
+    display: block;
+    font-weight: 500;
+}
+
+#countDown {
+    z-index: 4;
+    color: var(--tertiary-color);
+    font-size: 38px;
+    display: block;
+    margin: 25px 0;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    color: #9E8D7D;
+    width: auto;
+    /* display: none; */
+    /* ^ CESAR SAID SO! */
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.buttonsContainer>.buttons {
+    background-color: var(--gradient-bg);
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-size: 1000% 1000%;
+    height: 50px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 0 !important;
+}
+
+.buttonsContainer>.buttons:hover {
+    animation: GradientBackground 15s infinite;
+    background: var(--gradient-bg);
+    background-size: 900% 900%;
+}
+
+.buttonsContainer>.buttons>* {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 0;
+}
+
+
+/* #register {
+	cursor: not-allowed;
+} */
+
+
+/* #register>* {
+    width: 79%;
+}
+
+#sponsor>* {
+    width: 54%;
+}*/
+
+@media only screen and (max-width: 1200px) {
+    .buttonsContainer {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .buttonsContainer>.buttons {
+        height: 40px;
+        width: 190px;
+        padding: 0px;
+    }
+    #details {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.buttonsContainer>.buttons:hover>* {
+    margin-bottom: -1px;
+}
+
+.buttons {
+    margin: 10px;
+    -webkit-border-radius: 30px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: solid 3px transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    background-color: var(--primary-color);
+    border: solid 3px pink;
+}
+
+#creed {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: var(--tertiary-color);
+    font-size: 1.8em;
+    display: block;
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif!important;
+}
+.scrollContainer{
+    height: 500px;
+    
+}
+/* .scrollFAQ{
+    overflow: auto;
+    box-sizing: border-box
+} */
+
+.faqCardContainer{
+    width:80vw;
+}
+
+*[type="button"] {
+    cursor: pointer;
+}

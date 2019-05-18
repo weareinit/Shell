@@ -9,7 +9,7 @@ const Button = (props) => {
             className="submit-button"
             id={id}
             type="button"
-            style={}
+        
             onClick={callback()}>{title}</button>
     )
 }

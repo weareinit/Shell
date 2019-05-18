@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
-class Schedule extends Component {
+class Essentials extends Component {
 
     render() {
         return (
             <div>
-                <h1 className="dashboard-page-title">Schedule</h1>
+                <h1 className="page-title">Essentials</h1>
             </div>
         )
     }
 }
 
-export default Schedule;
+export default Essentials;
