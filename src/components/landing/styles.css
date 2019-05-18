@@ -1,13 +1,14 @@
 .landing-container {
-    height: auto;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     overflow-y: scroll;
     overflow-x: hidden;
-    z-index: 7;
+    /* z-index: 7; */
 }
 
 .landing-section {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     text-align: center;
     display: flex;
@@ -15,6 +16,7 @@
     justify-content: center;
     align-items: center;
     z-index: 7;
+    box-sizing: border-box;
 }
 
 .left-section-details {
@@ -45,12 +47,14 @@
     font-weight: 500;
 }
 
-.landing-section-title{
+.landing-section-title {
     padding-bottom: 5%;
 }
-.landing-section-content-text{
-    padding-bottom:5%
+
+.landing-section-content-text {
+    padding-bottom: 5%
 }
+
 #brand {
     width: 550px;
     max-width: 80%;
@@ -211,35 +215,53 @@
     font-weight: 900;
     font-family: "Montserrat", sans-serif!important;
 }
-.scrollContainer{
-    height: 500px;
-    
-}
+
+
 /* .scrollFAQ{
     overflow: auto;
     box-sizing: border-box
 } */
 
-.faqCardContainer{
-    width:80vw;
+.faqCardContainer {
+    width: 80vw;
 }
-.trackDesc{
+
+.tracks-container {
+    width: 100%
+}
+
+.track-card-container {
+    width: 25%
+}
+
+.trackDesc {
     display: flex;
     flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
+    height: 100%;
+    width: 100%
 }
-.holder-circle{
-    height:360px;
+
+.holder-circle {
+    height: 20%;
 }
-.shell{
-    height:30px;
-    margin-right: 10%;
-    margin-left:20%
+
+.shell {
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 30px
 }
-.shell-and-info{
+
+.shell-and-info {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+}
+
+.host-section-detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left
 }
 
 *[type="button"] {

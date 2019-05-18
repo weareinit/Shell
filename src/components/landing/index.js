@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import FAQ from './faq'
 import Tracks from './tracks'
+import Sponsors from './sponsors'
 import './styles.css'
 
 class Landing extends Component {
@@ -24,7 +25,7 @@ class Landing extends Component {
         return (
             <div className="landing-container">
 
-                <div className="landing-section" id="main">
+                <section className="landing-section" id="main">
 
                     <img id="brand" alt="brand" class="fade-in one" src={require('../../assets/frontpage/shellhacks.svg')} />
 
@@ -43,10 +44,10 @@ class Landing extends Component {
                             <h3>Register</h3> {/**ignore these for now */}
                         </button>
                     </div>
-                </div>
+                </section>
 
 
-                <div className="landing-section" id="main">
+                <section className="landing-section" id="main">
                     <div className="left-section-details">
                         <h1 className="landing-section-title">What is ShellHacks?</h1>
                         <p className="landing-section-content-text"> is simply dummy text of the printing and typesetting industry.
@@ -55,43 +56,41 @@ class Landing extends Component {
                             specimen book. It has survived not only five centuries, but also the leap
                             into electronic typesetting, remaining essentially unchanged</p>
                     </div>
-                </div>
+                </section>
 
-                <div className="landing-section" id="main">
+                <section className="landing-section" id="main">
                     <div className="landing-section-deatils">
                         <h1 className="landing-section-title">Learning tracks</h1>
                         <Tracks/>
                     </div>
-                </div>
+                </section>
 
-                <div className="landing-section" id="main">
+                <section className="landing-section" id="main">
                     <div className="landing-section-deatils">
                         <h1 className="landing-section-title">Tentative Schedule</h1>
                     </div>
-                </div>
+                </section>
 
-                <div className="landing-section" id="main">
+                <section className="landing-section" id="main">
                     <div className="landing-section-deatils">
                         <h1 className="landing-section-title">Frequently asked Questions (FAQ)</h1>
-                        <div className='scrollContainer'>
-                            <div className='scrollFAQ'>
-                                <FAQ/>
-                            </div>
+                        <div>
+                            <FAQ/>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div className="landing-section" id="main">
+                <section className="landing-section" id="main">
                     <div className="landing-section-deatils">
-                        <h1 className="landing-section-title">Sponsors</h1>
+                        <Sponsors/>
                     </div>
-                </div>
+                </section>
 
-                <div className="landing-section" id="main">
+                <section className="landing-section" id="main">
                     <div className="landing-section-deatils">
                         <h1 className="landing-section-title">Thank you for love ShellHacks!</h1>
                     </div>
-                </div>
+                </section>
             </div>
         )
     }
