@@ -6,10 +6,10 @@ import request from '../../services/request'
 import './style.css'
 
 class SignUp extends Component {
-    constructor(props) {
-        super(props)
+    // constructor(props) {
+    //     super(props)
 
-    }
+    // }
 
 
     handleSubmit = (values, { resetForm }) => {
