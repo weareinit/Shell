@@ -34,7 +34,6 @@ class LogIn extends Component {
     }
 
     render() {
-        { console.log(this.props) }
         return (
             <Formik
                 initialValues={{

@@ -1,6 +1,6 @@
 //workshop tracks for the landing page
-import React, { Component, Fragment } from 'react'
-import {ReactComponent as Shell} from '../../assets/frontpage/shell.svg'
+import React, { Component } from 'react'
+import { ReactComponent as Shell } from '../../assets/frontpage/shell.svg'
 import './styles.css'
 
 //Data for different tracks are all Objects
@@ -22,6 +22,12 @@ const Hardware = {
     details: 'Brief description on Hardware',
     trackDetails: ['Arduino', 'Raspberry Pi', '3D Modeling']
 };
+const CyberSecurity = {
+    title: 'CyberSecurity',
+    path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png',
+    details: 'Brief description on CyberSecurity',
+    trackDetails: ['Thing1', 'Thing2', 'Thing3']
+};
 
 class Tracks extends Component {
 
@@ -29,15 +35,15 @@ class Tracks extends Component {
     trackCard = (trackParams) => {
         let { title, path, details, trackDetails } = trackParams;
         return (
-            <div>
+            <div className='track-card-container'>
                 <p>{title}</p>
                 <img className="holder-circle" alt="cirlcePlaceholder"
                     src={path} />
-                <p style={{textAlign:"center"}}>{details}</p>
+                <p style={{ textAlign: "center" }}>{details}</p>
                 <div>
-                    {trackDetails.map(techDetails =>(
+                    {trackDetails.map(techDetails => (
                         <div className='shell-and-info'>
-                            <Shell className='shell'/>
+                            <Shell className='shell' />
                             <p>{techDetails}</p>
                         </div>
                     ))}
@@ -48,22 +54,17 @@ class Tracks extends Component {
 
     render() {
         return (
-            <Fragment>
+            <div className='tracks-container'>
                 <p className="landing-section-content-text"> is simply dummy text of the printing and typesetting industry.
                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             when an unknown printer took a galley.</p>
                 <div className='trackDesc'>
-                    <div>
-                        {this.trackCard(frontEnd)}
-                    </div>
-                    <div>
-                        {this.trackCard(backEnd)}
-                    </div>
-                    <div>
-                        {this.trackCard(Hardware)}
-                    </div>
+                    {this.trackCard(frontEnd)}
+                    {this.trackCard(backEnd)}
+                    {this.trackCard(Hardware)}
+                    {this.trackCard(CyberSecurity)}
                 </div>
-            </Fragment>
+            </div>
         )
     }
 }
