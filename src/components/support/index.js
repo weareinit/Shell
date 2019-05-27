@@ -6,6 +6,10 @@ class Support extends Component {
         return (
             <div>
                 <h1 className="page-title">Support</h1>
+                <div>
+                    If any issues or bugs arise, please reach out to Webmaster Jehf 
+                    on the UPE Discord or any of the Shellhacks volunteers.
+                </div>
             </div>
         )
     }
