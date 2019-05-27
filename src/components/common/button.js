@@ -3,7 +3,9 @@ import React from 'react';
 import './styles.css'
 
 const Button = (props) => {
-    const { callback, title, id } = props;
+    const { 
+        // callback,
+         title, id } = props;
     return (
         <button
             className="submit-button"
