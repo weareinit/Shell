@@ -7,6 +7,18 @@ import './style.css'
 import { LOGIN_PATH } from '../../config/api_paths'
 import request from '../../services/request'
 
+const axios = require('axios');
+
+async function makeGetRequest() {
+  
+  let res = await axios.post("https://immense-reef-66486.herokuapp.com/application/login",{email:"dev@fiu.edu",password:"devboidev"});
+
+  let data = res.data;
+  console.log(data);
+}
+
+makeGetRequest();
+
 class LogIn extends Component {
     constructor(props) {
         super(props)
@@ -29,6 +41,7 @@ class LogIn extends Component {
             data
         }).then((resp) => {
             console.log(resp);
+            
         })
 
     }
@@ -64,7 +77,7 @@ class LogIn extends Component {
                             />
                         </div>
                         <div className="auth-submit-button-container">
-                            <button className="auth-submit-button" type="submit" onClick={this.handleSubmit ? this.props.nextPath : this.history.push("/auth")}>Log In</button>
+                            <button className="auth-submit-button" type="submit" onClick={this.handleSubmit}>Log In</button>
                         </div>
                     </Form>
 

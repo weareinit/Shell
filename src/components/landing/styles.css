@@ -1,11 +1,16 @@
+/* page styles */
+
 .landing-container {
-    display: flex;
-    flex-direction: column;
+    display: block;
     width: 100vw;
     overflow-y: scroll;
     overflow-x: hidden;
-    /* z-index: 7; */
+    box-sizing: border-box;
+    padding: 0 10% 0 10%;
 }
+
+
+/* all sections */
 
 .landing-section {
     min-height: 100vh;
@@ -15,15 +20,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 7;
     box-sizing: border-box;
 }
 
 .left-section-details {
-    width: 63.333%;
+    max-width: 600px;
     align-self: flex-end;
-    padding-left: 10%;
-    padding-right: 10%;
 }
 
 .left-section-details p {
@@ -235,19 +237,22 @@
 }
 
 .track-card-container {
-    width: 25%
+    width: 33%;
+    height: auto
 }
 
 .trackDesc {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     height: 100%;
-    width: 100%
+    width: 100%;
+    padding-bottom: 5%
 }
 
 .holder-circle {
-    height: 20%;
+    width: 80%;
 }
 
 .shell {
@@ -260,6 +265,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    
+}
+.shell-and-info.li{
+    list-style-image: url('../../assets/frontpage/shell.svg');
 }
 
 .sponsors-container {
@@ -282,4 +291,11 @@
 
 *[type="button"] {
     cursor: pointer;
+}
+
+.schedule-button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }

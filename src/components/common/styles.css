@@ -1,4 +1,4 @@
-.buttonInfo{
+.buttonInfo {
     display: flex !important;
     flex-direction: row;
     justify-content: space-between;
@@ -16,10 +16,34 @@
     font-weight: 700;
     margin-bottom: 20px;
 }
-.buttonInfo:hover{
+
+.buttonInfo:hover {
     cursor: pointer;
     background: rgba(73, 73, 73, 0.5) !important;
 }
+
+.submit-button {
+    min-width: 100px;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 30px;
+    border: none;
+    outline-style: none;
+    border-radius: 20px;
+    background-color: #665B50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    background: rgba(73, 73, 73, 0.5) !important;
+}
+
 .dashboard-page-title {
     font-family: "Montserrat", sans-serif;
     color: #9E8D7D;
