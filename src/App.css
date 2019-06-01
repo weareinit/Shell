@@ -24,11 +24,17 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+<<<<<<< HEAD
 
 *[type="button"] {
     cursor: pointer;
 }
 
+=======
+ul{
+    list-style-type:none !important
+}
+>>>>>>> dev
 body {
     margin: 0;
     padding: 0;

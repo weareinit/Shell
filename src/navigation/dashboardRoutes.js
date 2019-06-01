@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import Navbar from '../components/navbar'
 
 import Application from '../components/application'
-import Home from '../components/dashboard'
+import Home from '../components/home'
 import Support from '../components/support'
 import Essentials from '../components/essentials'
 import Profile from '../components/profile'

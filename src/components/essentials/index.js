@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import "./styles.css";
 import Card from "../common/cards";
+=======
+import React, { Component } from 'react'
+import './styles.css'
+import Card from '../common/cards'
+import {ParkingCardContent, ImportantItemsCardContent, LearningTracksCardContent} from './cardContent'
+>>>>>>> dev
 
 class Essentials extends Component {
   cardContent = () => (
@@ -19,6 +26,7 @@ class Essentials extends Component {
     </div>
   );
 
+<<<<<<< HEAD
   render() {
     return (
       <div className="essentials-container">
@@ -29,13 +37,35 @@ class Essentials extends Component {
       </div>
     );
   }
+=======
+
+    render() {
+        
+        return (
+            <div>
+                <h1 className="page-title">Essentials</h1>
+                <div>
+                    <Card title='Parking and Transportation' content={ParkingCardContent} />
+                    <Card title='What should you bring to Shellhacks' content={ImportantItemsCardContent}/>
+                    <Card title='Learning Tracks' content={LearningTracksCardContent} />
+                    <Card title='Parking and Transportation' content={ParkingCardContent} />
+                    <Card title='What should you bring to Shellhacks' content={ImportantItemsCardContent}/>
+                    <Card title='Learning Tracks' content={LearningTracksCardContent} />
+                </div>
+            </div>
+        )
+    }
+>>>>>>> dev
 }
 
 export default Essentials;
 
+<<<<<<< HEAD
 // const data = [
 //     {
 //         title: 'What is a Hackathon?',
 //         description: 'Insert description here'
 //     },
 // ]
+=======
+>>>>>>> dev

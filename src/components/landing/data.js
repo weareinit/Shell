@@ -26,11 +26,3 @@ export const schedules = {
     { time: "3:00-8:00PM", description: " Hello There" }
   ]
 };
-
-export const tracks = {};
-
-export const sponsors = {};
-
-export const faqs = {};
-
-export const descriptions = {};

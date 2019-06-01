@@ -15,19 +15,16 @@ class Card extends Component {
     }
 
     render() {
-        let { title, description,content } = this.props;
+        let { title, description, content } = this.props;
+        let cardContent = (description ? <h4>{description}</h4> : content)
         return (
             <div>
                 <button className='buttonInfo' onClick={this.handleClick}>
-                    {title}
+                    <h3>{title}</h3>
                 </button>
                 <div className='info'
                     style={this.state.clicked ? { display: 'flex' } : { display: 'none' }}>
-                    <h4>{description} </h4>
-                    <div>
-                        {content}
-                    </div>
-                    
+                    {cardContent}
                 </div>
             </div>
         )

@@ -153,6 +153,20 @@
     display: none;
 }
 
+<<<<<<< HEAD
+=======
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+    font-weight: 300;
+}
+
+>>>>>>> dev
 .welcomeMessage {
     text-align: center;
 }

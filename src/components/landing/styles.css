@@ -220,4 +220,85 @@
 
 .scrollContainer {
     height: 500px;
+<<<<<<< HEAD
+=======
+}
+
+
+/* .scrollFAQ{
+    overflow: auto;
+    box-sizing: border-box
+} */
+
+.faqCardContainer {
+    width: 80vw;
+}
+
+.tracks-container {
+    width: 100%
+}
+
+.track-card-container {
+    width: 33%;
+    height: auto
+}
+
+.trackDesc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 5%
+}
+
+.holder-circle {
+    width: 80%;
+}
+
+.shell {
+    height: 30px;
+    margin-right: 10%;
+    margin-left: 20%
+}
+
+.shell-and-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+}
+.shell-and-info.li{
+    list-style-image: url('../../assets/frontpage/shell.svg');
+}
+
+.sponsors-container {
+    width: 100%;
+    height: 100%
+}
+
+.host-section-detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left
+}
+
+.sponsor-logo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+*[type="button"] {
+    cursor: pointer;
+}
+
+.schedule-button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+>>>>>>> dev
 }

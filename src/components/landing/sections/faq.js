@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import Card from "../../common/cards";
 import "./styles.css";
 
+<<<<<<< HEAD
+=======
+class Faq extends Component {
+
+    
+>>>>>>> dev
 
 class Schedule extends Component {
   title = (title, location, time) => (
@@ -10,6 +16,7 @@ class Schedule extends Component {
     </div>
   );
 
+<<<<<<< HEAD
   render() {
     return (
       <div className="faqCardContainer">
@@ -25,9 +32,22 @@ class Schedule extends Component {
       </div>
     );
   }
+=======
+    render() {
+        return (
+            <div className='faqCardContainer'>
+                {data.map(card => {
+                    const { title, description } = card;
+                    return (<Card description={description} title={title} />)
+                }
+                )}
+            </div>
+        )
+    }
+>>>>>>> dev
 }
 
-export default Schedule;
+export default Faq;
 
 // Dummy Data
 const data = [
