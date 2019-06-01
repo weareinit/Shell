@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import FAQ from './sections/faq'
+import Faq from './sections/faq'
 import Tracks from './sections/tracks'
 import Sponsors from './sections/sponsors'
 import Schedule from './sections/scheduleItem';
@@ -53,7 +53,7 @@ class Landing extends Component {
                 {/* FAQS SECTION */}
                 <section className="landing-section" >
                     <h1 className="landing-section-title">Frequently asked Questions (FAQ)</h1>
-                    <FAQ />
+                    <Faq />
                 </section>
 
                 {/* COMPANIES AND ORGS SECTION */}
