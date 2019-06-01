@@ -153,18 +153,6 @@
     display: none;
 }
 
-h1 {
-    font-family: "Montserrat", sans-serif;
-    color: #9E8D7D;
-}
-
-p {
-    font-family: "Montserrat", sans-serif;
-    color: #9E8D7D;
-    font-weight: 300;
-    line-height: 0em;
-}
-
 .welcomeMessage {
     text-align: center;
 }

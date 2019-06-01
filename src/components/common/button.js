@@ -1,17 +1,18 @@
 //work in progress...want to create a reusable button
-import React, { PropTypes } from 'react';
-import './styles.css'
+import React from "react";
+import "./styles.css";
 
-const Button = (props) => {
-    const { 
-        // callback,
-         title, id } = props;
-    return (
-        <button
-            className="submit-button"
-        // onClick={callback(1)}
-        >{props.title}</button>
-    )
-}
+const Button = props => {
+  const { action, title, id } = props;
+
+  const buttonClicked = () => {
+    action(id);
+  };
+  return (
+    <button onClick={buttonClicked} className="submit-button">
+      <h3>{title}</h3>
+    </button>
+  );
+};
 
 export default Button;

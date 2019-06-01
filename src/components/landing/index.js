@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import FAQ from './sections/faq'
 import Tracks from './sections/tracks'
 import Sponsors from './sections/sponsors'
-import Schedule from './sections/scheduleItem';
+import Schedule from './sections/schedule';
 
 import './styles.css'
 import MainSection from './sections/main';

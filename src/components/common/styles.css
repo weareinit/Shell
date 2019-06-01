@@ -27,7 +27,7 @@
     display: flex !important;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 0 30px;
     border: none;
     outline-style: none;
     border-radius: 20px;
@@ -37,6 +37,7 @@
     color: white;
     font-weight: 700;
     margin-bottom: 20px;
+    border-radius: 50px;
 }
 
 .submit-button:hover {
@@ -49,7 +50,7 @@
     color: #9E8D7D;
 }
 
-.info{
+.info {
     height: 300px;
     width: 300px;
 }
