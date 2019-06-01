@@ -237,19 +237,22 @@
 }
 
 .track-card-container {
-    width: 25%
+    width: 33%;
+    height: auto
 }
 
 .trackDesc {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     height: 100%;
-    width: 100%
+    width: 100%;
+    padding-bottom: 5%
 }
 
 .holder-circle {
-    height: 20%;
+    width: 80%;
 }
 
 .shell {
@@ -262,6 +265,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    
+}
+.shell-and-info.li{
+    list-style-image: url('../../assets/frontpage/shell.svg');
 }
 
 .sponsors-container {
