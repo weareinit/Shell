@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Card from '../common/cards'
+import Card from '../../common/cards'
 
 class Schedule extends Component {
 
