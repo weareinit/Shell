@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Button from '../common/button'
-import { schedules } from './data'
-import './styles.css'
+import Button from '../../common/button'
+import { schedules } from '../data'
+import '../styles.css'
 
 class Schedule extends Component {
     constructor(props) {
@@ -39,8 +39,8 @@ class Schedule extends Component {
 
         return (
             <div>
-                <div>
-                    <Button />
+                <div className="schedule-button-container">
+                    <Button props={{ title: "hello" }} />
                     <Button />
                     <Button />
                 </div>

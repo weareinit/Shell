@@ -1,7 +1,7 @@
 //workshop tracks for the landing page
 import React, { Component } from 'react'
-import { ReactComponent as Shell } from '../../assets/frontpage/shell.svg'
-import './styles.css'
+import { ReactComponent as Shell } from '../../../assets/frontpage/shell.svg'
+import '../styles.css'
 
 //Data for different tracks are all Objects
 const frontEnd = {
