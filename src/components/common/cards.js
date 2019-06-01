@@ -27,8 +27,8 @@ class Card extends Component {
                     <div>
                         {content}
                     </div>
+                    
                 </div>
-
             </div>
         )
     }
