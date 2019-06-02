@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from "../../common/button";
-import { schedules } from "../data";
+import { schedules } from "../../../data";
 import "./styles.css";
 
 class Schedule extends Component {
