@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import {supportFAQData} from '../../data/support'
+import Card from '../common/cards'
 class Support extends Component {
 
     render() {
@@ -7,8 +8,15 @@ class Support extends Component {
             <div>
                 <h1 className="page-title">Support</h1>
                 <div>
-                    <p>If any issues or bugs arise, please reach out to any 
-                    admin on the UPE Discord or any of the Shellhacks volunteers.</p>
+                    <h3>We are sorry to hear that you having issues. Here's a couple of solutions to common problems</h3>
+                    <div>
+                        {supportFAQData.map(data =>{
+                            const { title, description } = data;
+                            return (<Card description = {description} title={title} />)
+                        })}
+                    </div>
+                    <h3>If these solutions did not fix your issue, you can reach us throught the
+                         <a href='https://discord.gg/upefiu'>UPE discord</a> or email us at <a href='mailto: upe@fiu.edu'> upe@fiu.edu</a></h3>
                 </div>
             </div>
         )
