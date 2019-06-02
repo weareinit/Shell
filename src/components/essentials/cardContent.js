@@ -1,7 +1,6 @@
 import React from 'react'
 import './styles.css'
 import { tracksData, essentialItems, optionalItems } from '../../data'
-import { ReactComponent as Shell } from '../../assets/frontpage/shell.svg'
 
 export const ParkingCardContent = (
     <div className='essentials-parking-card-content'>
@@ -73,10 +72,6 @@ export const LearningTracksCardContent = (
                         {data.trackDetails.map(techDetails => (
 
                             <li>{techDetails}</li>
-                            // <div className='shell-and-info'>
-                            //     <Shell className='shell' />
-                            //     <p>{techDetails}</p>
-                            // </div>
                         ))}
                         </ul>
                         

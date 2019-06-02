@@ -16,8 +16,7 @@ class Faq extends Component {
                 {data.map(card => {
                     const { title, description } = card;
                     return (<Card description={description} title={title} />)
-                }
-                )}
+                })}
             </div>
         )
     }
