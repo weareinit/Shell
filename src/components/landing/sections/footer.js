@@ -1,1 +1,1 @@
-//last section of the landing page
+import "./styles.css";
