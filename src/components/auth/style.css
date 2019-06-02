@@ -1,0 +1,204 @@
+.field {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    outline-style: none;
+    padding: 10px;
+    background-color: white !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: black;
+    font-weight: 500;
+    max-width: 555px;
+}
+
+.fieldDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.field::placeholder {
+    color: #c4baa2;
+    font-weight: 500;
+}
+
+.auth-submit-button {
+    border: none;
+    outline-style: none;
+    border-radius: 30px;
+    padding: 11px;
+    width: 50%;
+    background-color: #665B50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    max-width: 250px;
+}
+
+#loginStyle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+
+.auth-submit-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.auth-submit-button {
+    transition: .2s ease-in;
+}
+
+.auth-submit-button:hover {
+    cursor: pointer;
+    background: rgba(73, 73, 73, 0.5) !important;
+}
+
+
+/*----------------------- CONTENTS STYLES --------------------------*/
+
+.container {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    /* ^^^^IMPORTANT!!! */
+}
+
+.regContainer {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    max-width: 750px;
+    min-width: 300px;
+    background-color: rgba(206, 188, 143, 0.4);
+    border-radius: 30px;
+    z-index: 8;
+}
+
+.Logo {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: (rgba(128, 128, 128, 0.5));
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#signUpBtn {
+    border: none;
+    outline-style: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 11px;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    background-color: #665B50;
+    color: white;
+    font-weight: 700;
+}
+
+#logInBtn {
+    border: none;
+    outline-style: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 11px;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    background-color: #665B50;
+    color: white;
+    font-weight: 700;
+}
+
+.buttonSwitch {
+    margin-top: 10%;
+    width: 65%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    max-width: 335px;
+}
+
+.forms {
+    width: 82%;
+}
+
+.logoStyle {
+    width: 80%;
+}
+
+#mobileLogo {
+    display: none;
+}
+
+<<<<<<< HEAD
+=======
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+    font-weight: 300;
+}
+
+>>>>>>> dev
+.welcomeMessage {
+    text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        height: 100vh;
+        width: 100vw;
+    }
+    .regContainer {
+        display: flex;
+        flex-direction: column;
+        background: none !important;
+        width: 100%;
+        height: 100%;
+    }
+    .formContainer {
+        height: 100%;
+        width: 100%;
+    }
+    .Logo {
+        display: none;
+        background: none;
+    }
+    #mobileLogo {
+        display: flex;
+    }
+    .logoStyle {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}

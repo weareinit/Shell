@@ -1,0 +1,51 @@
+.buttonInfo {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #665B50;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: none;
+    outline-style: none;
+    border-radius: 20px;
+    background-color: #665B50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.buttonInfo:hover {
+    cursor: pointer;
+    background: rgba(73, 73, 73, 0.5) !important;
+}
+
+.submit-button {
+    min-width: 100px;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+    border: none;
+    outline-style: none;
+    border-radius: 20px;
+    background-color: #665B50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-radius: 50px;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    background: rgba(73, 73, 73, 0.5) !important;
+}
+
+.dashboard-page-title {
+    font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+}

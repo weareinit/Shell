@@ -1,1 +1,0 @@
-//implement card for one schedule item

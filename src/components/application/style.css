@@ -1,0 +1,124 @@
+#application,
+#application-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.dashboard-page-title {
+    font-family: "Montserrat", sans-serif;
+    color: #9E8D7D;
+}
+
+#application #application-container h3 {
+    margin-left: 8px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: rgb(45, 69, 77);
+}
+
+.application-input-full {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    outline-style: none;
+    background-color: white !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: black;
+    font-weight: 500;
+    max-width: 500;
+}
+
+.half-field-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 500;
+}
+
+.full-field-container {
+    overflow: hidden;
+    max-width: 500;
+    width: 100%;
+    padding: 5px;
+}
+
+.application-input-half {
+    width: 48%;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    outline-style: none;
+    padding: 10px;
+    background-color: white !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: black;
+    font-weight: 500;
+    margin: 5px;
+}
+
+#application-container form {
+    width: 70%;
+}
+
+#application #application-container .submit-button {
+    border: none;
+    outline-style: none;
+    border-radius: 30px;
+    padding: 13px 70px 13px 70px;
+    max-width: 250px!important;
+    background-color: #665B50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    margin-top: 60px;
+}
+
+input:focus::-webkit-datetime-edit {
+    color: #000;
+}
+
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+}
+
+.submit-button {
+    transition: .2s ease-in;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    background: rgba(73, 73, 73, 0.5) !important;
+}
+
+@media(max-width: 650px) {
+    .half-field-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .application-input-half {
+        width: initial;
+    }
+}
+
+.input-file+label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.input-file:focus+label,
+.input-file+label:hover {
+    background-color: red;
+}

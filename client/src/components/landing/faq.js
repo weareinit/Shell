@@ -1,1 +1,0 @@
-//implement landing faq cards
