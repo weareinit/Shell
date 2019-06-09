@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { individualData } from '../../data/home'
+import { individualData, announcementCardInfo } from '../../data/home'
+import Card from '../common/cards'
 import './styles.css'
 class Home extends Component {
 
     render() {
         let { fullName, score, status } = individualData;
+        let { title, date, description } = announcementCardInfo;
         return (
             <div id="home">
                 <h1 className="dashboard-page-title">Home</h1>
@@ -18,6 +20,14 @@ class Home extends Component {
                 <button className='application-status-button'>
                     <h3>{status}</h3>
                 </button>
+
+                <h3>Announcements:</h3>
+                <div>
+                    {announcementCardInfo.map(data =>
+                        <Card title={title} description={description} />
+                        )}
+                    
+                </div>
             </div>
         )
     }
