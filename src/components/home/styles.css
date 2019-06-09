@@ -1,3 +1,19 @@
 #home {
     width: 80%;
 }
+.application-status-button{
+    min-width: 100px;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+    border: none;
+    outline-style: none;
+    background-color: #E86B6B;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
