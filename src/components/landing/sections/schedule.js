@@ -41,6 +41,9 @@ class Schedule extends Component {
       case 3:
         data = sunday;
         break;
+      default:
+        data = 'friendsday';
+        break;
     }
 
     return (
