@@ -1,3 +1,26 @@
 #home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.application-status-button{
+    width: 60%;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 30px;
+    border: none;
+    outline-style: none;
+    background-color: #E86B6B;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.announcement-card-container{
     width: 80%;
 }
