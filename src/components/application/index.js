@@ -7,6 +7,7 @@ import { ApplicationValidation, ApplicationInitialValues } from "../../utils/val
 import CustomSelect from './customSelect';
 import axios from "axios";
 import "./style.css";
+import { readFile } from "fs";
 
 class Application extends Component {
 
@@ -282,6 +283,10 @@ class Application extends Component {
                     type="file"
                     style={touched.resume && errors.resume ? { border: '2px solid red' } : null}
                     placeholder="Resume"
+                    onBlur={() => {
+                      let reader = new FileReader();
+                      console.log(setFieldValue("resume", readFile.__promisify__(values.resume)))
+                    }}
                   />
                   <Field
                     className="application-input-half"

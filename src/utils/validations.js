@@ -52,7 +52,8 @@ export const ApplicationValidation = Yup.object().shape({
   major: Yup.string().required("Must select your major"),
   //profetional info
   areaOfFocus: Yup.string().required("Must select an area of focus"),
-  resume: Yup.string().required("Must add your resume"),
+  resume: Yup.mixed().required("Must add your resume"),
+  // resume: Yup.string().required("Must add your resume"),
   linkedIn: Yup.string(),
   portfolio: Yup.string(),
   github: Yup.string(),
@@ -84,7 +85,7 @@ export const ApplicationInitialValues = {
   major: "",
   //profetional info
   areaOfFocus: "",
-  resume: "",
+  resume: null,
   linkedIn: "",
   portfolio: "",
   github: "",
