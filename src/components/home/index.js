@@ -6,7 +6,6 @@ class Home extends Component {
 
     render() {
         let { fullName, score, status } = individualData;
-        let { title, date, description } = announcementCardInfo;
         return (
             <div id="home">
                 <h1 className="dashboard-page-title">Home</h1>
@@ -22,9 +21,9 @@ class Home extends Component {
                 </button>
 
                 <h3>Announcements:</h3>
-                <div>
+                <div className='announcement-card-container'>
                     {announcementCardInfo.map(data =>
-                        <Card title={title} description={description} />
+                        <Card title={data.title} date={data.date} description={data.description} />
                         )}
                     
                 </div>
