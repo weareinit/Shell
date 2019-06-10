@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik'
-import { LogInValidation } from '../../utils/ValidationSchema'
+import { LogInValidation } from '../../utils/validations'
 import './style.css'
 
 import { LOGIN_PATH } from '../../config/api_paths'

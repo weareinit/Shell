@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Formik, Form, Field } from 'formik'
-import { SignUpValidation } from '../../utils/ValidationSchema'
+import { SignUpValidation } from '../../utils/validations'
 import { REGISTER_PATH } from '../../config/api_paths'
 import request from '../../services/request'
 import './style.css'
