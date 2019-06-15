@@ -1,6 +1,10 @@
 import React from 'react'
 import './styles.css'
-import { tracksData, essentialItems, optionalItems } from '../../data'
+import tracks from '../../config/data/tracks'
+
+const essentialItems = ["hell", "there", "this", "is ", "a ", "test"];
+const optionalItems = ["hell", "there", "this", "is ", "a ", "test"]
+
 
 export const ParkingCardContent = (
     <div className='essentials-parking-card-content'>
@@ -39,17 +43,17 @@ export const ImportantItemsCardContent = (
             <div className='essential-items-list'>
                 <h3>Essential Items</h3>
                 <ul>
-                    {essentialItems.map((item)=>
+                    {essentialItems.map((item) =>
                         <li>{item}</li>
-                        )}
+                    )}
                 </ul>
             </div>
             <div className='optional-items-list'>
                 <h3>Optional Items</h3>
                 <ul>
-                    {optionalItems.map((item)=>
+                    {optionalItems.map((item) =>
                         <li>{item}</li>
-                        )}
+                    )}
                 </ul>
             </div>
         </div>
@@ -61,7 +65,7 @@ export const LearningTracksCardContent = (
         <div>Brief summary about what is a learning track and what you
             can possibly gain by doing a learning track at Shellhacks and
             how to choose your tracks and how to prepare for your track.</div>
-        {tracksData.map((data) =>
+        {tracks.map((data) =>
             <div>
                 <h2>{data.title}</h2>
                 <div className="track-overview">
@@ -69,19 +73,19 @@ export const LearningTracksCardContent = (
                     <div className="track-details">
                         {data.details}
                         <ul>
-                        {data.trackDetails.map(techDetails => (
+                            {data.trackDetails.map(techDetails => (
 
-                            <li>{techDetails}</li>
-                        ))}
+                                <li>{techDetails}</li>
+                            ))}
                         </ul>
-                        
+
                     </div>
                 </div>
                 <h2>Required Software and How to get them</h2>
                 <div className="track-software">
-                    {data.softwareNames.map(softwareLinks=>
+                    {data.softwareNames.map(softwareLinks =>
                         <button className="software-button" onClick={() => window.open("https://Shellhacks.net")}>{softwareLinks}</button>
-                        )}
+                    )}
                 </div>
             </div>
         )}

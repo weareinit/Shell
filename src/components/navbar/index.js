@@ -13,8 +13,7 @@ class Navbar extends Component {
 
 
     toggle = () => {
-        const { open } = this.state
-        this.setState({ open: !open })
+        this.setState((prevState) => ({ open: !prevState.open }))
     }
 
 
@@ -35,12 +34,12 @@ class Navbar extends Component {
                         <h4 className="user">Jehf Doe</h4>
                     </div>
                     <ul id="options">
-                        <li className='toggle'><div onClick={this.toggle} >X</div></li>
-                        <li><Link to="/dashboard">Home</Link></li>
-                        <li><Link to="/dashboard/application">Application</Link></li>
-                        <li><Link to="/dashboard/essentials">Essentials</Link></li>
-                        <li><Link to="/dashboard/profile">Profile</Link></li>
-                        <li><Link to="/dashboard/support">Support</Link></li>
+                        <li className='toggle'><div className="toggle-content" onClick={this.toggle} >&times;</div></li>
+                        <li className="nav-item" onClick={this.toggle} ><Link to="/dashboard">Home</Link></li>
+                        <li className="nav-item" onClick={this.toggle} ><Link to="/dashboard/application">Application</Link></li>
+                        <li className="nav-item" onClick={this.toggle} ><Link to="/dashboard/essentials">Essentials</Link></li>
+                        <li className="nav-item" onClick={this.toggle} ><Link to="/dashboard/profile">Profile</Link></li>
+                        <li className="nav-item" onClick={this.toggle} ><Link to="/dashboard/support">Support</Link></li>
                     </ul>
                     <ul id="logout">
                         <li><Link to="/">Logout <FontAwesomeIcon icon="sign-out-alt" /></Link></li>

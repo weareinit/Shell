@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import { Form, Field } from 'formik'
-import Select from 'react-select';
 
 import { ApplicationValidation, ApplicationInitialValues } from "../../utils/validations";
-import CustomSelect from './customSelect';
+import {Select} from '../common';
 import axios from "axios";
 import "./style.css";
 import { readFile } from "fs";
@@ -130,7 +129,7 @@ class Application extends Component {
 
                 <div className="half-field-container">
 
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     name='gender'
                     id={"gener"}
@@ -148,7 +147,7 @@ class Application extends Component {
                       { value: 'female', label: 'female' },
                       { value: 'nb', label: 'Other/Non-Binary' },]}
                   />
-                  <CustomSelect
+                  <Select
                     className={"application-select-input-half"}
                     id={"race"}
                     test={values}
@@ -182,7 +181,7 @@ class Application extends Component {
 
                 <h3>School Information</h3>
                 <div className="half-field-container">
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     name="schoolName"
                     id={"schoolName"}
@@ -197,7 +196,7 @@ class Application extends Component {
                       { value: 'FIU', label: 'FIU' },]}
                   />
 
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     name="major"
                     id="major"
@@ -216,7 +215,7 @@ class Application extends Component {
                 </div>
 
                 <div className="half-field-container">
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     name="levelOfStudy"
                     id="levelOfStudy"
@@ -231,7 +230,7 @@ class Application extends Component {
                       { value: 'graduate', label: 'Graduate' },]}
                   />
 
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     id="graduationYear"
                     name="graduationYear"
@@ -253,7 +252,7 @@ class Application extends Component {
                 <h3>Profetional Information</h3>
 
                 <div className="full-field-container">
-                  <CustomSelect
+                  <Select
                     className="application-select-input-full"
                     id="areaOfFocus"
                     name="areaOfFocus"
@@ -325,7 +324,7 @@ class Application extends Component {
                 </div>
 
                 <div className="full-field-container">
-                  <CustomSelect
+                  <Select
                     className="application-select-input-full"
                     id="dietaryRestriction"
                     name="dietaryRestriction"
@@ -347,7 +346,7 @@ class Application extends Component {
                 </div>
 
                 <div className="half-field-container">
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     id="shirtSize"
                     name="shirtSize"
@@ -366,7 +365,7 @@ class Application extends Component {
                       { value: 'xxl', label: 'XXL' },
                       { value: 'xxxl', label: 'XXXL' }]}
                   />
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     id="needReimburesment"
                     name="needReimburesment"
@@ -384,7 +383,7 @@ class Application extends Component {
                 </div>
 
                 <div className="half-field-container">
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     id="firstTimeHack"
                     name="firstTimeHack"
@@ -399,7 +398,7 @@ class Application extends Component {
                       { value: 'no', label: 'No' },
                     ]}
                   />
-                  <CustomSelect
+                  <Select
                     className="application-select-input-half"
                     id="haveBeenToShell"
                     name="haveBeenToShell"
@@ -417,7 +416,7 @@ class Application extends Component {
                 </div>
 
                 <div className="full-field-container">
-                  <CustomSelect
+                  <Select
                     className="application-select-input-full"
                     id="howDidYouHear"
                     name="howDidYouHear"

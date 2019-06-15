@@ -1,8 +1,8 @@
 import React from 'react';
-import Select from 'react-select';
+import { default as ReactSelect } from 'react-select';
 
 
-class CustomSelect extends React.Component {
+class Select extends React.Component {
 
     handleChange = async (value) => {
         // this is going to call setFieldValue and manually update values.this.props.name
@@ -40,7 +40,7 @@ class CustomSelect extends React.Component {
             })
         }
         return (
-            <Select
+            <ReactSelect
                 styles={customStyles}
                 onChange={this.handleChange}
                 onBlur={this.handleBlur}
@@ -53,4 +53,4 @@ class CustomSelect extends React.Component {
     }
 }
 
-export default CustomSelect;
+export { Select };

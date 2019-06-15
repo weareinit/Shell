@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Button from "../../common/button";
-import { schedules } from "../../../data";
-import "./styles.css";
+import { Button } from "../../common";
+import schedule from "../../../config/data/schedule";
+import "../styles.css";
 
 class Schedule extends Component {
   constructor(props) {
@@ -12,14 +12,13 @@ class Schedule extends Component {
     this.changeDataSource = this.changeDataSource.bind(this);
   }
 
-  displaySchedule = event => {
+  displaySchedule = (event, id) => {
     let { time, description } = event;
     return (
-      <p id>
-        {time}
-        <br />
-        {description}
-      </p>
+      <div className="schedule-section-event" key={id}>
+        <p className=" schedule-section-event-title" >{time}</p>
+        <p className="landing-section-sub-heading">{description}</p>
+      </div>
     );
   };
 
@@ -28,7 +27,7 @@ class Schedule extends Component {
   };
 
   render() {
-    const { friday, saturday, sunday } = schedules;
+    const { friday, saturday, sunday } = schedule;
     let data = friday;
 
     switch (this.state.dataSource) {
@@ -48,6 +47,7 @@ class Schedule extends Component {
 
     return (
       <div className="schedule-container">
+        <h1 className="landing-section-title">Tentative Schedule</h1>
         <div className="schedule-button-container">
           <Button
             title="Friday, Sept 20"

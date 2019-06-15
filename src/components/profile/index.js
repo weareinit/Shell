@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {profileData} from '../../data/profile'
+import {profileData} from '../../config/data/profile'
 import './styles.css'
 
 class Profile extends Component {

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import Card from "../../common/cards";
-import "./styles.css";
+import { Card } from "../../common";
+import "../styles.css";
+
+import data from '../../../config/data/faq'
 
 class Faq extends Component {
 
@@ -10,52 +12,18 @@ class Faq extends Component {
     </div>
   );
 
-    render() {
-        return (
-            <div className='faqCardContainer'>
-                {data.map(card => {
-                    const { title, description } = card;
-                    return (<Card description={description} title={title} />)
-                })}
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className='faq-card-container'>
+        <h1 className="landing-section-title">Frequently asked Questions (FAQs)</h1>
+        {data.map(card => {
+          const { title, description } = card;
+          return (<Card description={description} title={title} />)
+        })}
+      </div>
+    )
+  }
 }
 
 export default Faq;
 
-// Dummy Data
-const data = [
-  {
-    title: "What is a Hackathon?",
-    description: "Insert description here"
-  },
-  {
-    title: "DO you have to hack to participate?",
-    description: "Insert description here"
-  },
-  {
-    title: "Will there be food?",
-    description: "Insert description here"
-  },
-  {
-    title: "Will there be Travel Reimbersement?",
-    description: "Insert description here"
-  },
-  {
-    title: "What is a Hackathon?",
-    description: "Insert description here"
-  },
-  {
-    title: "DO you have to hack to participate?",
-    description: "Insert description here"
-  },
-  {
-    title: "Will there be food?",
-    description: "Insert description here"
-  },
-  {
-    title: "Will there be Travel Reimbersement?",
-    description: "Insert description here"
-  }
-];

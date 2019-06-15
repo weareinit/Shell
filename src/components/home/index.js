@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { individualData, announcementCardInfo } from '../../data/home'
-import Card from '../common/cards'
+import { individualData, announcementCardInfo } from '../../config/data/home'
+import { Card } from '../common'
 import './styles.css'
 class Home extends Component {
 
@@ -24,8 +24,8 @@ class Home extends Component {
                 <div className='announcement-card-container'>
                     {announcementCardInfo.map(data =>
                         <Card title={data.title} date={data.date} description={data.description} />
-                        )}
-                    
+                    )}
+
                 </div>
             </div>
         )

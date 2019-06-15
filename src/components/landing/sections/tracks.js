@@ -2,30 +2,30 @@
 import React, { Component } from 'react'
 import { ReactComponent as Shell } from '../../../assets/frontpage/shell.svg'
 import '../styles.css'
-import {tracksData} from '../../../data'
+import tracks from '../../../config/data/tracks'
 
 
 
 class Tracks extends Component {
 
     //Fucntion that takes Data and renders card structure
-    trackCard = (trackParams) => {
+    TrackItem = (trackParams) => {
         let { title, path, details, trackDetails } = trackParams;
         return (
             <div className='track-card-container'>
-                <p>{title}</p>
+                <p className="track-card-item-title">{title}</p>
                 <img className="holder-circle" alt="cirlcePlaceholder"
                     src={path} />
-                <p style={{ textAlign: "center" }}>{details}</p>
+                <p className="track-card-item-description">{details}</p>
                 <div>
                     {trackDetails.map(techDetails => (
-                        <div className= 'shell-and-info'>
-                            <Shell className='shell' />
+                        <div className='shell-and-info'>
+                            <Shell className='shell-icon' />
                             <p>{techDetails}</p>
                         </div>
-                        
+
                     ))}
-                    
+
                 </div>
             </div>
         )
@@ -33,13 +33,12 @@ class Tracks extends Component {
 
     render() {
         return (
-            <div className='tracks-container'>
-                <p className="landing-section-content-text"> is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley.</p>
-                <div className='trackDesc'>
-                    {tracksData.map((data) => (
-                        this.trackCard(data)
+            <div className='tracks-section-container'>
+                <h1 className="landing-section-title">Learning tracks</h1>
+                <p className="landing-section-paragraph"> Sometimes the process of learning can get overwhelming. There’s so much to learn, and not enough time to devote to really diving in. When I get in a situation where I feel like giving up, or like I’ll never be able to learn what I want to learn in the time I have, it can help to turn to some outside inspiration.</p>
+                <div className='track-items-container'>
+                    {tracks.map((data) => (
+                        this.TrackItem(data)
                     ))}
 
                 </div>

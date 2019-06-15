@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import DashboardRoutes from './dashboardRoutes';
@@ -18,7 +18,7 @@ class Navigation extends Component {
 
     render() {
         return (
-            <div className="pages">
+            <Fragment>
                 <Switch>
                     <Route exact path="/" component={Landing} />
                     <Route exact path="/auth" render={
@@ -33,7 +33,7 @@ class Navigation extends Component {
                             <DashboardRoutes url={url} />
                         )} />
                 </Switch>
-            </div>
+            </Fragment>
         )
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './styles.css'
-import Card from '../common/cards'
-import {ParkingCardContent, ImportantItemsCardContent, LearningTracksCardContent} from './cardContent'
+import {Card} from '../common'
+import {ParkingCardContent, ImportantItemsCardContent, LearningTracksCardContent} from './contents'
 
 class Essentials extends Component {
   cardContent = () => (
