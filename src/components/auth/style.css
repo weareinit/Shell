@@ -64,7 +64,7 @@
 
 /*----------------------- CONTENTS STYLES --------------------------*/
 
-.container {
+.auth-container {
     overflow: hidden;
     height: 100vh;
     width: 100vw;
@@ -153,26 +153,12 @@
     display: none;
 }
 
-<<<<<<< HEAD
-=======
-h1 {
-    font-family: "Montserrat", sans-serif;
-    color: #9E8D7D;
-}
-
-p {
-    font-family: "Montserrat", sans-serif;
-    color: #9E8D7D;
-    font-weight: 300;
-}
-
->>>>>>> dev
 .welcomeMessage {
     text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
-    .container {
+    .auth-container {
         height: 100vh;
         width: 100vw;
     }

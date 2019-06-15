@@ -1,57 +1,55 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom';
-import { Formik, Form, Field } from 'formik'
-import { LogInValidation } from '../../utils/validations'
-import './style.css'
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { Formik, Form, Field } from "formik";
+import { LogInValidation } from "../../utils/validations";
+import "./style.css";
 
-import { LOGIN_PATH } from '../../config/api_paths'
-import request from '../../services/request'
+import { LOGIN_PATH } from "../../config/api_paths";
+import request from "../../services/request";
 
-const axios = require('axios');
+const axios = require("axios");
 
 async function makeGetRequest() {
   
   let res = await axios.post("https://immense-reef-66486.herokuapp.com/application/login",{email:"dev@fiu.edu",password:"devboidev"});
 
   let data = res.data;
-  console.log(data);
 }
 
 makeGetRequest();
 
 class LogIn extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
 
         }
 
-    }
+    };
 
     handleSubmit(values) {
 
         const data = {
             email: values.email,
             password: values.password
-        }
+        };
 
         request({
-            method: 'POST',
+            method: "POST",
             url: LOGIN_PATH,
             data
         }).then((resp) => {
-            console.log(resp);
             
         })
 
-    }
+    };
 
     render() {
         return (
             <Formik
                 initialValues={{
-                    email: '',
-                    password: ''
+                    email: "",
+                    password: ""
                 }}
                 validationSchema={LogInValidation}
                 onSubmit={this.handleSubmit}
@@ -63,7 +61,7 @@ class LogIn extends Component {
                                 name="email"
                                 type="email"
                                 className="field"
-                                style={touched.email && errors.email ? { border: '2px solid red' } : null}
+                                style={touched.email && errors.email ? { border: "2px solid red" } : null}
                                 placeholder="Email"
                             />
                         </div>
@@ -72,7 +70,7 @@ class LogIn extends Component {
                                 name="password"
                                 type="password"
                                 className="field"
-                                style={touched.password && errors.password ? { border: '2px solid red' } : null}
+                                style={touched.password && errors.password ? { border: "2px solid red" } : null}
                                 placeholder="Password"
                             />
                         </div>
@@ -83,7 +81,7 @@ class LogIn extends Component {
 
                 )}
             />
-        )
+        );
     }
 }
 

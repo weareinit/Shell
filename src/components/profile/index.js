@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import {profileData} from '../../data/profile'
-import './styles.css'
+import React, { Component } from "react";
+import {profileData} from "../../config/data/profile";
+import "./styles.css";
 
 class Profile extends Component {
 
@@ -8,11 +8,11 @@ class Profile extends Component {
         return (
             <div>
                 <h1 className="dashboard-page-title">Profile</h1>
-                <div className='profile-details-container'>
+                <div className="profile-details-container">
                     <div>
                         <h4>Avatar</h4>
                         <img className="holder-circle" alt="cirlcePlaceholder"
-                            src='../assets/frontpage/shell.svg' />
+                            src="../assets/frontpage/shell.svg" />
                     </div>
                     <div>
                         <h4>Full Name</h4>
@@ -24,9 +24,9 @@ class Profile extends Component {
                     </div>
                 </div>
                 <div>
-                    <div className='qr-info'>
+                    <div className="qr-info">
                         <img className="holder-circle" alt="qrPlaceholder"
-                            src='../assets/qrcode.png' />
+                            src="../assets/qrcode.png" />
                         <div>
                             <p>Brief description of the QR code here lol Litter kitter
                                 kitty litty little kitten big roar roar feed me mice cat
@@ -39,7 +39,7 @@ class Profile extends Component {
                 </div>
 
             </div>
-        )
+        );
     }
 }
 

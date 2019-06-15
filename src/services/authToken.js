@@ -1,26 +1,26 @@
 /**
 Handles user token manupilations 
  **/
-import qs from 'query-string';
+import qs from "query-string";
 
-const name = 'JWT';
+const name = "JWT";
 
-saveToken = token => (
+const saveToken = token => (
     localStorage.setItem(name, token)
 );
 
-getToken = () => (
+const getToken = () => (
     localStorage.getItem(name)
 );
 
-removeToken = () => (
+const removeToken = () => (
     localStorage.removeItem(name)
 );
 
-getObjToken = () => {
+const getObjToken = () => {
     const token = localStorage.getItem(name)
     return qs.parse(token);
-}
+};
 
 export default { saveToken, getToken, getObjToken, removeToken };
 
