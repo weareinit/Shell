@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Live extends Component {
 
@@ -7,7 +7,7 @@ class Live extends Component {
             <div>
                 Live
             </div>
-        )
+        );
     }
 }
 

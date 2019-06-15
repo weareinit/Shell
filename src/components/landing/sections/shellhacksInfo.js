@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "../styles.css";
 
 const Info = () => {
@@ -12,6 +12,6 @@ const Info = () => {
                             <br /><br />Our mission is to provide students with the opportunity to learn about new technologies, create innovative projects, and share their work with the community!</p>
             </div>
         </div>
-    )
+    );
 }
 export default Info;

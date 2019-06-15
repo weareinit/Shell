@@ -1,40 +1,40 @@
-import React, { Component, Fragment } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom';
-import './styles.css'
+import React, { Component, Fragment } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import "./styles.css";
 class Navbar extends Component {
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             open: false
         }
-    }
+    };
 
 
     toggle = () => {
-        this.setState((prevState) => ({ open: !prevState.open }))
-    }
+        this.setState((prevState) => ({ open: !prevState.open }));
+    };
 
 
 
     render() {
         return (
             <Fragment>
-                <header className='menu'>
-                    <div className='mobile-logo'>
+                <header className="menu">
+                    <div className="mobile-logo">
 
                     </div>
-                    <div onClick={this.toggle} class='mobile-btn'>☰</div>
+                    <div onClick={this.toggle} class="mobile-btn">☰</div>
                 </header>
-                <div className={`nav ` + (this.state.open ? '' : ' hide')}>
-                    <div className='desktop-logo'>
-                        <img id="dashboard-logo" className="" alt="placeholder" src={require('../../assets/frontpage/shellhacks.svg')} />
-                        <img id="dashboard-shell" className="" alt="placeholder" src={require('../../assets/frontpage/shell.svg')} />
+                <div className={`nav ` + (this.state.open ? "" : " hide")}>
+                    <div className="desktop-logo">
+                        <img id="dashboard-logo" className="" alt="placeholder" src={require("../../assets/frontpage/shellhacks.svg")} />
+                        <img id="dashboard-shell" className="" alt="placeholder" src={require("../../assets/frontpage/shell.svg")} />
                         <h4 className="user">Jehf Doe</h4>
                     </div>
                     <ul id="options">
-                        <li className='toggle'><div className="toggle-content" onClick={this.toggle} >&times;</div></li>
+                        <li className="toggle"><div className="toggle-content" onClick={this.toggle} >&times;</div></li>
                         <li className="nav-item" onClick={this.toggle} ><Link to="/dashboard">Home</Link></li>
                         <li className="nav-item" onClick={this.toggle} ><Link to="/dashboard/application">Application</Link></li>
                         <li className="nav-item" onClick={this.toggle} ><Link to="/dashboard/essentials">Essentials</Link></li>

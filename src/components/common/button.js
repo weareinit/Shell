@@ -9,10 +9,10 @@ const Button = props => {
     action(id);
   };
   return (
-    <button onClick={buttonClicked} className="submit-button">
+    <button onClick={buttonClicked} className="submit-button" id={props.styleId}>
       <h3>{title}</h3>
     </button>
   );
 };
 
-export { Button};
+export { Button };

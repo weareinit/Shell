@@ -1,28 +1,28 @@
 export const individualData = {
-    fullName : 'Andrew Scott',
+    fullName : "Andrew Scott",
     score: 500,
-    status: 'Incomplete'
+    status: "Incomplete"
 };
 
 export const announcementCardInfo = [
     {
         title: "FOOOOOD!",
-        date: 'Today',
-        description: 'Come get your free food!'
+        date: "Today",
+        description: "Come get your free food!"
     },
     {
         title: "Free Stuff",
-        date: 'Yestermorrow',
-        description: 'Come get your free Stuff!'
+        date: "Yestermorrow",
+        description: "Come get your free Stuff!"
     },
     {
         title: "Workshop moved",
-        date: 'Tomorrow',
-        description: 'Workshop has been moved to a new room.'
+        date: "Tomorrow",
+        description: "Workshop has been moved to a new room."
     },
     {
         title: "This is a title",
-        date: 'Someday',
-        description: 'This might be a decription.'
+        date: "Someday",
+        description: "This might be a decription."
     },
-]
+];

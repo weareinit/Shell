@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
-import { Form, Field } from 'formik'
+import { Form, Field } from "formik";
 
 import { ApplicationValidation, ApplicationInitialValues } from "../../utils/validations";
-import {Select} from '../common';
+import { Select, Button } from "../common";
 import axios from "axios";
 import "./style.css";
 import { readFile } from "fs";
@@ -28,25 +28,23 @@ class Application extends Component {
             phoneNumber: values.phoneNumber
           }
         );
-        console.log(response.data);
         resetForm();
       } catch (error) {
-        console.log(error);
       }
     };
     apply();
-  }
+  };
 
   min = () => {
-    let date = new Date()
-  }
+    let date = new Date();
+  };
 
   max = () => {
-    let date = new Date()
+    let date = new Date();
 
-    let year = date.getFullYear()
-    let month = date.getMonth() + 1
-    let day = date.getDate()
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
 
     if (month.toString().length < 2) {
       month = "0" + month
@@ -55,10 +53,11 @@ class Application extends Component {
       day = "0" + day
     }
 
-    let maxDate = year + "-" + month + "-" + day
+    let maxDate = year + "-" + month + "-" + day;
 
-    return maxDate
-  }
+    return maxDate;
+  };
+
   render() {
     return (
       <div id="application">
@@ -91,7 +90,7 @@ class Application extends Component {
                     name="firstName"
                     type="text"
 
-                    style={touched.firstName && errors.firstName ? { border: '2px solid red' } : null}
+                    style={touched.firstName && errors.firstName ? { border: "2px solid red" } : null}
                     placeholder="First Name"
                   />
 
@@ -99,7 +98,7 @@ class Application extends Component {
                     className="application-input-half"
                     name="lastName"
                     type="text"
-                    style={touched.lastName && errors.lastName ? { border: '2px solid red' } : null}
+                    style={touched.lastName && errors.lastName ? { border: "2px solid red" } : null}
                     placeholder="Last Name"
                   />
                 </div>
@@ -109,7 +108,7 @@ class Application extends Component {
                     className="application-input-full"
                     name="email"
                     type="email"
-                    style={touched.email && errors.email ? { border: '2px solid red' } : null}
+                    style={touched.email && errors.email ? { border: "2px solid red" } : null}
                     placeholder="School Email"
                   />
                 </div>
@@ -123,7 +122,7 @@ class Application extends Component {
                     placeholder="DOB: "
                     max={() => (this.max())}
 
-                    style={touched.dob && errors.dob ? { border: '2px solid red' } : null}
+                    style={touched.dob && errors.dob ? { border: "2px solid red" } : null}
                   />
                 </div>
 
@@ -131,10 +130,10 @@ class Application extends Component {
 
                   <Select
                     className="application-select-input-half"
-                    name='gender'
+                    name="gender"
                     id={"gener"}
                     test={values}
-                    name='gender'
+                    name="gender"
                     value={values.gender}
                     onBlur={setFieldTouched}
                     onChange={setFieldValue}
@@ -143,15 +142,15 @@ class Application extends Component {
                     placeholder="Gender"
                     onBlur={setFieldTouched}
                     options={[
-                      { value: 'male', label: 'Male' },
-                      { value: 'female', label: 'female' },
-                      { value: 'nb', label: 'Other/Non-Binary' },]}
+                      { value: "male", label: "Male" },
+                      { value: "female", label: "female" },
+                      { value: "nb", label: "Other/Non-Binary" },]}
                   />
                   <Select
                     className={"application-select-input-half"}
                     id={"race"}
                     test={values}
-                    name='race'
+                    name="race"
                     value={values.race}
                     onBlur={setFieldTouched}
                     onChange={setFieldValue}
@@ -159,12 +158,12 @@ class Application extends Component {
                     placeholder="Race/Ethnicity"
                     error={errors.race}
                     options={[
-                      { value: 'white', label: 'White' },
-                      { value: 'black', label: 'Black or African American' },
-                      { value: 'hispanic', label: 'Hispanic or Latin' },
-                      { value: 'native', label: 'Native American' },
-                      { value: 'asian', label: 'Asian' },
-                      { value: 'other', label: 'Other' }]}
+                      { value: "white", label: "White" },
+                      { value: "black", label: "Black or African American" },
+                      { value: "hispanic", label: "Hispanic or Latin" },
+                      { value: "native", label: "Native American" },
+                      { value: "asian", label: "Asian" },
+                      { value: "other", label: "Other" }]}
 
                   />
                 </div>
@@ -174,7 +173,7 @@ class Application extends Component {
                     className="application-input-full"
                     name="phoneNumber"
                     type="text"
-                    style={touched.phoneNumber && errors.phoneNumber ? { border: '2px solid red' } : null}
+                    style={touched.phoneNumber && errors.phoneNumber ? { border: "2px solid red" } : null}
                     placeholder="Phone Number"
                   />
                 </div>
@@ -192,8 +191,8 @@ class Application extends Component {
                     error={errors.schoolName}
                     placeholder="School Name"
                     options={[
-                      { value: 'UM', label: 'UM' },
-                      { value: 'FIU', label: 'FIU' },]}
+                      { value: "UM", label: "UM" },
+                      { value: "FIU", label: "FIU" },]}
                   />
 
                   <Select
@@ -207,10 +206,10 @@ class Application extends Component {
                     touched={touched.major}
                     error={errors.major}
                     options={[
-                      { value: 'cs', label: 'Computer Sciences' },
-                      { value: 'it', label: 'Information Technology' },
-                      { value: 'ce', label: 'Computer Engineering' },
-                      { value: 'other', label: 'Other' },]}
+                      { value: "cs", label: "Computer Sciences" },
+                      { value: "it", label: "Information Technology" },
+                      { value: "ce", label: "Computer Engineering" },
+                      { value: "other", label: "Other" },]}
                   />
                 </div>
 
@@ -226,8 +225,8 @@ class Application extends Component {
                     touched={touched.levelOfStudy}
                     error={errors.levelOfStudy}
                     options={[
-                      { value: 'undergrade', label: 'Undergraduate' },
-                      { value: 'graduate', label: 'Graduate' },]}
+                      { value: "undergrade", label: "Undergraduate" },
+                      { value: "graduate", label: "Graduate" },]}
                   />
 
                   <Select
@@ -241,11 +240,11 @@ class Application extends Component {
                     touched={touched.graduationYear}
                     error={errors.graduationYear}
                     options={[
-                      { value: '2019', label: '2019' },
-                      { value: '2020', label: '2020' },
-                      { value: '2020', label: '2021' },
-                      { value: '2020', label: '2022' },
-                      { value: '2020', label: '2023' },]}
+                      { value: "2019", label: "2019" },
+                      { value: "2020", label: "2020" },
+                      { value: "2020", label: "2021" },
+                      { value: "2020", label: "2022" },
+                      { value: "2020", label: "2023" },]}
                   />
                 </div>
 
@@ -263,13 +262,13 @@ class Application extends Component {
                     touched={touched.areaOfFocus}
                     error={errors.areaOfFocus}
                     options={[
-                      { value: 'web developer', label: 'Web Developer' },
-                      { value: 'mobile developer', label: 'Mobile Developer' },
-                      { value: 'frontend', label: 'Front-end Developer' },
-                      { value: 'backend', label: 'Back-end Developer' },
-                      { value: 'designer', label: 'UI/UX Designer' },
-                      { value: 'entrepreneur', label: 'Entrepreneur' },
-                      { value: 'other', label: 'Other' }]}
+                      { value: "web developer", label: "Web Developer" },
+                      { value: "mobile developer", label: "Mobile Developer" },
+                      { value: "frontend", label: "Front-end Developer" },
+                      { value: "backend", label: "Back-end Developer" },
+                      { value: "designer", label: "UI/UX Designer" },
+                      { value: "entrepreneur", label: "Entrepreneur" },
+                      { value: "other", label: "Other" }]}
 
                   />
 
@@ -280,7 +279,7 @@ class Application extends Component {
                     className="application-input-half input-file"
                     name="resume"
                     type="file"
-                    style={touched.resume && errors.resume ? { border: '2px solid red' } : null}
+                    style={touched.resume && errors.resume ? { border: "2px solid red" } : null}
                     placeholder="Resume"
                     onBlur={() => {
                       let reader = new FileReader();
@@ -292,7 +291,7 @@ class Application extends Component {
                     name="linkedIn"
                     type="url"
                     placeholder="LinkedIn"
-                    style={touched.linkedIn && errors.linkedIn ? { border: '2px solid red' } : null}
+                    style={touched.linkedIn && errors.linkedIn ? { border: "2px solid red" } : null}
                   />
                 </div>
 
@@ -302,14 +301,14 @@ class Application extends Component {
                     name="github"
                     type="url"
                     placeholder="Github"
-                    style={touched.github && errors.github ? { border: '2px solid red' } : null}
+                    style={touched.github && errors.github ? { border: "2px solid red" } : null}
                   />
                   <Field
                     className="application-input-half"
                     name="portfolio"
                     type="url"
                     placeholder="Potfolio"
-                    style={touched.portfolio && errors.portfolio ? { border: '2px solid red' } : null}
+                    style={touched.portfolio && errors.portfolio ? { border: "2px solid red" } : null}
                   />
                 </div>
 
@@ -320,7 +319,7 @@ class Application extends Component {
                     type="text"
                     placeholder="Reason for attending?"
                     name="reasonForAttending"
-                    style={touched.reasonForAttending && errors.reasonForAttending ? { border: '2px solid red' } : null} />
+                    style={touched.reasonForAttending && errors.reasonForAttending ? { border: "2px solid red" } : null} />
                 </div>
 
                 <div className="full-field-container">
@@ -335,13 +334,13 @@ class Application extends Component {
                     touched={touched.dietaryRestriction}
                     error={errors.dietaryRestriction}
                     options={[
-                      { value: 'xs', label: 'XS' },
-                      { value: 's', label: 'S' },
-                      { value: 'm', label: 'M' },
-                      { value: 'l', label: 'L' },
-                      { value: 'xl', label: 'XL' },
-                      { value: 'xxl', label: 'XXL' },
-                      { value: 'xxxl', label: 'XXXL' }]}
+                      { value: "xs", label: "XS" },
+                      { value: "s", label: "S" },
+                      { value: "m", label: "M" },
+                      { value: "l", label: "L" },
+                      { value: "xl", label: "XL" },
+                      { value: "xxl", label: "XXL" },
+                      { value: "xxxl", label: "XXXL" }]}
                   />
                 </div>
 
@@ -357,13 +356,13 @@ class Application extends Component {
                     touched={touched.shirtSize}
                     error={errors.shirtSize}
                     options={[
-                      { value: 'xs', label: 'XS' },
-                      { value: 's', label: 'S' },
-                      { value: 'm', label: 'M' },
-                      { value: 'l', label: 'L' },
-                      { value: 'xl', label: 'XL' },
-                      { value: 'xxl', label: 'XXL' },
-                      { value: 'xxxl', label: 'XXXL' }]}
+                      { value: "xs", label: "XS" },
+                      { value: "s", label: "S" },
+                      { value: "m", label: "M" },
+                      { value: "l", label: "L" },
+                      { value: "xl", label: "XL" },
+                      { value: "xxl", label: "XXL" },
+                      { value: "xxxl", label: "XXXL" }]}
                   />
                   <Select
                     className="application-select-input-half"
@@ -376,8 +375,8 @@ class Application extends Component {
                     touched={touched.needReimburesment}
                     error={errors.needReimburesment}
                     options={[
-                      { value: 'yes', label: 'Yes' },
-                      { value: 'no', label: 'No' },
+                      { value: "yes", label: "Yes" },
+                      { value: "no", label: "No" },
                     ]}
                   />
                 </div>
@@ -394,8 +393,8 @@ class Application extends Component {
                     touched={touched.firstTimeHack}
                     error={errors.firstTimeHack}
                     options={[
-                      { value: 'yes', label: 'Yes' },
-                      { value: 'no', label: 'No' },
+                      { value: "yes", label: "Yes" },
+                      { value: "no", label: "No" },
                     ]}
                   />
                   <Select
@@ -409,8 +408,8 @@ class Application extends Component {
                     touched={touched.haveBeenToShell}
                     error={errors.haveBeenToShell}
                     options={[
-                      { value: 'yes', label: 'Yes' },
-                      { value: 'no', label: 'No' },
+                      { value: "yes", label: "Yes" },
+                      { value: "no", label: "No" },
                     ]}
                   />
                 </div>
@@ -427,8 +426,8 @@ class Application extends Component {
                     touched={touched.howDidYouHear}
                     error={errors.howDidYouHear}
                     options={[
-                      { value: 'instagram', label: 'Instagram' },
-                      { value: 'facebook', label: 'Facebook' },
+                      { value: "instagram", label: "Instagram" },
+                      { value: "facebook", label: "Facebook" },
                     ]}
                   />
                 </div>
@@ -439,19 +438,17 @@ class Application extends Component {
                     <p> <input
                       name="isGoing"
                       type="checkbox"
-                      style={touched.mlh && errors.mlh ? { border: '2px solid red' } : null}
+                      style={touched.mlh && errors.mlh ? { border: "2px solid red" } : null}
                     />I confirm that I have read and agree with the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a></p>
                     <p>  <input
                       name="isGoing"
                       type="checkbox"
-                      style={touched.fiu && errors.fiu ? { border: '2px solid red' } : null}
+                      style={touched.fiu && errors.fiu ? { border: "2px solid red" } : null}
                     />I confirm that I have read and agree with the <a href="https://studentaffairs.fiu.edu/get-support/student-conduct-and-conflict-resolution/student-code-of-conduct%20/index.php" target="_blank">FIU Code of Conduct</a></p>
                   </div>
 
                 </div>
-                <button className="submit-button" type="submit" disabled={isSubmitting}>
-                  Submit
-              </button>
+                <Button styleId="application-submit-button" title="Submit" />
               </Form>
 
             </div>

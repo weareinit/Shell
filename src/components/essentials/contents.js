@@ -1,19 +1,19 @@
-import React from 'react'
-import './styles.css'
-import tracks from '../../config/data/tracks'
+import React from "react";
+import "./styles.css";
+import tracks from "../../config/data/tracks";
 
 const essentialItems = ["hell", "there", "this", "is ", "a ", "test"];
-const optionalItems = ["hell", "there", "this", "is ", "a ", "test"]
+const optionalItems = ["hell", "there", "this", "is ", "a ", "test"];
 
 
 export const ParkingCardContent = (
-    <div className='essentials-parking-card-content'>
-        <div className='arena-info-container'>
-            <img className="arena-maps-image" src="https://seatgeek.com/maps/plot/v5143-3939-1/1024x1024/concert-oceanfirst-bank-center.png" alt='mapsImage' />
+    <div className="essentials-parking-card-content">
+        <div className="arena-info-container">
+            <img className="arena-maps-image" src="https://seatgeek.com/maps/plot/v5143-3939-1/1024x1024/concert-oceanfirst-bank-center.png" alt="mapsImage" />
             <div className="parking-content">
                 <h3>Shellhacks is located at: </h3>
                 <div>
-                    <p>FIU's Ocean Bank Convocation Center
+                    <p>FIU"s Ocean Bank Convocation Center
                         1180 SW 113th Ave, Miami, FL</p>
                     <p>Direction 1 Here</p>
                     <p>Direction 2 Here</p>
@@ -32,7 +32,7 @@ export const ParkingCardContent = (
             <p>something else here</p>
         </div>
     </div>
-)
+);
 
 export const ImportantItemsCardContent = (
     <div className="essentials-items-card-content">
@@ -40,7 +40,7 @@ export const ImportantItemsCardContent = (
         shellhacks and what they usually tento to be. Also warnings
         and a few things that ongoing hacks should know. </div>
         <div className="item-checklists">
-            <div className='essential-items-list'>
+            <div className="essential-items-list">
                 <h3>Essential Items</h3>
                 <ul>
                     {essentialItems.map((item) =>
@@ -48,7 +48,7 @@ export const ImportantItemsCardContent = (
                     )}
                 </ul>
             </div>
-            <div className='optional-items-list'>
+            <div className="optional-items-list">
                 <h3>Optional Items</h3>
                 <ul>
                     {optionalItems.map((item) =>
@@ -58,7 +58,7 @@ export const ImportantItemsCardContent = (
             </div>
         </div>
     </div>
-)
+);
 
 export const LearningTracksCardContent = (
     <div className="learning-tracks-container">
@@ -91,4 +91,4 @@ export const LearningTracksCardContent = (
         )}
 
     </div>
-)
+);

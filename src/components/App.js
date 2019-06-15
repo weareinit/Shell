@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import Navigation from '../navigation'
+import React, { Component } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Navigation from "../navigation";
 
-import '../css/App.css'
+import "../css/App.css";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheckSquare, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faCheckSquare, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faCheckSquare, faSignOutAlt)
+library.add(faCheckSquare, faSignOutAlt);
 
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
     this.state = {
       isLoggedIn: false,
     }
-  }
+  };
 
   render() {
     return (
@@ -26,8 +26,8 @@ class App extends Component {
           <Navigation />
         </BrowserRouter>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default App
+export default App;

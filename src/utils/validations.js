@@ -1,5 +1,5 @@
 import * as Yup from 'yup'
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 /**
  * login validation 
@@ -10,7 +10,7 @@ export const LogInValidation = Yup.object().shape({
     .required("Email is required"),
   password: Yup.string()
     .required("Password is required")
-})
+});
 
 
 /**
@@ -31,7 +31,7 @@ export const SignUpValidation = Yup.object().shape({
     .required("Password is required"),
   confirmPassword: Yup.string()
     .required("Please confirm your password")
-})
+});
 
 /**
  * application validation 
@@ -67,7 +67,7 @@ export const ApplicationValidation = Yup.object().shape({
   needReimburesment: Yup.string().required(),
   mlh: Yup.string().required("You must agree to the MLH Code of Conduct."),
   fiu: Yup.string().required("You must agree to the FIU Code of Conduct.")
-})
+});
 
 export const ApplicationInitialValues = {
   //personal info
@@ -99,6 +99,6 @@ export const ApplicationInitialValues = {
   needReimburesment: "",
   mlh: "DISAGREE",
   fiu: "DISAGREE",
-}
+};
 
 

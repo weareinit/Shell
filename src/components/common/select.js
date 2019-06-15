@@ -1,5 +1,5 @@
-import React from 'react';
-import { default as ReactSelect } from 'react-select';
+import React from "react";
+import { default as ReactSelect } from "react-select";
 
 
 class Select extends React.Component {
@@ -19,26 +19,24 @@ class Select extends React.Component {
 
         let notIsValid = this.props.touched && this.props.error;
 
-        console.log(notIsValid)
-
         const customStyles = {
             control: (base, state) => ({
                 ...base,
                 // state.isFocused can display different borderColor if you need it
-                borderWidth: '2px',
-                borderStyle: ' solid ',
-                borderRadius: '8px',
+                borderWidth: "2px",
+                borderStyle: " solid ",
+                borderRadius: "8px",
                 borderColor: state.isFocused ?
-                    '#ddd' : notIsValid ?
-                        'red' : '#ddd',
+                    "#ddd" : notIsValid ?
+                        "red" : "#ddd",
                 // overwrittes hover style
-                '&:hover': {
+                "&:hover": {
                     borderColor: state.isFocused ?
-                        '#ddd' : notIsValid ?
-                            'red' : '#ddd'
+                        "#ddd" : notIsValid ?
+                            "red" : "#ddd"
                 }
             })
-        }
+        };
         return (
             <ReactSelect
                 styles={customStyles}
@@ -49,7 +47,7 @@ class Select extends React.Component {
                 setValue={this.props.value}
                 placeholder={this.props.placeholder}
             />
-        )
+        );
     }
 }
 

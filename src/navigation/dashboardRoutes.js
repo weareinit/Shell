@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
-import Navbar from '../components/navbar'
+import Navbar from "../components/navbar";
 
-import Application from '../components/application'
-import Home from '../components/home'
-import Support from '../components/support'
-import Essentials from '../components/essentials'
-import Profile from '../components/profile'
-import './style.css'
+import Application from "../components/application";
+import Home from "../components/home";
+import Support from "../components/support";
+import Essentials from "../components/essentials";
+import Profile from "../components/profile";
+import "./style.css";
+
 class Dashboard extends Component {
 
     render() {
@@ -24,8 +25,8 @@ class Dashboard extends Component {
                     <Route path={`${url}/essentials`} component={Essentials} />
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default Dashboard
+export default Dashboard;

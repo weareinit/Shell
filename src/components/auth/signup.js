@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { Formik, Form, Field } from 'formik'
-import { SignUpValidation } from '../../utils/validations'
-import { REGISTER_PATH } from '../../config/api_paths'
-import request from '../../services/request'
-import './style.css'
+import React, { Component } from "react";
+import { Formik, Form, Field } from "formik";
+import { SignUpValidation } from "../../utils/validations";
+import { REGISTER_PATH } from "../../config/api_paths";
+import request from "../../services/request";
+import "./style.css";
 
 class SignUp extends Component {
     // constructor(props) {
@@ -21,29 +21,28 @@ class SignUp extends Component {
         }
 
         if (values.password !== values.confirmPassword) {
-            alert("Passwords do not match!")
+            alert("Passwords do not match!");
         } else {
             request({
-                method: 'POST',
+                method: " POST",
                 url: REGISTER_PATH,
                 data
             }).then((resp) => {
-                console.log(resp);
                 resetForm()
                 this.props.nextPath();
-            })
+            });
         }
-    }
+    };
 
     render() {
         return (
             <Formik
                 initialValues={{
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    password: '',
-                    confirmPassword: ''
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: "",
+                    confirmPassword: ""
                 }}
                 validationSchema={SignUpValidation}
                 onSubmit={this.handleSubmit}
@@ -55,7 +54,7 @@ class SignUp extends Component {
                                 name="firstName"
                                 type="text"
                                 className="field"
-                                style={touched.firstName && errors.firstName ? { border: '2px solid red' } : null}
+                                style={touched.firstName && errors.firstName ? { border: "2px solid red" } : null}
                                 placeholder="Enter first name"
                             />
                         </div>
@@ -64,7 +63,7 @@ class SignUp extends Component {
                                 name="lastName"
                                 type="text"
                                 className="field"
-                                style={touched.lastName && errors.lastName ? { border: '2px solid red' } : null}
+                                style={touched.lastName && errors.lastName ? { border: "2px solid red" } : null}
                                 placeholder="Enter last name"
                             />
                         </div>
@@ -73,7 +72,7 @@ class SignUp extends Component {
                                 name="email"
                                 type="email"
                                 className="field"
-                                style={touched.email && errors.email ? { border: '2px solid red' } : null}
+                                style={touched.email && errors.email ? { border: "2px solid red" } : null}
                                 placeholder="Enter your school email"
                             />
                         </div>
@@ -82,7 +81,7 @@ class SignUp extends Component {
                                 name="password"
                                 type="password"
                                 className="field"
-                                style={touched.password && errors.password ? { border: '2px solid red' } : null}
+                                style={touched.password && errors.password ? { border: "2px solid red" } : null}
                                 placeholder="Password"
                             />
                         </div>
@@ -91,7 +90,7 @@ class SignUp extends Component {
                                 name="confirmPassword"
                                 type="password"
                                 className="field"
-                                style={touched.confirmPassword && errors.confirmPassword ? { border: '2px solid red' } : null}
+                                style={touched.confirmPassword && errors.confirmPassword ? { border: "2px solid red" } : null}
                                 placeholder="Confirm password"
                             />
                         </div>
@@ -101,8 +100,8 @@ class SignUp extends Component {
                     </Form>
                 )}
             />
-        )
+        );
     }
 }
 
-export default SignUp
+export default SignUp;

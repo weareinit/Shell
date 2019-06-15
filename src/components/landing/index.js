@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import Faq from './sections/faq'
-import Tracks from './sections/tracks'
-import Sponsors from './sections/sponsors'
-import Schedule from './sections/schedule';
-import MainSection from './sections/main';
-import Info from './sections/shellhacksInfo';
+import Faq from "./sections/faq";
+import Tracks from "./sections/tracks";
+import Sponsors from "./sections/sponsors";
+import Schedule from "./sections/schedule";
+import MainSection from "./sections/main";
+import Info from "./sections/shellhacksInfo";
 
 
-import './styles.css'
-import { GradientBackground, WaveBackground } from '../common';
+import "./styles.css";
+import { GradientBackground, WaveBackground } from "../common";
 
 
 class Landing extends Component {
@@ -18,13 +18,13 @@ class Landing extends Component {
 
         this.goToAuth = this.goToAuth.bind(this);
         this.goToSponsor = this.goToSponsor.bind(this);
-    }
+    };
 
     goToAuth = () => {
-        this.props.history.push('/auth')
+        this.props.history.push("/auth");
     }
     goToSponsor = () => {
-        this.props.history.push('/sponsor')
+        this.props.history.push("/sponsor");
     }
 
     render() {
@@ -76,7 +76,7 @@ class Landing extends Component {
                     </section>
                 </GradientBackground>
             </div>
-        )
+        );
     }
 }
 
