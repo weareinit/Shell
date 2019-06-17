@@ -4,7 +4,7 @@ class Live extends Component {
 
     render() {
         return (
-            <div>
+            <div >
                 Live
             </div>
         );

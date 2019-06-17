@@ -12,7 +12,7 @@
     --shell-gradient: linear-gradient(#22C3D5, #172A61);
     --heading: 700 2em "monserat", sans-serif;
     --sub-heading: 600 1.3em "monserat", sans-serif;
-    --paragraph: 400 1em/1.5em "monserat", sans-serif;
+    --paragraph: 400 16px/1.5em "monserat", sans-serif;
 }
 
 html,

@@ -60,7 +60,7 @@ class Application extends Component {
 
   render() {
     return (
-      <div id="application">
+      <div className="dashboard-page">
         <h1 className="page-title">Application</h1>
         <Formik
           initialValues={ApplicationInitialValues}

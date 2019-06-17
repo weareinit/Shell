@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import support from "../../config/data/support.json";
 import { Card } from "../common";
+import "./styles.css";
+
 class Support extends Component {
 
     render() {
         return (
-            <div>
+            <div className="dashboard-page">
                 <h1 className="page-title">Support</h1>
-                <div>
+                <div className="support-container">
                     <h3>We are sorry to hear that you having issues. Here"s a couple of solutions to common problems</h3>
                     <div>
                         {support.map(data => {
