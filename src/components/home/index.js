@@ -7,6 +7,7 @@ class Home extends Component {
     render() {
         let { fullName, score, status } = individualData;
         return (
+            <div className="dashboard-page">
             <div id="home">
                 <h1 className="dashboard-page-title">Home</h1>
 
@@ -27,6 +28,7 @@ class Home extends Component {
                     )}
 
                 </div>
+            </div>
             </div>
         );
     }

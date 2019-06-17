@@ -6,10 +6,13 @@ import Sponsors from "./sections/sponsors";
 import Schedule from "./sections/schedule";
 import MainSection from "./sections/main";
 import Info from "./sections/shellhacksInfo";
+import Thank from "./sections/thanks";
 
 
 import "./styles.css";
-import { GradientBackground, WaveBackground } from "../common";
+import { GradientBackground, WaveBackground, Footer } from "../common";
+
+
 
 
 class Landing extends Component {
@@ -72,8 +75,9 @@ class Landing extends Component {
 
                     {/* FOOTER SECTION */}
                     <section className="landing-section" >
-                        <h1 className="landing-section-title">Thank you for love ShellHacks!</h1>
+                        <Thank />
                     </section>
+                    <Footer />
                 </GradientBackground>
             </div>
         );
