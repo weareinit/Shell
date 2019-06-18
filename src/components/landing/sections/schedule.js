@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "../../common";
-import schedule from "../../../config/data/schedule";
+import schedules from "../../../config/data/schedule";
 import "../styles.css";
 
 class Schedule extends Component {
@@ -12,22 +12,19 @@ class Schedule extends Component {
     this.changeDataSource = this.changeDataSource.bind(this);
   }
 
-  displaySchedule = (event, id) => {
-    let { time, description } = event;
-    return (
-      <div className="schedule-section-event" key={id}>
-        <p className=" schedule-section-event-title" >{time}</p>
-        <p className="landing-section-sub-heading">{description}</p>
-      </div>
-    );
-  };
 
   changeDataSource = i => {
     this.setState({ dataSource: i });
   };
 
   render() {
-    const { friday, saturday, sunday } = schedule;
+
+    let ScheduleItem = ({ time, description }, id) => (<div className="schedule-section-event" key={id}>
+      <p className=" schedule-section-event-title" >{time}</p>
+      <p className="schedule-section-event-description">{description}</p>
+    </div>)
+
+    const { friday, saturday, sunday, defaultData } = schedules;
     let data = friday;
 
     switch (this.state.dataSource) {
@@ -41,7 +38,7 @@ class Schedule extends Component {
         data = sunday;
         break;
       default:
-        data = 'friendsday';
+        data = defaultData;
         break;
     }
 
@@ -66,7 +63,7 @@ class Schedule extends Component {
           />
         </div>
 
-        {data.map((item, id) => this.displaySchedule(item, id))}
+        {data.map((item, id) => ScheduleItem(item, id))}
       </div>
     );
   }

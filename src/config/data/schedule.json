@@ -1,4 +1,8 @@
 {
+    " defaultData": [{
+        "time": "Event time",
+        "description": " No event was scheduled for this date"
+    }],
     "friday": [{
             "time": "3:00-8:00PM",
             "description": " Get the awesome ShellHacks 2018 T-shirt and a little something extra!"
