@@ -22,7 +22,7 @@ class Auth extends Component {
         super(props);
         this.state = {
             showLogIn: true,
-            showSuccess: true,
+            showSuccess: false,
 
         }
         this.shouldSuccessShow = this.shouldSuccessShow.bind(this);
