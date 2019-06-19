@@ -1,18 +1,27 @@
 import React, { Component } from "react";
+
 import { Formik, Form, Field } from "formik";
+
 import { SignUpValidation } from "../../utils/validations";
 import { REGISTER_PATH } from "../../config/api_paths";
 import request from "../../services/request";
+
 import "./style.css";
 
 class SignUp extends Component {
-    // constructor(props) {
-    //     super(props)
 
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
 
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        console.log(this.props.showSuccess)
 
-    handleSubmit = (values, { resetForm }) => {
+    };
+
+    handleSubmit = (values) => {
+
         const data = {
             firstName: values.firstName,
             lastName: values.lastName,
@@ -20,18 +29,15 @@ class SignUp extends Component {
             password: values.password
         }
 
-        if (values.password !== values.confirmPassword) {
-            alert("Passwords do not match!");
-        } else {
-            request({
-                method: " POST",
-                url: REGISTER_PATH,
-                data
-            }).then((resp) => {
-                resetForm()
-                this.props.nextPath();
-            });
-        }
+        request({
+            method: "POST",
+            url: REGISTER_PATH,
+            data
+        }).then((resp) => {
+            console.log(resp)
+            this.props.showSuccess(resp.success);
+        });
+
     };
 
     render() {
@@ -47,9 +53,8 @@ class SignUp extends Component {
                 validationSchema={SignUpValidation}
                 onSubmit={this.handleSubmit}
                 render={({ touched, errors, handleSubmit }) => (
-                    // <SignUpForm {...props} />
                     <Form className="auth-form">
-                        <div className="fieldDiv">
+                        <div className="field-div">
                             <Field
                                 name="firstName"
                                 type="text"
@@ -58,7 +63,7 @@ class SignUp extends Component {
                                 placeholder="Enter first name"
                             />
                         </div>
-                        <div className="fieldDiv">
+                        <div className="field-div">
                             <Field
                                 name="lastName"
                                 type="text"
@@ -67,7 +72,7 @@ class SignUp extends Component {
                                 placeholder="Enter last name"
                             />
                         </div>
-                        <div className="fieldDiv">
+                        <div className="field-div">
                             <Field
                                 name="email"
                                 type="email"
@@ -76,7 +81,7 @@ class SignUp extends Component {
                                 placeholder="Enter your school email"
                             />
                         </div>
-                        <div className="fieldDiv">
+                        <div className="field-div">
                             <Field
                                 name="password"
                                 type="password"
@@ -85,7 +90,7 @@ class SignUp extends Component {
                                 placeholder="Password"
                             />
                         </div>
-                        <div className="fieldDiv">
+                        <div className="field-div">
                             <Field
                                 name="confirmPassword"
                                 type="password"
@@ -95,7 +100,7 @@ class SignUp extends Component {
                             />
                         </div>
                         <div className="auth-submit-button-container">
-                            <button className="auth-submit-button" type="submit" onClick={handleSubmit}>Submit</button>
+                            <button className="auth-submit-button" type="submit" >Submit</button>
                         </div>
                     </Form>
                 )}

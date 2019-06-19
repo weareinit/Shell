@@ -4,7 +4,15 @@ import "../styles.css";
 
 class MainSection extends Component {
 
+    goToRegister = () => (
+        this.props.history.push("/auth")
+    )
+    goToSponsor = () => (
+        this.props.history.push("/sponsor")
+    )
+
     render() {
+        console.log(this.props)
         return (
 
             <div className="main-section-container">
@@ -18,9 +26,11 @@ class MainSection extends Component {
                 <div className="main-section-buttons-container ">
                     <Button
                         title="Sponsor"
+                        action={this.goToSponsor}
                     />
                     <Button
                         title="Register"
+                        action={this.goToRegister}
                     />
                 </div>
             </div>

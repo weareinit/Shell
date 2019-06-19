@@ -41,7 +41,8 @@ class Landing extends Component {
 
                     {/* MAIN SECTION */}
                     <section className="landing-section main-section" >
-                        <MainSection />
+                        <MainSection {...this.props} />
+                       
                     </section>
 
                     {/* WHAT IS SHELLHACKS SECTION */}
