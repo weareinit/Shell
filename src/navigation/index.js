@@ -1,24 +1,24 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React, { Component, Fragment } from "react";
+import { Route, Switch } from "react-router-dom";
 
-import DashboardRoutes from './dashboardRoutes';
+import DashboardRoutes from "./dashboardRoutes";
 
-import Auth from '../components/auth'
-import Live from '../components/live'
-import Landing from '../components/landing'
-import Sponsor from '../components/sponsor'
-import './style.css'
+import Auth from "../components/auth";
+import Live from "../components/live";
+import Landing from "../components/landing";
+import Sponsor from "../components/sponsor";
+import "./style.css";
 class Navigation extends Component {
     constructor(props) {
         super(props);
         this.state = {
             showNav: false,
         }
-    }
+    };
 
     render() {
         return (
-            <div className="pages">
+            <Fragment>
                 <Switch>
                     <Route exact path="/" component={Landing} />
                     <Route exact path="/auth" render={
@@ -33,9 +33,9 @@ class Navigation extends Component {
                             <DashboardRoutes url={url} />
                         )} />
                 </Switch>
-            </div>
-        )
+            </Fragment>
+        );
     }
 }
 
-export default Navigation
+export default Navigation;

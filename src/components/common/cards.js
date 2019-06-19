@@ -18,12 +18,12 @@ class Card extends Component {
         let { title, description, date, content } = this.props;
         let cardContent = (description ? <h4>{description}</h4> : content)
         return (
-            <div>
-                <button className='buttonInfo' onClick={this.handleClick}>
+            <div className ="card-container">
+                <div className='card-button' onClick={this.handleClick}>
                     <h3>{title}</h3>
                     <h4>{date}</h4>
-                </button>
-                <div className='info'
+                </div>
+                <div className='card-content'
                     style={this.state.clicked ? { display: 'flex' } : { display: 'none' }}>
                     {cardContent}
                 </div>
@@ -33,5 +33,5 @@ class Card extends Component {
 }
 
 
-export default Card;
+export { Card };
 

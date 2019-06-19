@@ -1,29 +1,41 @@
-import React, { Component, Fragment } from "react"
-import "./styles.css";
+import React, { Component } from "react";
+import { Button } from "../../common";
+import "../styles.css";
 
 class MainSection extends Component {
 
+    goToRegister = () => (
+        this.props.history.push("/auth")
+    )
+    goToSponsor = () => (
+        this.props.history.push("/sponsor")
+    )
+
     render() {
+        console.log(this.props)
         return (
-            <Fragment>
-                <img id="brand" alt="brand" src={require('../../../assets/frontpage/shellhacks.svg')} />
 
-                <div >
-                    <h3 id="creed"><b>Florida's Largest Hackathon</b></h3>
+            <div className="main-section-container">
+
+                <div className="main-section-details-container">
+                    <img className="main-section-details-logo" alt="ShellHacks Wordmark" src={require("../../../assets/frontpage/shellhacks.svg")} />
+                    <h1 className="main-section-details-creed">Florida's Largest Hackathon</h1>
+                    <p className="main-section-details-specific" >September 20-22, 2019<br />Florida International University<br />Ocean Bank Convention Center</p>
                 </div>
 
-                <p id="details" >September 20-22, 2019<br />Florida International University<br />Ocean Bank Convention Center</p>
-
-                <div className="buttonsContainer ">
-                    <button onClick={this.goToSponsor} className="buttons" id="register" type="button">
-                        <h3>Sponsor</h3>
-                    </button>
-                    <button onClick={this.goToAuth} className="buttons" id="sponsor" type="button">
-                        <h3>Register</h3> {/**ignore these for now */}
-                    </button>
+                <div className="main-section-buttons-container ">
+                    <Button
+                        title="Sponsor"
+                        action={this.goToSponsor}
+                    />
+                    <Button
+                        title="Register"
+                        action={this.goToRegister}
+                    />
                 </div>
-            </Fragment>
-        )
+            </div>
+
+        );
     }
 
 }

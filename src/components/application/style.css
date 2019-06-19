@@ -1,6 +1,6 @@
-#application,
 #application-container {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,13 +10,6 @@
 .dashboard-page-title {
     font-family: "Montserrat", sans-serif;
     color: #9E8D7D;
-}
-
-#application #application-container h3 {
-    margin-left: 8px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    color: rgb(45, 69, 77);
 }
 
 .application-input-full {
@@ -91,22 +84,9 @@
 }
 
 #application-container form {
-    width: 90%;
-}
-
-#application #application-container .submit-button {
-    border: none;
-    outline-style: none;
-    border-radius: 30px;
-    padding: 13px 70px 13px 70px;
-    max-width: 250px!important;
-    background-color: #665B50;
-    font-family: "Montserrat", sans-serif;
-    font-size: 100%;
-    color: white;
-    font-weight: 700;
-    margin: 60px auto;
-    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 input:focus::-webkit-datetime-edit {
@@ -117,15 +97,6 @@ input[type="date"]:before {
     content: attr(placeholder) !important;
     color: #aaa;
     margin-right: 0.5em;
-}
-
-.submit-button {
-    transition: .2s ease-in;
-}
-
-.submit-button:hover {
-    cursor: pointer;
-    background: rgba(73, 73, 73, 0.5) !important;
 }
 
 @media(max-width: 650px) {
@@ -167,4 +138,9 @@ input[type="date"]:before {
 .agreement p {
     margin: 0;
     color: rgb(91, 93, 94);
+}
+
+#application-submit-button {
+    align-self: center;
+    margin: 50px 0 0;
 }

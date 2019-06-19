@@ -1,86 +1,74 @@
-import React, {Component} from 'react'
-import "./styles.css";
+import React, { Component, Fragment } from "react";
+import "../styles.css";
+import sponsors from "../../../config/data/sponsors";
 
-class Sponsors extends Component{
 
-    sponsorCard = (imagePath, size) => {
-        let logoWidth = '0%';
-        switch(size){
-            case 1:
-                logoWidth = '40%';
-                break;
-            case 2:
-                logoWidth = '30%';
-                break;
-            case 3:
-                logoWidth = '20%';
-                break;
-            default:
-                logoWidth = '10%';
-                break;
+class Sponsors extends Component {
+
+    render() {
+
+        let tempUrl = "http://jarederickson.com/wp-content/uploads/2012/12/10_batman-1989-illustration-cartoon-logo.png";
+
+        let Logo = ({ logo, url, name, tier }) => {
+            let logoClass;
+            switch (tier) {
+                case "sponsor":
+                    logoClass = "sponsor-img"
+                    break;
+                case "partner":
+                    logoClass = "partner-img"
+                    break;
+                    case "temp":
+                    logoClass = "temp-img"
+                    break;
+                default:
+                    logoClass = ""
+            }
+            return (
+                <a className={logoClass} href={url}>
+                    <img style={{ width: "100%" }} className={`${tier}-img `} alt={name} src={tempUrl} />
+                </a>
+            )
         }
-        return( 
-            <img alt='sponsor' src={imagePath} style={{width:logoWidth}}/>
-        )
-    }
-    
 
-    render(){
-        return(
-            <div className='sponsors-container'>
-                <div>
+
+        return (
+            <div className="sponsors-container" >
+
+                <div className="organizers-container">
                     <h1 className="landing-section-title">Hosted By</h1>
-                    <div className='host-section-detail-container'>
-                        <img style={{marginRight:'20%', marginLeft:'15%'}}alt='UPE Logo' src='https://i2.wp.com/www.cis.fiu.edu/wp-content/uploads/2018/03/upe.png?resize=246%2C109&ssl=1'/>
-                        <p>Brief description regarding the organization.Brief description regarding the organization.
-                        Brief description regarding the organization.Brief description regarding the organization.
-                        Brief description regarding the organization.Brief description regarding the organization.
-                        Brief description regarding the organization.Brief description regarding the organization.
-                        </p>
-                    </div>
+                    <a className="logo-container logo-hover" href="http://upe.cs.fiu.edu"><img className="organizer-logo" alt="UPE Logo" src="http://2018.shellhacks.net/imgs/logos/2018/upe-national-logo.png" /></a>
+                    <p className="landing-section-paragraph">ShellHacks is organized by <a className="links" href="http://upe.cs.fiu.edu">Upsilon Pi Epsilon (UPE)</a>,the largest student organization for technology at <a className="links" href="http://fiu.edu">FIU</a>, with support from companies, academic programs, and student organizations.</p>
                 </div>
-                <div>
+
+                <div className="organizers-container">
                     <h1 className="landing-section-title">Cohost</h1>
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 1)}
+                    <a className="logo-container logo-hover hacky-comlumn-reverse-mobile" href="http://upe.cs.fiu.edu"> <img className="organizer-logo" alt="Microsoft Logo" src="http://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2qVsJ?ver=3f74" /></a>
+                    <p className="landing-section-paragraph">"<a className="links" href="http://microsoft.com">Microsoft</a> enables digital transformation for the era of an intelligent cloud and an intelligent edge. Its mission is to empower every person and every organization on the planet to achieve more."</p>
+                    <a className="logo-container logo-hover hacky-comlumn-reverse-web" href="http://upe.cs.fiu.edu"> <img className="organizer-logo" alt="Microsoft Logo" src="http://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2qVsJ?ver=3f74" /></a>
                 </div>
+
                 <h1 className="landing-section-title">Sponsors</h1>
                 <div className="sponsor-logo-container">
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 1)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 1)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 1)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 1)}
+                    {sponsors.map((company, i) => (
+                        (company.tier === "temp") ? <Logo {...company} /> : <Fragment />
+                    ))}
 
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 2)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 2)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 2)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 2)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 2)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 2)}
-
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
+                    {sponsors.map((company, i) => (
+                        (company.tier === "sponsor") ? <Logo {...company} /> : <Fragment />
+                    ))}
                 </div>
 
-                <h1 className="landing-section-title">Partenrs</h1>
+                <h1 className="landing-section-title">Partners</h1>
                 <div className="sponsor-logo-container">
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
-                    {this.sponsorCard('http://www.hibarnsley.com/wp-content/uploads/2017/06/dummy-logo.png', 3)}
+                    {sponsors.map((company, i) => (
+                        (company.tier === "partner") ? <Logo {...company} /> : <Fragment />
+                    ))}
                 </div>
+
             </div>
-        )
+        );
     }
 }
 
-export default Sponsors
+export default Sponsors;

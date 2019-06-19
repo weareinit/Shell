@@ -1,51 +1,224 @@
-.buttonInfo {
-    display: flex !important;
+/* CARD */
+
+.card-container {
+    padding: 12.5555px;
+}
+
+.card-button {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    background-color: #665B50;
-    padding-right: 20px;
-    padding-left: 20px;
-    border: none;
-    outline-style: none;
-    border-radius: 20px;
-    background-color: #665B50;
-    font-family: "Montserrat", sans-serif;
-    font-size: 100%;
+    background-color: var(--shell-teal);
+    padding: 25px;
+    border-radius: 15px;
+    font: var(--sub-heading);
+    font-size: 2em;
     color: white;
-    font-weight: 700;
-    margin-bottom: 20px;
 }
 
-.buttonInfo:hover {
+.card-button:hover {
     cursor: pointer;
-    background: rgba(73, 73, 73, 0.5) !important;
+    background: var(--shell-light-pink);
 }
+
+.card-content {
+    padding: 12.5555px;
+    font-size: 18px;
+}
+
+
+/* BUTTON */
 
 .submit-button {
-    min-width: 100px;
-    display: flex !important;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 30px;
+    width: 40%;
+    max-width: 250px;
+    padding: 12.5555px;
+    margin-bottom: 25px;
+    border-radius: 40px;
     border: none;
-    outline-style: none;
-    border-radius: 20px;
-    background-color: #665B50;
-    font-family: "Montserrat", sans-serif;
     font-size: 100%;
+    font-weight: bold;
     color: white;
-    font-weight: 700;
-    margin-bottom: 20px;
-    border-radius: 50px;
+    background-color: var(--shell-dark-brown)
 }
 
 .submit-button:hover {
     cursor: pointer;
-    background: rgba(73, 73, 73, 0.5) !important;
+    background: var(--shell-mid-brown);
 }
 
-.dashboard-page-title {
-    font-family: "Montserrat", sans-serif;
-    color: #9E8D7D;
+
+/* WAVE BACKGROUND */
+
+.wave-background-child {
+    z-index: 1;
+    width: 100vw;
+}
+
+#wave-background-objects {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#seat1 {
+    left: 0;
+    width: 400px;
+}
+
+#seat2 {
+    right: 0;
+    width: 320px;
+}
+
+#shore {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1920px;
+    min-width: 100%;
+    z-index: 0;
+}
+
+#wetsand,
+#surf {
+    position: relative;
+}
+
+#wetsand>*,
+#surf>* {
+    position: absolute;
+    bottom: -57px;
+    left: 0;
+    min-width: 100%;
+}
+
+@keyframes wetsand3 {
+    from {
+        bottom: -50px;
+    }
+    to {
+        bottom: -45px;
+    }
+}
+
+#wetsand3 {
+    animation: wetsand3 var(--waves-speed) ease 1.6s infinite alternate;
+    bottom: -50px;
+}
+
+@keyframes wetsand2 {
+    from {
+        bottom: -370px;
+    }
+    to {
+        bottom: -40px;
+    }
+}
+
+#wetsand2 {
+    animation: wetsand2 var(--waves-speed) ease 1.5s infinite alternate;
+    bottom: -370px;
+}
+
+@keyframes wetsand1 {
+    from {
+        bottom: -390px;
+    }
+    to {
+        bottom: -10px;
+    }
+}
+
+#wetsand1 {
+    animation: wetsand1 var(--waves-speed) ease 1.2s infinite alternate;
+    bottom: -390px;
+}
+
+@keyframes surf3 {
+    from {
+        bottom: -280px;
+    }
+    to {
+        bottom: 75px;
+    }
+}
+
+#surf3 {
+    animation: surf3 var(--waves-speed) ease 0.5s infinite alternate;
+    bottom: -280px;
+}
+
+@keyframes surf2 {
+    from {
+        bottom: -250px;
+    }
+    to {
+        bottom: 5px;
+    }
+}
+
+#surf2 {
+    animation: surf2 var(--waves-speed) ease 0.3s infinite alternate;
+    bottom: -50px;
+}
+
+@keyframes surf1 {
+    from {
+        bottom: -200px;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+
+#surf1 {
+    animation: surf1 var(--waves-speed) ease 0s infinite alternate;
+    bottom: 0px;
+    z-index: 2;
+}
+
+
+/* GRADIENT BACKGROUND */
+
+.gradient-background {
+    all: inherit;
+    background: var(--shell-gradient);
+}
+
+
+/* FOOTER */
+
+.footer-container {
+    width: 100%;
+    height: 300px;
+    background: center/cover no-repeat url("../../assets/footerBackground.svg");
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 3% 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    color: var(--shell-dark-brown);
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: inherit;
 }

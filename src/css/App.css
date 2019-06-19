@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+:root {
+    --shell-dark-pink: #ff1d8e;
+    --shell-light-pink: #E86BA4;
+    --shell-teal: #22C3D5;
+    --shell-navy: #172A61;
+    --shell-sand: #FBEDCA;
+    --shell-dark-brown: #665B50;
+    --shell-mid-brown: #8E7A69;
+    --shell-light-brown: #9E8D7D;
+    --waves-speed: 3s;
+    --shell-gradient: linear-gradient(#22C3D5, #172A61);
+    --heading: 700 2em "monserat", sans-serif;
+    --sub-heading: 600 1.3em "monserat", sans-serif;
+    --paragraph: 400 16px/1.5em "monserat", sans-serif;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    background: var(--shell-sand);
+    color: var(--shell-light-brown)
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
