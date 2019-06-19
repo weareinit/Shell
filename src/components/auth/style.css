@@ -13,7 +13,7 @@
     max-width: 555px;
 }
 
-.fieldDiv {
+.field-div {
     display: flex;
     justify-content: center;
     margin-top: 5%;
@@ -39,26 +39,11 @@
     max-width: 250px;
 }
 
-#loginStyle {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10%;
-}
-
 .auth-submit-button-container {
     display: flex;
     justify-content: center;
     margin-top: 10%;
     margin-bottom: 10%;
-}
-
-.auth-submit-button {
-    transition: .2s ease-in;
-}
-
-.auth-submit-button:hover {
-    cursor: pointer;
-    background: rgba(73, 73, 73, 0.5) !important;
 }
 
 
@@ -72,10 +57,9 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-    /* ^^^^IMPORTANT!!! */
 }
 
-.regContainer {
+.auth-reg-container {
     display: flex;
     flex-direction: row;
     width: 60%;
@@ -83,18 +67,20 @@
     min-width: 300px;
     background-color: rgba(206, 188, 143, 0.4);
     border-radius: 30px;
+    overflow: hidden;
     z-index: 8;
 }
 
-.Logo {
+.auth-logo-container {
     display: flex;
     flex-direction: column;
     width: 40%;
     justify-content: center;
     align-items: center;
+    /* background: linear-gradient(to right, red, blue); */
 }
 
-.formContainer {
+.auth-form-container {
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -104,7 +90,7 @@
     align-items: center;
 }
 
-#signUpBtn {
+#signup-half-button {
     border: none;
     outline-style: none;
     border-top-right-radius: 20px;
@@ -118,7 +104,7 @@
     font-weight: 700;
 }
 
-#logInBtn {
+#login-half-button {
     border: none;
     outline-style: none;
     border-top-left-radius: 20px;
@@ -132,7 +118,7 @@
     font-weight: 700;
 }
 
-.buttonSwitch {
+.auth-switch-button-container {
     margin-top: 10%;
     width: 65%;
     margin-bottom: 5%;
@@ -141,20 +127,54 @@
     max-width: 335px;
 }
 
-.forms {
+.switch-button-selected {
+    background-color: var(--shell-light-brown);
+}
+
+.auth-forms {
     width: 82%;
 }
 
-.logoStyle {
+.auth-logo {
     width: 80%;
 }
 
-#mobileLogo {
+#auth-mobile-logo {
     display: none;
 }
 
-.welcomeMessage {
+.welcome-message {
     text-align: center;
+    padding: 0 10%;
+}
+
+
+/* SUCCESS */
+
+.success-container {
+    position: absolute;
+    background: transparent;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.success-modal {
+    width: 60%;
+    height: 100%;
+    max-width: 750px;
+    min-width: 400px;
+    max-height: 400px;
+    background-color: rgba(206, 188, 143, 0.4);
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -162,25 +182,25 @@
         height: 100vh;
         width: 100vw;
     }
-    .regContainer {
+    .auth-reg-container {
         display: flex;
         flex-direction: column;
         background: none !important;
         width: 100%;
         height: 100%;
     }
-    .formContainer {
+    .auth-form-container {
         height: 100%;
         width: 100%;
     }
-    .Logo {
+    .auth-logo-container {
         display: none;
         background: none;
     }
-    #mobileLogo {
+    #auth-mobile-logo {
         display: flex;
     }
-    .logoStyle {
+    .auth-logo {
         width: 80%;
         margin-left: auto;
         margin-right: auto;

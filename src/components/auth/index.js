@@ -1,10 +1,20 @@
 import React, { Component, Fragment } from "react";
 
 import { WaveBackground } from "../common";
-import LogIn from "./login";
+import Login from "./login";
 import SignUp from "./signup";
+import Success from "./success";
+
+// import querries from "../../utils/querries";
+import getMessage from "../../utils/authMessage";
+
 import { ReactComponent as Logo } from "../../assets/frontpage/shellhacks.svg";
 import "./style.css";
+
+
+//assign a message
+const loginMessage = getMessage(true);
+const registerMessage = getMessage(false);
 
 class Auth extends Component {
 
@@ -12,54 +22,64 @@ class Auth extends Component {
         super(props);
         this.state = {
             showLogIn: true,
-        }
+            showSuccess: false,
 
+        }
+        this.shouldSuccessShow = this.shouldSuccessShow.bind(this);
     };
 
-    goToDashboard = () => (this.props.history.push("/dashboard"));
+    shouldSuccessShow(condition) {
+        if (condition) {
+            this.setState(prevState => ({ showSuccess: !prevState.showSuccess }))
+        }
+    }
+
 
     render() {
-        let form = this.state.showLogIn ? <LogIn nextPath={this.goToDashboard.bind(this)} /> : <SignUp nextPath={this.nextPath} />
-        let details = this.state.showLogIn ? <p>{"Please sign in"}</p> : <p>{"Please fill out the form"}</p>
+        let currentView;
+        currentView = (this.state.showLogIn ? <Login /> : <SignUp showSuccess={this.shouldSuccessShow} />)
+        let details = this.state.showLogIn ? <pre>{loginMessage}</pre> : <pre>{registerMessage}</pre>
 
-        return (
-            <Fragment>
-                <WaveBackground>
-                    <div className="auth-container">
-                        <div className="regContainer">
-                            <div className="Logo">
-                                <Logo className="logoStyle" id="siteLogo" />
-                                <span className="welcomeMessage">
-                                    <h1>Welcome!</h1>
-                                    {details}
-                                </span>
-                            </div>
-                            <div className="formContainer">
-                                <Logo className="logoStyle" id="mobileLogo" />
-                                <div className="buttonSwitch">
-                                    <button
-                                        className="switchButtons"
-                                        id="logInBtn"
-                                        type="button"
-                                        alt="placeholder"
-                                        style={!this.state.showLogIn ? { backgroundColor: "#cec09c" } : null}
-                                        onClick={() => this.setState({ showLogIn: true })}>Log In</button>
-                                    <button
-                                        className="switchButtons"
-                                        id="signUpBtn"
-                                        type="button"
-                                        style={this.state.showLogIn ? { backgroundColor: "#cec09c" } : null}
-                                        onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
+        if (this.state.showSuccess)
+            return (<Success showSuccess={this.shouldSuccessShow} />)
+        else
+            return (
+                <Fragment>
+                    <WaveBackground>
+                        <div className="auth-container">
+                            <div className="auth-reg-container">
+                                <div className="auth-logo-container">
+                                    <Logo className="auth-logo" id="siteLogo" />
+                                    <span className="welcome-message">
+                                        {details}
+                                    </span>
                                 </div>
-                                <div className="forms">
-                                    {form}
+                                <div className="auth-form-container">
+                                    <Logo className="auth-logo" id="auth-mobile-logo" />
+                                    <div className="auth-switch-button-container">
+                                        <button
+                                            className="switchButtons"
+                                            id="login-half-button"
+                                            type="button"
+                                            alt="placeholder"
+                                            style={!this.state.showLogIn ? { backgroundColor: "#9E8D7D" } : null}
+                                            onClick={() => this.setState({ showLogIn: true })}>Log In</button>
+                                        <button
+                                            className="switchButtons"
+                                            id="signup-half-button"
+                                            type="button"
+                                            style={this.state.showLogIn ? { backgroundColor: "#9E8D7D" } : null}
+                                            onClick={() => this.setState({ showLogIn: false })}>Sign Up</button>
+                                    </div>
+                                    <div className="auth-forms">
+                                        {currentView}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </WaveBackground>
-            </Fragment>
-        );
+                    </WaveBackground>
+                </Fragment>
+            );
     }
 }
 

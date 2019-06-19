@@ -1,31 +1,28 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+
+import { withRouter } from "react-router";
 import { Formik, Form, Field } from "formik";
+
 import { LogInValidation } from "../../utils/validations";
 import "./style.css";
 
 import { LOGIN_PATH } from "../../config/api_paths";
 import request from "../../services/request";
+import querries from "../../utils/querries";
 
-const axios = require("axios");
+class Login extends Component {
 
-async function makeGetRequest() {
-  
-  let res = await axios.post("https://immense-reef-66486.herokuapp.com/application/login",{email:"dev@fiu.edu",password:"devboidev"});
-
-  let data = res.data;
-}
-
-makeGetRequest();
-
-class LogIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
 
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     };
+
+    nextPath = () => this.props.history.push("/dashboard");
 
     handleSubmit(values) {
 
@@ -39,12 +36,14 @@ class LogIn extends Component {
             url: LOGIN_PATH,
             data
         }).then((resp) => {
-            
+            querries.storeItem(resp.data);
+            this.nextPath();
         })
 
     };
 
     render() {
+
         return (
             <Formik
                 initialValues={{
@@ -54,9 +53,8 @@ class LogIn extends Component {
                 validationSchema={LogInValidation}
                 onSubmit={this.handleSubmit}
                 render={({ touched, errors, handleSubmit }) => (
-                    // <LogInForm {...props}/>
                     <Form>
-                        <div className="fieldDiv">
+                        <div className="field-div">
                             <Field
                                 name="email"
                                 type="email"
@@ -65,7 +63,7 @@ class LogIn extends Component {
                                 placeholder="Email"
                             />
                         </div>
-                        <div className="fieldDiv">
+                        <div className="field-div">
                             <Field
                                 name="password"
                                 type="password"
@@ -75,7 +73,7 @@ class LogIn extends Component {
                             />
                         </div>
                         <div className="auth-submit-button-container">
-                            <button className="auth-submit-button" type="submit" onClick={this.handleSubmit}>Log In</button>
+                            <button className="auth-submit-button" type="submit">Log In</button>
                         </div>
                     </Form>
 
@@ -85,4 +83,4 @@ class LogIn extends Component {
     }
 }
 
-export default withRouter(LogIn);
+export default withRouter(Login);
