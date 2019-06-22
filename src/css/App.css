@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
 :root {
     --shell-dark-pink: #ff1d8e;
-    --shell-light-pink: #E86BA4;
-    --shell-teal: #22C3D5;
-    --shell-navy: #172A61;
-    --shell-sand: #FBEDCA;
-    --shell-dark-brown: #665B50;
-    --shell-mid-brown: #8E7A69;
-    --shell-light-brown: #9E8D7D;
+    --shell-light-pink: #e86ba4;
+    --shell-teal: #22c3d5;
+    --shell-navy: #172a61;
+    --shell-sand: #fbedca;
+    --shell-dark-brown: #665b50;
+    --shell-mid-brown: #8e7a69;
+    --shell-light-brown: #9e8d7d;
     --waves-speed: 3s;
-    --shell-gradient: linear-gradient(#22C3D5, #172A61);
+    --shell-gradient: linear-gradient(#22c3d5, #172a61);
     --heading: 700 2em "monserat", sans-serif;
     --sub-heading: 600 1.3em "monserat", sans-serif;
     --paragraph: 400 16px/1.5em "monserat", sans-serif;
@@ -20,7 +20,7 @@ body {
     height: 100vh;
     width: 100vw;
     background: var(--shell-sand);
-    color: var(--shell-light-brown)
+    color: var(--shell-light-brown);
 }
 
 body {
@@ -32,4 +32,9 @@ body {
 
 * {
     font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+* a:hover {
+    color: var(--shell-light-pink);
 }

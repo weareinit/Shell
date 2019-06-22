@@ -10,12 +10,17 @@
         "axios": "^0.18.0",
         "formik": "^1.5.1",
         "jsonwebtoken": "^8.5.1",
-        "react": "^16.8.4",
-        "react-dom": "^16.8.4",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-medium-image-zoom": "^3.1.0",
         "react-pose": "^4.0.8",
         "react-router-dom": "^5.0.0",
         "react-scripts": "2.1.8",
+        "react-scroll": "^1.7.12",
+        "react-scroll-horizontal": "^1.6.2",
         "react-select": "^3.0.4",
+        "redux": "^4.0.1",
+        "video-react": "^0.13.9",
         "yup": "^0.27.0"
     },
     "scripts": {
@@ -38,5 +43,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "prettier": "1.18.2"
     }
 }

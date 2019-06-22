@@ -7,6 +7,7 @@ import Auth from "../components/auth";
 import Live from "../components/live";
 import Landing from "../components/landing";
 import Sponsor from "../components/sponsor";
+
 import "./style.css";
 class Navigation extends Component {
     constructor(props) {
