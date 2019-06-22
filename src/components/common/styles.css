@@ -54,6 +54,8 @@
 .wave-background-child {
     z-index: 1;
     width: 100vw;
+    min-height: 100vh;
+    height: 100%;
 }
 
 #wave-background-objects {
@@ -219,6 +221,5 @@
 }
 
 .footer-content a {
-    text-decoration: none;
-    color: inherit;
+    color: var(--shell-dark-brown)
 }

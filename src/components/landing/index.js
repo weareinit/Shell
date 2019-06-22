@@ -5,7 +5,7 @@ import Tracks from "./sections/tracks";
 import Sponsors from "./sections/sponsors";
 import Schedule from "./sections/schedule";
 import MainSection from "./sections/main";
-import Info from "./sections/shellhacksInfo";
+import Info from "./sections/info"
 import Thank from "./sections/thanks";
 
 
