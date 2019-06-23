@@ -227,7 +227,7 @@ class Sponsor extends Component {
           <div className="sponsor-page-section">
             <div className="main-container">
               <h1 id="main-message"> {"MAKE A SPLASH AT SHELLHACKS"}</h1>
-              <p>{"The Largest Hackathon in Florida"}</p>
+              <p>{"Florida's Largest Hackathon"}</p>
             </div>
           </div>
         </WaveBackground>
