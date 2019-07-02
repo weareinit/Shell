@@ -1,19 +1,24 @@
 import React, { Component } from "react";
-import { Formik } from "formik";
-import { Form, Field } from "formik";
-
-import { ApplicationValidation, ApplicationInitialValues } from "../../utils/validations";
-import { Select, Button } from "../common";
+import { Formik, ErrorMessage, Form, Field } from "formik";
+import {
+  ApplicationValidation,
+  ApplicationInitialValues
+} from "../../utils/validations";
+import { Select, Button, Checkbox } from "../common";
+import schools from "../../config/data/schools";
 import axios from "axios";
 import "./style.css";
 import { readFile } from "fs";
 
 class Application extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      showErrs: false
+    };
+  }
 
   handleSubmit(values, { resetForm }) {
-    console.log(values);
-
     const apply = async () => {
       try {
         const response = await axios.post(
@@ -29,125 +34,120 @@ class Application extends Component {
           }
         );
         resetForm();
-      } catch (error) {
-      }
+      } catch (error) {}
     };
     apply();
-  };
-
-  min = () => {
-    let date = new Date();
-  };
-
-  max = () => {
-    let date = new Date();
-
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-
-    if (month.toString().length < 2) {
-      month = "0" + month
-    }
-    if (day.toString().length < 2) {
-      day = "0" + day
-    }
-
-    let maxDate = year + "-" + month + "-" + day;
-
-    return maxDate;
-  };
+  }
 
   render() {
     return (
       <div className="dashboard-page">
-        <h1 className="page-title">Application</h1>
+        <h1>Application</h1>
         <Formik
           initialValues={ApplicationInitialValues}
           validationSchema={ApplicationValidation}
-          onSubmit={this.handleSubmit}
+          // onSubmit={this.handleSubmit}
           enableReinitialize={false}
-        >{({
-          values,
-          touched,
-          dirty,
-          errors,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          handleReset,
-          setFieldValue,
-          setFieldTouched,
-          isSubmitting }) => (
-
-            <div id="application-container">
+          onSubmit={values => alert(JSON.stringify(values))} //test
+        >
+          {({
+            values,
+            touched,
+            dirty,
+            errors,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            handleReset,
+            setFieldValue,
+            setFieldTouched,
+            setFieldError,
+            isSubmitting,
+            isValid
+          }) => (
+            <div className="application-container">
               <Form onSubmit={handleSubmit}>
-                <h3>Personal Information</h3>
-
-                <div className="half-field-container">
+                <h2>Personal Information</h2>
+                <div className="half-container">
+                  <label htmlFor="firstName">*First Name</label>
                   <Field
-                    className="application-input-half"
+                    className="application-input"
                     name="firstName"
                     type="text"
-
-                    style={touched.firstName && errors.firstName ? { border: "2px solid red" } : null}
-                    placeholder="First Name"
+                    style={
+                      touched.firstName && errors.firstName
+                        ? { border: "2px solid red" }
+                        : null
+                    }
+                    placeholder="Jehf"
                   />
-
+                  <span className="application-error"></span>
+                </div>
+                <div className="half-container">
+                  <label htmlFor="lastName">*Last Name</label>
                   <Field
-                    className="application-input-half"
+                    className="application-input"
                     name="lastName"
                     type="text"
-                    style={touched.lastName && errors.lastName ? { border: "2px solid red" } : null}
-                    placeholder="Last Name"
+                    style={
+                      touched.lastName && errors.lastName
+                        ? { border: "2px solid red" }
+                        : null
+                    }
+                    placeholder="Doe"
                   />
                 </div>
-
-                <div className="full-field-container">
+                <div className="full-container">
+                  <label htmlFor="email">*School Email Address</label>
                   <Field
-                    className="application-input-full"
+                    className="application-input"
                     name="email"
                     type="email"
-                    style={touched.email && errors.email ? { border: "2px solid red" } : null}
-                    placeholder="School Email"
+                    style={
+                      touched.email && errors.email
+                        ? { border: "2px solid red" }
+                        : null
+                    }
+                    placeholder="roary@fiu.edu"
                   />
                 </div>
-
-                <div className="full-field-container">
+                <div className="full-container">
+                  <label htmlFor="dob">Date of Birth</label>
                   <Field
-                    className="application-input-full"
+                    className="application-input"
                     name="dob"
                     type="date"
-                    min="1900-01-01"
-                    placeholder="DOB: "
-                    max={() => (this.max())}
-
-                    style={touched.dob && errors.dob ? { border: "2px solid red" } : null}
+                    style={
+                      touched.dob && errors.dob
+                        ? { border: "2px solid red" }
+                        : null
+                    }
                   />
                 </div>
-
-                <div className="half-field-container">
-
+                <div className="half-container">
+                  <label htmlFor="gender">Gender</label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     name="gender"
                     id={"gener"}
                     test={values}
-                    name="gender"
                     value={values.gender}
                     onBlur={setFieldTouched}
                     onChange={setFieldValue}
                     touched={touched.gender}
                     error={errors.gender}
-                    placeholder="Gender"
-                    onBlur={setFieldTouched}
+                    placeholder="Select one"
                     options={[
                       { value: "male", label: "Male" },
                       { value: "female", label: "female" },
-                      { value: "nb", label: "Other/Non-Binary" },]}
+                      { value: "nb", label: "Other/Non-Binary" }
+                    ]}
                   />
+                </div>
+                <div className="half-container">
+                  <label htmlFor="race">Race/Ethnicity</label>
                   <Select
-                    className={"application-select-input-half"}
+                    className="application-input"
                     id={"race"}
                     test={values}
                     name="race"
@@ -155,33 +155,57 @@ class Application extends Component {
                     onBlur={setFieldTouched}
                     onChange={setFieldValue}
                     touched={touched.race}
-                    placeholder="Race/Ethnicity"
+                    placeholder="Select one"
                     error={errors.race}
                     options={[
-                      { value: "white", label: "White" },
-                      { value: "black", label: "Black or African American" },
+                      {
+                        value: "American Indian or Alaskan Native",
+                        label: "American Indian or Alaskan Native"
+                      },
+                      {
+                        value: "White/Caucasian",
+                        label: "White /Caucasian"
+                      },
+                      {
+                        value: "Black or African American",
+                        label: "Black or African American"
+                      },
                       { value: "hispanic", label: "Hispanic or Latin" },
                       { value: "native", label: "Native American" },
-                      { value: "asian", label: "Asian" },
-                      { value: "other", label: "Other" }]}
-
+                      {
+                        value: "Asian/Pacific Islander",
+                        label: "Asian/Pacific Islander"
+                      },
+                      {
+                        value: "Multiple Ethnicity/Other",
+                        label: "Multiple Ethnicity/Other"
+                      },
+                      {
+                        value: "Prefer not to answer",
+                        label: "Prefer not to answer"
+                      }
+                    ]}
                   />
                 </div>
-
-                <div className="full-field-container">
+                <div className="full-container">
+                  <label htmlFor="phoneNumber">*Phone Number</label>
                   <Field
-                    className="application-input-full"
+                    className="application-input"
                     name="phoneNumber"
                     type="text"
-                    style={touched.phoneNumber && errors.phoneNumber ? { border: "2px solid red" } : null}
-                    placeholder="Phone Number"
+                    style={
+                      touched.phoneNumber && errors.phoneNumber
+                        ? { border: "2px solid red" }
+                        : null
+                    }
+                    placeholder="000-000-0000"
                   />
                 </div>
-
-                <h3>School Information</h3>
-                <div className="half-field-container">
+                <h2>School Information</h2>
+                <div className="half-container">
+                  <label htmlFor="schoolName">*School Name</label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     name="schoolName"
                     id={"schoolName"}
                     value={values.schoolName}
@@ -189,51 +213,65 @@ class Application extends Component {
                     onChange={setFieldValue}
                     touched={touched.schoolName}
                     error={errors.schoolName}
-                    placeholder="School Name"
-                    options={[
-                      { value: "UM", label: "UM" },
-                      { value: "FIU", label: "FIU" },]}
+                    placeholder="Florida International University"
+                    options={schools}
                   />
-
+                </div>
+                <div className="half-container">
+                  <label htmlFor="major">Major</label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     name="major"
                     id="major"
-                    placeholder="Major"
+                    placeholder="Computer Science"
                     value={values.major}
                     onBlur={setFieldTouched}
                     onChange={setFieldValue}
                     touched={touched.major}
                     error={errors.major}
                     options={[
-                      { value: "cs", label: "Computer Sciences" },
-                      { value: "it", label: "Information Technology" },
-                      { value: "ce", label: "Computer Engineering" },
-                      { value: "other", label: "Other" },]}
+                      { value: "Computer Science", label: "Computer Science" },
+                      {
+                        value: "Imformation Technology",
+                        label: "Information Technology"
+                      },
+                      {
+                        value: "Computer Engineering",
+                        label: "Computer Engineering"
+                      },
+                      { value: "other", label: "Other" }
+                    ]}
                   />
                 </div>
-
-                <div className="half-field-container">
+                <div className="half-container">
+                  <label htmlFor="levelOfStudy">Level of Study</label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     name="levelOfStudy"
                     id="levelOfStudy"
-                    placeholder="Level of Study"
+                    placeholder="Undergraduate"
                     value={values.levelOfStudy}
                     onBlur={setFieldTouched}
                     onChange={setFieldValue}
                     touched={touched.levelOfStudy}
                     error={errors.levelOfStudy}
                     options={[
-                      { value: "undergrade", label: "Undergraduate" },
-                      { value: "graduate", label: "Graduate" },]}
+                      {
+                        value: "High school diploma or equivalent",
+                        label: "High school diploma or equivalent"
+                      },
+                      { value: "undergraduate", label: "Undergraduate" },
+                      { value: "Graduate", label: "Graduate" }
+                    ]}
                   />
-
+                </div>
+                <div className="half-container">
+                  <label htmlFor="graduationYear">Graduation Year</label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     id="graduationYear"
                     name="graduationYear"
-                    placeholder="Graduation Year"
+                    placeholder="2020"
                     onChange={setFieldValue}
                     value={values.graduationYear}
                     onBlur={setFieldTouched}
@@ -244,18 +282,20 @@ class Application extends Component {
                       { value: "2020", label: "2020" },
                       { value: "2020", label: "2021" },
                       { value: "2020", label: "2022" },
-                      { value: "2020", label: "2023" },]}
+                      { value: "2020", label: "2023" }
+                    ]}
                   />
                 </div>
-
-                <h3>Profetional Information</h3>
-
-                <div className="full-field-container">
+                <h2>Profetional Information</h2>
+                <div className="full-container">
+                  <label htmlFor="areaOfFocus">
+                    Which role best describe you?
+                  </label>
                   <Select
-                    className="application-select-input-full"
+                    className="application-input"
                     id="areaOfFocus"
                     name="areaOfFocus"
-                    placeholder="Which role best describe you?"
+                    placeholder="Front-end Developer"
                     onChange={setFieldValue}
                     value={values.areaOfFocus}
                     onBlur={setFieldTouched}
@@ -268,88 +308,121 @@ class Application extends Component {
                       { value: "backend", label: "Back-end Developer" },
                       { value: "designer", label: "UI/UX Designer" },
                       { value: "entrepreneur", label: "Entrepreneur" },
-                      { value: "other", label: "Other" }]}
-
+                      { value: "other", label: "Other" }
+                    ]}
                   />
-
                 </div>
-
-                <div className="half-field-container">
+                <div className="half-container">
+                  <label htmlFor="resume">*Resume</label>
                   <Field
-                    className="application-input-half input-file"
+                    className="application-input"
                     name="resume"
                     type="file"
-                    style={touched.resume && errors.resume ? { border: "2px solid red" } : null}
+                    style={
+                      touched.resume && errors.resume
+                        ? { border: "2px solid red" }
+                        : null
+                    }
                     placeholder="Resume"
                     onBlur={() => {
                       let reader = new FileReader();
-                      console.log(setFieldValue("resume", readFile.__promisify__(values.resume)))
                     }}
                   />
+                </div>
+                <div className="half-container">
+                  <label htmlFor="linkedIn">LinkedIn</label>
                   <Field
-                    className="application-input-half"
+                    className="application-input"
                     name="linkedIn"
                     type="url"
-                    placeholder="LinkedIn"
-                    style={touched.linkedIn && errors.linkedIn ? { border: "2px solid red" } : null}
+                    placeholder="https://www.linkedin.com/in/jehf-doe"
+                    style={
+                      touched.linkedIn && errors.linkedIn
+                        ? { border: "2px solid red" }
+                        : null
+                    }
                   />
                 </div>
-
-                <div className="half-field-container">
+                <div className="half-container">
+                  <label htmlFor="github">Github</label>
                   <Field
-                    className="application-input-half"
+                    className="application-input"
                     name="github"
                     type="url"
-                    placeholder="Github"
-                    style={touched.github && errors.github ? { border: "2px solid red" } : null}
+                    placeholder="https://github.com/jehfdoe"
+                    style={
+                      touched.github && errors.github
+                        ? { border: "2px solid red" }
+                        : null
+                    }
                   />
+                </div>
+                <div className="half-container">
+                  <label htmlFor="portfolio">Portfolio</label>
                   <Field
-                    className="application-input-half"
+                    className="application-input"
                     name="portfolio"
                     type="url"
-                    placeholder="Potfolio"
-                    style={touched.portfolio && errors.portfolio ? { border: "2px solid red" } : null}
+                    placeholder="https://shellhacks.net"
+                    style={
+                      touched.portfolio && errors.portfolio
+                        ? { border: "2px solid red" }
+                        : null
+                    }
                   />
                 </div>
-
-                <h3>Additional Information</h3>
-                <div className="full-field-container">
+                <h2>Additional Information</h2>
+                <div className="full-container">
+                  <label htmlFor="reasonForAttending">
+                    *Reason for attending?
+                  </label>
                   <Field
-                    className="application-input-full"
+                    className="application-input"
                     type="text"
-                    placeholder="Reason for attending?"
+                    placeholder="I love ShellHacks"
                     name="reasonForAttending"
-                    style={touched.reasonForAttending && errors.reasonForAttending ? { border: "2px solid red" } : null} />
+                    style={
+                      touched.reasonForAttending && errors.reasonForAttending
+                        ? { border: "2px solid red" }
+                        : null
+                    }
+                  />
                 </div>
-
-                <div className="full-field-container">
+                <div className="full-container">
+                  <label htmlFor="dietaryRestriction">
+                    *Any dietary Restriction?
+                  </label>
                   <Select
-                    className="application-select-input-full"
+                    className="application-input"
                     id="dietaryRestriction"
                     name="dietaryRestriction"
-                    placeholder="Any dietary Restriction?"
+                    placeholder="Vegan"
                     onChange={setFieldValue}
                     value={values.dietaryRestriction}
                     onBlur={setFieldTouched}
                     touched={touched.dietaryRestriction}
                     error={errors.dietaryRestriction}
                     options={[
-                      { value: "xs", label: "XS" },
-                      { value: "s", label: "S" },
-                      { value: "m", label: "M" },
-                      { value: "l", label: "L" },
-                      { value: "xl", label: "XL" },
-                      { value: "xxl", label: "XXL" },
-                      { value: "xxxl", label: "XXXL" }]}
+                      { value: "Vegan", label: "Vegan" },
+                      { value: "Vegetarian", label: "Vegetarian" },
+                      {
+                        value: "Lactose Intolerance",
+                        label: "Lactose Intolerance"
+                      },
+                      { value: "Nut-free", label: "Nut-free" },
+                      { value: "Gluten Free", label: "Gluten Free" },
+                      { value: "Dairy-free", label: "Dairy-free" },
+                      { value: "Other", label: "Other" }
+                    ]}
                   />
                 </div>
-
-                <div className="half-field-container">
+                <div className="half-container">
+                  <label htmlFor="shirtSize">*Shirt Size</label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     id="shirtSize"
                     name="shirtSize"
-                    placeholder="Shirt Size"
+                    placeholder="Select One"
                     onChange={setFieldValue}
                     value={values.shirtSize}
                     onBlur={setFieldTouched}
@@ -362,13 +435,19 @@ class Application extends Component {
                       { value: "l", label: "L" },
                       { value: "xl", label: "XL" },
                       { value: "xxl", label: "XXL" },
-                      { value: "xxxl", label: "XXXL" }]}
+                      { value: "xxxl", label: "XXXL" }
+                    ]}
                   />
+                </div>
+                <div className="half-container">
+                  <label htmlFor="needReimburesment">
+                    *Need travel reinburesment?
+                  </label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     id="needReimburesment"
                     name="needReimburesment"
-                    placeholder="Need travel reinburesment?"
+                    placeholder="Select One"
                     onChange={setFieldValue}
                     value={values.needReimburesment}
                     onBlur={setFieldTouched}
@@ -376,17 +455,17 @@ class Application extends Component {
                     error={errors.needReimburesment}
                     options={[
                       { value: "yes", label: "Yes" },
-                      { value: "no", label: "No" },
+                      { value: "no", label: "No" }
                     ]}
                   />
                 </div>
-
-                <div className="half-field-container">
+                <div className="half-container">
+                  <label htmlFor="firstTimeHack">*First time hacker?</label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     id="firstTimeHack"
                     name="firstTimeHack"
-                    placeholder="First time hacker?"
+                    placeholder="Select One"
                     onChange={setFieldValue}
                     value={values.firstTimeHack}
                     onBlur={setFieldTouched}
@@ -394,14 +473,17 @@ class Application extends Component {
                     error={errors.firstTimeHack}
                     options={[
                       { value: "yes", label: "Yes" },
-                      { value: "no", label: "No" },
+                      { value: "no", label: "No" }
                     ]}
                   />
+                </div>
+                <div className="half-container">
+                  <label htmlFor="haveBeenToShell">*Attended last year?</label>
                   <Select
-                    className="application-select-input-half"
+                    className="application-input"
                     id="haveBeenToShell"
                     name="haveBeenToShell"
-                    placeholder="Attended last year?"
+                    placeholder="Select One"
                     onChange={setFieldValue}
                     value={values.haveBeenToShell}
                     onBlur={setFieldTouched}
@@ -409,48 +491,65 @@ class Application extends Component {
                     error={errors.haveBeenToShell}
                     options={[
                       { value: "yes", label: "Yes" },
-                      { value: "no", label: "No" },
+                      { value: "no", label: "No" }
                     ]}
                   />
                 </div>
-
-                <div className="full-field-container">
+                <div className="full-container">
+                  <label htmlFor="howDidYouHear">
+                    *How did you hear about us?
+                  </label>
                   <Select
-                    className="application-select-input-full"
+                    className="application-input"
                     id="howDidYouHear"
                     name="howDidYouHear"
-                    placeholder="How did you hear about us?"
+                    placeholder="Select One"
                     onChange={setFieldValue}
                     value={values.howDidYouHear}
                     onBlur={setFieldTouched}
                     touched={touched.howDidYouHear}
                     error={errors.howDidYouHear}
                     options={[
-                      { value: "instagram", label: "Instagram" },
-                      { value: "facebook", label: "Facebook" },
+                      { value: "Instagram", label: "Instagram" },
+                      { value: "Facebook", label: "Facebook" },
+                      { value: "LinkedIn", label: "LinkedIn" },
+                      { value: "Twitter", label: "Twitter" },
+                      {
+                        value: "My School's CS Club",
+                        label: "My School's CS Club"
+                      },
+                      { value: "Friends", label: "Friends" }
                     ]}
                   />
                 </div>
-
-                <div className="agreements-container">
-                  <div className="agreement">
-
-                    <p> <input
-                      name="isGoing"
-                      type="checkbox"
-                      style={touched.mlh && errors.mlh ? { border: "2px solid red" } : null}
-                    />I confirm that I have read and agree with the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a></p>
-                    <p>  <input
-                      name="isGoing"
-                      type="checkbox"
-                      style={touched.fiu && errors.fiu ? { border: "2px solid red" } : null}
-                    />I confirm that I have read and agree with the <a href="https://studentaffairs.fiu.edu/get-support/student-conduct-and-conflict-resolution/student-code-of-conduct%20/index.php" target="_blank">FIU Code of Conduct</a></p>
-                  </div>
-
+                <div className="agreement">
+                  <p>
+                    <Field component={Checkbox} name="mlh" id="mlh" />
+                    confirm that I have read and agree with the{" "}
+                    <a
+                      href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      MLH Code of Conduct
+                    </a>
+                  </p>
+                  <p>
+                    <Field component={Checkbox} name="fiu" id="fiu" />I confirm
+                    that I have read and agree with the{" "}
+                    <a
+                      href="https://studentaffairs.fiu.edu/get-support/student-conduct-and-conflict-resolution/student-code-of-conduct%20/index.php"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      FIU Code of Conduct
+                    </a>
+                  </p>
                 </div>
-                <Button styleId="application-submit-button" title="Submit" />
+                <div className="application-submit-button">
+                  <Button type="submit" title="Submit" id="application" />
+                </div>
               </Form>
-
             </div>
           )}
         </Formik>
@@ -458,5 +557,4 @@ class Application extends Component {
     );
   }
 }
-
 export default Application;

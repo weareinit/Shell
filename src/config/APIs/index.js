@@ -1,3 +1,4 @@
+export const GOOGLE_MAP_KEY = "";//temp
 export const API_URL = "https://shellfront.herokuapp.com/";
 export const REGISTER_PATH = "/application";
 export const LOGIN_PATH = "/application/login";

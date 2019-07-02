@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 
 import Faq from "./sections/faq";
 import Tracks from "./sections/tracks";
@@ -42,13 +42,14 @@ class Landing extends Component {
             maxWidth: 100,
             minWidth: 60,
             position: "fixed",
-            right: 50,
+            right: "2.5%",
             top: 0,
             width: "10%",
             zIndex: 10000
           }}
           href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-blue.svg"
@@ -56,45 +57,32 @@ class Landing extends Component {
             style={{ width: "100%" }}
           />
         </a>
-        <ScrollContainer >
+        <ScrollContainer>
           <WaveBackground>
-            {/* MAIN SECTION */}
             <section name="home" className="landing-section main-section">
               <MainSection {...this.props} />
             </section>
-
-            {/* WHAT IS SHELLHACKS SECTION */}
-            <section name="aboutus"className="landing-section info-section">
+          </WaveBackground>
+          <GradientBackground>
+            <section name="about" className="landing-section info-section">
               <Info />
             </section>
-          </WaveBackground>
-
-          <GradientBackground>
-            {/* TRACKS SECTION */}
             <section name="tracks" className="landing-section">
               <Tracks />
             </section>
-
-            {/* SCHEDULE SECTION */}
             <section name="schedule" className="landing-section">
               <Schedule />
             </section>
-
-            {/* FAQS SECTION */}
-            <section name="faq"className="landing-section">
+            <section name="faq" className="landing-section">
               <Faq />
             </section>
-
-            {/* COMPANIES AND ORGS SECTION */}
-            <section name="sponsor"className="landing-section">
+            <section name="sponsor" className="landing-section">
               <Sponsors />
             </section>
-
-            {/* FOOTER SECTION */}
-            <section name ="thanks"className="landing-section">
+            <section name="thanks" className="landing-section">
               <Thank />
             </section>
-            <Footer />
+            <Footer showSocials={false} />
           </GradientBackground>
         </ScrollContainer>
       </div>

@@ -1,35 +1,13 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Menu } from "./menu";
-import {
-  Link,
-  DirectLink,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll";
-
-const styles = {
-  fontFamily: "sans-serif",
-  textAlign: "center"
-};
+import { Events, animateScroll as scroll, scroller } from "react-scroll";
 
 //section  wrapper
 class ScrollContainer extends React.Component {
   constructor(props) {
     super(props);
     this.scrollToTop = this.scrollToTop.bind(this);
-  }
-
-  componentDidMount() {
-    Events.scrollEvent.register("begin", function() {
-      console.log("begin", arguments);
-    });
-
-    Events.scrollEvent.register("end", function() {
-      console.log("end", arguments);
-    });
   }
 
   scrollToTop() {
@@ -80,5 +58,8 @@ class ScrollContainer extends React.Component {
     );
   }
 }
-
+//type checking
+ScrollContainer.propTypes = {
+  children: PropTypes.elementType.isRequired
+};
 export { ScrollContainer };

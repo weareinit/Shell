@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Formik, Form, Field } from "formik";
 
 import { SignUpValidation } from "../../utils/validations";
-import { REGISTER_PATH } from "../../config/api_paths";
+import { REGISTER_PATH } from "../../config/APIs";
 import request from "../../services/request";
 
 import "./style.css";
@@ -16,8 +16,6 @@ class SignUp extends Component {
 
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        console.log(this.props.showSuccess)
-
     };
 
     handleSubmit = (values) => {
@@ -34,7 +32,6 @@ class SignUp extends Component {
             url: REGISTER_PATH,
             data
         }).then((resp) => {
-            console.log(resp)
             this.props.showSuccess(resp.success);
         });
 
