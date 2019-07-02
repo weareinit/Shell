@@ -1,12 +1,8 @@
 [{
         "title": "Front-End",
         "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on Front-End",
-        "trackDetails": [
-            "HTML/CSS",
-            "Javascript",
-            "UI/UX Design"
-        ],
+        "details": "Brief description on the hardware track. Brief description on the hard",
+        "trackDetails": ["HTML/CSS", "Javascript", "UI/UX Design"],
         "softwareNames": [
             "Software 1",
             "Software 2",
@@ -21,12 +17,8 @@
     {
         "title": "Back-End",
         "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on Back-End",
-        "trackDetails": [
-            "MongoDB",
-            "Google Cloud",
-            "Azure"
-        ],
+        "details": "Brief description on the hardware track. Brief description on the hard",
+        "trackDetails": ["MongoDB", "Google Cloud", "Azure"],
         "softwareNames": [
             "Software 1",
             "Software 2",
@@ -41,12 +33,8 @@
     {
         "title": "Hardware",
         "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on Hardware",
-        "trackDetails": [
-            "Arduino",
-            "Raspberry Pi",
-            "3D Modeling"
-        ],
+        "details": "Brief description on the hardware track. Brief description on the hard",
+        "trackDetails": ["Arduino", "Raspberry Pi", "3D Modeling"],
         "softwareNames": [
             "Software 1",
             "Software 2",
@@ -61,12 +49,8 @@
     {
         "title": "CyberSecurity",
         "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on CyberSecurity",
-        "trackDetails": [
-            "Thing1",
-            "Thing2",
-            "Thing3"
-        ],
+        "details": "Brief description on the hardware track. Brief description on the hard",
+        "trackDetails": ["Thing1", "Thing2", "Thing3", "Thing3"],
         "softwareNames": [
             "Software 1",
             "Software 2",
@@ -79,14 +63,10 @@
         ]
     },
     {
-        "title": "AI/Machine Learning",
+        "title": "Artificial Intelligence",
         "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on CyberSecurity",
-        "trackDetails": [
-            "Thing1",
-            "Thing2",
-            "Thing3"
-        ],
+        "details": "Brief description on the hardware track. Brief description on the hard",
+        "trackDetails": ["Thing1", "Thing2", "Thing3"],
         "softwareNames": [
             "Software 1",
             "Software 2",

@@ -1,112 +1,118 @@
 import React from "react";
-import { Link } from "react-scroll";
-// import { fa } from "@fortawesome/free-regular-svg-icons"; //need to pre-load in app.js
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link, Element } from "react-scroll";
+import { faCircle } from "@fortawesome/free-solid-svg-icons"; //need to pre-load in app.js
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles.css";
 class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isAtHome: true
+    };
+  }
+
+  handleSetActive = args => {
+    if (args === "home") this.setState({ isAtHome: true });
+    else if (args !== "home") this.setState({ isAtHome: false });
+  };
+
   render() {
     return (
-      <div class="menu">
-        <div class="label">Menu</div>
-        <div class="spacer"></div>
-        <div class="item">
-          <span>
-            <Link
-              activeClass="active"
-              className="test1"
-              to="home"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Home
-            </Link>
-          </span>
-        </div>
-        <div class="item">
-          <span>
-            <Link
-              activeClass="active"
-              className="test1"
-              to="aboutus"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              About us
-            </Link>
-          </span>
-        </div>
-        <div class="item">
-          <span>
-            <Link
-              activeClass="active"
-              className="test1"
-              to="tracks"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Learning Tracks
-            </Link>
-          </span>
-        </div>
-        <div class="item">
-          <span>
-            <Link
-              activeClass="active"
-              className="test1"
-              to="schedule"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Schedule
-            </Link>
-          </span>
-        </div>
-        <div class="item">
-          <span>
-            <Link
-              activeClass="active"
-              className="test1"
-              to="faq"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              FAQs
-            </Link>
-          </span>
-        </div>
-        <div class="item">
-          <span>
-            <Link
-              activeClass="active"
-              className="test1"
-              to="sponsor"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Sponsors
-            </Link>
-          </span>
-        </div>
-        <div class="item">
-          <span>
-            <Link
-              activeClass="active"
-              className="test1"
-              to="thanks"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Thanks
-            </Link>
-          </span>
-        </div>
+      <div
+        style={this.state.isAtHome ? { display: "none" } : {}}
+        className="menu"
+      >
+        <Element title="Home">
+          <Link
+            activeClass="active"
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            onSetActive={this.handleSetActive}
+          >
+            <FontAwesomeIcon icon={faCircle} />
+          </Link>
+        </Element>
+        <Element title="About Us">
+          <Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            onSetActive={this.handleSetActive}
+          >
+            <FontAwesomeIcon icon={faCircle} />
+          </Link>
+        </Element>
+        <Element title="Learning Tracks">
+          <Link
+            activeClass="active"
+            to="tracks"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            onSetActive={this.handleSetActive}
+          >
+            <FontAwesomeIcon icon={faCircle} />
+          </Link>
+        </Element>
+        <Element title="Tentative Schedule">
+          <Link
+            activeClass="active"
+            to="schedule"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            onSetActive={this.handleSetActive}
+          >
+            <FontAwesomeIcon icon={faCircle} />
+          </Link>
+        </Element>
+        <Element title="FAQs">
+          <Link
+            activeClass="active"
+            to="faq"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            onSetActive={this.handleSetActive}
+          >
+            <FontAwesomeIcon icon={faCircle} />
+          </Link>
+        </Element>
+        <Element title="Sponsors">
+          <Link
+            activeClass="active"
+            to="sponsor"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            onSetActive={this.handleSetActive}
+          >
+            <FontAwesomeIcon icon={faCircle} />
+          </Link>
+        </Element>
+        <Element title="Thanks &hearts;">
+          <Link
+            activeClass="active"
+            to="thanks"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            onSetActive={this.handleSetActive}
+          >
+            <FontAwesomeIcon icon={faCircle} />
+          </Link>
+        </Element>
       </div>
     );
   }

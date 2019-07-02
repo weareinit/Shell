@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { WaveBackground, GradientBackground } from "../common";
 import { Footer } from "../common";
-import ZoomableImg from "./zoomableImg";
+import { ZoomableImg } from "../common";
 import Sponsorcard from "./sponsorCard";
 
 class Sponsor extends Component {

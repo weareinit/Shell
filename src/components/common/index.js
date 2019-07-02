@@ -5,3 +5,6 @@ export * from "./select";
 export * from "./footer";
 export * from "./menu";
 export * from "./scroll";
+export * from "./checkbox";
+export * from "./map";
+export * from "./zoomableImg";

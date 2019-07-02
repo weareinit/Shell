@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 import { withRouter } from "react-router";
 import { Formik, Form, Field } from "formik";
@@ -7,7 +6,7 @@ import { Formik, Form, Field } from "formik";
 import { LogInValidation } from "../../utils/validations";
 import "./style.css";
 
-import { LOGIN_PATH } from "../../config/api_paths";
+import { LOGIN_PATH } from "../../config/APIs";
 import request from "../../services/request";
 import querries from "../../utils/querries";
 

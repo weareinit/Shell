@@ -1,38 +1,52 @@
 import React, { Component } from "react";
 import "./styles.css";
-import { Card } from "../common";
-import { ParkingCardContent, ImportantItemsCardContent, LearningTracksCardContent } from "./contents";
-
+import { Card, ZoomableImg } from "../common";
+import {
+  ParkingCardContent,
+  ImportantItemsCardContent,
+  LearningTracksCardContent
+} from "./contents";
+import {
+  faLaptop,
+  faCar,
+  faSuitcaseRolling
+} from "@fortawesome/free-solid-svg-icons"; //need to pre-load in app.js
 class Essentials extends Component {
-  cardContent = () => (
-    <div>
-      <img src="../../assets/arenaMapsImg.png" alt="mapsImage" />
-      <div>
-        <h3>Shellhacks is located at: </h3>
-        <div>
-          <p>
-            FIU"s Ocean Bank Convocation Center 1180 SW 113th Ave, Miami, FL
-            Direction 1 Here Direction 2 Here Direction 3 Here Direction 4 Here
-            Direction 5 Here
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-
-
   render() {
-
+    let props = {
+      styleClassName: "dashboard-card align-title-icon",
+      activeClassName: "active-dashboard-card align-title-icon"
+    };
     return (
       <div className="dashboard-page">
-        <h1 className="page-title">Essentials</h1>
-        <div>
-          <Card title="Parking and Transportation" content={ParkingCardContent} />
-          <Card title="What should you bring to Shellhacks" content={ImportantItemsCardContent} />
-          <Card title="Learning Tracks" content={LearningTracksCardContent} />
-          <Card title="Parking and Transportation" content={ParkingCardContent} />
-          <Card title="What should you bring to Shellhacks" content={ImportantItemsCardContent} />
-          <Card title="Learning Tracks" content={LearningTracksCardContent} />
+        <h1>Essentials</h1>
+        <div className="essentials-container">
+          <div className="support-description">
+            <p>
+              I shall purr myself to sleep swipe at owner's legs but ask to go
+              outside and ask to come inside and ask to go outside and ask to
+              come inside i bet my nine lives on you-oooo-ooo-hooo so chew the
+              plant milk the cow but intrigued by the shower.
+            </p>
+          </div>
+          <Card
+            title="Parking and Transportation"
+            content={ParkingCardContent}
+            titleIcon={faCar}
+            {...props}
+          />
+          <Card
+            title="What should you bring to Shellhacks"
+            titleIcon={faSuitcaseRolling}
+            content={ImportantItemsCardContent}
+            {...props}
+          />
+          <Card
+            title="Learning Tracks"
+            titleIcon={faLaptop}
+            content={LearningTracksCardContent}
+            {...props}
+          />
         </div>
       </div>
     );
@@ -40,4 +54,3 @@ class Essentials extends Component {
 }
 
 export default Essentials;
-

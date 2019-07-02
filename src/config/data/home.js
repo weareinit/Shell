@@ -1,28 +1,32 @@
 export const individualData = {
-    fullName : "Andrew Scott",
-    score: 500,
-    status: "Incomplete"
+  fullName: "Andrew Scott",
+  score: 500,
+  status: "Incomplete"
 };
 
 export const announcementCardInfo = [
-    {
-        title: "FOOOOOD!",
-        date: "Today",
-        description: "Come get your free food!"
-    },
-    {
-        title: "Free Stuff",
-        date: "Yestermorrow",
-        description: "Come get your free Stuff!"
-    },
-    {
-        title: "Workshop moved",
-        date: "Tomorrow",
-        description: "Workshop has been moved to a new room."
-    },
-    {
-        title: "This is a title",
-        date: "Someday",
-        description: "This might be a decription."
-    },
+  {
+    title: "Welcome!",
+    date: "30 mins ago",
+    description:
+      "Since InVision is a SaaS product with many features, it’s crucial that users understand the product as soon as possible. This could be why the company focuses on tutorials in its welcome email. The goal is to get customers using the product right away so they’ll discover how it might help with their business."
+  },
+  {
+    title: "Application is open!",
+    date: "2 days ago",
+    description:
+      "Since InVision is a SaaS product with many features, it’s crucial that users understand the product as soon as possible. This could be why the company focuses on tutorials in its welcome email. The goal is to get customers using the product right away so they’ll discover how it might help with their business."
+  },
+  {
+    title: "Application is open!",
+    date: "2 days ago",
+    description:
+      "Since InVision is a SaaS product with many features, it’s crucial that users understand the product as soon as possible. This could be why the company focuses on tutorials in its welcome email. The goal is to get customers using the product right away so they’ll discover how it might help with their business."
+  },
+  {
+    title: "Application is open!",
+    date: "2 days ago",
+    description:
+      "Since InVision is a SaaS product with many features, it’s crucial that users understand the product as soon as possible. This could be why the company focuses on tutorials in its welcome email. The goal is to get customers using the product right away so they’ll discover how it might help with their business."
+  }
 ];

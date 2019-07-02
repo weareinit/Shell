@@ -1,101 +1,45 @@
-[{
-        "title": "Front-End",
-        "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on Front-End",
-        "trackDetails": [
-            "HTML/CSS",
-            "Javascript",
-            "UI/UX Design"
-        ],
-        "softwareNames": [
-            "Software 1",
-            "Software 2",
-            "Software 3",
-            "Software 4",
-            "Software 5",
-            "Software 6",
-            "Software 7",
-            "Software 8"
+{
+    "direction": {
+        "title": "Shellhacks is located at:",
+        "address": "FIU's Ocean Bank Convocation Center 1180 SW 113th Ave, Miami, FL",
+        "directions": [
+            "Direction Here",
+            "Direction Here",
+            "Direction Here",
+            "Direction Here",
+            "Direction Here"
         ]
     },
-    {
-        "title": "Back-End",
-        "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on Back-End",
-        "trackDetails": [
-            "MongoDB",
-            "Google Cloud",
-            "Azure"
-        ],
-        "softwareNames": [
-            "Software 1",
-            "Software 2",
-            "Software 3",
-            "Software 4",
-            "Software 5",
-            "Software 6",
-            "Software 7",
-            "Software 8"
-        ]
+    "parking": {
+        "title": "Parking",
+        "description": "Instructions on how to park and what do upcoming parkers need to know regarding FIU, what they need to bring and travel reimbursements Litter kitter kitty litty little kitten big roar roar feed me mice cat sit like bread. Pur Litter kitter kitty litty little kitten big roar roar feed me mice cat sit like bread. Pur Litter kitter kitty litty"
     },
-    {
-        "title": "Hardware",
-        "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on Hardware",
-        "trackDetails": [
-            "Arduino",
-            "Raspberry Pi",
-            "3D Modeling"
-        ],
-        "softwareNames": [
-            "Software 1",
-            "Software 2",
-            "Software 3",
-            "Software 4",
-            "Software 5",
-            "Software 6",
-            "Software 7",
-            "Software 8"
-        ]
+    "transportation": {
+        "title": "Transportation",
+        "description": "Instructions on how to FIU if they are out of state or if there are any busses that are open to their schools and how they can go about to reserve their spots, yada kitter kitty litty little kitten big roar roar feed me mice cat sit like bread. Pur Litter kitter kitty litty little kittenkitter kitty litty little kitten big roar roar feed me mice cat sit like bread."
     },
-    {
-        "title": "CyberSecurity",
-        "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on CyberSecurity",
-        "trackDetails": [
-            "Thing1",
-            "Thing2",
-            "Thing3"
-        ],
-        "softwareNames": [
-            "Software 1",
-            "Software 2",
-            "Software 3",
-            "Software 4",
-            "Software 5",
-            "Software 6",
-            "Software 7",
-            "Software 8"
-        ]
+    "shouldBring": {
+        "title": "Brief summary about the items that should be brought shellhacks and what they usually tento to be. Also warnings and a few things that ongoing hacks should know.",
+        "optional": {
+            "title": "Essential Items",
+            "items": [
+                "Items Here",
+                "Items Here",
+                "Items Here",
+                "Items Here",
+                "Items Here"
+            ]
+        },
+        "essential": {
+            "title": "Optional Items",
+            "items": [
+                "Items Here",
+                "Items Here",
+                "Items Here",
+                "Items Here",
+                "Items Here"
+            ]
+        }
     },
-    {
-        "title": "AI/Machine Learning",
-        "path": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
-        "details": "Brief description on CyberSecurity",
-        "trackDetails": [
-            "Thing1",
-            "Thing2",
-            "Thing3"
-        ],
-        "softwareNames": [
-            "Software 1",
-            "Software 2",
-            "Software 3",
-            "Software 4",
-            "Software 5",
-            "Software 6",
-            "Software 7",
-            "Software 8"
-        ]
-    }
-]
+    "tracksDesc": "Twitch tail in permanent irritation my slave human didn’t give me any food so i pooped on the floor. Touch my tail, i shred your hand purrrr poop in litter box, scratch the walls playing with balls of wool bird bird bird bird bird."
+}
