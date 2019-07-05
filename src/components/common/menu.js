@@ -1,3 +1,9 @@
+/**
+ * Summary: Home "bubble" menu component
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
+
 import React from "react";
 import { Link, Element } from "react-scroll";
 import { faCircle } from "@fortawesome/free-solid-svg-icons"; //need to pre-load in app.js

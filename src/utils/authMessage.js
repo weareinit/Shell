@@ -3,32 +3,44 @@
  * @param {Boolean} condition - login <--> true, register <--> false
  */
 function getMessage(condition) {
+  let message = "";
 
-    let message = "";
+  let salutations = condition
+    ? [
+        { header: `Welcome!`, desc: `Please Signin` },
+        { header: `Bienvenido!`, desc: "Please Login" },
+        {
+          header: `こんにちは`,
+          desc: `Ahh go ahead and Google translate that, WAVE time.`
+        },
+        { header: `Greetings!`, desc: `We've been WAVING for you` },
+        { header: `Oh, Hi There!`, desc: `WAVE been expecting you.` },
+        { header: `Hello There!`, desc: `We love the WAVE you look.` },
+        {
+          header: `Salut, Bienvenue.`,
+          desc: `Ahh, i Know Right! WAVE Been practicing`
+        }
+      ]
+    : [
+        {
+          header: `Shell-Hacker Incoming...`,
+          desc: `Please Fillout the Form to Create an Account`
+        },
+        {
+          header: `Shell-Hacker Incoming...`,
+          desc: `Please Fillout the Form to Register`
+        },
+        {
+          header: `Hi There!`,
+          desc: `Please Fillout the Form to Register`
+        }
+      ];
 
-    let salutations = condition ? [
-        `Welcome!\n Please Signin`,
-        `Bienvenido!\n`,
-        `こんにちは\nOh go ahead and Google \ntranslate that, WAVE time.`,
-        `Oh look who it is!\nWe"ve been WAVING for you`,
-        `Oh, Hi There!\nWAVE been expecting you.`,
-        `Well Hello There!\nWe love the WAVE you look.`,
-        `Salut, Bienvenue.\nAhh, i Know Right!\n WAVE Been practicing.`,
-    ]
-        :
-        [
-            `Whoa New Hacker Incoming!\nPlease Fillout the Form to Register`,
-            `New Shell-Hacker Incoming...\nPlease Fillout the Form to Register`,
-            `Wanna Hack with the Cool Kids?\nPlease Fillout the Form to Register`,
-            `A Wise Man Once said:\nPlease Fillout the Form to Register`
-        ];
+  let randomNumber = Math.floor(Math.random() * salutations.length);
 
-    let randomNumber = Math.floor(Math.random() * salutations.length);
+  message = salutations[randomNumber];
 
-    message = salutations[randomNumber];
-
-
-    return message
+  return message;
 }
 
 export default getMessage;

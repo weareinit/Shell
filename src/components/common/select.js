@@ -1,12 +1,12 @@
+/**
+ * Summary: formik child select component using react-select
+ * @docs https://react-select.com/
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
+
 import React from "react";
 import PropTypes from "prop-types";
-/** 
-author: Jehf Kemsy D. 
-email: jehfkemsy@gmail.com
-last edited: @jehfkemsy
-IMPROVEMENT: add load options async -> https://codesandbox.io/s/oxovwo4ojy
-*/
-
 import { default as ReactSelect } from "react-select";
 
 class Select extends React.Component {
@@ -39,6 +39,7 @@ class Select extends React.Component {
     };
     return (
       <ReactSelect
+        autoComplete="off"
         classNamePrefix="react-select"
         styles={selectStyles}
         onChange={this.handleChange}

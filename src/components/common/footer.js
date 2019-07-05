@@ -1,3 +1,9 @@
+/**
+ * Summary: Website footer
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import {
@@ -74,6 +80,10 @@ class Footer extends Component {
               href="http://upe.cs.fiu.edu"
             >
               Upsilon Pi Epsilon at FIU
+            </a>
+            {" | "}
+            <a className="links" href="mailto: upe@fiu.edu">
+              Contact Us
             </a>
             {" | "}
             <a

@@ -62,17 +62,32 @@ body {
     overflow-x: hidden;
 }
 
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #c4baa2;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #c4baa2;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #c4baa2;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 * {
     box-sizing: border-box;
-}
-
-* a:hover {
-    cursor: pointer;
-}
-
-.links {
-    color: var(--shell-sand);
-    text-decoration: underline;
 }
 
 .centered-flex-column {
@@ -91,6 +106,15 @@ body {
 
 
 /* contents */
+
+* a:hover {
+    cursor: pointer;
+}
+
+.links {
+    color: var(--shell-sand);
+    text-decoration: underline;
+}
 
 h1 {
     font-size: var(--heading-bg);

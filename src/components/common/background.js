@@ -1,3 +1,9 @@
+/**
+ * Summary: Theme backgrounds
+ * ------------------------------
+ * @author Jehf K D., Raf (@jehfkemsy , @rslay)
+ */
+
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 
@@ -59,9 +65,9 @@ class GradientBackground extends Component {
 }
 
 WaveBackground.propTypes = {
-  children: PropTypes.elementType.isRequired
+  children: PropTypes.element.isRequired
 };
 GradientBackground.propTypes = {
-  children: PropTypes.elementType.isRequired
+  children: PropTypes.element.isRequired
 };
 export { WaveBackground, GradientBackground };

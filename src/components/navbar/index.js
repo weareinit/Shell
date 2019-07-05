@@ -1,6 +1,18 @@
+/**
+ * Dashboard side-menu
+ * ------------------------------
+ * @author Jehf K D. ,Alex C. (@jehfkemsy , @aalexcomas11)
+ */
 import React, { Component, Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import {
+  DASHBOARD,
+  PROFILE,
+  APPLICATION,
+  ESSENTIALs,
+  SUPPORT
+} from "../../config/pageRoutes";
 import "./styles.css";
 class Navbar extends Component {
   constructor(props) {
@@ -46,19 +58,19 @@ class Navbar extends Component {
               </div>
             </li>
             <li className="nav-item" onClick={this.toggle}>
-              <Link to="/dashboard">Home</Link>
+              <Link to={DASHBOARD}>Home</Link>
             </li>
             <li className="nav-item" onClick={this.toggle}>
-              <Link to="/dashboard/application">Application</Link>
+              <Link to={DASHBOARD + APPLICATION}>Application</Link>
             </li>
             <li className="nav-item" onClick={this.toggle}>
-              <Link to="/dashboard/essentials">Essentials</Link>
+              <Link to={DASHBOARD + ESSENTIALs}>Essentials</Link>
             </li>
             <li className="nav-item" onClick={this.toggle}>
-              <Link to="/dashboard/profile">Profile</Link>
+              <Link to={DASHBOARD + PROFILE}>Profile</Link>
             </li>
             <li className="nav-item" onClick={this.toggle}>
-              <Link to="/dashboard/support">Support</Link>
+              <Link to={DASHBOARD + SUPPORT}>Support</Link>
             </li>
           </ul>
           <ul id="logout">

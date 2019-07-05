@@ -1,109 +1,104 @@
-import React, { Component } from "react";
+/**
+ * register user then set show Success component
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
 
-import { Formik, Form, Field } from "formik";
+import React from "react";
+import { Formik, Form } from "formik";
+import { Button, TextInput, ErrorMessage } from "../common";
+import { SignUpValidation, SignUpInitialValues } from "../../utils/validations";
+import { register } from "../../services/routes";
+import "./styles.css";
 
-import { SignUpValidation } from "../../utils/validations";
-import { REGISTER_PATH } from "../../config/APIs";
-import request from "../../services/request";
-
-import "./style.css";
-
-class SignUp extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
+const SignUp = props => {
+  const handleSubmit = values => {
+    const form = {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      email: values.email,
+      password: values.password
     };
+    let nextPath = props.showSuccess;
+    register(form, nextPath);
+  };
 
-    handleSubmit = (values) => {
-
-        const data = {
-            firstName: values.firstName,
-            lastName: values.lastName,
-            email: values.email,
-            password: values.password
-        }
-
-        request({
-            method: "POST",
-            url: REGISTER_PATH,
-            data
-        }).then((resp) => {
-            this.props.showSuccess(resp.success);
-        });
-
-    };
-
-    render() {
-        return (
-            <Formik
-                initialValues={{
-                    firstName: "",
-                    lastName: "",
-                    email: "",
-                    password: "",
-                    confirmPassword: ""
-                }}
-                validationSchema={SignUpValidation}
-                onSubmit={this.handleSubmit}
-                render={({ touched, errors, handleSubmit }) => (
-                    <Form className="auth-form">
-                        <div className="field-div">
-                            <Field
-                                name="firstName"
-                                type="text"
-                                className="field"
-                                style={touched.firstName && errors.firstName ? { border: "2px solid red" } : null}
-                                placeholder="Enter first name"
-                            />
-                        </div>
-                        <div className="field-div">
-                            <Field
-                                name="lastName"
-                                type="text"
-                                className="field"
-                                style={touched.lastName && errors.lastName ? { border: "2px solid red" } : null}
-                                placeholder="Enter last name"
-                            />
-                        </div>
-                        <div className="field-div">
-                            <Field
-                                name="email"
-                                type="email"
-                                className="field"
-                                style={touched.email && errors.email ? { border: "2px solid red" } : null}
-                                placeholder="Enter your school email"
-                            />
-                        </div>
-                        <div className="field-div">
-                            <Field
-                                name="password"
-                                type="password"
-                                className="field"
-                                style={touched.password && errors.password ? { border: "2px solid red" } : null}
-                                placeholder="Password"
-                            />
-                        </div>
-                        <div className="field-div">
-                            <Field
-                                name="confirmPassword"
-                                type="password"
-                                className="field"
-                                style={touched.confirmPassword && errors.confirmPassword ? { border: "2px solid red" } : null}
-                                placeholder="Confirm password"
-                            />
-                        </div>
-                        <div className="auth-submit-button-container">
-                            <button className="auth-submit-button" type="submit" >Submit</button>
-                        </div>
-                    </Form>
-                )}
+  return (
+    <Formik
+      initialValues={SignUpInitialValues}
+      validationSchema={SignUpValidation}
+      onSubmit={handleSubmit}
+      render={({ touched, errors }) => (
+        <Form className="auth-form">
+          <ErrorMessage
+            errors={[
+              //one error at a time
+              (touched.firstName && errors.firstName) ||
+                (touched.lastName && errors.lastName) ||
+                (touched.email && errors.email) ||
+                (touched.password && errors.password) ||
+                (touched.confirmPassword && errors.confirmPassword)
+            ]}
+            shouldShow={
+              !!(touched.firstName && errors.firstName) ||
+              !!(touched.lastName && errors.lastName) ||
+              !!(touched.email && errors.email) ||
+              !!(touched.password && errors.password) ||
+              !!(touched.confirmPassword && errors.confirmPassword)
+            }
+          />
+          <div className="field-div">
+            <TextInput
+              name="firstName"
+              type="text"
+              error={touched.firstName && errors.firstName}
+              placeholder="First Name"
             />
-        );
-    }
-}
+          </div>
+          <div className="field-div">
+            <TextInput
+              name="lastName"
+              type="text"
+              error={touched.lastName && errors.lastName}
+              placeholder="Last Name"
+            />
+          </div>
+          <div className="field-div">
+            <TextInput
+              name="email"
+              type="email"
+              error={touched.email && errors.email}
+              placeholder="Email Address"
+            />
+          </div>
+          <div className="field-div">
+            <TextInput
+              name="password"
+              type="password"
+              error={touched.password && errors.password}
+              placeholder="Password"
+            />
+          </div>
+          <div className="field-div">
+            <TextInput
+              name="confirmPassword"
+              type="password"
+              error={touched.confirmPassword && errors.confirmPassword}
+              placeholder="Confirm password"
+            />
+          </div>
+          <div className="auth-submit-button-container">
+            <Button
+              title="Submit"
+              type="submit"
+              id="signup"
+              extraStyles="auth-button-extra-styles"
+            />
+          </div>
+        </Form>
+      )}
+    />
+  );
+};
 
 export default SignUp;
