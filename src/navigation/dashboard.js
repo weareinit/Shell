@@ -9,7 +9,7 @@ import {
   APPLICATION,
   PROFILE,
   SUPPORT,
-  ESSENTIALs
+  ESSENTIAL
 } from "../config/pageRoutes";
 
 import Application from "../components/application";
@@ -31,7 +31,7 @@ class Dashboard extends Component {
               <Route path={DASHBOARD + APPLICATION} component={Application} />
               <Route path={DASHBOARD + SUPPORT} component={Support} />
               <Route path={DASHBOARD + PROFILE} component={Profile} />
-              <Route path={DASHBOARD + ESSENTIALs} component={Essentials} />
+              <Route path={DASHBOARD + ESSENTIAL} component={Essentials} />
               <Footer showSocials={true} />
             </div>
           </Fragment>

@@ -16,4 +16,4 @@ export const HOME = `${DASHBOARD}`;
 export const APPLICATION = `/application`;
 export const PROFILE = `/profile`;
 export const SUPPORT = `/support`;
-export const ESSENTIALs = `/essential`;
+export const ESSENTIAL = `/essential`;
