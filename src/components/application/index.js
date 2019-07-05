@@ -1,14 +1,19 @@
+/**
+ * Applications form
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
 import React, { Component } from "react";
 import { Formik, ErrorMessage, Form, Field } from "formik";
 import {
   ApplicationValidation,
   ApplicationInitialValues
 } from "../../utils/validations";
-import { Select, Button, Checkbox } from "../common";
+import { Select, Button, Checkbox, SelectAsync } from "../common";
 import schools from "../../config/data/schools";
-import axios from "axios";
+import { apply } from "../../services/routes";
 import "./style.css";
-import { readFile } from "fs";
+import { readFile, writeFile } from "fs";
 
 class Application extends Component {
   constructor(props) {
@@ -18,37 +23,37 @@ class Application extends Component {
     };
   }
 
-  handleSubmit(values, { resetForm }) {
-    const apply = async () => {
-      try {
-        const response = await axios.post(
-          "https://jsonplaceholder.typicode.com/posts",
-          {
-            firstName: values.firstName,
-            lastName: values.lastName,
-            email: values.email,
-            dob: values.dob,
-            gender: values.gender,
-            race: values.race,
-            phoneNumber: values.phoneNumber
-          }
-        );
-        resetForm();
-      } catch (error) {}
+  handleSubmit = (values, { resetForm }) => {
+    const { history } = this.props;
+
+    let nextAction = () => {
+      console.log("hello"); //temp
     };
-    apply();
-  }
+    console.log(history);
+
+    const submitApplication = async () => {
+      try {
+        apply(values, nextAction, history);
+        alert(JSON.stringify(values));
+
+        resetForm();
+      } catch (error) {
+        alert(error);
+      }
+    };
+    submitApplication();
+  };
 
   render() {
+    const { history } = this.props;
     return (
       <div className="dashboard-page">
         <h1>Application</h1>
         <Formik
           initialValues={ApplicationInitialValues}
           validationSchema={ApplicationValidation}
-          // onSubmit={this.handleSubmit}
+          onSubmit={this.handleSubmit}
           enableReinitialize={false}
-          onSubmit={values => alert(JSON.stringify(values))} //test
         >
           {({
             values,
@@ -66,6 +71,7 @@ class Application extends Component {
             isValid
           }) => (
             <div className="application-container">
+              {<></> && console.log(values)}
               <Form onSubmit={handleSubmit}>
                 <h2>Personal Information</h2>
                 <div className="half-container">

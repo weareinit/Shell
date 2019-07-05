@@ -26,17 +26,33 @@
 }
 
 
+/* TEXTINPUT */
+
+.text-input {
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: var(--shell-sand);
+    border-width: 1px;
+    width: 100%;
+    margin: 0 0 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+}
+
+
 /* BUTTON */
 
 .submit-button {
-    min-width: 30%;
+    min-width: 100%;
     max-width: 250px;
     padding: 12.5555px;
     margin-bottom: 25px;
     border-radius: 40px;
     border: none;
     font-size: 100%;
-    font-weight: bold;
+    font-weight: 600;
     color: white;
     background-color: var(--shell-dark-brown);
 }
@@ -57,6 +73,33 @@
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+
+/* ERROR MESSAGE*/
+
+.error-message {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 100%;
+    margin: 25px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+}
+
+.error-message li {
+    list-style-position: inside;
+    line-height: 130%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message li svg {
+    margin: 5px;
 }
 
 

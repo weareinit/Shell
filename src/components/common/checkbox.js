@@ -1,3 +1,8 @@
+/**
+ * Summary: formik child checkbox component
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
 import React from "react";
 import PropTypes from "prop-types";
 const Checkbox = ({ field: { name, value, onChange, onBlur }, id }) => {

@@ -1,8 +1,7 @@
 /**
  * Borrowed from: https://gist.github.com/sheharyarn/7f43ef98c5363a34652e60259370d2cb
- *
  * Axios Request Wrapper
- * ---------------------
+ * --------------------------------------
  * @author  Sheharyar Naseer (@sheharyarn)
  * @license MIT
  */

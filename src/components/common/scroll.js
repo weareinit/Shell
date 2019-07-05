@@ -1,5 +1,12 @@
+/**
+ * Summary: Scroll wrapper using react-scroll
+ * @docs https://www.npmjs.com/package/react-scroll
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
+
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Menu } from "./menu";
 import { Events, animateScroll as scroll, scroller } from "react-scroll";
 

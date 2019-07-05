@@ -1,3 +1,9 @@
+/**
+ * Summary: Reusable card component
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
+
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";

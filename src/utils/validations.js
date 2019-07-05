@@ -1,3 +1,9 @@
+/**
+ * Form validations
+ * ------------------------------
+ * @author Jehf K D., Luis H. (@jehfkemsy , @boxslide15)
+ */
+
 import * as Yup from "yup";
 import moment from "moment";
 
@@ -23,9 +29,14 @@ export const LogInValidation = Yup.object().shape({
     .email("Email is not valid")
     .required("Email is required"),
   password: Yup.string()
-    .min("Password is too short")
+    .min(6, "Password is too short")
     .required("Password is required")
 });
+
+export const LoginInitialValues = {
+  email: "",
+  password: ""
+};
 
 /**
  * signup validation
@@ -41,10 +52,73 @@ export const SignUpValidation = Yup.object().shape({
     .email("Email is not valid")
     .required("Email is required"),
   password: Yup.string()
-    .min(8, "Password must be at least 8 characters long")
+    .min(6, "Password must be at least 6 characters long")
     .required("Password is required"),
-  confirmPassword: Yup.string().required("Please confirm your password")
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("password"), null], "Passwords Must Match")
+    .required("Password confirmation is required")
 });
+
+export const SignUpInitialValues = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  confirmPassword: ""
+};
+
+/**
+ * validates user verification form
+ */
+export const registrationCodeValidation = Yup.object().shape({
+  verifycationCode: Yup.string()
+    .min(8, "You Confirmation Code Must be 8 Characters Minimum")
+    .max(8, "You Confirmation Code Must be 8 Characters Maximum")
+    .required(" You Must enter your confirmation token"),
+  email: Yup.string()
+    .email("Please Enter a Valid Email")
+    .required("Email is Required")
+});
+
+export const registrationCodeInitialValues = {
+  verifycationCode: "",
+  email: ""
+};
+
+/**
+ * validates forgot password from
+ */
+export const forgotPasswordValidation = Yup.object().shape({
+  userEmail: Yup.string()
+    .email("Please Format Email Correctly ")
+    .required("Email is required")
+});
+export const forgotPasswordInitialValues = {
+  userEmail: ""
+};
+
+/**
+ * validates reset password from
+ */
+export const resetPasswordValidation = Yup.object().shape({
+  resetCode: Yup.string().required("Reset Code is Required"),
+  email: Yup.string()
+    .email("Please Format Email Correctly ")
+    .required("Email is required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters long")
+    .required("Password is required"),
+  confirmpassword: Yup.string()
+    .oneOf([Yup.ref("password"), null], "Passwords Must Match")
+    .required("Password confirmation is required")
+});
+
+export const resetPasswordInitialValues = {
+  resetCode: "",
+  email: "",
+  password: "",
+  confirmpassword: ""
+};
 
 /**
  * application validation
@@ -108,6 +182,7 @@ export const ApplicationValidation = Yup.object().shape({
   fiu: Yup.boolean().oneOf([true], "You must agree to FIU Agreements")
 });
 
+//application initial values
 export const ApplicationInitialValues = {
   //personal info
   firstName: "",

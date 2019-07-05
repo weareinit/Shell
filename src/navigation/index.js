@@ -1,42 +1,34 @@
+/**
+ * Main Navigation
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
 import React, { Component, Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
-
-import DashboardRoutes from "./dashboardRoutes";
-
+import Dashboard from "./dashboard";
+import { DASHBOARD, AUTH, LIVE, SPONSOR, LANDING } from "../config/pageRoutes";
 import Auth from "../components/auth";
 import Live from "../components/live";
 import Landing from "../components/landing";
 import Sponsor from "../components/sponsor";
 
-import "./style.css";
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showNav: false,
-        }
-    };
-
-    render() {
-        return (
-            <Fragment>
-                <Switch>
-                    <Route exact path="/" component={Landing} />
-                    <Route exact path="/auth" render={
-                        (props) => (
-                            <Auth props={props} />
-                        )
-                    } component={Auth} />
-                    <Route exact path="/live" component={Live} />
-                    <Route exact path="/sponsor" component={Sponsor} />
-                    <Route path="/dashboard"
-                        render={({ match: { url } }) => (
-                            <DashboardRoutes url={url} />
-                        )} />
-                </Switch>
-            </Fragment>
-        );
-    }
+  render() {
+    return (
+      <Fragment>
+        <Switch>
+          <Route exact path={LANDING} component={Landing} />
+          <Route exact path={AUTH} component={Auth} />
+          <Route exact path={LIVE} component={Live} />
+          <Route exact path={SPONSOR} component={Sponsor} />
+          <Route
+            path={DASHBOARD}
+            render={({ match: { url } }) => <Dashboard url={url} />}
+          />
+        </Switch>
+      </Fragment>
+    );
+  }
 }
 
 export default Navigation;
