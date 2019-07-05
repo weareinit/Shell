@@ -139,6 +139,7 @@
 
 .auth-button-extra-styles {
     min-width: 70%;
+    margin: 0;
 }
 
 .auth-question-buttons {
