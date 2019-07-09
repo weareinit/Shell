@@ -1,7 +1,7 @@
 header {
     top: 0;
     background: none;
-    color: var(--shell-white, #fff);
+    color: white;
     height: 60px;
     display: flex;
     align-items: center;
@@ -11,6 +11,7 @@ header {
     overflow: hidden;
     background-color: transparent;
     z-index: 1000;
+    overflow-x: hidden;
 }
 
 .hide {
@@ -89,7 +90,7 @@ header {
     font-weight: 500;
 }
 
-@media(max-width: 650px) {
+@media (max-width: 650px) {
     .nav-item {
         margin: 1.5em 0;
     }
@@ -98,7 +99,13 @@ header {
     }
 }
 
-@media(min-width: 650px) {
+@media (min-width: 650px) {
+    .nav-item-selected {
+        background: var(--shell-dark-brown);
+    }
+    .nav-item-selected a {
+        color: #fff !important;
+    }
     header {
         display: none;
     }
@@ -131,17 +138,15 @@ header {
         padding: 0;
         line-height: 40px;
     }
-    .nav #options li:hover {
-        background: var(--shell-dark-brown);
-    }
-    .nav #options li:hover a {
-        color: var(--shell-white, #fff);
-    }
     .nav #options li a {
         color: var(--shell-light-brown);
         width: 100%;
         font-size: 1em;
-        font-weight: 500;
+        font-weight: 600;
+    }
+    .nav #logout li a {
+        font-size: 1em;
+        font-weight: 600;
     }
     .nav #logout li :hover {
         color: var(--shell-dark-brown);

@@ -1,0 +1,140 @@
+.wave-background-child {
+    z-index: 1;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+}
+
+#wave-background-objects {
+    background: var(--shell-sand);
+    display: block;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#seat1 {
+    left: 0;
+    width: 400px;
+}
+
+#seat2 {
+    right: 0;
+    width: 320px;
+}
+
+#shore {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1920px;
+    min-width: 100%;
+    z-index: 0;
+}
+
+#wetsand,
+#surf {
+    position: relative;
+}
+
+#wetsand>*,
+#surf>* {
+    position: absolute;
+    bottom: -57px;
+    left: 0;
+    min-width: 100%;
+}
+
+@keyframes wetsand3 {
+    from {
+        bottom: -50px;
+    }
+    to {
+        bottom: -45px;
+    }
+}
+
+#wetsand3 {
+    animation: wetsand3 var(--waves-speed) ease 1.6s infinite alternate;
+    bottom: -50px;
+}
+
+@keyframes wetsand2 {
+    from {
+        bottom: -370px;
+    }
+    to {
+        bottom: -40px;
+    }
+}
+
+#wetsand2 {
+    animation: wetsand2 var(--waves-speed) ease 1.5s infinite alternate;
+    bottom: -370px;
+}
+
+@keyframes wetsand1 {
+    from {
+        bottom: -390px;
+    }
+    to {
+        bottom: -10px;
+    }
+}
+
+#wetsand1 {
+    animation: wetsand1 var(--waves-speed) ease 1.2s infinite alternate;
+    bottom: -390px;
+}
+
+@keyframes surf3 {
+    from {
+        bottom: -280px;
+    }
+    to {
+        bottom: 75px;
+    }
+}
+
+#surf3 {
+    animation: surf3 var(--waves-speed) ease 0.5s infinite alternate;
+    bottom: -280px;
+}
+
+@keyframes surf2 {
+    from {
+        bottom: -250px;
+    }
+    to {
+        bottom: 5px;
+    }
+}
+
+#surf2 {
+    animation: surf2 var(--waves-speed) ease 0.3s infinite alternate;
+    bottom: -50px;
+}
+
+@keyframes surf1 {
+    from {
+        bottom: -200px;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+
+#surf1 {
+    animation: surf1 var(--waves-speed) ease 0s infinite alternate;
+    bottom: 0px;
+    z-index: 2;
+}

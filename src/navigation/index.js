@@ -1,42 +1,40 @@
-import React, { Component, Fragment } from "react";
+/**
+ * Main Navigation
+ * ------------------------------
+ * @author Jehf K D. (@jehfkemsy)
+ */
+import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-import DashboardRoutes from "./dashboardRoutes";
+import Navbar from "../components/navbar";
+import { Footer } from "../components/footer";
 
-import Auth from "../components/auth";
-import Live from "../components/live";
-import Landing from "../components/landing";
-import Sponsor from "../components/sponsor";
+import Application from "../pages/application";
+import Home from "../pages/home";
+import Support from "../pages/support";
+import Essentials from "../pages/essentials";
+import Profile from "../pages/profile";
+import Auth from "../pages/auth";
 
-import "./style.css";
+import "./styles.css";
+
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showNav: false,
-        }
-    };
-
-    render() {
-        return (
-            <Fragment>
-                <Switch>
-                    <Route exact path="/" component={Landing} />
-                    <Route exact path="/auth" render={
-                        (props) => (
-                            <Auth props={props} />
-                        )
-                    } component={Auth} />
-                    <Route exact path="/live" component={Live} />
-                    <Route exact path="/sponsor" component={Sponsor} />
-                    <Route path="/dashboard"
-                        render={({ match: { url } }) => (
-                            <DashboardRoutes url={url} />
-                        )} />
-                </Switch>
-            </Fragment>
-        );
-    }
+  render() {
+    return (
+      <Switch>
+        <Route exact path={"/auth"} component={Auth} />
+        <div className="dashboard-wrapper">
+          <Navbar />
+          <Route exact path={"/"} component={Home} />
+          <Route exact path={"/application"} component={Application} />
+          <Route exact path={"/support"} component={Support} />
+          <Route exact path={"/essentials"} component={Essentials} />
+          <Route exact path={"/profile"} component={Profile} />
+          <Footer />
+        </div>
+      </Switch>
+    );
+  }
 }
 
 export default Navigation;

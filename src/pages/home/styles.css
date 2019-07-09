@@ -1,0 +1,53 @@
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home h4 {
+    font-weight: 600;
+}
+
+.home-avatar {
+    height: auto;
+    width: 180px;
+    /* margin: 10px; */
+}
+
+.application-status {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 0 80px;
+    text-align: center;
+}
+
+.home-announcements {
+    width: inherit;
+}
+
+.application-status-button {
+    background-color: rgb(243, 84, 84);
+    justify-content: center;
+}
+
+.active-application-status-button {
+    background-color: rgb(247, 107, 107);
+    justify-content: center;
+}
+
+.user-info {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-info .user {
+    text-align: center;
+    color: white;
+    line-height: 130%;
+}

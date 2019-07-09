@@ -1,0 +1,9 @@
+.support-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.support-description {
+    margin: 0 0 50px;
+}
