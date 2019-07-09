@@ -1,4 +1,5 @@
-export const GOOGLE_MAP_KEY = ""; //temp
+//testing purposes only
+export const GOOGLE_MAP_KEY = "";
 export const REGISTER_PATH = "/application";
 export const LOGIN_PATH = "/application/login";
 export const APPLICATION_PATH = "/application/apply";

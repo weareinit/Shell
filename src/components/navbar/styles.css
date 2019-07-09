@@ -1,7 +1,7 @@
 header {
     top: 0;
     background: none;
-    color: var(--shell-white, #fff);
+    color: white;
     height: 60px;
     display: flex;
     align-items: center;
@@ -11,6 +11,7 @@ header {
     overflow: hidden;
     background-color: transparent;
     z-index: 1000;
+    overflow-x: hidden;
 }
 
 .hide {

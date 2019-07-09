@@ -7,22 +7,16 @@ import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import {
-  DASHBOARD,
-  PROFILE,
-  APPLICATION,
-  ESSENTIAL,
-  SUPPORT
-} from "../../config/pageRoutes";
+
 import "./styles.css";
 
-//auth states
+//nav states
 const navSelections = Object.freeze({
-  HOME_SELECTED: DASHBOARD,
-  PROFILE_SELECTED: DASHBOARD + PROFILE,
-  APPLICATION_SELECTED: DASHBOARD + APPLICATION,
-  ESSENTIAL_SELECTED: DASHBOARD + ESSENTIAL,
-  SUPPORT_SELECTED: DASHBOARD + SUPPORT
+  HOME: "/",
+  PROFILE: "/profile",
+  APPLICATION: "/application",
+  ESSENTIAL: "/essentials",
+  SUPPORT: "/support"
 });
 
 class Navbar extends Component {
@@ -30,7 +24,7 @@ class Navbar extends Component {
     super(props);
     this.state = {
       open: false,
-      currSelection: navSelections.HOME_SELECTED
+      currSelection: navSelections.HOME
     };
   }
 
@@ -48,15 +42,7 @@ class Navbar extends Component {
   };
 
   render() {
-    let {
-      HOME_SELECTED,
-      PROFILE_SELECTED,
-      SUPPORT_SELECTED,
-      APPLICATION_SELECTED,
-      ESSENTIAL_SELECTED
-    } = navSelections;
-
-    console.log(this.props);
+    let { HOME, PROFILE, SUPPORT, APPLICATION, ESSENTIAL } = navSelections;
 
     return (
       <Fragment>
@@ -72,13 +58,13 @@ class Navbar extends Component {
               id="dashboard-logo"
               className=""
               alt="placeholder"
-              src={require("../../assets/frontpage/shellhacks.svg")}
+              src={require("../../assets/logos/organizer/shellhacks.svg")}
             />
             <img
               id="dashboard-shell"
               className=""
               alt="placeholder"
-              src={require("../../assets/frontpage/shell.svg")}
+              src={require("../../assets/waves/shell.svg")}
             />
             <h4 className="user">Jehf Doe</h4>
           </div>
@@ -89,54 +75,50 @@ class Navbar extends Component {
               </div>
             </li>
             <li
-              className={`nav-item ${(this.state.currSelection ===
-                HOME_SELECTED &&
+              className={`nav-item ${(this.state.currSelection === HOME &&
                 "nav-item-selected") ||
                 ""}`}
               onClick={this.toggle}
             >
-              <Link to={DASHBOARD}>Home</Link>
+              <Link to={HOME}>Home</Link>
             </li>
             <li
               className={`nav-item ${(this.state.currSelection ===
-                APPLICATION_SELECTED &&
+                APPLICATION &&
                 "nav-item-selected") ||
                 ""}`}
               onClick={this.toggle}
             >
-              <Link to={APPLICATION_SELECTED}>Application</Link>
+              <Link to={APPLICATION}>Application</Link>
             </li>
             <li
-              className={`nav-item ${(this.state.currSelection ===
-                ESSENTIAL_SELECTED &&
+              className={`nav-item ${(this.state.currSelection === ESSENTIAL &&
                 "nav-item-selected") ||
                 ""}`}
               onClick={this.toggle}
             >
-              <Link to={ESSENTIAL_SELECTED}>Essentials</Link>
+              <Link to={ESSENTIAL}>Essentials</Link>
             </li>
             <li
-              className={`nav-item ${(this.state.currSelection ===
-                PROFILE_SELECTED &&
+              className={`nav-item ${(this.state.currSelection === PROFILE &&
                 "nav-item-selected") ||
                 ""}`}
               onClick={this.toggle}
             >
-              <Link to={PROFILE_SELECTED}>Profile</Link>
+              <Link to={PROFILE}>Profile</Link>
             </li>
             <li
-              className={`nav-item ${(this.state.currSelection ===
-                SUPPORT_SELECTED &&
+              className={`nav-item ${(this.state.currSelection === SUPPORT &&
                 "nav-item-selected") ||
                 ""}`}
               onClick={this.toggle}
             >
-              <Link to={SUPPORT_SELECTED}>Support</Link>
+              <Link to={SUPPORT}>Support</Link>
             </li>
           </ul>
           <ul id="logout">
             <li>
-              <Link to="/">
+              <Link to="/auth">
                 Logout <FontAwesomeIcon icon="sign-out-alt" />
               </Link>
             </li>

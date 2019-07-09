@@ -1,0 +1,38 @@
+.loading-overlay {
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(197, 187, 163, 0.5);
+    flex-direction: column;
+}
+
+.loading-overlay h1 {
+    color: var(--shell-dark-brown);
+    text-transform: capitalize !important;
+}
+
+.loading-overlay .loading-modal {
+    background-color: var(--shell-sand);
+    width: 85%;
+    max-width: 550px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    position: absolute;
+}
+
+.loading-overlay .loading-modal .loading-close {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    font-weight: 600;
+    color: var(--shell-mid-brown);
+}

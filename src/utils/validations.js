@@ -27,10 +27,10 @@ const getValidDobRange = () => {
 export const LogInValidation = Yup.object().shape({
   email: Yup.string()
     .email("Email is not valid")
-    .required("Email is required"),
+    .required("Required"),
   password: Yup.string()
     .min(6, "Password is too short")
-    .required("Password is required")
+    .required("Required")
 });
 
 export const LoginInitialValues = {
@@ -43,20 +43,20 @@ export const LoginInitialValues = {
  */
 export const SignUpValidation = Yup.object().shape({
   firstName: Yup.string()
-    .min(2, "First name cannot be empty")
-    .required("First name is required"),
+    .min(2, "First Name is too Short")
+    .required("Required"),
   lastName: Yup.string()
-    .min(2, "Last name cannot be empty")
-    .required("Last name is required"),
+    .min(2, "Last Name is too Short")
+    .required("Required"),
   email: Yup.string()
     .email("Email is not valid")
-    .required("Email is required"),
+    .required("Required"),
   password: Yup.string()
-    .min(6, "Password must be at least 6 characters long")
-    .required("Password is required"),
+    .min(6, "Password is too Short")
+    .required("Required"),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password"), null], "Passwords Must Match")
-    .required("Password confirmation is required")
+    .required("Required")
 });
 
 export const SignUpInitialValues = {
@@ -74,10 +74,10 @@ export const registrationCodeValidation = Yup.object().shape({
   verifycationCode: Yup.string()
     .min(8, "You Confirmation Code Must be 8 Characters Minimum")
     .max(8, "You Confirmation Code Must be 8 Characters Maximum")
-    .required(" You Must enter your confirmation token"),
+    .required("Required"),
   email: Yup.string()
     .email("Please Enter a Valid Email")
-    .required("Email is Required")
+    .required("Required")
 });
 
 export const registrationCodeInitialValues = {
@@ -90,8 +90,8 @@ export const registrationCodeInitialValues = {
  */
 export const forgotPasswordValidation = Yup.object().shape({
   userEmail: Yup.string()
-    .email("Please Format Email Correctly ")
-    .required("Email is required")
+    .email("Email is not Valid")
+    .required("Required")
 });
 export const forgotPasswordInitialValues = {
   userEmail: ""
@@ -101,16 +101,16 @@ export const forgotPasswordInitialValues = {
  * validates reset password from
  */
 export const resetPasswordValidation = Yup.object().shape({
-  resetCode: Yup.string().required("Reset Code is Required"),
+  resetCode: Yup.string().required("Required"),
   email: Yup.string()
-    .email("Please Format Email Correctly ")
-    .required("Email is required"),
+    .email("Email is not Valid")
+    .required("Required"),
   password: Yup.string()
-    .min(6, "Password must be at least 6 characters long")
-    .required("Password is required"),
+    .min(6, "Password is too Short")
+    .required("Required"),
   confirmpassword: Yup.string()
     .oneOf([Yup.ref("password"), null], "Passwords Must Match")
-    .required("Password confirmation is required")
+    .required("Required")
 });
 
 export const resetPasswordInitialValues = {
@@ -125,61 +125,53 @@ export const resetPasswordInitialValues = {
  */
 export const ApplicationValidation = Yup.object().shape({
   //personal info
-  firstName: Yup.string().required("Must enter your First Name"),
-  lastName: Yup.string().required("Must enter your Last Name"),
-  email: Yup.string("Must enter your school Email Address")
-    .email()
-    .required(),
+  firstName: Yup.string().required("Required"),
+  lastName: Yup.string().required("Required"),
+  email: Yup.string("Email is not valid")
+    .email("Email is not Valid")
+    .required("Required"),
   dob: Yup.date()
     .min(
       new Date(getValidDobRange().min),
-      `Date of Birth must be greater than ${getValidDobRange().min}`
+      `Date Must be greater than ${getValidDobRange().min}`
     )
-    .max(
-      new Date(getValidDobRange().max),
-      "Must be at least 18 years old to attend Shellhacks"
-    ),
+    .max(new Date(getValidDobRange().max), "Must Be at Least 18 Years Old")
+    .required("Required"),
   gender: Yup.string(),
   race: Yup.string(),
   phoneNumber: Yup.string()
     .trim()
-    .min(10, "Phone Number is too short!")
-    .required("Must add Phone Number")
+    .min(10, "Phone Number is too short")
+    .required("Required")
     .matches(phoneRegExp, "Phone number is not valid"),
   //school info
-  schoolName: Yup.string().required("You must select a school"),
+  schoolName: Yup.string().required("Required"),
   levelOfStudy: Yup.string(),
   graduationYear: Yup.string(),
   major: Yup.string(),
   //profetional info
   areaOfFocus: Yup.string(),
-  resume: Yup.mixed().required("You must add your resume"),
+  resume: Yup.mixed().required("Required"),
   // resume: Yup.string().required("Must add your resume"),
-  linkedIn: Yup.string().url("Please enter a valid URL for your LinkedIn"),
-  portfolio: Yup.string().url("Please enter a valid URL fro you Portfolio"),
-  github: Yup.string().url("Please enter a valid URL for you GitHub account"),
+  linkedIn: Yup.string().url("LinkedIn URL is not Valid"),
+  portfolio: Yup.string().url("Portfolio URL is not Valid"),
+  github: Yup.string().url("Github URL is not Valid"),
   //additional info
-  shirtSize: Yup.string().required("You must select a shirt size"),
-  dietaryRestriction: Yup.string().required(
-    "Please tell us if you have a dietary restrictions"
-  ),
-  firstTimeHack: Yup.string().required(
-    "Please tell us if you are a first time hacker"
-  ),
-  howDidYouHear: Yup.string().required(
-    "Please let us know how you heard about us"
-  ),
-  reasonForAttending: Yup.string().required(
-    "Must tell us if you attended ShellHacks last year"
-  ),
-  haveBeenToShell: Yup.string().required(
-    "Whoa! Please tell us if you've been to ShellHacks before"
-  ),
-  needReimburesment: Yup.string().required(
-    "Must tell us if you need Travel Reimbursement"
-  ),
-  mlh: Yup.boolean().oneOf([true], "You must agree to MLH Code of Conduct"),
-  fiu: Yup.boolean().oneOf([true], "You must agree to FIU Agreements")
+  shirtSize: Yup.string().required("Required"),
+  dietaryRestriction: Yup.string().required("Required"),
+  firstTimeHack: Yup.string().required("Required"),
+  howDidYouHear: Yup.string().required("Required"),
+  reasonForAttending: Yup.string().required("Required"),
+  haveBeenToShell: Yup.string().required("Required"),
+  needReimburesment: Yup.string().required("Required"),
+  mlh: Yup.boolean()
+    .oneOf([true], "You must agree to MLH Code of Conduct")
+    .required("Required"),
+  sponsorPromo: Yup.boolean().oneOf(
+    [true],
+    "Must Agree to receive emails from our Sponsors"
+  )
+  // .required("Required")
 });
 
 //application initial values
@@ -212,5 +204,5 @@ export const ApplicationInitialValues = {
   haveBeenToShell: "",
   needReimburesment: "",
   mlh: "",
-  fiu: ""
+  sponsorPromo: ""
 };
