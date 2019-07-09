@@ -51,7 +51,7 @@ html,
 body {
     height: 100%;
     width: 100vw;
-    background: var(--shell-gradient);
+    background: var(--shell-sand);
     color: white;
 }
 
@@ -88,6 +88,8 @@ button:focus {
 
 * {
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .centered-flex-column {
@@ -109,6 +111,11 @@ button:focus {
 
 * a:hover {
     cursor: pointer;
+}
+
+input {
+    font-weight: 600;
+    color: var(--shell-dark-brown);
 }
 
 .links {

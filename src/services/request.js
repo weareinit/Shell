@@ -13,7 +13,7 @@ import { API_URL } from "../config/APIs";
  * Create an Axios Client with defaults
  */
 const client = axios.create({
-  baseURL: API_URL
+  baseURL: 'https://jsonplaceholder.typicode.com/'
 });
 
 /**

@@ -1,0 +1,224 @@
+{
+    "genderData": [{
+            "value": "male",
+            "label": "Male"
+        },
+        {
+            "value": "female",
+            "label": "female"
+        },
+        {
+            "value": "nb",
+            "label": "Other/Non-Binary"
+        }
+    ],
+    "raceData": [{
+            "value": "American Indian or Alaskan Native",
+            "label": "American Indian or Alaskan Native"
+        },
+        {
+            "value": "White/Caucasian",
+            "label": "White /Caucasian"
+        },
+        {
+            "value": "Black or African American",
+            "label": "Black or African American"
+        },
+        {
+            "value": "hispanic",
+            "label": "Hispanic or Latin"
+        },
+        {
+            "value": "native",
+            "label": "Native American"
+        },
+        {
+            "value": "Asian/Pacific Islander",
+            "label": "Asian/Pacific Islander"
+        },
+        {
+            "value": "Multiple Ethnicity/Other",
+            "label": "Multiple Ethnicity/Other"
+        },
+        {
+            "value": "Prefer not to answer",
+            "label": "Prefer not to answer"
+        }
+    ],
+    "majorData": [{
+            "value": "Computer Science",
+            "label": "Computer Science"
+        },
+        {
+            "value": "Imformation Technology",
+            "label": "Information Technology"
+        },
+        {
+            "value": "Computer Engineering",
+            "label": "Computer Engineering"
+        },
+        {
+            "value": "other",
+            "label": "Other"
+        }
+    ],
+    "levelOfStudyData": [{
+            "value": "High school diploma or equivalent",
+            "label": "High school diploma or equivalent"
+        },
+        {
+            "value": "undergraduate",
+            "label": "Undergraduate"
+        },
+        {
+            "value": "Graduate",
+            "label": "Graduate"
+        }
+    ],
+    "graduationYearData": [{
+            "value": "2019",
+            "label": "2019"
+        },
+        {
+            "value": "2020",
+            "label": "2020"
+        },
+        {
+            "value": "2021",
+            "label": "2021"
+        },
+        {
+            "value": "2022",
+            "label": "2022"
+        },
+        {
+            "value": "2023",
+            "label": "2023"
+        }
+    ],
+
+    "areaOfFocusData": [{
+            "value": "web developer",
+            "label": "Web Developer"
+        },
+        {
+            "value": "mobile developer",
+            "label": "Mobile Developer"
+        },
+        {
+            "value": "frontend",
+            "label": "Front-end Developer"
+        },
+        {
+            "value": "backend",
+            "label": "Back-end Developer"
+        },
+        {
+            "value": "designer",
+            "label": "UI/UX Designer"
+        },
+        {
+            "value": "entrepreneur",
+            "label": "Entrepreneur"
+        },
+        {
+            "value": "other",
+            "label": "Other"
+        }
+    ],
+
+    "dietaryRestrictionData": [{
+            "value": "Vegan",
+            "label": "Vegan"
+        },
+        {
+            "value": "Vegetarian",
+            "label": "Vegetarian"
+        },
+        {
+            "value": "Lactose Intolerance",
+            "label": "Lactose Intolerance"
+        },
+        {
+            "value": "Nut-free",
+            "label": "Nut-free"
+        },
+        {
+            "value": "Gluten Free",
+            "label": "Gluten Free"
+        },
+        {
+            "value": "Dairy-free",
+            "label": "Dairy-free"
+        },
+        {
+            "value": "Other",
+            "label": "Other"
+        }
+    ],
+
+    "shirtSizeData": [{
+            "value": "xs",
+            "label": "XS"
+        },
+        {
+            "value": "s",
+            "label": "S"
+        },
+        {
+            "value": "m",
+            "label": "M"
+        },
+        {
+            "value": "l",
+            "label": "L"
+        },
+        {
+            "value": "xl",
+            "label": "XL"
+        },
+        {
+            "value": "xxl",
+            "label": "XXL"
+        },
+        {
+            "value": "xxxl",
+            "label": "XXXL"
+        }
+    ],
+    "yesNoData": [{
+            "value": "yes",
+            "label": "Yes"
+        },
+        {
+            "value": "no",
+            "label": "No"
+        }
+    ],
+
+    "howDidYouHearData": [{
+            "value": "Instagram",
+            "label": "Instagram"
+        },
+        {
+            "value": "Facebook",
+            "label": "Facebook"
+        },
+        {
+            "value": "LinkedIn",
+            "label": "LinkedIn"
+        },
+        {
+            "value": "Twitter",
+            "label": "Twitter"
+        },
+        {
+            "value": "My School's CS Club",
+            "label": "My School's CS Club"
+        },
+        {
+            "value": "Friends",
+            "label": "Friends"
+        }
+    ]
+}

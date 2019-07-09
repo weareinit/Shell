@@ -1,0 +1,158 @@
+.application-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.application-container form {
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.application-container form input {
+    background-color: white;
+    border-color: var(--shell-sand);
+    color: var(--shell-dark-brown);
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.application-container h2 {
+    margin: 50px 0 5px;
+    font-size: var(--sub-heading);
+    width: 100%;
+}
+
+.application-container label {
+    text-align: left;
+}
+
+.half-container {
+    width: 48%;
+    text-align: left;
+}
+
+.full-container {
+    width: 100%;
+    text-align: left;
+}
+
+.application-input {
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    margin: 0 0 5px;
+}
+
+.half-field-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 500;
+}
+
+.full-field-container {
+    max-width: 500;
+    width: 100%;
+    padding: 5px;
+}
+
+.css-2b097c-container {
+    padding: 0 !important;
+    color: var(--shell-dark-brown);
+    border: var(--shell-sand);
+}
+
+.css-1yb3pmm-control {
+    margin: -0.2em;
+}
+
+.css-1agpzqe-control {
+    border-width: 1px !important;
+    border-color: var(--shell-sand) !important;
+    font-size: 16px;
+}
+
+input:focus::-webkit-datetime-edit {
+    color: #000;
+}
+
+input[type="date"]:before {
+    color: #aaa;
+    margin-right: 0.5em;
+}
+
+.input-file+label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.input-file:focus+label,
+.input-file+label:hover {
+    background-color: red;
+}
+
+.agreement {
+    font-size: 14;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.agreement a {
+    color: white;
+}
+
+.application-submit-button {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    margin: 50px 0 0;
+}
+
+.application-error {
+    color: rgb(232, 90, 90);
+    font-size: 14px;
+}
+
+.application-container input ::placeholder {
+    color: var(--shell-light-brown) !important;
+}
+
+.application-button-wrapper {
+    width: 40%;
+    max-width: 250px;
+    min-width: 200px;
+}
+
+.dob {
+    padding: 9px !important;
+}
+
+.resume {
+    padding: 8.668px;
+}
+
+@media (max-width: 650px) {
+    .submit-button {
+        width: 100%;
+    }
+    .half-container {
+        width: 100%;
+    }
+}

@@ -25,7 +25,7 @@ const JWT = "JWT";
  * @param {Object} history - react router history object
  */
 const login = async (credentials, history) => {
-  request({
+  return request({
     method: "post",
     url: LOGIN_PATH,
     data: credentials
@@ -50,7 +50,7 @@ const login = async (credentials, history) => {
  * @param {Function} nextAction - show success component
  */
 const register = async (form, nextAction) => {
-  request({
+  return request({
     method: "post",
     url: REGISTER_PATH,
     data: form
@@ -69,7 +69,7 @@ const register = async (form, nextAction) => {
  * @param {Object} verificationCode  - contains user verification string
  */
 const verifyEmail = verificationCode => {
-  request({
+  return request({
     method: "post",
     url: VERIFY_EMAIL_PATH,
     data: verificationCode
@@ -82,7 +82,7 @@ const verifyEmail = verificationCode => {
  * @param {Object} data - email verification code
  */
 const forgotPassword = data => {
-  request({
+  return request({
     method: "post",
     url: FORGOT_PASSWORD_PATH,
     data: data
@@ -96,7 +96,7 @@ const forgotPassword = data => {
  * @param {Object} data - email and reset token
  */
 const resetPassword = data => {
-  request({ method: "post", url: RESET_PASSWORD_PATH, data: data }).then(
+  return request({ method: "post", url: RESET_PASSWORD_PATH, data: data }).then(
     resp => {
       console.log(resp);
     }
@@ -109,19 +109,23 @@ const resetPassword = data => {
  * @param {Function} nextAction - success action
  * @param {Object} history - react router history object
  */
-const apply = async (form, nextAction, history) => {
-  let token = await querries.isAuthorized(history);
-  request({
-    method: "post",
-    url: APPLICATION_PATH,
-    data: { form },
-    config: {
-      Authorization: `Bearer ${token}`
-    }
-  }).then(resp => {
-    console.log(resp);
-    if (resp.success) nextAction();
-  });
+const apply = async (form, history) => {
+  // let token = await querries.isAuthorized(history);
+  try {
+    await request({
+      method: "post",
+      url: "todos", //for testing
+      data: form
+      // config: {
+      //   header: `Bearer ${token}`
+      // }
+    }).then(resp => {
+      console.log(resp);
+      return resp;
+    });
+  } catch (err) {
+    return err;
+  }
 };
 
 /**
@@ -130,7 +134,7 @@ const apply = async (form, nextAction, history) => {
  */
 const getInfo = async history => {
   let token = await querries.isAuthorized(history);
-  request({
+  return request({
     method: "get",
     url: USER_PATH,
     config: {

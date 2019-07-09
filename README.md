@@ -1,9 +1,10 @@
-# :shell:Shell-Web
+# :shell: shell
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/503f67159e4144b9b025cffdd57f141d)](https://app.codacy.com/app/Jehfkemsy/Web-ShellHacks?utm_source=github.com&utm_medium=referral&utm_content=UPE-FIU/Web-ShellHacks&utm_campaign=Badge_Grade_Settings)
 
-A web App for Shellhacks 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- dashboard for Shellhacks 2019
+  <br/>
+  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
