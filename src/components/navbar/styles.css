@@ -125,7 +125,7 @@ header {
     .nav {
         padding-top: 20px;
         display: flex !important;
-        width: 20%;
+        width: 20vw;
         flex-direction: column;
     }
     .toggle {
