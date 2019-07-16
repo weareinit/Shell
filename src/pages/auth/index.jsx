@@ -25,14 +25,14 @@ const authState = Object.freeze({
   SIGNUP: "signup",
   VERIFY: "verify",
   FORGOT_PASSWORD: "forgot",
-  RESET_PASSWORD: "reset"
+  RESET_PASSWORD: "reset",
 });
 
 class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentState: authState.LOGIN
+      currentState: authState.LOGIN,
     };
 
     this.setAuthState = this.setAuthState.bind(this);
@@ -48,7 +48,7 @@ class Auth extends Component {
       FORGOT_PASSWORD,
       LOGIN,
       SIGNUP,
-      RESET_PASSWORD
+      RESET_PASSWORD,
     } = authState;
 
     let props = {
@@ -57,7 +57,7 @@ class Auth extends Component {
       FORGOT_PASSWORD,
       LOGIN,
       SIGNUP,
-      RESET_PASSWORD
+      RESET_PASSWORD,
     };
 
     switch (condition) {
@@ -82,7 +82,7 @@ class Auth extends Component {
       FORGOT_PASSWORD,
       LOGIN,
       SIGNUP,
-      RESET_PASSWORD
+      RESET_PASSWORD,
     } = authState;
 
     switch (condition) {
@@ -130,45 +130,47 @@ class Auth extends Component {
   render() {
     const { LOGIN, SIGNUP } = authState;
     return (
-      <WaveBackground>
-        <div className="auth-page-container">
-          <div className="auth-reg-container">
-            <div className="auth-logo-container">
-              <Logo className="auth-logo" id="siteLogo" />
-              {this.currMessage(this.state.currentState)}
-            </div>
-            <div className="auth-form-container">
-              <Logo className="auth-logo" id="auth-mobile-logo" />
-              {(this.state.currentState === LOGIN ||
-                this.state.currentState === SIGNUP) && (
-                <div className="auth-switch-button-container">
-                  <button
-                    className={`switchButton ${this.state.currentState ===
-                      SIGNUP && "switch-button-selected"}`} // sets button list's selected button color
-                    id="login-half-button"
-                    type="button"
-                    onClick={() => this.setState({ currentState: LOGIN })}
-                  >
-                    Log In
-                  </button>
-                  <button
-                    className={`switchButton ${this.state.currentState ===
-                      LOGIN && "switch-button-selected"}`} // sets button list's selected button color
-                    id="signup-half-button"
-                    type="button"
-                    onClick={() => this.setState({ currentState: SIGNUP })}
-                  >
-                    Sign Up
-                  </button>
+      <section>
+        <WaveBackground>
+          <div className="auth-page-container">
+            <div className="auth-reg-container">
+              <div className="auth-logo-container">
+                <Logo className="auth-logo" id="siteLogo" />
+                {this.currMessage(this.state.currentState)}
+              </div>
+              <div className="auth-form-container">
+                <Logo className="auth-logo" id="auth-mobile-logo" />
+                {(this.state.currentState === LOGIN ||
+                  this.state.currentState === SIGNUP) && (
+                  <div className="auth-switch-button-container">
+                    <button
+                      className={`switchButton ${this.state.currentState ===
+                        SIGNUP && "switch-button-selected"}`} // sets button list's selected button color
+                      id="login-half-button"
+                      type="button"
+                      onClick={() => this.setState({ currentState: LOGIN })}
+                    >
+                      Log In
+                    </button>
+                    <button
+                      className={`switchButton ${this.state.currentState ===
+                        LOGIN && "switch-button-selected"}`} // sets button list's selected button color
+                      id="signup-half-button"
+                      type="button"
+                      onClick={() => this.setState({ currentState: SIGNUP })}
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                )}
+                <div className="auth-forms">
+                  {this.currForm(this.state.currentState)}
                 </div>
-              )}
-              <div className="auth-forms">
-                {this.currForm(this.state.currentState)}
               </div>
             </div>
           </div>
-        </div>
-      </WaveBackground>
+        </WaveBackground>
+      </section>
     );
   }
 }
