@@ -4,20 +4,15 @@ import { Card } from "../../components";
 import {
   ParkingCardContent,
   ImportantItemsCardContent,
-  LearningTracksCardContent
+  LearningTracksCardContent,
 } from "./contents";
-import {
-  faLaptop,
-  faCar,
-  faSuitcaseRolling
-} from "@fortawesome/free-solid-svg-icons"; //need to pre-load in app.js
 import "./styles.css";
 
 class Essentials extends Component {
   render() {
     let props = {
       styleClassName: "dashboard-card align-title-icon",
-      activeClassName: "active-dashboard-card align-title-icon"
+      activeClassName: "active-dashboard-card align-title-icon",
     };
     return (
       <div className="dashboard-page">
@@ -34,18 +29,18 @@ class Essentials extends Component {
           <Card
             title="Parking and Transportation"
             content={ParkingCardContent}
-            titleIcon={faCar}
+            titleIcon="car"
             {...props}
           />
           <Card
             title="What should you bring to Shellhacks"
-            titleIcon={faSuitcaseRolling}
+            titleIcon="suitcase-rolling"
             content={ImportantItemsCardContent}
             {...props}
           />
           <Card
             title="Learning Tracks"
-            titleIcon={faLaptop}
+            titleIcon="laptop"
             content={LearningTracksCardContent}
             {...props}
           />

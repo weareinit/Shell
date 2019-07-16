@@ -6,16 +6,15 @@
 
 import request from "./request";
 import querries from "../utils/querries";
-import { DASHBOARD } from "../config/pageRoutes"; //page paths
-import {
-  LOGIN_PATH,
-  REGISTER_PATH,
-  APPLICATION_PATH,
-  USER_PATH,
-  FORGOT_PASSWORD_PATH,
-  RESET_PASSWORD_PATH,
-  VERIFY_EMAIL_PATH
-} from "../config/APIs";
+
+//obj destructuring doesn't work here...bug: https://github.com/parcel-bundler/parcel/issues/2191
+const REGISTER_PATH = process.env.REGISTER_PATH,
+  LOGIN_PATH = process.env.LOGIN_PATH,
+  VERIFY_EMAIL_PATH = process.env.VERIFY_EMAIL_PATH,
+  FORGOT_PASSWORD_PATH = process.env.FORGOT_PASSWORD_PATH,
+  RESET_PASSWORD_PATH = process.env.RESET_PASSWORD_PATH,
+  READ_USER_PATH = process.env.READ_USER_PATH,
+  APPLY_PATH = process.env.APPLY_PATH;
 
 const JWT = "JWT";
 
@@ -28,7 +27,7 @@ const login = async (credentials, history) => {
   return request({
     method: "post",
     url: LOGIN_PATH,
-    data: credentials
+    data: credentials,
   })
     .then(resp => {
       console.log(resp);
@@ -36,7 +35,7 @@ const login = async (credentials, history) => {
       console.log(querries.retrieveItem(JWT));
 
       if (querries.isAuthorized(history)) {
-        history.push(DASHBOARD);
+        history.push("dashboard");
       }
     })
     .catch(err => {
@@ -53,7 +52,7 @@ const register = async (form, nextAction) => {
   return request({
     method: "post",
     url: REGISTER_PATH,
-    data: form
+    data: form,
   }).then(resp => {
     console.log(resp);
     if (resp.success) nextAction(resp.success);
@@ -72,7 +71,7 @@ const verifyEmail = verificationCode => {
   return request({
     method: "post",
     url: VERIFY_EMAIL_PATH,
-    data: verificationCode
+    data: verificationCode,
   }).then(resp => {
     console.log(resp);
   });
@@ -85,7 +84,7 @@ const forgotPassword = data => {
   return request({
     method: "post",
     url: FORGOT_PASSWORD_PATH,
-    data: data
+    data: data,
   }).then(resp => {
     console.log(resp);
   });
@@ -115,7 +114,7 @@ const apply = async (form, history) => {
     await request({
       method: "post",
       url: "todos", //for testing
-      data: form
+      data: form,
       // config: {
       //   header: `Bearer ${token}`
       // }
@@ -136,10 +135,10 @@ const getInfo = async history => {
   let token = await querries.isAuthorized(history);
   return request({
     method: "get",
-    url: USER_PATH,
+    url: READ_USER_PATH,
     config: {
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   }).then(resp => {
     console.log(resp);
     return resp;
@@ -153,5 +152,5 @@ export {
   forgotPassword,
   resetPassword,
   apply,
-  getInfo
+  getInfo,
 };

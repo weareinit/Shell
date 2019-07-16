@@ -7,13 +7,13 @@
  */
 
 import axios from "axios";
-import { API_URL } from "../config/APIs";
+const API_URL = process.env.API_URL;
 
 /**
  * Create an Axios Client with defaults
  */
 const client = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com/'
+  baseURL: API_URL,
 });
 
 /**

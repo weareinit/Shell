@@ -1,6 +1,5 @@
 .dashboard-wrapper {
-    margin-left: 20%;
-    width: 80%;
+    min-height: 100vh;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -25,17 +24,14 @@
 }
 
 @media (min-width: 650px) {
-    .dashboard-container {
-        float: right;
-        width: 80%;
-        height: 100vh;
+    .dashboard-wrapper {
         margin-left: 20%;
+        width: 80%;
     }
 }
 
 @media (max-width: 650px) {
-    .dashboard-container {
-        padding-top: 60px;
-        height: 100vh;
+    .dashboard-wrapper {
+        width: 100%;
     }
 }

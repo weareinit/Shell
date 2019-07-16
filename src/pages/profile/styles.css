@@ -62,11 +62,14 @@
     .qr-info {
         flex-direction: column-reverse;
     }
+    .profile-user-info {
+        margin: 25px 0 0;
+    }
     .profile-user {
         width: 100%;
         display: flex;
         flex-direction: column;
-        margin: 50px 0 150px;
+        margin: 50px 0 80px;
         align-items: center;
         text-align: center;
     }

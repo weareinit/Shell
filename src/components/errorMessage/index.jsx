@@ -6,7 +6,6 @@
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"; //need to pre-load in app.js
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles.css";
 
@@ -14,7 +13,7 @@ class BlockError extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shouldShow: false
+      shouldShow: false,
     };
   }
 
@@ -34,7 +33,7 @@ class BlockError extends Component {
             <ul>
               {errors.map((error, i) => (
                 <li key={i}>
-                  <FontAwesomeIcon icon={faExclamationCircle} /> <p>{error}</p>
+                  <FontAwesomeIcon icon="exclamation-circle" /> <p>{error}</p>
                 </li>
               ))}
             </ul>
@@ -48,7 +47,7 @@ BlockError.propTypes = {
   shouldShow: PropTypes.bool.isRequired,
   errors: PropTypes.array.isRequired,
   children: PropTypes.element,
-  extraStylesClass: PropTypes.string
+  extraStylesClass: PropTypes.string,
 };
 
 const InlineError = ({ shouldShow, extraStylesClass, error, label, name }) => {
@@ -58,7 +57,7 @@ const InlineError = ({ shouldShow, extraStylesClass, error, label, name }) => {
       {shouldShow &&
         (error && (
           <p>
-            <FontAwesomeIcon icon={faExclamationCircle} />
+            <FontAwesomeIcon icon="exclamation-circle" />
             {error}
           </p>
         ))}
@@ -71,7 +70,7 @@ InlineError.propTypes = {
   error: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string,
-  extraStylesClass: PropTypes.string
+  extraStylesClass: PropTypes.string,
 };
 
 export { BlockError, InlineError };
