@@ -30,7 +30,7 @@ class Navigation extends Component {
           <Route exact path={"/support"} component={Support} />
           <Route exact path={"/essentials"} component={Essentials} />
           <Route exact path={"/profile"} component={Profile} />
-          <Footer />
+          <Footer showSocials />
         </div>
       </Switch>
     );

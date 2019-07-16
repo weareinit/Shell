@@ -11,6 +11,11 @@
     font-size: 100%;
 }
 
+.text-input:focus {
+    border: 1px solid var(--shell-teal) !important;
+    box-shadow: 0 0 2px 0.2px var(--shell-teal);
+}
+
 input[type="text"]:focus {
     border: 1px solid var(--shell-teal) !important;
     box-shadow: 0 0 2px 0.2px var(--shell-teal);

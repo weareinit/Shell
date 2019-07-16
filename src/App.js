@@ -16,7 +16,6 @@ import {
   faCar,
   faSuitcaseRolling,
 } from "@fortawesome/free-solid-svg-icons";
-import dotenv from "dotenv";
 
 import Navigation from "./navigation";
 import "./css/App.css"; //load general/global css
@@ -35,9 +34,6 @@ library.add(
   faCar,
   faSuitcaseRolling
 );
-
-//load enviroment vars...
-dotenv.config();
 
 class App extends Component {
   constructor(props) {

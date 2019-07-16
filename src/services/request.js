@@ -7,13 +7,13 @@
  */
 
 import axios from "axios";
-const API_URL = process.env.API_URL;
+import apiRoutes from "../config/APIs";
 
 /**
  * Create an Axios Client with defaults
  */
 const client = axios.create({
-  baseURL: API_URL,
+  baseURL: apiRoutes.API_URL,
 });
 
 /**

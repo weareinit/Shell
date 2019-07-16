@@ -6,15 +6,17 @@
 
 import request from "./request";
 import querries from "../utils/querries";
+import apiRoutes from "../config/APIs";
 
-//obj destructuring doesn't work here...bug: https://github.com/parcel-bundler/parcel/issues/2191
-const REGISTER_PATH = process.env.REGISTER_PATH,
-  LOGIN_PATH = process.env.LOGIN_PATH,
-  VERIFY_EMAIL_PATH = process.env.VERIFY_EMAIL_PATH,
-  FORGOT_PASSWORD_PATH = process.env.FORGOT_PASSWORD_PATH,
-  RESET_PASSWORD_PATH = process.env.RESET_PASSWORD_PATH,
-  READ_USER_PATH = process.env.READ_USER_PATH,
-  APPLY_PATH = process.env.APPLY_PATH;
+const {
+  REGISTER_PATH,
+  LOGIN_PATH,
+  VERIFY_EMAIL_PATH,
+  FORGOT_PASSWORD_PATH,
+  RESET_PASSWORD_PATH,
+  READ_USER_PATH,
+  APPLY_PATH,
+} = apiRoutes;
 
 const JWT = "JWT";
 
@@ -55,7 +57,7 @@ const register = async (form, nextAction) => {
     data: form,
   }).then(resp => {
     console.log(resp);
-    if (resp.success) nextAction(resp.success);
+    if (resp.success) nextAction("verify");
     else
       alert(
         "Something went wrong....Check your Username and Password and try again."

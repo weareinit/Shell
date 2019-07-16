@@ -113,7 +113,7 @@ class ResetPassword extends React.Component {
             </div>
             <div className="auth-submit-button-container">
               <Button
-                title="Reset"
+                title="Reset Password"
                 type="submit"
                 id="register-success"
                 extraStyles="auth-button-extra-styles"

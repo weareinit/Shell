@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { individualData, announcementCardInfo } from "../../config/data/home";
-// import { ReactComponent as Avatar } from "../../assets/frontpage/shell.svg";
 import { Card } from "../../components";
 import "./styles.css";
 class Home extends Component {

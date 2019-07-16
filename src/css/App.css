@@ -92,20 +92,6 @@ button:focus {
     -webkit-box-sizing: border-box;
 }
 
-.centered-flex-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.centered-flex-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
 
 /* contents */
 
@@ -114,7 +100,7 @@ button:focus {
 }
 
 input {
-    font-weight: 600;
+    font-weight: 500;
     color: var(--shell-dark-brown);
 }
 
@@ -158,17 +144,9 @@ p {
 }
 
 .dashboard-card {
-    background-color: var(--shell-dark-brown);
-}
-
-.active-dashboard-card {
-    background-color: var(--shell-light-brown);
-}
-
-.landing-card {
     background-color: var(--shell-teal);
 }
 
-.active-landing-card {
+.active-dashboard-card {
     background-color: var(--shell-light-pink);
 }

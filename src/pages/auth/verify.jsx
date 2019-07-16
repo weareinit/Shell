@@ -11,7 +11,7 @@ import { Formik, Form } from "formik";
 import { TextInput, Button, BlockError } from "../../components";
 import {
   registrationCodeValidation,
-  registrationCodeInitialValues
+  registrationCodeInitialValues,
 } from "../../utils/validations";
 import { verifyEmail } from "../../services/routes";
 
@@ -35,7 +35,7 @@ const Verify = props => {
         <Form className="success-form">
           <div className="welcome-message">
             <h3>Verify Email</h3>
-            <p>vase fill out the form bellow to reset your Password</p>
+            <p>Please follow instruction below to activate your account.</p>
           </div>
           <BlockError
             errors={[errors.email || errors.verifycationCode]}
@@ -56,7 +56,7 @@ const Verify = props => {
             <TextInput
               name="verifycationCode"
               type="text"
-              placeholder="Verification Code"
+              placeholder="Confirmation Code"
               error={touched.verifycationCode && errors.verifycationCode}
             />
           </div>
@@ -66,7 +66,7 @@ const Verify = props => {
           </div>
           <div className="auth-submit-button-container">
             <Button
-              title="Submit"
+              title="Activate Account"
               type="submits"
               id="register-success"
               extraStyles="auth-button-extra-styles"
@@ -81,6 +81,6 @@ Verify.propType = {
   LOGIN: PropTypes.string.isRequired,
   FORGOT_PASSWORD: PropTypes.string,
   SIGNUP: PropTypes.string,
-  VERIFY: PropTypes.string
+  VERIFY: PropTypes.string,
 };
 export default Verify;
