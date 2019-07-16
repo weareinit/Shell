@@ -45,14 +45,9 @@
     margin: 0 0 0 10%;
 }
 
-.auth-page-container p {
-    font-size: 1em;
+.auth-page-container label {
+    color: var(--shell-mid-brown);
 }
-
-
-/* .field-div {
-    margin: 5% 0;
-} */
 
 .auth-submit-button {
     border: none;
@@ -134,6 +129,10 @@
     margin: 8% 0 0;
 }
 
+.welcome-message p {
+    color: var(--shell-light-brown);
+}
+
 .welcome-message h3 {
     margin: 0 0 4%;
 }
@@ -152,7 +151,7 @@
 }
 
 .auth-question-buttons p {
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
 }
 

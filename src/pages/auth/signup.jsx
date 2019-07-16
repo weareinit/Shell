@@ -17,10 +17,10 @@ const SignUp = props => {
       firstName: values.firstName,
       lastName: values.lastName,
       email: values.email,
-      password: values.password
+      password: values.password,
     };
-    let nextPath = props.showSuccess;
-    register(form, nextPath);
+
+    register(form, props.setAuthState);
   };
 
   return (
@@ -37,7 +37,7 @@ const SignUp = props => {
                 (touched.lastName && errors.lastName) ||
                 (touched.email && errors.email) ||
                 (touched.password && errors.password) ||
-                (touched.confirmPassword && errors.confirmPassword)
+                (touched.confirmPassword && errors.confirmPassword),
             ]}
             shouldShow={
               !!(touched.firstName && errors.firstName) ||
@@ -89,7 +89,7 @@ const SignUp = props => {
           </div>
           <div className="auth-submit-button-container">
             <Button
-              title="Submit"
+              title="Register"
               type="submit"
               id="signup"
               extraStyles="auth-button-extra-styles"

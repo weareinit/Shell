@@ -16,7 +16,7 @@ const navSelections = Object.freeze({
   PROFILE: "/profile",
   APPLICATION: "/application",
   ESSENTIAL: "/essentials",
-  SUPPORT: "/support"
+  SUPPORT: "/support",
 });
 
 class Navbar extends Component {
@@ -24,7 +24,7 @@ class Navbar extends Component {
     super(props);
     this.state = {
       open: false,
-      currSelection: navSelections.HOME
+      currSelection: navSelections.HOME,
     };
   }
 
@@ -37,7 +37,7 @@ class Navbar extends Component {
     let newSelection = this.props.history.location.pathname;
     this.setState(prevState => ({
       open: !prevState.open,
-      currSelection: newSelection
+      currSelection: newSelection,
     }));
   };
 
@@ -64,7 +64,7 @@ class Navbar extends Component {
               id="dashboard-shell"
               className=""
               alt="placeholder"
-              src={require("../../assets/waves/shell.svg")}
+              src={require("../../assets/logos/organizer/ShellHacks_Circle_Logo.png")}
             />
             <h4 className="user">Jehf Doe</h4>
           </div>
