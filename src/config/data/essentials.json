@@ -16,30 +16,38 @@
     },
     "transportation": {
         "title": "Transportation",
-        "description": "Instructions on how to FIU if they are out of state or if there are any busses that are open to their schools and how they can go about to reserve their spots, yada kitter kitty litty little kitten big roar roar feed me mice cat sit like bread. Pur Litter kitter kitty litty little kittenkitter kitty litty little kitten big roar roar feed me mice cat sit like bread."
+        "description": "Details on busses and stuff pending information"
     },
     "shouldBring": {
-        "title": "Brief summary about the items that should be brought shellhacks and what they usually tento to be. Also warnings and a few things that ongoing hacks should know.",
+        "description": "To make sure everyone’s as comfortable as possible, make sure to bring some essential tools and toiletries for your time at ShellHacks.",
         "optional": {
             "title": "Essential Items",
             "items": [
-                "Items Here",
-                "Items Here",
-                "Items Here",
-                "Items Here",
-                "Items Here"
+                "Deodorant",
+                "Laptop & charger",
+                "Phone & charger",
+                "Bag/backpack",
+                "Headphones",
+                "Change of clothes",
+                "Toothbrush & toothpaste",
+                "Sleeping bag/pillow/blanket",
+                "Water bottle"
+
             ]
         },
         "essential": {
             "title": "Optional Items",
             "items": [
-                "Items Here",
-                "Items Here",
-                "Items Here",
-                "Items Here",
-                "Items Here"
+                "Inflatable pool floaties",
+                "Earplugs",
+                "Sleeping mask",
+                "USB key",
+                "Keyboard & mouse",
+                "Yoga mat",
+                "Portable speaker",
+                "Pen & paper"
             ]
         }
     },
-    "tracksDesc": "Twitch tail in permanent irritation my slave human didn’t give me any food so i pooped on the floor. Touch my tail, i shred your hand purrrr poop in litter box, scratch the walls playing with balls of wool bird bird bird bird bird."
+    "tracksDesc": "Do you love tinkering with databases, but aren’t really sure how the front-end works? Or maybe all you’ve ever done is Java, but you really want to work with microcontrollers? At ShellHacks, we offer learning tracks for everyone to learn new skills in any field they’re interested in!"
 }

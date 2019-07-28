@@ -1,169 +1,201 @@
 /**
- * Page - wraps login, forgot password and signup
- * ------------------------------
- * @author Jehf K D., Luis H. (@jehfkemsy , @boxslide15)
+ * Wraps login, forgot password,verify email,resend veriry email code, reset password and signup
  */
 
-import React, { Component } from "react";
-import { WaveBackground } from "../../components";
-import Login from "./login";
-import SignUp from "./signup";
-import Verify from "./verify";
-import ForgotPassword from "./forgotPassword";
-import ResetPassword from "./resetPassword";
-import getMessage from "../../utils/authMessage";
-import { ReactComponent as Logo } from "../../assets/logos/organizer/shellhacks.svg";
-import "./styles.css";
+import React, { Component } from 'react'
+import { WaveBackground } from '../../components'
+import Login from './forms/login'
+import Register from './forms/register'
+import Verify from './forms/verify'
+import ForgotPassword from './forms/forgotPassword'
+import ResetPassword from './forms/resetPassword'
+import ResendCode from './forms/resendCode'
+import getMessage from '../../utils/authMessage'
+import { ReactComponent as Logo } from '../../assets/logos/organizer/shellhacks.svg'
+import authState from './authStates'
+import './styles.css'
 
-//get welcome messages on page load
-const loginMessage = getMessage(true);
-const registerMessage = getMessage(false);
-
-//auth states
-const authState = Object.freeze({
-  LOGIN: "login",
-  SIGNUP: "signup",
-  VERIFY: "verify",
-  FORGOT_PASSWORD: "forgot",
-  RESET_PASSWORD: "reset",
-});
+// Get random welcome message for login and register on page load
+const loginMessage = getMessage(true)
+const registerMessage = getMessage(false)
 
 class Auth extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      currentState: authState.LOGIN,
-    };
+      currentState: authState.LOGIN
+    }
 
-    this.setAuthState = this.setAuthState.bind(this);
+    this.setAuthState = this.setAuthState.bind(this)
   }
 
+  /**
+   * Update state to new state
+   * @param {String} - new state
+   */
   setAuthState = newState => {
-    this.setState({ currentState: newState });
-  };
+    this.setState({ currentState: newState })
+  }
 
-  currForm = condition => {
+  /**
+   * Decides which form to show
+   * @param {String} state - current state
+   */
+  currForm = state => {
     const {
-      VERIFY,
+      VERIFY_EMAIL,
       FORGOT_PASSWORD,
       LOGIN,
       SIGNUP,
       RESET_PASSWORD,
-    } = authState;
+      RESEND_VERIFY_CODE
+    } = authState
 
     let props = {
-      setAuthState: this.setAuthState,
-      VERIFY,
-      FORGOT_PASSWORD,
-      LOGIN,
-      SIGNUP,
-      RESET_PASSWORD,
-    };
-
-    switch (condition) {
-      case LOGIN:
-        return <Login {...props} />;
-      case SIGNUP:
-        return <SignUp {...props} />;
-      case VERIFY:
-        return <Verify {...props} />;
-      case FORGOT_PASSWORD:
-        return <ForgotPassword {...props} />;
-      case RESET_PASSWORD:
-        return <ResetPassword {...props} />;
-      default:
-        return;
+      setAuthState: this.setAuthState
     }
-  };
 
-  currMessage = condition => {
+    switch (state) {
+      case LOGIN:
+        return <Login {...props} />
+      case SIGNUP:
+        return <Register {...props} />
+      case VERIFY_EMAIL:
+        return <Verify {...props} />
+      case FORGOT_PASSWORD:
+        return <ForgotPassword {...props} />
+      case RESEND_VERIFY_CODE:
+        return <ResendCode {...props} />
+      case RESET_PASSWORD:
+        return <ResetPassword {...props} />
+      default:
+    }
+  }
+
+  /**
+   * Decides which messages to show on the form
+   * @param {String} state - current state
+   */
+  currMessage = state => {
     const {
-      VERIFY,
+      VERIFY_EMAIL,
       FORGOT_PASSWORD,
       LOGIN,
       SIGNUP,
       RESET_PASSWORD,
-    } = authState;
+      RESEND_VERIFY_CODE
+    } = authState
 
-    switch (condition) {
+    switch (state) {
       case LOGIN:
         return (
-          <div className="welcome-message">
-            <h3>{loginMessage.header}</h3>
+          <div className='welcome-message'>
+            <h2>{loginMessage.header}</h2>
             <p>{loginMessage.desc}</p>
           </div>
-        );
+        )
       case SIGNUP:
         return (
-          <div className="welcome-message">
-            <h3>{registerMessage.header}</h3>
+          <div className='welcome-message'>
+            <h2>{registerMessage.header}</h2>
             <p>{registerMessage.desc}</p>
           </div>
-        );
-      case VERIFY:
+        )
+      case VERIFY_EMAIL:
         return (
-          <div className="welcome-message">
-            <h3>welcome</h3>
-            {/* <p>Check your Inbox, We've sent you a verification code</p> */}
+          <div className='welcome-message'>
+            <h2>
+              <span role='img' aria-label='waving hands'>
+                👋
+              </span>
+              Hi
+            </h2>
+            <p>
+              If you've already registered, check your Inbox for your email
+              verification code
+            </p>
           </div>
-        );
+        )
       case FORGOT_PASSWORD:
         return (
-          <div className="welcome-message">
-            <h3>welcome</h3>
-            {/* <p>Please fill out the form to reset your password</p> */}
+          <div className='welcome-message'>
+            <h2>
+              <span role='img' aria-label='waving hands'>
+                👋
+              </span>
+              Hi
+            </h2>
+            <p>Please fill out the form to reset your password</p>
           </div>
-        );
+        )
       case RESET_PASSWORD:
         return (
-          <div className="welcome-message">
-            <h3>welcome</h3>
-            {/* <p>Please fill out the form to reset your password</p> */}
+          <div className='welcome-message'>
+            <h2>
+              <span role='img' aria-label='waving hands'>
+                👋
+              </span>
+              Welcome
+            </h2>
+            <p>Please fill out the form to reset your password</p>
           </div>
-        );
+        )
+      case RESEND_VERIFY_CODE:
+        return (
+          <div className='welcome-message'>
+            <h2>
+              <span role='img' aria-label='waving hands'>
+                👋
+              </span>
+              Welcome
+            </h2>
+            <p>
+              Please enter your email address to get a new verification code
+            </p>
+          </div>
+        )
 
       default:
-        return;
     }
-  };
+  }
 
-  render() {
-    const { LOGIN, SIGNUP } = authState;
+  render () {
+    const { LOGIN, SIGNUP } = authState
     return (
       <section>
         <WaveBackground>
-          <div className="auth-page-container">
-            <div className="auth-reg-container">
-              <div className="auth-logo-container">
-                <Logo className="auth-logo" id="siteLogo" />
+          <div className='auth-page-container'>
+            <div className='auth-reg-container'>
+              <div className='auth-logo-container'>
+                <Logo className='auth-logo' id='siteLogo' />
                 {this.currMessage(this.state.currentState)}
               </div>
-              <div className="auth-form-container">
-                <Logo className="auth-logo" id="auth-mobile-logo" />
+              <div className='auth-form-container'>
+                <Logo className='auth-logo' id='auth-mobile-logo' />
                 {(this.state.currentState === LOGIN ||
                   this.state.currentState === SIGNUP) && (
-                  <div className="auth-switch-button-container">
+                  <div className='auth-switch-button-container'>
                     <button
                       className={`switchButton ${this.state.currentState ===
-                        SIGNUP && "switch-button-selected"}`} // sets button list's selected button color
-                      id="login-half-button"
-                      type="button"
+                        SIGNUP && 'switch-button-selected'}`} // sets button list's selected button color
+                      id='login-half-button'
+                      type='button'
                       onClick={() => this.setState({ currentState: LOGIN })}
                     >
                       Log In
                     </button>
                     <button
                       className={`switchButton ${this.state.currentState ===
-                        LOGIN && "switch-button-selected"}`} // sets button list's selected button color
-                      id="signup-half-button"
-                      type="button"
+                        LOGIN && 'switch-button-selected'}`} // sets button list's selected button color
+                      id='signup-half-button'
+                      type='button'
                       onClick={() => this.setState({ currentState: SIGNUP })}
                     >
                       Sign Up
                     </button>
                   </div>
                 )}
-                <div className="auth-forms">
+                <div className='auth-forms'>
                   {this.currForm(this.state.currentState)}
                 </div>
               </div>
@@ -171,8 +203,8 @@ class Auth extends Component {
           </div>
         </WaveBackground>
       </section>
-    );
+    )
   }
 }
 
-export default Auth;
+export default Auth

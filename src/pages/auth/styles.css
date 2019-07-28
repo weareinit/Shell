@@ -135,10 +135,6 @@
     color: var(--shell-light-brown);
 }
 
-.welcome-message h3 {
-    margin: 0 0 4%;
-}
-
 .auth-button-extra-styles {
     min-width: 70%;
     margin: 0;
@@ -155,6 +151,16 @@
 .auth-question-buttons p {
     font-weight: 500;
     cursor: pointer;
+}
+
+.welcome-message h1 {
+    font-size: 2.3em;
+    margin-bottom: 30px;
+}
+
+.welcome-message h2 {
+    font-size: 1.5em;
+    margin-bottom: 12.555px;
 }
 
 

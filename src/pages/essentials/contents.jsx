@@ -1,3 +1,7 @@
+/**
+ * Essentials page contaents
+ */
+
 import React from "react";
 import { ZoomableImg } from "../../components";
 import data from "../../config/data/essentials";
@@ -44,31 +48,34 @@ export const ParkingCardContent = (
   </div>
 );
 
-const { title, essential, optional } = shouldBring;
+const { description, essential, optional } = shouldBring;
 export const ImportantItemsCardContent = (
   <div className="essentials-items-card-content">
-    <div>
-      <p style={{ margin: "25px 0 50px" }}>{title}</p>
-      <p className="essential-item-header">{essential.title}</p>
-      <br />
-      <ul>
-        {essential.items.map((item, i) => (
-          <li key={i}>
-            <p>{item}</p>
-          </li>
-        ))}
-      </ul>
-      <br />
-      <br />
-      <p className="essential-item-header">{optional.title}</p>
-      <br />
-      <ul>
-        {optional.items.map((item, i) => (
-          <li key={i}>
-            <p>{item}</p>
-          </li>
-        ))}
-      </ul>
+    {/* description */}
+    <p style={{ margin: "25px 0 50px" }}>{description}</p>
+    <div className="essential-lists-container">
+      {/* optional items */}
+      <div className="essential-card">
+        <p className="essential-item-header">{optional.title}</p>
+        <ul>
+          {optional.items.map((item, i) => (
+            <li key={i}>
+              <p>{item}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {/* essential items */}
+      <div className="essential-card">
+        <p className="essential-item-header">{essential.title}</p>
+        <ul>
+          {essential.items.map((item, i) => (
+            <li key={i}>
+              <p>{item}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </div>
 );

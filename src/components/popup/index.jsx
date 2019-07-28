@@ -1,7 +1,5 @@
 /**
  * Controlled Loading Components
- * ------------------------------
- * @author Jehf K D. (@jehfkemsy)
  */
 
 import React from "react";

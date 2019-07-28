@@ -144,11 +144,13 @@ header {
         font-size: 1em;
         font-weight: 600;
     }
-    .nav #logout li a {
+    #logout {
         font-size: 1em;
         font-weight: 600;
+        color: var(--shell-light-brown);
+        cursor: pointer;
     }
-    .nav #logout li :hover {
+    #logout:hover {
         color: var(--shell-dark-brown);
     }
 }

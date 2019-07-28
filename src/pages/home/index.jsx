@@ -1,3 +1,7 @@
+/**
+ * Home Page
+ */
+
 import React, { Component } from "react";
 import { individualData, announcementCardInfo } from "../../config/data/home";
 import { Card } from "../../components";

@@ -1,3 +1,7 @@
+/**
+ * user profile page
+ */
+
 import React, { Component } from "react";
 import { profileData } from "../../config/data/profile";
 import "./styles.css";

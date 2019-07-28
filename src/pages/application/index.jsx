@@ -1,7 +1,5 @@
 /**
  * Applications form
- * ------------------------------
- * @author Jehf K D. (@jehfkemsy)
  */
 
 import React, { Component } from "react";

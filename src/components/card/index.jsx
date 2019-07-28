@@ -1,7 +1,5 @@
 /**
- * Summary: Reusable card component
- * ------------------------------
- * @author Jehf K D. (@jehfkemsy)
+ * Reusable card component
  */
 
 import React, { Component } from "react";

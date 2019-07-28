@@ -1,7 +1,5 @@
 /**
- * Summary: Theme backgrounds
- * ------------------------------
- * @author Jehf K D., Raf (@jehfkemsy , @rslay)
+ * Theme backgrounds
  */
 
 import React, { Component } from "react";
@@ -30,7 +28,7 @@ class WaveBackground extends Component {
               alt="placeholder"
               src={require("../../assets/waves/wetsand2.svg")}
             />
-            <div id="surfboard" class="decor"></div>
+            <div id="surfboard" className="decor"></div>
             <img
               id="wetsand1"
               className="decor"

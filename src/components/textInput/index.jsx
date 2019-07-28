@@ -1,7 +1,5 @@
 /**
  * A reusable text input component
- * ------------------------------
- * @author Jehf K D. (@jehfkemsy)
  */
 import React from "react";
 import PropTypes from "prop-types";
