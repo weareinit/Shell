@@ -1,11 +1,19 @@
-//testing purposes only
-export const GOOGLE_MAP_KEY = "";
-export const REGISTER_PATH = "/application";
-export const LOGIN_PATH = "/application/login";
-export const APPLICATION_PATH = "/application/apply";
-export const USER_PATH = "/application/readOne";
-export const FORGOT_PASSWORD_PATH = "/";
-export const RESET_PASSWORD_PATH = "/";
-export const VERIFY_EMAIL_PATH = "/";
-// export const API_URL = "https://shellfront.herokuapp.com";
-export const API_URL = "http://jehfkemsy.me";
+export default {
+	// API settings
+	API_URL: 'http://localhost:3000/',
+
+	REGISTER_PATH: 'application',
+	VERIFY_EMAIL_PATH: 'application/confirmation',
+	RESEND_CODE_PATH: 'application/resend',
+
+	LOGIN_PATH: 'application/login',
+	FORGOT_PASSWORD_PATH: 'application/forgot_password',
+	RESET_PASSWORD_PATH: 'application/reset_password',
+
+	READ_USER_PATH: 'application/readOne',
+	APPLY_PATH: 'application/apply',
+
+	// sockets
+	CONNECTION_URL: 'http://localhost:3000',
+	NOTIFICATION_EVENT: 'notification',
+};

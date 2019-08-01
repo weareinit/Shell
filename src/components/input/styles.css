@@ -1,0 +1,26 @@
+.text-input {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid var(--shell-sand);
+    border-radius: 8px;
+    width: 100%;
+    padding: 11.34px;
+    margin: 0 0 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+}
+
+.text-input:focus {
+    border: 1px solid var(--shell-teal) !important;
+    box-shadow: 0 0 2px 0.2px var(--shell-teal);
+}
+
+input[type="text"]:focus {
+    border: 1px solid var(--shell-teal) !important;
+    box-shadow: 0 0 2px 0.2px var(--shell-teal);
+}
+
+input[type="date"]:invalid::-webkit-datetime-edit {
+    color: #c5bba3;
+}

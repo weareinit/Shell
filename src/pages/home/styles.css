@@ -10,7 +10,7 @@
 }
 
 .home-avatar {
-    height: auto;
+    height: 180px;
     width: 180px;
     /* margin: 10px; */
 }
@@ -34,7 +34,7 @@
 }
 
 .active-application-status-button {
-    background-color: rgb(247, 107, 107);
+    background-color: var(--shell-teal);
     justify-content: center;
 }
 
@@ -50,4 +50,16 @@
     text-align: center;
     color: white;
     line-height: 130%;
+}
+
+.applactions-status-accepted {
+    background: #7ca87c;
+}
+
+.applactions-status-applied {
+    background: #ddc38b;
+}
+
+.applactions-status-confirmed {
+    background-color: var(--shell-teal);
 }

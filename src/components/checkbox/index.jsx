@@ -1,7 +1,5 @@
 /**
- * Summary: formik child checkbox component
- * ------------------------------
- * @author Jehf K D. (@jehfkemsy)
+ * formik child checkbox component
  */
 import React from "react";
 import PropTypes from "prop-types";

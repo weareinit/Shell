@@ -1,157 +1,235 @@
 /**
  * Manages All API requests
- * ------------------------------
- * @author Jehf K D. (@jehfkemsy)
  */
 
-import request from "./request";
-import querries from "../utils/querries";
-import { DASHBOARD } from "../config/pageRoutes"; //page paths
-import {
-  LOGIN_PATH,
-  REGISTER_PATH,
-  APPLICATION_PATH,
-  USER_PATH,
-  FORGOT_PASSWORD_PATH,
-  RESET_PASSWORD_PATH,
-  VERIFY_EMAIL_PATH
-} from "../config/APIs";
+import request from './request';
+import querries from '../utils/querries';
+import apiRoutes from '../config/APIs';
+import States from '../pages/auth/states';
 
-const JWT = "JWT";
+const {
+	VERIFY_EMAIL,
+	LOGIN,
+	RESET_PASSWORD,
+	BAD_REQUEST,
+	FAILED_REQUEST
+} = States;
+
+const {
+	REGISTER_PATH,
+	LOGIN_PATH,
+	VERIFY_EMAIL_PATH,
+	FORGOT_PASSWORD_PATH,
+	RESET_PASSWORD_PATH,
+	READ_USER_PATH,
+	APPLY_PATH,
+	RESEND_CODE_PATH
+} = apiRoutes;
+
+const TOKEN = 'JWT';
+const ID = 'shellID';
 
 /**
- * login user in then navigate to next page
+ * submits user account registration form
+ * @param {Object} data - registration form
+ * @param {Function} successAction - executed after a sucessful request
+ * @param {Function} faillureAction - executed on request failure
+ */
+const register = async(data, successAction, faillureAction) => {
+	console.log(data);
+	request({
+		method: 'post',
+		url: REGISTER_PATH,
+		data
+	}).then(resp => {
+		if (resp.success) successAction(VERIFY_EMAIL);
+
+	}).catch((err) => {
+
+		if (!err.data) faillureAction(BAD_REQUEST);
+		else faillureAction(FAILED_REQUEST);
+
+	});
+};
+
+/**
+ * Resquest send verification code to user email address
+ * @param {Object} data - contains user email address string
+ * @param {Function} successAction - executed after a sucessful request
+ * @param {Function} faillureAction - executed on request failure
+ */
+const verifyEmail = (data, successAction, faillureAction) =>
+	request({
+		method: 'put',
+		url: VERIFY_EMAIL_PATH,
+		data,
+	}).then(resp => {
+		if (resp.success) successAction(LOGIN);
+
+	}).catch((err) => {
+
+		if (!err.data.success) faillureAction(BAD_REQUEST);
+		else faillureAction(FAILED_REQUEST);
+
+	});
+
+
+/**
+ * Resquest to send user a new email verification code
+ * @param {Object} data - wraps user email 
+ * @param {Function} successAction - executed after a sucessful request
+ * @param {Function} faillureAction - executed on request failure
+ */
+const resendCode = (data, successAction, faillureAction) =>
+	request({
+		method: 'put',
+		url: RESEND_CODE_PATH,
+		data
+	}).then(resp => {
+		console.log(resp);
+		if (resp.success) successAction(VERIFY_EMAIL);
+	}).catch((err) => {
+
+		if (!err.data.success) faillureAction(BAD_REQUEST);
+		else faillureAction(FAILED_REQUEST);
+
+	});
+
+
+
+/**
+ * login user then navigate to dashboard
  * @param {Object} credentials - username and  password
- * @param {Object} history - react router history object
+ * @param {Function} successAction - executed after a sucessful request
+ * @param {Function} faillureAction - executed on request failure
  */
-const login = async (credentials, history) => {
-  return request({
-    method: "post",
-    url: LOGIN_PATH,
-    data: credentials
-  })
-    .then(resp => {
-      console.log(resp);
-      querries.storeItem(JWT, resp.data);
-      console.log(querries.retrieveItem(JWT));
+const login = async(credentials, history, faillureAction) =>
+	request({
+		method: 'post',
+		url: LOGIN_PATH,
+		data: credentials,
+	})
+		.then(resp => {
+			const { shellID, JWT } = resp.data;
+			querries.storeItem(TOKEN, JWT);
+			querries.storeItem(ID, shellID);
+		}).then(() => {
+			if (querries.isAuthorized(history)) {
+				history.push('/');
+			}
+		})
+		.catch((err) => {
 
-      if (querries.isAuthorized(history)) {
-        history.push(DASHBOARD);
-      }
-    })
-    .catch(err => {
-      if (err) alert("Something went wrong....Please try again");
-    });
-};
+			if (!err.data.success) faillureAction(BAD_REQUEST);
+			else faillureAction(FAILED_REQUEST);
 
-/**
- *submits user account registration
- * @param {Object} form - registration form
- * @param {Function} nextAction - show success component
- */
-const register = async (form, nextAction) => {
-  return request({
-    method: "post",
-    url: REGISTER_PATH,
-    data: form
-  }).then(resp => {
-    console.log(resp);
-    if (resp.success) nextAction(resp.success);
-    else
-      alert(
-        "Something went wrong....Check your Username and Password and try again."
-      );
-  });
-};
+		});
 
-/**
- * request to verify user email address
- * @param {Object} verificationCode  - contains user verification string
- */
-const verifyEmail = verificationCode => {
-  return request({
-    method: "post",
-    url: VERIFY_EMAIL_PATH,
-    data: verificationCode
-  }).then(resp => {
-    console.log(resp);
-  });
-};
+
 /**
  * Submits user email validation code
- * @param {Object} data - email verification code
+ * @param {Object} data - contains user email address
+ * @param {Function} successAction - executed after a sucessful request
+ * @param {Function} faillureAction - executed on request failure
  */
-const forgotPassword = data => {
-  return request({
-    method: "post",
-    url: FORGOT_PASSWORD_PATH,
-    data: data
-  }).then(resp => {
-    console.log(resp);
-  });
-};
+const forgotPassword = (data, successAction, faillureAction) =>
+	request({
+		method: 'put',
+		url: FORGOT_PASSWORD_PATH,
+		data,
+	}).then(resp => {
+		if (resp.success) successAction(RESET_PASSWORD);
+	}).catch((err) => {
+		console.log(err);
+		if (!err.data.success) faillureAction(BAD_REQUEST);
+		else faillureAction(FAILED_REQUEST);
+
+	});
 
 /**
- * resquests to updates user password
+ * Resquests to updates user password
  * @param {Object} data - email and reset token
+ * @param {Function} successAction - executed after a sucessful request
+ * @param {Function} faillureAction - executed on request failure
  */
-const resetPassword = data => {
-  return request({ method: "post", url: RESET_PASSWORD_PATH, data: data }).then(
-    resp => {
-      console.log(resp);
-    }
-  );
-};
+const resetPassword = (data, successAction, faillureAction) =>
+	request({
+		method: 'put',
+		url: RESET_PASSWORD_PATH,
+		data
+	}).then(resp => {
+		if (resp.success) successAction(LOGIN);
+	}).catch((err) => {
+
+		if (!err.data.success) faillureAction(BAD_REQUEST);
+		else faillureAction(FAILED_REQUEST);
+
+	});
+
 
 /**
  * submits user application
- * @param {Object} form - application form values
+ * @param {Object} data - application form values
  * @param {Function} nextAction - success action
  * @param {Object} history - react router history object
  */
-const apply = async (form, history) => {
-  // let token = await querries.isAuthorized(history);
-  try {
-    await request({
-      method: "post",
-      url: "todos", //for testing
-      data: form
-      // config: {
-      //   header: `Bearer ${token}`
-      // }
-    }).then(resp => {
-      console.log(resp);
-      return resp;
-    });
-  } catch (err) {
-    return err;
-  }
+const apply = (form, history, nextAction) => {
+
+	const token = querries.isAuthorized(history);
+
+	let data = new FormData();
+	Object.keys(form).map(key => data.append(key,form[key]));
+
+	for(var pair of data.entries()) {
+		console.log(pair[0]+ ', '+ pair[1]); 
+	}
+
+	return request({
+		method: 'put',
+		url: APPLY_PATH,
+		data,
+		headers: {
+			'Content-Type': 'multipart/form-data',
+			'Authorization': 'Bearer ' + token
+		}
+	}).then(resp => {
+		console.log(resp);
+		nextAction();
+		return resp;
+	}).catch(err => {
+		console.log(err);
+	});
+
+
 };
 
 /**
- *get users informations
+ * Get users informations
  * @param {Object} history - react-router history object
  */
-const getInfo = async history => {
-  let token = await querries.isAuthorized(history);
-  return request({
-    method: "get",
-    url: USER_PATH,
-    config: {
-      Authorization: `Bearer ${token}`
-    }
-  }).then(resp => {
-    console.log(resp);
-    return resp;
-  });
+const getUserInfo = async history => {
+	const token = await querries.isAuthorized(history);
+	const shellID = await querries.retrieveItem(ID);
+
+	return await request({
+		method: 'post',
+		url: READ_USER_PATH,
+		data: { shellID },
+		headers: {
+			'Authorization': 'Bearer ' + token
+		}
+	}).then(resp => {
+		querries.storeItem('userData', JSON.stringify(resp.data));
+	}).catch((err) => querries.deAuthorize);
 };
 
-export {
-  login,
-  register,
-  verifyEmail,
-  forgotPassword,
-  resetPassword,
-  apply,
-  getInfo
+export default {
+	login,
+	register,
+	verifyEmail,
+	resendCode,
+	forgotPassword,
+	resetPassword,
+	apply,
+	getUserInfo,
 };

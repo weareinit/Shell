@@ -126,7 +126,20 @@
 }
 
 .essential-item-header {
-    font-weight: 900;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 0 0 0.3em;
+}
+
+.essential-card {
+    display: inline-block;
+    width: 45%;
+    margin-left: 5%;
+}
+
+.essential-lists-container {
+    display: flex;
+    justify-content: flex-start;
 }
 
 @media only screen and (max-width: 500px) {
@@ -163,5 +176,13 @@
     }
     .arena-info-container img {
         margin: 25px 0 0;
+    }
+    .essential-lists-container {
+        align-items: center;
+        flex-direction: column;
+    }
+    .essential-card {
+        width: 100%;
+        margin: 0 0 30px;
     }
 }

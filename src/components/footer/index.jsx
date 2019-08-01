@@ -1,7 +1,5 @@
 /**
  * Main site footer
- * ------------------------------
- * @author Jehf K D. (@jehfkemsy)
  */
 
 import React, { Component } from "react";
@@ -27,7 +25,7 @@ class Footer extends Component {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="http://upe.cs.fiu.edu"
+                href="https://discord.gg/upefiu"
               >
                 {" "}
                 <FontAwesomeIcon icon={faDiscord} />
@@ -35,7 +33,7 @@ class Footer extends Component {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="http://upe.cs.fiu.edu"
+                href="https://www.instagram.com/upefiu/?hl=en"
               >
                 {" "}
                 <FontAwesomeIcon icon={faInstagram} />
@@ -43,7 +41,7 @@ class Footer extends Component {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="http://upe.cs.fiu.edu"
+                href="https://www.facebook.com/upefiu/"
               >
                 {" "}
                 <FontAwesomeIcon icon={faFacebookSquare} />
@@ -51,14 +49,14 @@ class Footer extends Component {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="http://upe.cs.fiu.edu"
+                href="https://twitter.com/upefiu?lang=en"
               >
                 <FontAwesomeIcon icon={faTwitterSquare} />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="http://upe.cs.fiu.edu"
+                href="https://www.linkedin.com/company/upe-fiu"
               >
                 {" "}
                 <FontAwesomeIcon icon={faLinkedin} />
@@ -66,7 +64,7 @@ class Footer extends Component {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="http://upe.cs.fiu.edu"
+                href="https://github.com/UPE-FIU"
               >
                 <FontAwesomeIcon icon={faGithubSquare} />
               </a>

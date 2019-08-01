@@ -1,40 +1,34 @@
 /**
  * Main Navigation
- * ------------------------------
- * @author Jehf K D. (@jehfkemsy)
  */
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import Navbar from "../components/navbar";
-import { Footer } from "../components/footer";
+import Application from '../pages/application';
+import Home from '../pages/home';
+import Support from '../pages/support';
+import Essentials from '../pages/essentials';
+import Profile from '../pages/profile';
+import Auth from '../pages/auth';
+import NoMatch from '../pages/p_404';
 
-import Application from "../pages/application";
-import Home from "../pages/home";
-import Support from "../pages/support";
-import Essentials from "../pages/essentials";
-import Profile from "../pages/profile";
-import Auth from "../pages/auth";
-
-import "./styles.css";
+import DashboardRoute from './dashboardRoute';
+import './styles.css';
 
 class Navigation extends Component {
-  render() {
-    return (
-      <Switch>
-        <Route exact path={"/auth"} component={Auth} />
-        <div className="dashboard-wrapper">
-          <Navbar />
-          <Route exact path={"/"} component={Home} />
-          <Route exact path={"/application"} component={Application} />
-          <Route exact path={"/support"} component={Support} />
-          <Route exact path={"/essentials"} component={Essentials} />
-          <Route exact path={"/profile"} component={Profile} />
-          <Footer />
-        </div>
-      </Switch>
-    );
-  }
+	render () {
+		return (
+			<Switch>
+				<DashboardRoute exact path='/' component={Home} />
+				<DashboardRoute exact path='/profile' component={Profile} />
+				<DashboardRoute exact path='/essentials' component={Essentials} />
+				<DashboardRoute exact path='/support' component={Support} />
+				<DashboardRoute exact path='/application' component={Application} />
+				<Route exact path='/auth' component={Auth} />
+				<Route component={NoMatch} />
+			</Switch>
+		);
+	}
 }
 
 export default Navigation;

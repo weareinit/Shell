@@ -1,1 +1,41 @@
-[]
+[{
+        "title": "Front-end",
+        "identifierPath": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
+        "description": "Learn the technical and creative skills of User-Interfaces and User-Experience on web and mobile platforms",
+        "techs": [
+            "Name of chosen technologies coming soon"
+        ]
+    },
+    {
+        "title": "Back-end",
+        "identifierPath": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
+        "description": "Learn about the underlying systems that power the applications you interact with daily",
+        "techs": [
+            "Name of chosen technologies coming soon"
+        ]
+    },
+    {
+        "title": "Hardware",
+        "identifierPath": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
+        "description": "Get down to the wire and learn about microcontrollers, IoT devices like the raspberry pi, and be creative with computers that can affect the physical world",
+        "techs": [
+            "Name of chosen technologies coming soon"
+        ]
+    },
+    {
+        "title": "Data Science",
+        "identifierPath": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
+        "description": "Experience first-hand the power of what AI and statistical analysis can achieve, build off of existing models, and understand the fundamental concepts of machine learning",
+        "techs": [
+            "Name of chosen technologies coming soon"
+        ]
+    },
+    {
+        "title": "IT/Cybersecurity",
+        "identifierPath": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1024px-Circle_-_black_simple.svg.png",
+        "description": "Become versed in the realm of cloud computing, traditional and datacenter-level scalable hosting, and grasp the wonders of hacking and cybersecurity",
+        "techs": [
+            "Name of chosen technologies coming soon"
+        ]
+    }
+]
