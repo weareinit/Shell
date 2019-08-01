@@ -5,6 +5,8 @@ import React, { Component, Fragment } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
+import { ReactComponent as Logo } from '../../assets/logos/organizer/Icon_Logo.svg'
+import mixed from '../../utils/mixed'
 
 import querries from '../../utils/querries'
 import './styles.css'
@@ -42,6 +44,7 @@ class SideBar extends Component {
 
   render () {
     let { HOME, PROFILE, SUPPORT, APPLICATION, ESSENTIAL } = navSelections
+    let { fullName } = this.props
 
     return (
       <Fragment>
@@ -53,19 +56,11 @@ class SideBar extends Component {
         </header>
         <div className={`nav ` + (this.state.open ? '' : ' hide')}>
           <div className='desktop-logo'>
-            <img
-              id='dashboard-logo'
-              className=''
-              alt='placeholder'
-              src={require('../../assets/logos/organizer/shellhacks.svg')}
-            />
-            <img
-              id='dashboard-shell'
-              className=''
-              alt='placeholder'
-              src={require('../../assets/logos/organizer/ShellHacks_Circle_Logo.png')}
-            />
-            <h4 className='user'>Jehf Doe</h4>
+            <Logo id='dashboard-shell' />
+            <h3 className='user'>
+              {mixed.wordCase(fullName.f)} <br />
+              {mixed.wordCase(fullName.l)}
+            </h3>
           </div>
           <ul id='options'>
             <li className='toggle'>

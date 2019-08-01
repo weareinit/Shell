@@ -1,5 +1,3 @@
-/* SIGNUP & LOGIN */
-
 .auth-page-container {
     position: absolute;
     overflow-x: hidden;
@@ -69,48 +67,6 @@
     display: flex;
     justify-content: center;
     margin: 5% 0 0;
-}
-
-#signup-half-button {
-    border: none;
-    outline-style: none;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding: 11px;
-    width: 50%;
-    font-family: "Montserrat", sans-serif;
-    font-size: 100%;
-    background-color: #665b50;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-#login-half-button {
-    border: none;
-    outline-style: none;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 11px;
-    width: 50%;
-    font-family: "Montserrat", sans-serif;
-    font-size: 100%;
-    background-color: #665b50;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.auth-switch-button-container {
-    margin: 0 0 10%;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    max-width: 335px;
-}
-
-.switch-button-selected {
-    background-color: var(--shell-mid-brown) !important;
 }
 
 .auth-forms {

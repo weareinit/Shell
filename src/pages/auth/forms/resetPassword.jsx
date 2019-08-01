@@ -5,18 +5,17 @@
 import React, { useState } from 'react'
 import { Formik, Form } from 'formik'
 import PropTypes from 'prop-types'
-import { TextInput, Button, BlockError } from '../../../components'
+import { Input, Button, BlockError } from '../../../components'
 import {
-  resetPasswordValidation,
-  resetPasswordInitialValues
+  ResetPasswordValidation,
+  ResetPasswordInitialValues
 } from '../../../utils/validations'
-import { resetPassword } from '../../../services/routes'
-import authState from '../authStates'
+import services from '../../../services/routes'
+import States from '../states'
 import '../styles.css'
 
-const ResetPassword = props => {
-  const { BAD_REQUEST, FAILED_REQUEST, FORGOT_PASSWORD, LOGIN } = authState
-  const { setAuthState } = props
+const ResetPassword = ({ setAuthState }) => {
+  const { BAD_REQUEST, FAILED_REQUEST, FORGOT_PASSWORD, LOGIN } = States
   const [otherFaillure, setOtherFaillure] = useState(false)
   const [badRequest, setBadRequest] = useState(false)
 
@@ -49,7 +48,7 @@ const ResetPassword = props => {
       newPassword: values.password,
       token: values.resetCode
     }
-    resetPassword(data, setAuthState, submitionFaillure)
+    services.resetPassword(data, setAuthState, submitionFaillure)
   }
 
   // navigates to forgot
@@ -64,8 +63,8 @@ const ResetPassword = props => {
 
   return (
     <Formik
-      validationSchema={resetPasswordValidation}
-      initialValues={resetPasswordInitialValues}
+      validationSchema={ResetPasswordValidation}
+      initialValues={ResetPasswordInitialValues}
       onSubmit={handleSubmit}
       render={({ touched, errors }) => (
         <Form className='forgot-form'>
@@ -93,7 +92,7 @@ const ResetPassword = props => {
             }
           />
           <div className='field-div'>
-            <TextInput
+            <Input
               name='resetCode'
               type='text'
               placeholder='Reset Code'
@@ -101,7 +100,7 @@ const ResetPassword = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='email'
               type='email'
               placeholder='Email Address'
@@ -109,7 +108,7 @@ const ResetPassword = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='password'
               type='password'
               placeholder='New Password'
@@ -117,7 +116,7 @@ const ResetPassword = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='confirmpassword'
               type='password'
               placeholder='Confirm New Password'

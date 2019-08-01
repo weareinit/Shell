@@ -5,16 +5,17 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Formik, Form } from 'formik'
-import { Button, TextInput, BlockError } from '../../../components'
+import { Button, Input, BlockError } from '../../../components'
 import {
   SignUpValidation,
   SignUpInitialValues
 } from '../../../utils/validations'
-import { register } from '../../../services/routes'
+import services from '../../../services/routes'
 import '../styles.css'
-import authState from '../authStates'
+import States from '../states'
 
-const Register = props => {
+const Register = ({ setAuthState }) => {
+  const { BAD_REQUEST, FAILED_REQUEST, VERIFY_EMAIL, FORGOT_PASSWORD } = States
   const [otherFaillure, setOtherFaillure] = useState(false)
   const [badRequest, setBadRequest] = useState(false)
 
@@ -23,7 +24,6 @@ const Register = props => {
    * @param {String} problem - submition success
    */
   const submitionFaillure = problem => {
-    const { BAD_REQUEST, FAILED_REQUEST } = authState
     if (problem === BAD_REQUEST) {
       setBadRequest(true)
       setTimeout(() => {
@@ -50,9 +50,18 @@ const Register = props => {
       password: values.password
     }
 
-    register(data, props.setAuthState, submitionFaillure)
+  services.register(data, setAuthState, submitionFaillure)
   }
 
+  // navigates to forgot password
+  let goToforgot = () => {
+    setAuthState(FORGOT_PASSWORD)
+  }
+
+  // navigates to verify email address
+  let goToVerify = () => {
+    setAuthState(VERIFY_EMAIL)
+  }
   return (
     <Formik
       initialValues={SignUpInitialValues}
@@ -83,7 +92,7 @@ const Register = props => {
             }
           />
           <div className='field-div'>
-            <TextInput
+            <Input
               name='firstName'
               type='text'
               error={!!touched.firstName && errors.firstName}
@@ -91,7 +100,7 @@ const Register = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='lastName'
               type='text'
               error={!!touched.lastName && errors.lastName}
@@ -99,7 +108,7 @@ const Register = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='email'
               type='email'
               error={!!touched.email && errors.email}
@@ -107,7 +116,7 @@ const Register = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='password'
               type='password'
               error={!!touched.password && errors.password}
@@ -115,12 +124,16 @@ const Register = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='confirmPassword'
               type='password'
               error={!!touched.confirmPassword && errors.confirmPassword}
               placeholder='Confirm password'
             />
+          </div>
+          <div className='auth-question-buttons'>
+            <p onClick={goToforgot}>Forgot Password?</p>
+            <p onClick={goToVerify}>Need to Verify Email?</p>
           </div>
           <div className='auth-submit-button-container'>
             <Button

@@ -1,17 +1,13 @@
 [{
         "title": "Application Not Submitting",
-        "description": "I shall purr myself to sleep swipe at owner's legs but ask to go outside and ask to come inside and ask to go outside and ask to come inside i bet my nine lives on you-oooo-ooo-hooo so chew the plant milk the cow but intrigued by the shower. Eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap. "
+        "description": "👀 Double check your application and make you filled out all of the required  fields in the form and also check for any error messages. 📡 Be sure to double Check your internet connection too."
     },
     {
-        "title": "Something is wrong",
-        "description": "I shall purr myself to sleep swipe at owner's legs but ask to go outside and ask to come inside and ask to go outside and ask to come inside i bet my nine lives on you-oooo-ooo-hooo so chew the plant milk the cow but intrigued by the shower. Eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap. "
+        "title": "Forgot My Password",
+        "description": "🤔 Alright, there's no way you got in here without a password and if you did we'd love to have a quick chat with you. 🔑 Though, if really did forgot your password, logout and follow the instructions on the auth page to reset your password."
     },
     {
-        "title": "Problem something else is wrong",
-        "description": "I shall purr myself to sleep swipe at owner's legs but ask to go outside and ask to come inside and ask to go outside and ask to come inside i bet my nine lives on you-oooo-ooo-hooo so chew the plant milk the cow but intrigued by the shower. Eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap. "
-    },
-    {
-        "title": "Problem is really",
-        "description": "I shall purr myself to sleep swipe at owner's legs but ask to go outside and ask to come inside and ask to go outside and ask to come inside i bet my nine lives on you-oooo-ooo-hooo so chew the plant milk the cow but intrigued by the shower. Eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap. "
+        "title": "Found A Bug!",
+        "description": "🐛 Oof! Our junior developers did it again. 🙏 Feel free to click on the GitHub icon in the footer to open an issue on GitHub or the Discord icon to let us know on Discord."
     }
 ]

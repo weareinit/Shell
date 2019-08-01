@@ -6,15 +6,14 @@ import React, { useState } from 'react'
 import { withRouter } from 'react-router'
 import PropTypes from 'prop-types'
 import { Formik, Form } from 'formik'
-import { TextInput, Button, BlockError } from '../../../components'
+import { Input, Button, BlockError, ButtonLoader } from '../../../components'
 import { LogInValidation, LoginInitialValues } from '../../../utils/validations'
-import { login } from '../../../services/routes'
-import authState from '../authStates'
+import services from '../../../services/routes'
+import States from '../states'
 import '../styles.css'
 
-const Login = props => {
-  const { FORGOT_PASSWORD, VERIFY_EMAIL } = authState
-  const { setAuthState } = props
+const Login = ({ history, setAuthState }) => {
+  const { FORGOT_PASSWORD, VERIFY_EMAIL, BAD_REQUEST, FAILED_REQUEST } = States
   const [otherFaillure, setOtherFaillure] = useState(false)
   const [badRequest, setBadRequest] = useState(false)
 
@@ -23,7 +22,6 @@ const Login = props => {
    * @param {String} problem - submition success
    */
   const submitionFaillure = problem => {
-    const { BAD_REQUEST, FAILED_REQUEST } = authState
     if (problem === BAD_REQUEST) {
       setBadRequest(true)
       setTimeout(() => {
@@ -47,7 +45,7 @@ const Login = props => {
       email: values.email,
       password: values.password
     }
-    login(data, props.history, submitionFaillure)
+    services.login(data, history, submitionFaillure)
   }
 
   // navigates to forgot password
@@ -84,7 +82,7 @@ const Login = props => {
             }
           />
           <div className='field-div'>
-            <TextInput
+            <Input
               name='email'
               type='email'
               placeholder='Email Address'
@@ -92,7 +90,7 @@ const Login = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='password'
               type='password'
               placeholder='Password'
@@ -117,6 +115,7 @@ const Login = props => {
   )
 }
 Login.propTypes = {
-  setAuthState: PropTypes.func.isRequired
+  setAuthState: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 }
 export default withRouter(Login)

@@ -1,0 +1,42 @@
+.swch-btn-half--right {
+    border: none;
+    outline-style: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 11px;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    background-color: var(--shell-mid-brown);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.swch-btn-half--left {
+    border: none;
+    outline-style: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 11px;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    background-color: var(--shell-mid-brown);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.swch-container {
+    margin: 0 0 10%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    max-width: 335px;
+}
+
+.swch-btn--selected {
+    background-color: var(--shell-dark-brown) !important;
+    cursor: default;
+}

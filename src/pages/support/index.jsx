@@ -18,11 +18,11 @@ class Support extends Component {
         <div className='support-container'>
           <div className='support-description'>
             <p>
-              We are sorry to hear that you having issues with our apps.
+              We are sorry to hear that you having issues with our website.
               Checkout these commonly occured issues bellow. If you are still
-              having difficulties then, please reach out to us throught the{' '}
+              having difficulties then, please reach out to us throught our{' '}
               <a className='links' href='https://discord.gg/upefiu'>
-                UPE Discord
+                Discord Server
               </a>{' '}
               or email us at{' '}
               <a className='links' href='mailto: upe@fiu.edu'>

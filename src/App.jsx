@@ -4,39 +4,47 @@
 
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import Navigation from './navigation'
+import './css/App.css'
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faFacebookSquare,
   faInstagram,
   faLinkedin,
   faTwitter,
-  faDiscord
+  faDiscord,
+  faTwitterSquare,
+  faGithubSquare
 } from '@fortawesome/free-brands-svg-icons'
 import {
-  faCheckSquare,
+  faCheck,
   faSignOutAlt,
   faExclamationCircle,
   faLaptop,
   faCar,
-  faSuitcaseRolling
+  faSuitcaseRolling,
+  faSpinner,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons'
-
-import Navigation from './navigation'
-import './css/App.css' // load general/global css
 
 // preloading icons
 library.add(
-  faCheckSquare,
-  faSignOutAlt,
   faFacebookSquare,
   faInstagram,
   faLinkedin,
   faTwitter,
   faDiscord,
+  faTwitterSquare,
+  faGithubSquare,
+  faCheck,
+  faSignOutAlt,
   faExclamationCircle,
   faLaptop,
   faCar,
-  faSuitcaseRolling
+  faSuitcaseRolling,
+  faSpinner,
+  faTimes
 )
 
 class App extends Component {

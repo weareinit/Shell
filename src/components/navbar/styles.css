@@ -78,9 +78,10 @@ header {
 
 .user {
     color: var(--shell-light-brown);
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: 700;
     margin-top: 18px;
+    text-align: center;
 }
 
 .nav ul li a {
@@ -105,6 +106,7 @@ header {
     }
     .nav-item-selected a {
         color: #fff !important;
+        cursor: default !important;
     }
     header {
         display: none;
@@ -113,14 +115,12 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 60px;
     }
     #dashboard-logo {
         width: 70%;
     }
     #dashboard-shell {
-        margin-top: 18px;
-        width: 30%;
+        width: 60%;
     }
     .nav {
         padding-top: 20px;
@@ -143,6 +143,9 @@ header {
         width: 100%;
         font-size: 1em;
         font-weight: 600;
+    }
+    .nav #options li a:hover {
+        color: var(--shell-dark-brown);
     }
     #logout {
         font-size: 1em;

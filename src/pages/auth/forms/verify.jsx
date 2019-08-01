@@ -5,18 +5,17 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Formik, Form } from 'formik'
-import { TextInput, Button, BlockError } from '../../../components'
+import { Input, Button, BlockError } from '../../../components'
 import {
-  registrationCodeValidation,
-  registrationCodeInitialValues
+  RegistrationCodeValidation,
+  RegistrationCodeInitialValues
 } from '../../../utils/validations'
-import { verifyEmail } from '../../../services/routes'
-import authState from '../authStates'
+import services from '../../../services/routes'
+import States from '../states'
 import '../styles.css'
 
-const Verify = props => {
-  const { BAD_REQUEST, FAILED_REQUEST, LOGIN, RESEND_VERIFY_CODE } = authState
-  const { setAuthState } = props
+const Verify = ({ setAuthState }) => {
+  const { BAD_REQUEST, FAILED_REQUEST, LOGIN, RESEND_VERIFY_CODE } = States
   const [otherFaillure, setOtherFaillure] = useState(false)
   const [badRequest, setBadRequest] = useState(false)
 
@@ -48,7 +47,7 @@ const Verify = props => {
       emailConfirmationToken: values.verificationCode,
       email: values.email
     }
-    verifyEmail(data, setAuthState, submitionFaillure)
+    services.verifyEmail(data, setAuthState, submitionFaillure)
   }
 
   // navigates to login
@@ -63,8 +62,8 @@ const Verify = props => {
 
   return (
     <Formik
-      validationSchema={registrationCodeValidation}
-      initialValues={registrationCodeInitialValues}
+      validationSchema={RegistrationCodeValidation}
+      initialValues={RegistrationCodeInitialValues}
       onSubmit={handleSubmit}
       render={({ touched, errors }) => (
         <Form className='success-form'>
@@ -87,7 +86,7 @@ const Verify = props => {
             }
           />
           <div className='field-div'>
-            <TextInput
+            <Input
               name='email'
               type='eamil'
               placeholder='Email Address'
@@ -95,7 +94,7 @@ const Verify = props => {
             />
           </div>
           <div className='field-div'>
-            <TextInput
+            <Input
               name='verificationCode'
               type='text'
               placeholder='Email Verification Code'

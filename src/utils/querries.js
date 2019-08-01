@@ -9,9 +9,8 @@ const JWT = 'JWT';
  * @param {String} key - value key
  * @param {Any} value - value to be stored
  */
-async function storeItem(key, value) {
-    await isAuthorized()
-    localStorage.setItem(key, value);
+function storeItem(key, value) {
+	localStorage.setItem(key, value);
 }
 
 /**
@@ -19,7 +18,7 @@ async function storeItem(key, value) {
  * @param {String} key - retriving value key
  */
 function retrieveItem(key) {
-    return localStorage.getItem(key);
+	return localStorage.getItem(key);
 }
 
 /**
@@ -27,7 +26,7 @@ function retrieveItem(key) {
  * @param {String} key - key of value to be deleted
  */
 function removeItem(key) {
-    return localStorage.removeItem(key);
+	return localStorage.removeItem(key);
 }
 
 /**
@@ -35,9 +34,9 @@ function removeItem(key) {
  * @param {Object} history - react router history object
  */
 async function deAuthorize(history) {
-    await history.push('/auth');
-    removeItem(JWT);
-    return;
+	await history.push('/auth');
+	removeItem(JWT);
+	return;
 }
 
 /**
@@ -45,19 +44,19 @@ async function deAuthorize(history) {
  * @param {Object} history - react router history object
  */
 function isAuthorized(history) {
-    try {
-        const token = retrieveItem(JWT);
-        // history.push("/")
-        return token;
-    } catch (e) {
-        alert("WHOOPS! Looks like you shouldn't be here...Please Login");
-        return deAuthorize(history);
-    }
+	try {
+		const token = retrieveItem(JWT);
+		// history.push("/")
+		return token;
+	} catch (e) {
+		alert('WHOOPS! Looks like you shouldn\'t be here...Please Login');
+		return deAuthorize(history);
+	}
 }
 export default {
-    storeItem,
-    retrieveItem,
-    removeItem,
-    isAuthorized,
-    deAuthorize,
+	storeItem,
+	retrieveItem,
+	removeItem,
+	isAuthorized,
+	deAuthorize,
 };

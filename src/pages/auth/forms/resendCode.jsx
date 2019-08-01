@@ -5,18 +5,17 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Formik, Form } from 'formik'
-import { TextInput, Button, BlockError } from '../../../components'
+import { Input, Button, BlockError } from '../../../components'
 import {
-  forgotPasswordValidation,
-  forgotPasswordInitialValues
+  ForgotPasswordValidation,
+  ForgotPasswordInitialValues
 } from '../../../utils/validations'
-import { verifyEmail } from '../../../services/routes'
-import authState from '../authStates'
+import services from '../../../services/routes'
+import States from '../states'
 import '../styles.css'
 
-const ResendCode = props => {
-  const { BAD_REQUEST, FAILED_REQUEST, LOGIN, VERIFY_EMAIL } = authState
-  const { setAuthState } = props
+const ResendCode = ({ setAuthState }) => {
+  const { BAD_REQUEST, FAILED_REQUEST, LOGIN, VERIFY_EMAIL } = States
   const [otherFaillure, setOtherFaillure] = useState(false)
   const [badRequest, setBadRequest] = useState(false)
 
@@ -39,6 +38,15 @@ const ResendCode = props => {
     }
   }
 
+  /**
+   * Submits form
+   * @param {Object} values - form values
+   */
+  const handleSubmit = values => {
+    let data = { email: values.email }
+    services.resendCode(data, setAuthState, submitionFaillure)
+  }
+
   // navigates to login
   const goToLogin = () => {
     setAuthState(LOGIN)
@@ -49,19 +57,10 @@ const ResendCode = props => {
     setAuthState(VERIFY_EMAIL)
   }
 
-  /**
-   * Submits form
-   * @param {Object} values - form values
-   */
-  const handleSubmit = values => {
-    let data = { verifyCode: values.verificationCode }
-    verifyEmail(data, setAuthState, submitionFaillure)
-  }
-
   return (
     <Formik
-      validationSchema={forgotPasswordValidation}
-      initialValues={forgotPasswordInitialValues}
+      validationSchema={ForgotPasswordValidation}
+      initialValues={ForgotPasswordInitialValues}
       onSubmit={handleSubmit}
       render={({ touched, errors }) => (
         <Form className='forgot-form'>
@@ -73,14 +72,14 @@ const ResendCode = props => {
               errors.email ||
                 (badRequest &&
                   "Ummm...🤔 We couldn't find your email address") ||
-                (otherFaillure && 'Something went wrong 😕')
+                (otherFaillure && 'Something went wrong...Try again! 😕')
             ]}
             shouldShow={
               !!(errors.email && touched.email) || badRequest || otherFaillure
             }
           />
           <div className='field-div'>
-            <TextInput
+            <Input
               name='email'
               type='email'
               placeholder='Email Address'

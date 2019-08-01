@@ -1,12 +1,12 @@
 /**
- * A reusable text input component
+ * A reusable input component
  */
 import React from "react";
 import PropTypes from "prop-types";
 import { Field } from "formik";
 import { InlineError } from "../errorMessage";
 import "./styles.css";
-const TextInput = props => {
+const Input = props => {
   let {
     error,
     errorVal,
@@ -36,7 +36,7 @@ const TextInput = props => {
   );
 };
 
-TextInput.propTypes = {
+Input.propTypes = {
   error: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   errorVal: PropTypes.string,
@@ -46,4 +46,4 @@ TextInput.propTypes = {
   extraStylesClass: PropTypes.string
 };
 
-export { TextInput };
+export { Input };

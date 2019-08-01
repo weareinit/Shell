@@ -35,4 +35,21 @@ function getMessage(condition) {
     return message;
 }
 
-export default getMessage;
+const getAvatar = (id) => {
+    const avatars = ["turtle.png", "mana.png", "crab.png", "dolphin.png", "marlin.png"]
+    return avatars[id - 1];
+
+}
+
+const wordCase = (words) => {
+    const UNKNOWN = 'Unknwon'
+    if (!words) return UNKNOWN
+    else {
+        let text = words.toLowerCase().split(' ')
+            .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+            .join(' ');
+        return text;
+    }
+}
+
+export default { getMessage, getAvatar, wordCase };

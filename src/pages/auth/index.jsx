@@ -3,27 +3,27 @@
  */
 
 import React, { Component } from 'react'
-import { WaveBackground } from '../../components'
+import { WaveBackground, Switch } from '../../components'
 import Login from './forms/login'
 import Register from './forms/register'
 import Verify from './forms/verify'
 import ForgotPassword from './forms/forgotPassword'
 import ResetPassword from './forms/resetPassword'
 import ResendCode from './forms/resendCode'
-import getMessage from '../../utils/authMessage'
+import mixed from '../../utils/mixed'
 import { ReactComponent as Logo } from '../../assets/logos/organizer/shellhacks.svg'
-import authState from './authStates'
+import States from './states'
 import './styles.css'
 
 // Get random welcome message for login and register on page load
-const loginMessage = getMessage(true)
-const registerMessage = getMessage(false)
+const loginMessage = mixed.getMessage(true)
+const registerMessage = mixed.getMessage(false)
 
 class Auth extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      currentState: authState.LOGIN
+      currentState: States.LOGIN
     }
 
     this.setAuthState = this.setAuthState.bind(this)
@@ -49,7 +49,7 @@ class Auth extends Component {
       SIGNUP,
       RESET_PASSWORD,
       RESEND_VERIFY_CODE
-    } = authState
+    } = States
 
     let props = {
       setAuthState: this.setAuthState
@@ -84,8 +84,7 @@ class Auth extends Component {
       SIGNUP,
       RESET_PASSWORD,
       RESEND_VERIFY_CODE
-    } = authState
-
+    } = States
     switch (state) {
       case LOGIN:
         return (
@@ -160,7 +159,7 @@ class Auth extends Component {
   }
 
   render () {
-    const { LOGIN, SIGNUP } = authState
+    const { LOGIN, SIGNUP } = States
     return (
       <section>
         <WaveBackground>
@@ -174,26 +173,15 @@ class Auth extends Component {
                 <Logo className='auth-logo' id='auth-mobile-logo' />
                 {(this.state.currentState === LOGIN ||
                   this.state.currentState === SIGNUP) && (
-                  <div className='auth-switch-button-container'>
-                    <button
-                      className={`switchButton ${this.state.currentState ===
-                        SIGNUP && 'switch-button-selected'}`} // sets button list's selected button color
-                      id='login-half-button'
-                      type='button'
-                      onClick={() => this.setState({ currentState: LOGIN })}
-                    >
-                      Log In
-                    </button>
-                    <button
-                      className={`switchButton ${this.state.currentState ===
-                        LOGIN && 'switch-button-selected'}`} // sets button list's selected button color
-                      id='signup-half-button'
-                      type='button'
-                      onClick={() => this.setState({ currentState: SIGNUP })}
-                    >
-                      Sign Up
-                    </button>
-                  </div>
+                  <Switch
+                    titleOne='Login'
+                    titleTwo='Register'
+                    action={param => {
+                      param === 'left'
+                        ? this.setAuthState(LOGIN)
+                        : this.setAuthState(SIGNUP)
+                    }}
+                  />
                 )}
                 <div className='auth-forms'>
                   {this.currForm(this.state.currentState)}

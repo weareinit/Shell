@@ -5,18 +5,17 @@
 import React, { useState } from 'react'
 import { Formik, Form } from 'formik'
 import PropTypes from 'prop-types'
-import { TextInput, Button, BlockError } from '../../../components'
+import { Input, Button, BlockError } from '../../../components'
 import {
-  forgotPasswordValidation,
-  forgotPasswordInitialValues
+  ForgotPasswordValidation,
+  ForgotPasswordInitialValues
 } from '../../../utils/validations'
-import { forgotPassword } from '../../../services/routes'
-import authState from '../authStates'
+import services from '../../../services/routes'
+import States from '../states'
 import '../styles.css'
 
-const ForgotPassword = props => {
-  const { BAD_REQUEST, FAILED_REQUEST, RESET_PASSWORD, LOGIN } = authState
-  const { setAuthState } = props
+const ForgotPassword = ({ setAuthState }) => {
+  const { BAD_REQUEST, FAILED_REQUEST, RESET_PASSWORD, LOGIN } = States
   const [otherFaillure, setOtherFaillure] = useState(false)
   const [badRequest, setBadRequest] = useState(false)
 
@@ -42,7 +41,7 @@ const ForgotPassword = props => {
   // request a token to reset password
   const handleSubmit = values => {
     const data = { email: values.email }
-    forgotPassword(data, setAuthState, submitionFaillure)
+    services.forgotPassword(data, setAuthState, submitionFaillure)
   }
 
   // navigates to Reset password
@@ -57,8 +56,8 @@ const ForgotPassword = props => {
 
   return (
     <Formik
-      validationSchema={forgotPasswordValidation}
-      initialValues={forgotPasswordInitialValues}
+      validationSchema={ForgotPasswordValidation}
+      initialValues={ForgotPasswordInitialValues}
       onSubmit={handleSubmit}
       render={({ touched, errors }) => (
         <Form className='forgot-form'>
@@ -70,7 +69,7 @@ const ForgotPassword = props => {
             errors={[
               errors.email ||
                 (badRequest &&
-                  'Ummm...🤔 This email address is already been added to our databases') ||
+                  'Ummm...🤔 Something is wrong with that email address, have you registered yet?') ||
                 (otherFaillure && 'Something went wrong 😕')
             ]}
             shouldShow={
@@ -78,7 +77,7 @@ const ForgotPassword = props => {
             }
           />
           <div className='field-div'>
-            <TextInput
+            <Input
               name='email'
               type='email'
               placeholder='Email Address'

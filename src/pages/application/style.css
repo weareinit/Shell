@@ -3,6 +3,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 .application-container form {
@@ -104,7 +109,6 @@ input[type="date"]:before {
 }
 
 .agreement {
-    font-size: 14;
     color: white;
     text-decoration: none;
     width: 100%;
@@ -112,6 +116,10 @@ input[type="date"]:before {
     flex-direction: column;
     align-items: flex-start;
     padding-top: 20px;
+}
+
+#mlh {
+    margin-bottom: 15px;
 }
 
 .agreement a {
@@ -146,6 +154,26 @@ input[type="date"]:before {
 
 .resume {
     padding: 8.668px;
+}
+
+.submition-modal {
+    display: block;
+    margin: auto;
+    padding: 50px;
+    background: var(--shell-teal);
+    border-radius: 20px;
+}
+
+.application-overlay {
+    position: fixed !important;
+    z-index: 10;
+    background: rgb(102, 91, 80, 0.8);
+    height: 100vh;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 @media (max-width: 650px) {
