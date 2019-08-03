@@ -46,7 +46,7 @@ library.add(
   faSpinner,
   faTimes
 )
-
+alert("Please note that you are currently accessing a beta release of our dashboard, and any data or account submitted to our databases will be deleted before our official release (8/5/2019).")
 class App extends Component {
   render () {
     return (

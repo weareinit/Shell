@@ -7,8 +7,6 @@ function getMessage(condition) {
 
     const salutations = condition ? [
         { header: `👋Welcome!`, desc: `Please Signin to Continue` },
-        { header: `👋Bienvenido!`, desc: 'Please Login or Create an Account' },
-        { header: `Greetings!`, desc: `We've been WAVING for you` },
         { header: `👋Oh, Hi There!`, desc: `WAVE been expecting you.` },
         {
             header: `👋Salut, Bienvenue.`,
