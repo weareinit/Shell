@@ -58,8 +58,8 @@ class SideBar extends Component {
           <div className='desktop-logo'>
             <Logo id='dashboard-shell' />
             <h3 className='user'>
-              {mixed.wordCase(fullName.f)} <br />
-              {mixed.wordCase(fullName.l)}
+              {/* i have no idea why i didn't css this...but hey, too late! */}
+              {mixed.wordCase(fullName)} 
             </h3>
           </div>
           <ul id='options'>

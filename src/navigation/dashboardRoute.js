@@ -3,29 +3,42 @@
  * This function get triggered everytime user navigates to a dashboard page
  */
 
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { Footer, Navbar } from '../components'
+import { withRouter } from "react-router";
+import { Footer, Navbar,Loading } from '../components'
 import querries from '../utils/querries'
 import services from '../services/routes'
 
-const DashboardRoute = ({ component: Component, ...rest }) => {
-  services.getUserInfo(rest.history)
-  const userData = JSON.parse(querries.retrieveItem('userData'))
+const DashboardRoute = ({ component: Component,history,...rest }) => {
+ let userData;
+ const[loading,setLoading]=useState(true);
+ const[data,setData]=useState({});
+ 
+useEffect(() => {
+  const getData = () =>{
+    services.getUserInfo(history)
+    userData = JSON.parse(querries.retrieveItem('userData'))
+    setData(userData)
+    if(userData)
+    setLoading(false)
+  }
+  getData();
 
-  const getNames = () =>
-    userData
-      ? { f: userData.firstName, l: userData.lastName }
-      : { f: 'Unkwon', l: 'User' }
-  console.log(userData)
+},[])
+
   return (
     <div className='dashboard-wrapper'>
-      <Navbar fullName={getNames()} />{' '}
       <Route
         {...rest}
         render={props =>
           querries.isAuthorized(props.history) ? (
-            <Component {...props} userData={userData} />
+          (loading && <div className="dash-modal"><Loading size={50} color='white' /></div>)||
+            <>
+            <Navbar fullName={data.firstName} />
+            <Component {...props} userData={data} />
+            <Footer showSocials />
+            </>
           ) : (
             <Redirect
               to={{
@@ -35,10 +48,9 @@ const DashboardRoute = ({ component: Component, ...rest }) => {
             />
           )
         }
-      />{' '}
-      <Footer showSocials />
+      />
     </div>
   )
 }
 
-export default DashboardRoute
+export default withRouter(DashboardRoute)

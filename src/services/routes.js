@@ -36,7 +36,6 @@ const ID = 'shellID';
  * @param {Function} faillureAction - executed on request failure
  */
 const register = async(data, successAction, faillureAction) => {
-    console.log(data);
     request({
         method: 'post',
         url: REGISTER_PATH,
@@ -80,7 +79,6 @@ const resendCode = (data, successAction, faillureAction) =>
         url: RESEND_CODE_PATH,
         data
     }).then(resp => {
-        console.log(resp);
         if (resp.success) successAction(VERIFY_EMAIL);
     }).catch((err) => {
         faillureAction(FAILED_REQUEST);
@@ -162,10 +160,6 @@ const apply = (form, history, nextAction) => {
     let data = new FormData();
     Object.keys(form).map(key => data.append(key, form[key]));
 
-    for (var pair of data.entries()) {
-        console.log(pair[0] + ', ' + pair[1]);
-    }
-
     return request({
         method: 'put',
         url: APPLY_PATH,
@@ -175,7 +169,6 @@ const apply = (form, history, nextAction) => {
             'Authorization': 'Bearer ' + token
         }
     }).then(resp => {
-        console.log(resp);
         nextAction();
         return resp;
     }).catch(err => {
@@ -202,7 +195,8 @@ const getUserInfo = async history => {
         }
     }).then(resp => {
         querries.storeItem('userData', JSON.stringify(resp.data));
-    }).catch((err) => querries.deAuthorize);
+        let data = JSON.parse(querries.retrieveItem('userData'))
+    }).catch((err) => querries.deAuthorize(history));
 };
 
 export default {
