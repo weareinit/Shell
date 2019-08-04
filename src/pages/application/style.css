@@ -26,6 +26,9 @@
     font-family: "Montserrat", sans-serif;
 }
 
+.application-container form input[type="date"] {
+    text-transform: uppercase;
+}
 .application-container h2 {
     margin: 50px 0 5px;
     font-size: var(--sub-heading);

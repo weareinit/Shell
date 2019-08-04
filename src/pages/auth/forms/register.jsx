@@ -79,7 +79,7 @@ const Register = ({ setAuthState }) => {
                 (touched.confirmPassword && errors.confirmPassword) ||
                 (badRequest &&
                   'Ummm...🤔 That email address is  already in use, try resetting your password') ||
-                (otherFaillure && 'Something went wrong 😕')
+                (otherFaillure && 'Something went wrong 😕... Sure you don\'t already have an account?')
             ]}
             shouldShow={
               !!(touched.firstName && errors.firstName) ||

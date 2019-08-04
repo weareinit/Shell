@@ -72,7 +72,7 @@ const Login = ({ history, setAuthState }) => {
                 (touched.password && errors.password) ||
                 (badRequest &&
                   'Oof! Something is wrong with those credentials 😬') ||
-                (otherFaillure && 'Something went wrong 😕')
+                (otherFaillure && 'Something went wrong 😕... Your credentials may be incorrect')
             ]}
             shouldShow={
               !!(touched.email && errors.email) ||

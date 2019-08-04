@@ -34,6 +34,7 @@ const {
   dietaryRestrictionData,
   shirtSizeData,
   yesNoData,
+  didAttended,
   howDidYouHearData
 } = applicationData
 
@@ -101,7 +102,7 @@ const Application = ({ history, userData }) => {
                 <Input
                   className='application-input'
                   extraStylesClass='dob'
-                  label='Date of Birth'
+                  label='Date of Birth *'
                   name='dob'
                   type='date'
                   error={!!touched.dob && !!errors.dob}
@@ -111,7 +112,7 @@ const Application = ({ history, userData }) => {
               <div className='half-container'>
                 <Select
                   className='application-input'
-                  label='Gender'
+                  label='Gender *'
                   name='gender'
                   id={'gener'}
                   test={values}
@@ -127,7 +128,7 @@ const Application = ({ history, userData }) => {
               <div className='half-container'>
                 <Select
                   className='application-input'
-                  label='Race/Ethnicity'
+                  label='Race/Ethnicity *'
                   id={'race'}
                   test={values}
                   name='race'
@@ -144,7 +145,7 @@ const Application = ({ history, userData }) => {
                 <Input
                   className='application-input'
                   name='phoneNumber'
-                  label='Phone Number'
+                  label='Phone Number *'
                   placeholder='000-000-0000'
                   error={!!touched.phoneNumber && !!errors.phoneNumber}
                   errorVal={errors.phoneNumber}
@@ -154,7 +155,7 @@ const Application = ({ history, userData }) => {
               <div className='half-container'>
                 <Select
                   className='application-input'
-                  label='School Name'
+                  label='School Name *'
                   name='schoolName'
                   id={'schoolName'}
                   value={values.schoolName}
@@ -169,7 +170,7 @@ const Application = ({ history, userData }) => {
               <div className='half-container'>
                 <Select
                   className='application-input'
-                  label='Major'
+                  label='Major *'
                   name='major'
                   id='major'
                   placeholder='Computer Science'
@@ -184,7 +185,7 @@ const Application = ({ history, userData }) => {
               <div className='half-container'>
                 <Select
                   className='application-input'
-                  label='Level of Study'
+                  label='Level of Study *'
                   name='levelOfStudy'
                   id='levelOfStudy'
                   placeholder='Undergraduate'
@@ -199,7 +200,7 @@ const Application = ({ history, userData }) => {
               <div className='half-container'>
                 <Select
                   className='application-input'
-                  label='Graduation Year'
+                  label='Graduation Year *'
                   id='graduationYear'
                   name='graduationYear'
                   placeholder='2020'
@@ -215,7 +216,7 @@ const Application = ({ history, userData }) => {
               <div className='full-container'>
                 <Select
                   className='application-input'
-                  label=' Which role best describe you?'
+                  label=' Which role best describes you?'
                   id='areaOfFocus'
                   name='areaOfFocus'
                   placeholder='Front-end Developer'
@@ -232,7 +233,7 @@ const Application = ({ history, userData }) => {
                 <InlineError
                   shouldShow={!!touched.resume && errors.resume}
                   error={errors.resume}
-                  label={'Resume'}
+                  label={'Resume *'}
                   name={'resume'}
                 />
                 <input
@@ -289,7 +290,7 @@ const Application = ({ history, userData }) => {
                   className='application-input'
                   type='text'
                   name='reasonForAttending'
-                  label='Reason for attending'
+                  label='Reason for attending ShellHacks *'
                   placeholder='I love ShellHacks'
                   error={
                     !!touched.reasonForAttending && !!errors.reasonForAttending
@@ -300,7 +301,7 @@ const Application = ({ history, userData }) => {
               <div className='full-container'>
                 <Select
                   className='application-input'
-                  label='Any dietary Restriction?'
+                  label='Any dietary restrictions? *'
                   id='dietaryRestriction'
                   name='dietaryRestriction'
                   placeholder='Vegan'
@@ -316,7 +317,7 @@ const Application = ({ history, userData }) => {
               <div className='full-container'>
                 <Select
                   className='application-input'
-                  label='Need travel reimbursement?'
+                  label='Need travel reimbursement? *'
                   id='needReimbursement'
                   name='needReimbursement'
                   placeholder='Select One'
@@ -331,7 +332,7 @@ const Application = ({ history, userData }) => {
               <div className='half-container'>
                 <Select
                   className='application-input'
-                  label='First time hacker?'
+                  label='First time hacker? *'
                   id='firstTimeHack'
                   name='firstTimeHack'
                   placeholder='Select One'
@@ -346,7 +347,7 @@ const Application = ({ history, userData }) => {
               <div className='half-container'>
                 <Select
                   className='application-input'
-                  label='Attended last year?'
+                  label='Attended ShellHacks before? *'
                   id='haveBeenToShell'
                   name='haveBeenToShell'
                   placeholder='Select One'
@@ -355,13 +356,13 @@ const Application = ({ history, userData }) => {
                   onBlur={setFieldTouched}
                   touched={touched.haveBeenToShell}
                   error={errors.haveBeenToShell}
-                  options={yesNoData}
+                  options={didAttended}
                 />
               </div>
               <div className='full-container'>
                 <Select
                   className='application-input'
-                  label='Shirt Size'
+                  label='Shirt Size *'
                   id='shirtSize'
                   name='shirtSize'
                   placeholder='Select One'
@@ -376,7 +377,7 @@ const Application = ({ history, userData }) => {
               <div className='full-container'>
                 <Select
                   className='application-input'
-                  label='How did you hear about us?'
+                  label='How did you hear about us? *'
                   id='howDidYouHear'
                   name='howDidYouHear'
                   placeholder='Select One'
@@ -409,6 +410,41 @@ const Application = ({ history, userData }) => {
                     MLH Code of Conduct
                   </a>
                 </p>
+
+                <p id='mlhAffiliation'>
+                  <Field
+                    id='mlh--field'
+                    component={Checkbox}
+                    name='mlhAffiliation'
+                    onChange={onChange}
+                  />
+                I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the  <a
+                    href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
+                    rel='noopener noreferrer'
+                    target='_blank'
+                    style={{
+                      color: 'var(--shell-sand)',
+                      textDecoration: 'underline'
+                    }}
+                  >MLH Privacy Policy</a>. I further agree to the terms of both the  <a
+                  href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  style={{
+                    color: 'var(--shell-sand)',
+                    textDecoration: 'underline'
+                  }}
+                >MLH Contest Terms and Conditions</a> and the  <a
+                    href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
+                    rel='noopener noreferrer'
+                    target='_blank'
+                    style={{
+                      color: 'var(--shell-sand)',
+                      textDecoration: 'underline'
+                    }}
+                  >MLH Privacy Policy</a>.
+                </p>
+                <br/>
                 <p id='sponsor-promo'>
                   <Field
                     id='sponsor-promo--field'
@@ -422,10 +458,10 @@ const Application = ({ history, userData }) => {
                 <br />
                 <InlineError
                   shouldShow={
-                    (errors.mlh && touched.mlh) ||
+                    (errors.mlh && touched.mlh) || (errors.mlhAffiliation && touched.mlhAffiliation)||
                     (errors.sponsorPromo && touched.sponsorPromo)
                   }
-                  error={errors.mlh || errors.sponsorPromo}
+                  error={errors.mlh || errors.sponsorPromo || errors.mlhAffiliation}
                 />
               </div>
               <div className='application-submit-button'>
