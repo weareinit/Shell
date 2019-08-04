@@ -11,29 +11,32 @@ import querries from '../utils/querries'
 import services from '../services/routes'
 
 const DashboardRoute = ({ component: Component,history,...rest }) => {
- let userData={}
+ let userData;
  const[loading,setLoading]=useState(true);
-
-const getData = async ()=>{
-  const data = await  services.getUserInfo(history)
-  userData =  await JSON.parse(querries.retrieveItem('userData'))
-  if(userData)
-  setLoading(false)
-}
+ const[data,setData]=useState({});
  
 useEffect(() => {
+  const getData = () =>{
+    services.getUserInfo(history)
+    userData = JSON.parse(querries.retrieveItem('userData'))
+    setData(userData)
+    if(userData)
+    setLoading(false)
+  }
   getData();
-})
+
+},[])
+
   return (
     <div className='dashboard-wrapper'>
       <Route
         {...rest}
         render={props =>
           querries.isAuthorized(props.history) ? (
-          (loading && getData() && <div className="dash-modal"><Loading size={50} color='white' /></div>)||
+          (loading && <div className="dash-modal"><Loading size={50} color='white' /></div>)||
             <>
-            <Navbar fullName={"hrfshj"} />
-            <Component {...props} userData={userData} />
+            <Navbar fullName={data.firstName} />
+            <Component {...props} userData={data} />
             <Footer showSocials />
             </>
           ) : (
@@ -46,7 +49,6 @@ useEffect(() => {
           )
         }
       />
-     
     </div>
   )
 }

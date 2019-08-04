@@ -8,7 +8,7 @@ import { Card } from '../../components'
 import mixed from '../../utils/mixed'
 import './styles.css'
 const Home = ({ userData }) => {
-  const { applicationStatus, firstName, avatar } = userData
+  let { applicationStatus, firstName, avatar } = userData
   return (
     <div className='dashboard-page'>
       <h1>Home</h1>
