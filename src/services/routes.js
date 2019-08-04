@@ -193,6 +193,8 @@ const getUserInfo = async history => {
     const token = await querries.isAuthorized(history);
     const shellID = await querries.retrieveItem(ID);
 
+    console.log(history)
+
     return await request({
         method: 'post',
         url: READ_USER_PATH,
@@ -202,7 +204,7 @@ const getUserInfo = async history => {
         }
     }).then(resp => {
         querries.storeItem('userData', JSON.stringify(resp.data));
-    }).catch((err) => querries.deAuthorize);
+    }).catch((err) => querries.deAuthorize(history));
 };
 
 export default {

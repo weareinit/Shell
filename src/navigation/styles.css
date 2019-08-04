@@ -23,6 +23,11 @@
     text-transform: uppercase;
 }
 
+.dash-modal {
+    display: block;
+    margin-top: 40vh;
+}
+
 @media (min-width: 650px) {
     .dashboard-wrapper {
         margin-left: 20%;
