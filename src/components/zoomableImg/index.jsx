@@ -5,9 +5,7 @@
 import React from 'react'
 import ImageZoom from 'react-medium-image-zoom'
 
-function ZoomableImg (props) {
-  let { extraStyles, imageLink } = props
-
+const ZoomableImg = ({extraStyles, imageLink})=>{
   return (
     <ImageZoom
       style={extraStyles || {}}
