@@ -16,12 +16,12 @@ const DashboardRoute = ({ component: Component,history,...rest }) => {
  const[data,setData]=useState({});
  
 useEffect(() => {
-  const getData = () =>{
-    services.getUserInfo(history)
-    userData = JSON.parse(querries.retrieveItem('userData'))
+  const getData = async () =>{
+    await services.getUserInfo(history)
+   userData =   await JSON.parse(querries.retrieveItem('userData'))
     setData(userData)
     if(userData)
-    setLoading(false)
+    await setLoading(false)
   }
   getData();
 
