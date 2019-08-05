@@ -91,6 +91,17 @@ header {
     font-weight: 500;
 }
 
+.social-media-container{
+    margin: auto;
+}
+
+.social-media-container a {
+    margin: 5px 5px 5px 0;
+    font-size: 22px;
+    text-decoration: none;
+    color: var(--shell-mid-brown);
+    display: inline-flex;
+}
 @media (max-width: 650px) {
     .nav-item {
         margin: 1.5em 0;

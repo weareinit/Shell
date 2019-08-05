@@ -4,12 +4,16 @@
             "label": "Male"
         },
         {
-            "value": "female",
-            "label": "female"
+            "value": "Female",
+            "label": "Female"
         },
         {
-            "value": "nb",
-            "label": "Other/Non-Binary"
+            "value": "Other",
+            "label": "Other"
+        },
+        {
+            "value": "Prefer Not to Answer",
+            "label": "Prefer Not to Answer"
         }
     ],
     "raceData": [{
@@ -17,65 +21,64 @@
             "label": "American Indian or Alaskan Native"
         },
         {
-            "value": "White/Caucasian",
-            "label": "White /Caucasian"
+            "value": "Asian / Pacific Islander",
+            "label": "Asian / Pacific Islander"
         },
         {
             "value": "Black or African American",
             "label": "Black or African American"
         },
         {
-            "value": "hispanic",
+            "value": "Hispanic",
             "label": "Hispanic or Latin"
         },
         {
-            "value": "native",
-            "label": "Native American"
+            "value": "White / Caucasian",
+            "label": "White / Caucasian"
         },
         {
-            "value": "Asian/Pacific Islander",
-            "label": "Asian/Pacific Islander"
-        },
-        {
-            "value": "Multiple Ethnicity/Other",
-            "label": "Multiple Ethnicity/Other"
+            "value": "Other",
+            "label": "Other"
         },
         {
             "value": "Prefer not to answer",
             "label": "Prefer not to answer"
         }
     ],
-    "majorData": [{
-            "value": "Computer Science",
-            "label": "Computer Science"
-        },
-        {
-            "value": "Imformation Technology",
-            "label": "Information Technology"
-        },
-        {
-            "value": "Computer Engineering",
-            "label": "Computer Engineering"
-        },
-        {
-            "value": "other",
-            "label": "Other"
-        }
-    ],
     "levelOfStudyData": [{
-            "value": "High school diploma or equivalent",
-            "label": "High school diploma or equivalent"
+            "value": "Freshman",
+            "label": "Freshman"
         },
         {
-            "value": "undergraduate",
-            "label": "Undergraduate"
+            "value": "Sophomore",
+            "label": "Sophomore"
+        },
+        {
+            "value": "Junior",
+            "label": "Junior"
+        },
+        {
+            "value": "Senior",
+            "label": "Senior"
         },
         {
             "value": "Graduate",
             "label": "Graduate"
+        },
+        {
+            "value": "Masters",
+            "label": "Masters"
+        },
+        {
+            "value": "Ph.D.",
+            "label": "Ph.D."
         }
     ],
     "graduationYearData": [{
+            "value": "2018",
+            "label": "2018"
+        },
+        {
             "value": "2019",
             "label": "2019"
         },
@@ -94,39 +97,53 @@
         {
             "value": "2023",
             "label": "2023"
+        },
+        {
+            "value": "2024",
+            "label": "2024"
+        },
+        {
+            "value": "2025",
+            "label": "2025"
         }
     ],
-
     "areaOfFocusData": [{
-            "value": "web developer",
+            "value": "Web Developer",
             "label": "Web Developer"
         },
         {
-            "value": "mobile developer",
+            "value": "Mobile Developer",
             "label": "Mobile Developer"
         },
         {
-            "value": "frontend",
+            "value": "Front-end Developer",
             "label": "Front-end Developer"
         },
         {
-            "value": "backend",
+            "value": "Back-end Developer",
             "label": "Back-end Developer"
         },
         {
-            "value": "designer",
+            "value": "Full-stack Developer",
+            "label": "Full-stack Developer"
+        },
+        {
+            "value": "UI/UX Designer",
             "label": "UI/UX Designer"
         },
         {
-            "value": "entrepreneur",
+            "value": "Data Scientist",
+            "label": "Data Scientist"
+        },
+        {
+            "value": "Entrepreneur",
             "label": "Entrepreneur"
         },
         {
-            "value": "other",
+            "value": "Other",
             "label": "Other"
         }
     ],
-
     "dietaryRestrictionData": [{
             "value": "Vegan",
             "label": "Vegan"
@@ -136,27 +153,42 @@
             "label": "Vegetarian"
         },
         {
-            "value": "Lactose Intolerance",
-            "label": "Lactose Intolerance"
-        },
-        {
-            "value": "Nut-free",
-            "label": "Nut-free"
-        },
-        {
-            "value": "Gluten Free",
-            "label": "Gluten Free"
+            "value": "Lactose Intolerant",
+            "label": "Lactose Intolerant"
         },
         {
             "value": "Dairy-free",
             "label": "Dairy-free"
         },
         {
+            "value": "Nut-free",
+            "label": "Nut-free"
+        },
+        {
+            "value": "Gluten-free",
+            "label": "Gluten-free"
+        },
+        {
+            "value": "Halal",
+            "label": "Halal"
+        },
+        {
+            "value": "Kosher",
+            "label": "Kosher"
+        },
+        {
+            "value": "No Shellphish",
+            "label": "No Shellfish"
+        },
+        {
             "value": "Other",
             "label": "Other"
+        },
+        {
+            "value": "N/A",
+            "label": "N/A"
         }
     ],
-
     "shirtSizeData": [{
             "value": "xs",
             "label": "XS"
@@ -195,7 +227,21 @@
             "label": "No"
         }
     ],
-
+    "didAttended": [{
+            "value": "ShellHacks 2017",
+            "label": "ShellHacks 2017"
+        },
+        {
+            "value": "ShellHacks 2018",
+            "label": "ShellHacks 2018"
+        }, {
+            "value": "Both",
+            "label": "Both"
+        }, {
+            "value": "N/A",
+            "label": "N/A"
+        }
+    ],
     "howDidYouHearData": [{
             "value": "Instagram",
             "label": "Instagram"
@@ -219,6 +265,157 @@
         {
             "value": "Friends",
             "label": "Friends"
+        }
+    ],
+    "majorData":[
+        {
+            "value": "Accounting",
+            "label": "Accounting"
+        },
+        {
+            "value": "Aerospace Engineering",
+            "label": "Aerospace Engineering"
+        },
+        {
+            "value": "Applied Physics",
+            "label": "Applied Physics"
+        },
+        {
+            "value": "Architecture",
+            "label": "Architecture"
+        },
+        {
+            "value": "Astronomy or Astrophysics",
+            "label": "Astronomy or Astrophysics"
+        },
+        {
+            "value": "Biochemistry",
+            "label": "Biochemistry"
+        },
+        {
+            "value": "Biology",
+            "label": "Biology"
+        },{
+            "value": "Biomedical Engineering",
+            "label": "Biomedical Engineering"
+        },{
+            "value": "Business",
+            "label": "Business"
+        },{
+            "value": "Chemistry",
+            "label": "Chemistry"
+        },{
+            "value":"Chemical Engineering",
+            "label":"Chemical Engineering"
+        },{
+            "value": "Civil Engineering",
+            "label": "Civil Engineering"
+        },{
+            "value": "Computational Media",
+            "label": "Computational Media"
+        },
+        {
+            "value":"Computer Engineering",
+            "label": "Computer Engineering"
+        },{
+            "value":"Computer Science",
+            "label": "Computer Science"
+        }, {
+            "value":"Discrete Mathematics",
+            "label": "Discrete Mathematics"
+        }, {
+            "value":"Drama or Theater",
+            "label": "Drama or Theater"
+        }, {
+            "value":"Earth and Atmospheric Sciences",
+            "label": "Earth and Atmospheric Sciences"
+        }, {
+            "value":"Economics",
+            "label": "Economics"
+        }, {
+            "value":"Electrical Engineering",
+            "label":"Electrical Engineering"
+        }, 
+        {
+            "value":"English or Literature, Media, and Communication",
+            "label": "English or Literature, Media, and Communication"
+        }, 
+        {
+            "value":"Environmental Engineering",
+            "label": "Environmental Engineering"
+        },  {
+            "value":"Film and Media Studies",
+            "label": "Film and Media Studies"
+        },  {
+            "value":"Finance",
+            "label": "Finance"
+        },  {
+            "value":"Global Studies and Languages",
+            "label": "Global Studies and Languages"
+        }, {
+            "value":"History",
+            "label": "History"
+        }, 
+        {
+            "value":"Humanities",
+            "label": "Humanities"
+        }, 
+        {
+            "value":"Industrial Design",
+            "label": "Industrial Design"
+        }, 
+        {
+            "value":"Information Technology",
+            "label": "Information Technology"
+        }, 
+        {
+            "value":"International Affairs or International Relations",
+            "label":"International Affairs or International Relations"
+        },  {
+            "value":"Linguistics",
+            "label":"Linguistics"
+        },  {
+            "value":"Materials Science and Engineering",
+            "label":"Materials Science and Engineering"
+        },  {
+            "value":"Mathematics",
+            "label":"Mathematics"
+        },  {
+            "value":"Mechanical Engineering",
+            "label":"Mechanical Engineering"
+        },   {
+            "value":"Music",
+            "label":"Music"
+        },   {
+            "value":"Music Technology",
+            "label":"Music Technology"
+        },   {
+            "value":"Neuroscience",
+            "label":"Neuroscience"
+        },   {
+            "value":"Nuclear and Radiological Engineering",
+            "label":"Nuclear and Radiological Engineering"
+        },   {
+            "value":"Philosophy",
+            "label":"Philosophy"
+        },   {
+            "value":"Physics",
+            "label":"Physics"
+        },  {
+            "value":"Political Science",
+            "label":"Political Science"
+        },  {
+            "value":"Psychology",
+            "label":"Psychology"
+        },  {
+            "value":"Public Policy",
+            "label":"Public Policy"
+        }, {
+            "value":"Urban Planning",
+            "label":"Urban Planning"
+        }, {
+            "value":"Other",
+            "label":"Other"
         }
     ]
 }

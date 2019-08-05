@@ -4,15 +4,7 @@
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {
-  faFacebookSquare,
-  faInstagram,
-  faLinkedin,
-  faTwitterSquare,
-  faDiscord,
-  faGithubSquare
-} from "@fortawesome/free-brands-svg-icons"; //need to pre-load in app.js
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./styles.css";
 
 class Footer extends Component {
@@ -20,56 +12,6 @@ class Footer extends Component {
     return (
       <div className="footer-container">
         <div className="footer-content">
-          <div style={this.props.showSocials ? {} : { display: "none" }}>
-            <span className="footer-social-container">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://discord.gg/upefiu"
-              >
-                {" "}
-                <FontAwesomeIcon icon={faDiscord} />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.instagram.com/upefiu/?hl=en"
-              >
-                {" "}
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/upefiu/"
-              >
-                {" "}
-                <FontAwesomeIcon icon={faFacebookSquare} />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://twitter.com/upefiu?lang=en"
-              >
-                <FontAwesomeIcon icon={faTwitterSquare} />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/company/upe-fiu"
-              >
-                {" "}
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/UPE-FIU"
-              >
-                <FontAwesomeIcon icon={faGithubSquare} />
-              </a>
-            </span>
-          </div>
           <p>
             ©2019{" "}
             <a
