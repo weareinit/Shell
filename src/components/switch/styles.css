@@ -5,7 +5,6 @@
     border-bottom-right-radius: 20px;
     padding: 11px;
     width: 50%;
-    font-family: "Montserrat", sans-serif;
     font-size: 100%;
     background-color: var(--shell-mid-brown);
     color: white;
@@ -20,11 +19,10 @@
     border-bottom-left-radius: 20px;
     padding: 11px;
     width: 50%;
-    font-family: "Montserrat", sans-serif;
     font-size: 100%;
     background-color: var(--shell-mid-brown);
     color: white;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -39,4 +37,5 @@
 .swch-btn--selected {
     background-color: var(--shell-dark-brown) !important;
     cursor: default;
+    font-weight: 700;
 }

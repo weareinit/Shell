@@ -98,15 +98,18 @@
 
 .auth-question-buttons {
     display: flex;
-    /* justify-content: center; */
+    justify-content: space-evenly;
+    margin-top: 25px;
     flex-direction: column;
     align-items: center;
-    color: var(--shell-light-brown);
+    color: var(--shell-dark-brown);
+    flex-wrap: wrap;
 }
 
 .auth-question-buttons p {
     font-weight: 500;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .welcome-message h1 {

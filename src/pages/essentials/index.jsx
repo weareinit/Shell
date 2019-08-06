@@ -24,9 +24,9 @@ const Essentials = () => {
           <p>Below is a few things we thinks will</p>
         </div>
         <Card
-          title='Parking and Transportation'
-          // content={ParkingCardContent}
-          content={<p>Details are coming soon</p>}
+          title='Parking & Transportation'
+          content={ParkingCardContent}
+          // content={<p>Details are coming soon</p>}
           titleIcon='car'
           {...props}
         />

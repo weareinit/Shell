@@ -64,6 +64,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 60%;
 }
 
 .track-details ul {
@@ -115,10 +116,6 @@
     color: white;
     font-weight: 700;
     margin-bottom: 2%;
-}
-
-.align-title-icon {
-    justify-content: flex-start;
 }
 
 .align-title-icon svg {
@@ -184,5 +181,13 @@
     .essential-card {
         width: 100%;
         margin: 0 0 30px;
+    }
+    .track-details {
+        width: 100%;
+    }
+    .track-details li::before {
+        height: 30px;
+        width: 30px;
+        background-size: 20px;
     }
 }

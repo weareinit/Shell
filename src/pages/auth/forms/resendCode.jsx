@@ -86,10 +86,6 @@ const ResendCode = ({ setAuthState }) => {
               error={!!touched.email && errors.email}
             />
           </div>
-          <div className='auth-question-buttons'>
-            <p onClick={goToVerify}>Have a Verification Code?</p>
-            <p onClick={goToLogin}>Go Back to Login</p>
-          </div>
           <div className='auth-submit-button-container'>
             <Button
               title='Send Code'
@@ -97,6 +93,10 @@ const ResendCode = ({ setAuthState }) => {
               id='forgot-password'
               extraStyles='auth-button-extra-styles'
             />
+          </div>
+          <div className='auth-question-buttons'>
+            <p onClick={goToVerify}>Have a Verification Code?</p>
+            <p onClick={goToLogin}>Go Back to Login</p>
           </div>
         </Form>
       )}

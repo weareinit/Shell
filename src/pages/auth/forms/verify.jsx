@@ -102,8 +102,8 @@ const Verify = ({ setAuthState }) => {
             />
           </div>
           <div className='auth-question-buttons'>
-            <p onClick={goToLogin}>Go Back to Login</p>
             <p onClick={goToResend}>Need a New Code?</p>
+            <p onClick={goToLogin}>Go Back to Login</p>
           </div>
           <div className='auth-submit-button-container'>
             <Button

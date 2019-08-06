@@ -15,7 +15,7 @@ import {
   faTwitter,
   faDiscord,
   faTwitterSquare,
-  faGithubSquare
+  faGithubSquare,
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faCheck,
@@ -25,7 +25,9 @@ import {
   faCar,
   faSuitcaseRolling,
   faSpinner,
-  faTimes
+  faTimes,
+  faPlus,
+  faMinus
 } from '@fortawesome/free-solid-svg-icons'
 
 // preloading icons
@@ -44,9 +46,12 @@ library.add(
   faCar,
   faSuitcaseRolling,
   faSpinner,
-  faTimes
+  faTimes,
+  faPlus,
+  faMinus
 )
-alert("Please note that you are currently accessing a beta release of our dashboard, and any data or account submitted to our databases will be deleted before our official release (8/5/2019).")
+
+
 class App extends Component {
   render () {
     return (

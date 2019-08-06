@@ -1,22 +1,23 @@
 {
     "direction": {
-        "title": "Shellhacks is located at:",
-        "address": "FIU's Ocean Bank Convocation Center 1180 SW 113th Ave, Miami, FL",
+        "title": "Venue Address",
+        "venue": "Kovens Conference Center",
+        "school": "Florida International University",
         "directions": [
-            "Direction Here",
-            "Direction Here",
-            "Direction Here",
-            "Direction Here",
-            "Direction Here"
+            "Biscayne Bay Campus",
+            "3000 NE 151st Street",
+            "North Miami, FL 33181",
+            "(305) 919-5000"
+
         ]
     },
     "parking": {
-        "title": "Parking",
-        "description": "Instructions on how to park and what do upcoming parkers need to know regarding FIU, what they need to bring and travel reimbursements Litter kitter kitty litty little kitten big roar roar feed me mice cat sit like bread. Pur Litter kitter kitty litty little kitten big roar roar feed me mice cat sit like bread. Pur Litter kitter kitty litty"
+        "title": "🚘 Parking",
+        "description": "Parking is available for free in Parking Lot 5. You must register your car upon arrival when you check in (don’t forget your plate number!)"
     },
     "transportation": {
-        "title": "Transportation",
-        "description": "Details on busses and stuff pending information"
+        "title": "🚍 Buses",
+        "description": "Buses will be sent to schools with the most registrations (so be sure to spread the word!). Check back later for the list of schools and links to sign up!"
     },
     "shouldBring": {
         "description": "To make sure everyone’s as comfortable as possible, make sure to bring some essential tools and toiletries for your time at ShellHacks.",

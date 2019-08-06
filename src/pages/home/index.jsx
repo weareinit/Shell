@@ -41,12 +41,12 @@ const Home = ({ userData }) => {
               descStyles={{ margin: 'auto', display: 'block' }}
               description={
                 (applicationStatus.toLowerCase() === 'applied' &&
-                  "Please be patient, we'll be sending out acceptance emails soon") ||
+                 'Your application has been received and you’ll be notified when its processed.') ||
                 (applicationStatus.toLowerCase() === 'accepted' &&
-                  'Make sure to confirm your spot ASAP') ||
+                 'Shell yeah! You’ve been accepted into ShellHacks. Now go and confirm your attendance before the ship sails!') ||
                 (applicationStatus.toLowerCase() === 'confirmed' &&
-                  "You're all set! Can't wait to see you at ShellHacks 😊") ||
-                'Please fill out the application as soon as posible to secure your stop at ShellHacks.'
+                  'Yeah buoy! You’re confirmed for ShellHacks. Sea ya at the shore!') ||
+                'Water you doing? Fill out your application now to be considered for ShellHacks!'
               }
             />
           </div>
