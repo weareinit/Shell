@@ -29,8 +29,8 @@
             "label": "Black or African American"
         },
         {
-            "value": "Hispanic",
-            "label": "Hispanic or Latin"
+            "value": "Hispanic or Latinx",
+            "label": "Hispanic or Latinx"
         },
         {
             "value": "White / Caucasian",
@@ -62,8 +62,8 @@
             "label": "Senior"
         },
         {
-            "value": "Graduate",
-            "label": "Graduate"
+            "value": "Recent Graduate",
+            "label": "Recent Graduate"
         },
         {
             "value": "Masters",
@@ -108,30 +108,12 @@
         }
     ],
     "areaOfFocusData": [{
-            "value": "Web Developer",
-            "label": "Web Developer"
-        },
-        {
-            "value": "Mobile Developer",
-            "label": "Mobile Developer"
-        },
-        {
-            "value": "Front-end Developer",
-            "label": "Front-end Developer"
-        },
-        {
+            "value": "Artist",
+            "label": "Artist"
+        }, {
             "value": "Back-end Developer",
             "label": "Back-end Developer"
-        },
-        {
-            "value": "Full-stack Developer",
-            "label": "Full-stack Developer"
-        },
-        {
-            "value": "UI/UX Designer",
-            "label": "UI/UX Designer"
-        },
-        {
+        }, {
             "value": "Data Scientist",
             "label": "Data Scientist"
         },
@@ -140,45 +122,67 @@
             "label": "Entrepreneur"
         },
         {
+            "value": "Front-end Developer",
+            "label": "Front-end Developer"
+        },
+
+        {
+            "value": "Full-stack Developer",
+            "label": "Full-stack Developer"
+        }, {
+            "value": "Game Developer",
+            "label": "Game Developer"
+        },
+        {
+            "value": "Musician",
+            "label": "Musician"
+        },
+        {
+            "value": "Mobile Developer",
+            "label": "Mobile Developer"
+        },
+        {
+            "value": "UI/UX Designer",
+            "label": "UI/UX Designer"
+        },
+        {
+            "value": "Web Developer",
+            "label": "Web Developer"
+        },
+        {
             "value": "Other",
             "label": "Other"
         }
     ],
     "dietaryRestrictionData": [{
+            "value": "Dairy-free",
+            "label": "Dairy-free"
+        }, {
+            "value": "Gluten-free",
+            "label": "Gluten-free"
+        }, {
+            "value": "Halal",
+            "label": "Halal"
+        }, {
+            "value": "Kosher",
+            "label": "Kosher"
+        }, {
+            "value": "Lactose Intolerant",
+            "label": "Lactose Intolerant"
+        }, {
             "value": "Vegan",
             "label": "Vegan"
         },
         {
             "value": "Vegetarian",
             "label": "Vegetarian"
-        },
-        {
-            "value": "Lactose Intolerant",
-            "label": "Lactose Intolerant"
-        },
-        {
-            "value": "Dairy-free",
-            "label": "Dairy-free"
+        }, {
+            "value": "No Shellphish",
+            "label": "No Shellfish"
         },
         {
             "value": "Nut-free",
             "label": "Nut-free"
-        },
-        {
-            "value": "Gluten-free",
-            "label": "Gluten-free"
-        },
-        {
-            "value": "Halal",
-            "label": "Halal"
-        },
-        {
-            "value": "Kosher",
-            "label": "Kosher"
-        },
-        {
-            "value": "No Shellphish",
-            "label": "No Shellfish"
         },
         {
             "value": "Other",
@@ -243,6 +247,21 @@
         }
     ],
     "howDidYouHearData": [{
+            "value": "Email",
+            "label": "Email"
+        },
+        {
+            "value": "Website",
+            "label": "Website"
+        },
+        {
+            "value": "Friends",
+            "label": "Friends"
+        },
+        {
+            "value": "Professor",
+            "label": "Professor"
+        }, {
             "value": "Instagram",
             "label": "Instagram"
         },
@@ -259,16 +278,11 @@
             "label": "Twitter"
         },
         {
-            "value": "My School's CS Club",
-            "label": "My School's CS Club"
-        },
-        {
-            "value": "Friends",
-            "label": "Friends"
+            "value": "Other",
+            "label": "Other"
         }
     ],
-    "majorData":[
-        {
+    "majorData": [{
             "value": "Accounting",
             "label": "Accounting"
         },
@@ -295,127 +309,128 @@
         {
             "value": "Biology",
             "label": "Biology"
-        },{
+        }, {
             "value": "Biomedical Engineering",
             "label": "Biomedical Engineering"
-        },{
+        }, {
             "value": "Business",
             "label": "Business"
-        },{
+        }, {
             "value": "Chemistry",
             "label": "Chemistry"
-        },{
-            "value":"Chemical Engineering",
-            "label":"Chemical Engineering"
-        },{
+        }, {
+            "value": "Chemical Engineering",
+            "label": "Chemical Engineering"
+        }, {
             "value": "Civil Engineering",
             "label": "Civil Engineering"
-        },{
+        }, {
             "value": "Computational Media",
             "label": "Computational Media"
         },
         {
-            "value":"Computer Engineering",
+            "value": "Computer Engineering",
             "label": "Computer Engineering"
-        },{
-            "value":"Computer Science",
+        }, {
+            "value": "Computer Science",
             "label": "Computer Science"
         }, {
-            "value":"Discrete Mathematics",
+            "value": "Discrete Mathematics",
             "label": "Discrete Mathematics"
         }, {
-            "value":"Drama or Theater",
+            "value": "Drama or Theater",
             "label": "Drama or Theater"
         }, {
-            "value":"Earth and Atmospheric Sciences",
+            "value": "Earth and Atmospheric Sciences",
             "label": "Earth and Atmospheric Sciences"
         }, {
-            "value":"Economics",
+            "value": "Economics",
             "label": "Economics"
         }, {
-            "value":"Electrical Engineering",
-            "label":"Electrical Engineering"
-        }, 
+            "value": "Electrical Engineering",
+            "label": "Electrical Engineering"
+        },
         {
-            "value":"English or Literature, Media, and Communication",
+            "value": "English or Literature, Media, and Communication",
             "label": "English or Literature, Media, and Communication"
-        }, 
+        },
         {
-            "value":"Environmental Engineering",
+            "value": "Environmental Engineering",
             "label": "Environmental Engineering"
-        },  {
-            "value":"Film and Media Studies",
+        }, {
+            "value": "Film and Media Studies",
             "label": "Film and Media Studies"
-        },  {
-            "value":"Finance",
+        }, {
+            "value": "Finance",
             "label": "Finance"
-        },  {
-            "value":"Global Studies and Languages",
+        }, {
+            "value": "Global Studies and Languages",
             "label": "Global Studies and Languages"
         }, {
-            "value":"History",
+            "value": "History",
             "label": "History"
-        }, 
+        },
         {
-            "value":"Humanities",
+            "value": "Humanities",
             "label": "Humanities"
-        }, 
+        },
         {
-            "value":"Industrial Design",
+            "value": "Industrial Design",
             "label": "Industrial Design"
-        }, 
+        },
         {
-            "value":"Information Technology",
+            "value": "Information Technology",
             "label": "Information Technology"
-        }, 
+        },
         {
-            "value":"International Affairs or International Relations",
-            "label":"International Affairs or International Relations"
-        },  {
-            "value":"Linguistics",
-            "label":"Linguistics"
-        },  {
-            "value":"Materials Science and Engineering",
-            "label":"Materials Science and Engineering"
-        },  {
-            "value":"Mathematics",
-            "label":"Mathematics"
-        },  {
-            "value":"Mechanical Engineering",
-            "label":"Mechanical Engineering"
-        },   {
-            "value":"Music",
-            "label":"Music"
-        },   {
-            "value":"Music Technology",
-            "label":"Music Technology"
-        },   {
-            "value":"Neuroscience",
-            "label":"Neuroscience"
-        },   {
-            "value":"Nuclear and Radiological Engineering",
-            "label":"Nuclear and Radiological Engineering"
-        },   {
-            "value":"Philosophy",
-            "label":"Philosophy"
-        },   {
-            "value":"Physics",
-            "label":"Physics"
-        },  {
-            "value":"Political Science",
-            "label":"Political Science"
-        },  {
-            "value":"Psychology",
-            "label":"Psychology"
-        },  {
-            "value":"Public Policy",
-            "label":"Public Policy"
+            "value": "International Affairs or International Relations",
+            "label": "International Affairs or International Relations"
         }, {
-            "value":"Urban Planning",
-            "label":"Urban Planning"
+            "value": "Linguistics",
+            "label": "Linguistics"
         }, {
-            "value":"Other",
-            "label":"Other"
+            "value": "Materials Science and Engineering",
+            "label": "Materials Science and Engineering"
+        }, {
+            "value": "Mathematics",
+            "label": "Mathematics"
+        }, {
+            "value": "Mechanical Engineering",
+            "label": "Mechanical Engineering"
+        }, {
+            "value": "Music",
+            "label": "Music"
+        }, {
+            "value": "Music Technology",
+            "label": "Music Technology"
+        }, {
+            "value": "Neuroscience",
+            "label": "Neuroscience"
+        }, {
+            "value": "Nuclear and Radiological Engineering",
+            "label": "Nuclear and Radiological Engineering"
+        }, {
+            "value": "Philosophy",
+            "label": "Philosophy"
+        }, {
+            "value": "Physics",
+            "label": "Physics"
+        }, {
+            "value": "Political Science",
+            "label": "Political Science"
+        }, {
+            "value": "Psychology",
+            "label": "Psychology"
+        }, {
+            "value": "Public Policy",
+            "label": "Public Policy"
+        }, {
+            "value": "Web Development and UI/UX",
+            "label": "Web Development and UI/UX"
+        },
+        {
+            "value": "Other",
+            "label": "Other"
         }
     ]
 }

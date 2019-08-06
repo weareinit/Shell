@@ -11,14 +11,11 @@ const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2
 const getValidDobRange = () => {
     let today = moment(new Date()).format("YYYYMMDD");
     let eventDate = moment(20190920, "YYYYMMDD");
-    let daysFromToday = eventDate.diff(today,"days");
-    const min = moment()
-        .subtract(100, 'years')
-        .format('YYYY-MM-DD');
+    let daysFromToday = eventDate.diff(today, "days");
     const max = moment()
         .subtract(6570 - (daysFromToday - 3), 'days') // 18yrs from shellhacks
         .format('YYYY-MM-DD');
-    return { min, max };
+    return max;
 };
 
 // Login validation
@@ -113,7 +110,7 @@ const ResetPasswordInitialValues = {
 
 
 const SUPPORTED_FORMAT = 'application/pdf';
-const MAX_SIZE = 250000;
+const MAX_SIZE = 1048576;
 // application validation
 const ApplicationValidation = Yup.object().shape({
     // personal info
@@ -121,11 +118,7 @@ const ApplicationValidation = Yup.object().shape({
         .email('Email is not Valid')
         .required('Required'),
     dob: Yup.date().required('Required')
-        .min(
-            new Date(getValidDobRange().min),
-            `Date Must be greater than ${getValidDobRange().min}`
-        )
-        .max(new Date(getValidDobRange().max), 'Must Be at Least 18 Years Old')
+        .max(new Date(getValidDobRange()), 'Must Be at Least 18 Years Old')
         .required('Required'),
     gender: Yup.string().required('Required'),
     race: Yup.string().required('Required'),
@@ -143,7 +136,7 @@ const ApplicationValidation = Yup.object().shape({
     areaOfFocus: Yup.string(),
     resume: Yup.mixed().required('Required').test(
             'tooBig',
-            'File too large',
+            'File too large. Max size is 1MB',
             value => value && value.size <= MAX_SIZE
         ).test(
             'tooSmall',
@@ -206,8 +199,8 @@ const ApplicationInitialValues = {
     haveBeenToShell: '',
     needReimbursement: '',
     mlh: false,
-	sponsorPromo: false,
-	mlhAffiliation:false
+    sponsorPromo: false,
+    mlhAffiliation: false
 };
 
 export {

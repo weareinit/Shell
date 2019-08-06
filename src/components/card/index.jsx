@@ -4,6 +4,9 @@
 
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+faPlus
+} from "@fortawesome/free-brands-svg-icons"; //need to pre-load in app.js
 import PropTypes from 'prop-types'
 import './styles.css'
 
@@ -12,7 +15,8 @@ class Card extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      clicked: false
+      clicked: false,
+
     }
   }
 
@@ -44,9 +48,14 @@ class Card extends Component {
           className={'card-button ' + currenStyle}
           onClick={this.handleClick}
         >
-          {titleIcon && <FontAwesomeIcon icon={titleIcon} />}
+          <div style={{display:"flex"}}> 
+           {titleIcon && <FontAwesomeIcon icon={titleIcon} />}
+          <div>
           <h3>{title}</h3>
           <p>{date}</p>
+          </div>
+          </div>
+        <div>{this.state.clicked? <FontAwesomeIcon icon={"minus"} /> : <FontAwesomeIcon icon={"plus"} />}</div> 
         </div>
         <div
           className='card-content'
@@ -54,6 +63,7 @@ class Card extends Component {
         >
           {cardContent}
         </div>
+
       </div>
     )
   }

@@ -76,6 +76,10 @@ header {
     font-size: 2em;
 }
 
+.main-logo {
+    cursor: pointer;
+}
+
 .user {
     color: var(--shell-light-brown);
     font-size: 1.5em;
@@ -91,7 +95,7 @@ header {
     font-weight: 500;
 }
 
-.social-media-container{
+.social-media-container {
     margin: auto;
 }
 
@@ -102,6 +106,7 @@ header {
     color: var(--shell-mid-brown);
     display: inline-flex;
 }
+
 @media (max-width: 650px) {
     .nav-item {
         margin: 1.5em 0;

@@ -16,14 +16,15 @@ export const ParkingCardContent = (
       <div className='arena-maps-image-container'>
         <ZoomableImg
           imageLink={
-            'https://parking.fiu.edu/wp-content/uploads/2018/08/082018-updated-general-tg-map.png'
+          require("../../assets/site/BBC.png")
           }
         />
       </div>
       <div className='parking-content'>
         <p className='essential-item-header'>{direction.title} </p>
         <br />
-        <p>{direction.address}</p>
+        <p>{direction.venue}</p>
+        <p>{direction.school}</p>
         <br />
         {direction.directions.map((item, i) => (
           <p key={i}>{item}</p>
@@ -97,7 +98,7 @@ export const LearningTracksCardContent = (
           <img
             className='essentials-holder-circle'
             alt='cirlcePlaceholder'
-            src={data.identifierPath}
+            src={require(`../../assets/tracks/${data.icon}`)}
           />
           <div className='track-details'>
             <p>{data.description}</p>

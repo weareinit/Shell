@@ -30,12 +30,10 @@
 
 .application-status-button {
     background-color: rgb(243, 84, 84);
-    justify-content: center;
 }
 
 .active-application-status-button {
     background-color: var(--shell-teal);
-    justify-content: center;
 }
 
 .user-info {

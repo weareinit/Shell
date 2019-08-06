@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field } from 'formik'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import NumberFormat from 'react-number-format';
 import {
   Select,
   Button,
@@ -142,13 +143,25 @@ const Application = ({ history, userData }) => {
                 />
               </div>
               <div className='full-container'>
-                <Input
-                  className='application-input'
-                  name='phoneNumber'
-                  label='Phone Number *'
-                  placeholder='000-000-0000'
-                  error={!!touched.phoneNumber && !!errors.phoneNumber}
-                  errorVal={errors.phoneNumber}
+              <InlineError
+                  shouldShow={!!touched.resume && errors.resume}
+                  error={errors.resume}
+                  label={'Phone Number *'}
+                  name={'phoneNumber'}
+                />
+                <NumberFormat 
+                format="+1 (###) ###-####"
+                type="input"
+                className='text-input'
+                name='phoneNumber'
+                id='phoneNumber'
+                placeholder='+1 (786)-000-0000'
+                onValueChange={(e)=>setFieldValue("phoneNumber",e.value)}
+                style={
+                  !!touched.phoneNumer && errors.phoneNumer
+                    ? { border: '2px solid red' }
+                    :null
+                }
                 />
               </div>
               <h2>School Information</h2>
@@ -278,7 +291,7 @@ const Application = ({ history, userData }) => {
                   className='application-input'
                   name='portfolio'
                   type='url'
-                  label='Porfolio'
+                  label='Website'
                   placeholder='https://shellhacks.net'
                   error={!!touched.portfolio && !!errors.portfolio}
                   errorVal={errors.portfolio}
@@ -288,10 +301,10 @@ const Application = ({ history, userData }) => {
               <div className='full-container'>
                 <Input
                   className='application-input'
-                  type='text'
+                  type='text-area'
                   name='reasonForAttending'
-                  label='Reason for attending ShellHacks *'
-                  placeholder='I love ShellHacks'
+                  label='Why would you like to attend ShellHacks? *'
+                  placeholder='Be as detailed as possible - this is your chance to tell us why we should select you!'
                   error={
                     !!touched.reasonForAttending && !!errors.reasonForAttending
                   }
@@ -362,7 +375,7 @@ const Application = ({ history, userData }) => {
               <div className='full-container'>
                 <Select
                   className='application-input'
-                  label='Shirt Size *'
+                  label='T-Shirt Size *'
                   id='shirtSize'
                   name='shirtSize'
                   placeholder='Select One'

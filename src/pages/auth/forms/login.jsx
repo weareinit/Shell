@@ -97,10 +97,6 @@ const Login = ({ history, setAuthState }) => {
               error={!!touched.password && errors.password}
             />
           </div>
-          <div className='auth-question-buttons'>
-            <p onClick={goToforgot}>Forgot Password?</p>
-            <p onClick={goToVerify}>Need to Verify Email?</p>
-          </div>
           <div className='auth-submit-button-container'>
             <Button
               type='submit'
@@ -108,6 +104,10 @@ const Login = ({ history, setAuthState }) => {
               id='login'
               extraStyles='auth-button-extra-styles'
             />
+          </div>
+          <div className='auth-question-buttons'>
+            <p onClick={goToforgot}>Forgot Password?</p>
+            <p onClick={goToVerify}>Need to Verify Email?</p>
           </div>
         </Form>
       )}

@@ -123,10 +123,6 @@ const ResetPassword = ({ setAuthState }) => {
               error={!!touched.confirmpassword && errors.confirmpassword}
             />
           </div>
-          <div className='auth-question-buttons'>
-            <p onClick={gotToForgot}>Get a New Reset Code</p>
-            <p onClick={gotToLogin}>Go Back to Login</p>
-          </div>
           <div className='auth-submit-button-container'>
             <Button
               title='Reset Password'
@@ -134,6 +130,10 @@ const ResetPassword = ({ setAuthState }) => {
               id='register-success'
               extraStyles='auth-button-extra-styles'
             />
+          </div>
+          <div className='auth-question-buttons'>
+            <p onClick={gotToForgot}>Get a New Reset Code</p>
+            <p onClick={gotToLogin}>Go Back to Login</p>
           </div>
         </Form>
       )}
