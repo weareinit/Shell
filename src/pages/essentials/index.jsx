@@ -21,7 +21,7 @@ const Essentials = () => {
       <h1>Essentials</h1>
       <div className='essentials-container'>
         <div className='support-description'>
-          <p>Below is a few things we thinks will</p>
+          {/* <p>Below is a few things we thinks will</p> */}
         </div>
         <Card
           title='Parking & Transportation'
