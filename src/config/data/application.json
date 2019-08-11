@@ -194,40 +194,40 @@
         }
     ],
     "shirtSizeData": [{
-            "value": "xs",
+            "value": "XS",
             "label": "XS"
         },
         {
-            "value": "s",
+            "value": "S",
             "label": "S"
         },
         {
-            "value": "m",
+            "value": "M",
             "label": "M"
         },
         {
-            "value": "l",
+            "value": "L",
             "label": "L"
         },
         {
-            "value": "xl",
+            "value": "XL",
             "label": "XL"
         },
         {
-            "value": "xxl",
+            "value": "XXL",
             "label": "XXL"
         },
         {
-            "value": "xxxl",
+            "value": "XXXL",
             "label": "XXXL"
         }
     ],
     "yesNoData": [{
-            "value": "yes",
+            "value": "YES",
             "label": "Yes"
         },
         {
-            "value": "no",
+            "value": "NO",
             "label": "No"
         }
     ],
@@ -238,9 +238,6 @@
         {
             "value": "ShellHacks 2018",
             "label": "ShellHacks 2018"
-        }, {
-            "value": "Both",
-            "label": "Both"
         }, {
             "value": "N/A",
             "label": "N/A"

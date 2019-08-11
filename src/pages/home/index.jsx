@@ -8,7 +8,8 @@ import { Card } from '../../components'
 import mixed from '../../utils/mixed'
 import './styles.css'
 const Home = ({ userData }) => {
-  let { applicationStatus, firstName, avatar } = userData
+  const { applicationStatus, firstName, avatarID } = userData
+  let avatar = mixed.getAvatar(avatarID);
   return (
     <div className='dashboard-page'>
       <h1>Home</h1>
@@ -18,7 +19,7 @@ const Home = ({ userData }) => {
           <img
             className='home-avatar'
             alt=''
-            src={require(`../../assets/avatars/turtle.png`)}
+            src={require(`../../assets/avatars/${avatar}`)}
           />
           {/* <Avatar className="home-avatar" /> */}
           <div className='user'>
@@ -41,9 +42,9 @@ const Home = ({ userData }) => {
               descStyles={{ margin: 'auto', display: 'block' }}
               description={
                 (applicationStatus.toLowerCase() === 'applied' &&
-                 'Your application has been received and you’ll be notified when its processed.') ||
+                  'Your application has been received and you’ll be notified when its processed.') ||
                 (applicationStatus.toLowerCase() === 'accepted' &&
-                 'Shell yeah! You’ve been accepted into ShellHacks. Now go and confirm your attendance before the ship sails!') ||
+                  'Shell yeah! You’ve been accepted into ShellHacks. Now go and confirm your attendance before the ship sails!') ||
                 (applicationStatus.toLowerCase() === 'confirmed' &&
                   'Yeah buoy! You’re confirmed for ShellHacks. Sea ya at the shore!') ||
                 'Water you doing? Fill out your application now to be considered for ShellHacks!'

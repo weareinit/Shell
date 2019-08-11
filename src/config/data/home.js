@@ -7,6 +7,6 @@ export const announcementCardInfo = [
     }, {
         title: 'Application is Open!',
         date: 'Not Dated',
-        description: 'Our application inbox is officially open! You can access your application through the sidebar or the big button above. Make sure to shoot your applications our way before the deadline of <DEADLINE>. Acceptance decisions will be released shortly after!',
+        description: 'Our application inbox is officially open! You can access your application through the sidebar or the big button above. Make sure to shoot your applications our way before the deadline of September 1st. Acceptance decisions will be released shortly after!',
     }
 ];

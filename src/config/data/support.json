@@ -1,13 +1,18 @@
-[{
-        "title": "Application Not Submitting",
-        "description": "👀 Double check your application and make you filled out all of the required  fields in the form and also check for any error messages. 📡 Be sure to double Check your internet connection too."
+[
+    {
+        "title": "My Application Isn’t Submitting",
+        "description": "Are you shore? Take a second look at your application and be sure you’ve filled out all the required fields. Also check for any error messages!"
     },
     {
-        "title": "Forgot My Password",
-        "description": "🤔 Alright, there's no way you got in here without a password and if you did we'd love to have a quick chat with you. 🔑 Though, if really did forgot your password, logout and follow the instructions on the auth page to reset your password."
+        "title": "I Made a Mistake on my Application",
+        "description": "It happens! Send us an email to upe@fiu.edu and we’ll get it sorted right away!"
     },
     {
-        "title": "Found A Bug!",
-        "description": "🐛 Oof! Our junior developers did it again. 🙏 Feel free to click on the GitHub icon in the footer to open an issue on GitHub or the Discord icon to let us know on Discord."
+        "title": "I Found A Bug",
+        "description": "Oof... Our junior developers did it again! Feel free to open an issue on our GitHub and we’ll get to work!"
+    },
+    {
+        "title": "I Have Questions",
+        "description": "Contact us on our Discord server or send us an email to upe@fiu.edu"
     }
 ]

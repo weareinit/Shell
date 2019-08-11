@@ -6,21 +6,21 @@ function getMessage(condition) {
     let message = '';
 
     const salutations = condition ? [
-        { header: `👋 Welcome!`, desc: `Please login to Continue` },
+        { header: `👋 Long time no sea!`, desc: `Please login to Continue` },
         { header: `👋 Oh, Hi There!`, desc: `Wave been expecting you` },
         {
             header: `👋 Salut, Bienvenue.`,
             desc: `Ahh, i Know Right! Wave Been practicing`,
         },
     ] : [{
-            header: `👋 Hey`,
-            desc: `Please Fillout the Form to Create an Account`,
-        },
-        {
-            header: `👋 Hi There!`,
-            desc: `Please Fillout the Form to Register`,
-        },
-    ];
+        header: `👋 Hey`,
+        desc: `Please Fillout the Form to Create an Account`,
+    },
+    {
+        header: `👋 Hi There!`,
+        desc: `Please Fillout the Form to Register`,
+    },
+        ];
 
     const randomIndex = Math.floor(Math.random() * salutations.length);
 
@@ -35,8 +35,8 @@ function getMessage(condition) {
  * @param {Number} id - avatar id
  */
 const getAvatar = (id) => {
-    const avatars = ["turtle.png", "mana.png", "crab.png", "dolphin.png", "marlin.png"]
-    return avatars[id - 1];
+    const avatars = ["crab.png", "dolphin.png", "marlin.png", "turtle.png", "mana.png", "crab.png"]
+    return avatars[id];
 
 }
 

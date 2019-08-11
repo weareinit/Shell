@@ -10,6 +10,7 @@
         "@fortawesome/react-fontawesome": "^0.1.4",
         "axios": "^0.18.0",
         "formik": "^1.5.1",
+        "formik-error-focus": "^1.0.0",
         "google-libphonenumber": "^3.2.3",
         "moment": "^2.24.0",
         "qrcode.react": "^0.9.3",

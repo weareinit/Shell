@@ -63,8 +63,8 @@ const SignUpInitialValues = {
 // Validates user verification form
 const RegistrationCodeValidation = Yup.object().shape({
     verificationCode: Yup.string()
-        .min(8, 'You Confirmation Code Must be 8 Characters Minimum')
-        // .max(8, 'You Confirmation Code Must be 8 Characters Maximum')
+        .min(6, 'You Confirmation Code Must be 6 Characters Minimum')
+        .max(6, 'You Confirmation Code Must be 6 Characters Maximum')
         .required('Required'),
     email: Yup.string()
         .email('Please Enter a Valid Email')
@@ -135,14 +135,14 @@ const ApplicationValidation = Yup.object().shape({
     // profetional info
     areaOfFocus: Yup.string(),
     resume: Yup.mixed().required('Required').test(
-            'tooBig',
-            'File too large. Max size is 1MB',
-            value => value && value.size <= MAX_SIZE
-        ).test(
-            'tooSmall',
-            'File too large',
-            value => value && value.size >= 0
-        )
+        'tooBig',
+        'File too large. Max size is 1MB',
+        value => value && value.size <= MAX_SIZE
+    ).test(
+        'tooSmall',
+        'File too large',
+        value => value && value.size >= 0
+    )
         .test(
             'fileFormat',
             'Must be a PDF file',
@@ -153,11 +153,11 @@ const ApplicationValidation = Yup.object().shape({
     github: Yup.string().url('URL is not Valid'),
     // additional info
     shirtSize: Yup.string().required('Required'),
-    dietaryRestriction: Yup.string().required('Required'),
+    dietaryRestriction: Yup.array().required('Required').nullable(),
     firstTimeHack: Yup.string().required('Required'),
-    howDidYouHear: Yup.string().required('Required'),
+    howDidYouHear: Yup.string().min(1, "Must select at least one").required('Required'),
     reasonForAttending: Yup.string().required('Required'),
-    haveBeenToShell: Yup.string().required('Required'),
+    haveBeenToShell: Yup.array().required('Required').nullable(),
     needReimbursement: Yup.string().required('Required'),
     mlh: Yup.boolean()
         .oneOf([true], 'Must agree to MLH Code of Conduct')
@@ -192,11 +192,11 @@ const ApplicationInitialValues = {
     github: '',
     // additional info
     shirtSize: '',
-    dietaryRestriction: '',
+    dietaryRestriction: [],
     firstTimeHack: '',
     howDidYouHear: '',
     reasonForAttending: '',
-    haveBeenToShell: '',
+    haveBeenToShell: [],
     needReimbursement: '',
     mlh: false,
     sponsorPromo: false,

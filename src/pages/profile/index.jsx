@@ -8,9 +8,8 @@ import mixed from '../../utils/mixed'
 import './styles.css'
 
 const Profile = ({ userData }) => {
-  let { shellID, avatar, firstName, lastName, major, schoolName } = userData
-  const AVATAR = mixed.getAvatar(avatar)
-
+  let { shellID, avatarID, firstName, lastName, major, schoolName } = userData
+  let avatar = mixed.getAvatar(avatarID);
   return (
     <div className='dashboard-page'>
       <h1>Profile</h1>
@@ -22,7 +21,7 @@ const Profile = ({ userData }) => {
             <img
               className='holder-circle'
               alt='qrPlaceholder'
-              src={require(`../../assets/avatars/${AVATAR || 'turtle.png'}`)}
+              src={require(`../../assets/avatars/${avatar}`)}
             />
           </div>
           <div className='profile-user-info'>
@@ -47,9 +46,7 @@ const Profile = ({ userData }) => {
             <h3>ShellID</h3>
             <br />
             <p>
-              This year we are using ShellID which is our brand new mind blown
-              technology 🤯 that we definetely invented. Feel free to screenshot
-              yours for faster access to our resources.
+              Use your Shell ID to check-in and get your meals! Pull up the dashboard or take a screenshot with your shell-phone to access it later
             </p>
           </div>
         </div>

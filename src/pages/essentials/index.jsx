@@ -31,7 +31,7 @@ const Essentials = () => {
           {...props}
         />
         <Card
-          title='What should you bring to Shellhacks'
+          title='What to Bring'
           titleIcon='suitcase-rolling'
           content={ImportantItemsCardContent}
           {...props}

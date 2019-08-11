@@ -27,7 +27,7 @@ import {
   faSpinner,
   faTimes,
   faPlus,
-  faMinus
+  faMinus,
 } from '@fortawesome/free-solid-svg-icons'
 
 // preloading icons
@@ -48,12 +48,12 @@ library.add(
   faSpinner,
   faTimes,
   faPlus,
-  faMinus
+  faMinus,
 )
 
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <Fragment>
         <BrowserRouter>
