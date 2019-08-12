@@ -111,6 +111,9 @@ const Application = ({ history, userData, refresh }) => {
       </div>
     )) || <></>
 
+
+  let formValues = applicationStatus !== "not applied" ? userData : ApplicationInitialValues;
+
   return (
     <div className='dashboard-page'>
       {status()}
@@ -127,7 +130,7 @@ const Application = ({ history, userData, refresh }) => {
         />
       )}
       <Formik
-        initialValues={ApplicationInitialValues}
+        initialValues={formValues}
         validationSchema={ApplicationValidation}
         onSubmit={handleSubmit}
         enableReinitialize={false}

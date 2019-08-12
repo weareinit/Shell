@@ -107,11 +107,19 @@ header {
     display: inline-flex;
 }
 
+#logout {
+    color: var(--shell-light-brown);
+    font-size: 1.5em;
+}
+
 @media (max-width: 650px) {
     .nav-item {
         margin: 1.5em 0;
     }
     .nav ul li a {
+        font-size: 1.5em;
+    }
+    #logout {
         font-size: 1.5em;
     }
 }
