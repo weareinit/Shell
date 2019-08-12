@@ -24,24 +24,24 @@ const Essentials = () => {
           {/* <p>Below is a few things we thinks will</p> */}
         </div>
         <Card
-          title='Parking & Transportation'
+          title='🚗 Directions & Transportation'
           content={ParkingCardContent}
           // content={<p>Details are coming soon</p>}
-          titleIcon='car'
+          //titleIcon='car'
           {...props}
         />
         <Card
-          title='What to Bring'
-          titleIcon='suitcase-rolling'
+          title='🧳 What to Bring'
+          //titleIcon='suitcase-rolling'
           content={ImportantItemsCardContent}
           {...props}
         />
-        <Card
-          title='Learning Tracks'
-          titleIcon='laptop'
+        {/* <Card
+          title='💻 Learning Tracks'
+          //titleIcon='laptop'
           content={LearningTracksCardContent}
           {...props}
-        />
+        /> */}
       </div>
     </div>
   )

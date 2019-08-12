@@ -64,7 +64,7 @@ class SideBar extends Component {
         <div className={`nav ` + (this.state.open ? '' : ' hide')}>
           <div className='desktop-logo'>
             <Logo className="main-logo" id='dashboard-shell' onClick={()=>{
-            window.open("https://dashboard.shellhacks.net");
+            window.open("https://shellhacks.net");
             }} />
             <h3 className='user'>
               {/* i have no idea why i didn't css this...but hey, too late! */}
