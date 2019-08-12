@@ -8,10 +8,11 @@ import data from '../../config/data/essentials'
 import './styles.css'
 import tracks from '../../config/data/tracks.json'
 
-let { direction, parking, transportation, shouldBring, tracksDesc } = data
+let { direction, Northbound, Southbound, parking, transportation, shouldBring, tracksDesc } = data
 
 export const ParkingCardContent = (
   <div className='essentials-parking-card-content'>
+    <p>{direction.description}</p>
     <div className='arena-info-container'>
       <div className='arena-maps-image-container'>
         <ZoomableImg
@@ -31,6 +32,27 @@ export const ParkingCardContent = (
         ))}
       </div>
     </div>
+
+    <div className='arena-info-container'>
+      <div className='parking-content'>
+          <p className='essential-item-header'>{Northbound.title} </p>
+          <br />
+          {Northbound.directions.map((item, i) => (
+            <p key={i}>{item}</p>
+          ))}
+        </div>
+
+        <br/>
+        <br/>
+
+        <div className='parking-content'>
+          <p className='essential-item-header'>{Southbound.title} </p>
+          <br />
+          {Southbound.directions.map((item, i) => (
+            <p key={i}>{item}</p>
+          ))}
+        </div>
+      </div>
 
     <div>
       <br />

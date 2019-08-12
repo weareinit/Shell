@@ -93,7 +93,7 @@ const ForgotPassword = ({ setAuthState }) => {
             />
           </div>
           <div className='auth-question-buttons'>
-            <p onClick={goToReset}>Have a Reset Code?</p>
+            <p onClick={goToReset}>Got a Reset Code?</p>
             <p onClick={goToLogin}>Go Back to Login</p>
           </div>
         </Form>

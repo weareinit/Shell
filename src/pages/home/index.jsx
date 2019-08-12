@@ -23,7 +23,7 @@ const Home = ({ userData }) => {
           />
           {/* <Avatar className="home-avatar" /> */}
           <div className='user'>
-            <h2>Welcome, {firstName}!</h2>
+            <h2>Welcome, {mixed.wordCase(firstName)}!</h2>
             {/* <h3>Event Points: {score}</h3> */}
           </div>
 
@@ -42,7 +42,7 @@ const Home = ({ userData }) => {
               descStyles={{ margin: 'auto', display: 'block' }}
               description={
                 (applicationStatus.toLowerCase() === 'applied' &&
-                  'Your application has been received and you’ll be notified when its processed.') ||
+                  'Fin-tastic! Your application has been received! Look out for a response email soon.') ||
                 (applicationStatus.toLowerCase() === 'accepted' &&
                   'Shell yeah! You’ve been accepted into ShellHacks. Now go and confirm your attendance before the ship sails!') ||
                 (applicationStatus.toLowerCase() === 'confirmed' &&

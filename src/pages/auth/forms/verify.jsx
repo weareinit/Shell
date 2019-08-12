@@ -101,10 +101,6 @@ const Verify = ({ setAuthState }) => {
               error={!!touched.verificationCode && errors.verificationCode}
             />
           </div>
-          <div className='auth-question-buttons'>
-            <p onClick={goToResend}>Need a New Code?</p>
-            <p onClick={goToLogin}>Go Back to Login</p>
-          </div>
           <div className='auth-submit-button-container'>
             <Button
               title='Activate Account'
@@ -112,6 +108,10 @@ const Verify = ({ setAuthState }) => {
               id='register-success'
               extraStyles='auth-button-extra-styles'
             />
+          </div>
+          <div className='auth-question-buttons'>
+            <p onClick={goToResend}>Need a New Code?</p>
+            <p onClick={goToLogin}>Go Back to Login</p>
           </div>
         </Form>
       )}

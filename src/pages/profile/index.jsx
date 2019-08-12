@@ -43,7 +43,7 @@ const Profile = ({ userData }) => {
             </div>
           </div>
           <div className='qr-description'>
-            <h3>ShellID</h3>
+            <h3>Shell ID</h3>
             <br />
             <p>
               Use your Shell ID to check-in and get your meals! Pull up the dashboard or take a screenshot with your shell-phone to access it later

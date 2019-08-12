@@ -6,19 +6,16 @@ function getMessage(condition) {
     let message = '';
 
     const salutations = condition ? [
-        { header: `👋 Long time no sea!`, desc: `Please login to Continue` },
-        { header: `👋 Oh, Hi There!`, desc: `Wave been expecting you` },
-        {
-            header: `👋 Salut, Bienvenue.`,
-            desc: `Ahh, i Know Right! Wave Been practicing`,
-        },
+        { header: `👋 Long time no sea!`, desc: `Shell we dance?` },
+        { header: `👋 Hey there!`, desc: `Wave been expecting you` },
+        
     ] : [{
-        header: `👋 Hey`,
-        desc: `Please Fillout the Form to Create an Account`,
+        header: `🏖 Feeling beachy?`,
+        desc: `Join the wave!`,
     },
     {
-        header: `👋 Hi There!`,
-        desc: `Please Fillout the Form to Register`,
+        header: `🦑 Down for a dive?`,
+        desc: `Come get your vitamin sea!`,
     },
         ];
 
@@ -35,7 +32,7 @@ function getMessage(condition) {
  * @param {Number} id - avatar id
  */
 const getAvatar = (id) => {
-    const avatars = ["crab.png", "dolphin.png", "marlin.png", "turtle.png", "mana.png", "crab.png"]
+    const avatars = ["crab.png", "dolphin.png", "mahi.png", "octopus.png", "mana.png", "diver.png"]
     return avatars[id];
 
 }

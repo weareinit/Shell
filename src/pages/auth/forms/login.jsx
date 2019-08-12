@@ -106,8 +106,8 @@ const Login = ({ history, setAuthState }) => {
             />
           </div>
           <div className='auth-question-buttons'>
-            <p onClick={goToforgot}>Forgot Password?</p>
-            <p onClick={goToVerify}>Need to Verify Email?</p>
+            <p onClick={goToforgot}>Forgot Password</p>
+            <p onClick={goToVerify}>Verify Email</p>
           </div>
         </Form>
       )}

@@ -105,7 +105,7 @@ class Auth extends Component {
           <div className='welcome-message'>
             <h2>
               <span role='img' aria-label='waving hands'>
-                👋
+                📬{" "}
               </span>
               Almost There!
             </h2>
@@ -117,11 +117,11 @@ class Auth extends Component {
           <div className='welcome-message'>
             <h2>
               <span role='img' aria-label='waving hands'>
-                👋
+                😱{" "}
               </span>
-              Don't Fret!
+              Oh no!
             </h2>
-            <p>Please eneter your email address to reset your password</p>
+            <p>Please enter your email address to reset your password</p>
           </div>
         )
       case RESET_PASSWORD:
@@ -129,11 +129,11 @@ class Auth extends Component {
           <div className='welcome-message'>
             <h2>
               <span role='img' aria-label='waving hands'>
-              😞
+              😌{" "}
               </span>
-              Almost There!
+              Almost there!
             </h2>
-            <p>Check your inbox for your reset token</p>
+            <p>Check your inbox for your reset code</p>
           </div>
         )
       case RESEND_VERIFY_CODE:
@@ -141,7 +141,7 @@ class Auth extends Component {
           <div className='welcome-message'>
             <h2>
               <span role='img' aria-label='waving hands'>
-                👋
+              📬{" "}
               </span>
             Almost There!
             </h2>
