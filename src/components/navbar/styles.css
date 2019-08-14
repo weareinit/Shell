@@ -29,7 +29,8 @@ header {
 .mobile-btn {
     margin-right: 20px;
     font-size: 2em;
-    color: var(--shell-dark-brown);
+    color: var(--shell-white);
+    cursor: pointer;
 }
 
 .nav {
@@ -93,6 +94,7 @@ header {
     width: 100%;
     font-size: 1em;
     font-weight: 500;
+    display: block;
 }
 
 .social-media-container {
