@@ -57,7 +57,7 @@ class SchoolSelect extends React.Component {
         value: "",
         isDisabled: true
       }
-      list.unshift(message);
+      list.push(message);
     }
 
     const loadList = (input) =>
