@@ -35,7 +35,7 @@ class Support extends Component {
           <div style={{ width: "100%" }}>
             {support.map(data => {
               const { title, description } = data
-              return <Card description={description} title={title} {...props} />
+              return <Card description={description} title={title} isMarkdown={true} {...props} />
             })}
           </div>
         </div>

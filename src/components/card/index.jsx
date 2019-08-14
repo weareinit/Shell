@@ -4,6 +4,7 @@
 
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ReactMarkdown from 'react-markdown'
 import {
 faPlus
 } from "@fortawesome/free-brands-svg-icons"; //need to pre-load in app.js
@@ -33,10 +34,16 @@ class Card extends Component {
       styleClassName,
       activeClassName,
       titleIcon,
-      descStyles
+      descStyles,
+      isMarkdown
     } = this.props
+
     let cardContent = description ? (
-      <p style={descStyles}>{description}</p>
+      isMarkdown ? (
+        <ReactMarkdown source={description} />
+      ) : (
+        <p style={descStyles}>{description}</p>
+        )
     ) : (
       content
     )
@@ -75,7 +82,8 @@ Card.propTypes = {
   activeClassName: PropTypes.string.isRequired,
   description: PropTypes.string,
   content: PropTypes.elementType,
-  date: PropTypes.string
+  date: PropTypes.string,
+  isMarkdown: PropTypes.bool
 }
 
 export { Card }

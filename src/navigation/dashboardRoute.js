@@ -55,6 +55,7 @@ if(refetch){
           )
         }
       />
+      {window.scrollTo(0,0)}
     </div>
   )
 }

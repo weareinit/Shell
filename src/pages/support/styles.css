@@ -8,3 +8,8 @@
 .support-description {
     margin: 0 0 50px;
 }
+
+.support-container a
+{
+    color: var(--shell-sand)
+}
