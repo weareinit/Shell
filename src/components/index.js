@@ -14,3 +14,4 @@ export * from './navbar';
 export * from './switch';
 export * from './loading';
 export * from './multiSelect';
+export * from './schoolSelect';
