@@ -1,5 +1,9 @@
 [
     {
+        "label": "Florida International University",
+        "value": "Florida International University"
+    },
+    {
         "label": "Bootcamp Student",
         "value": "Bootcamp Student"
     },
@@ -9794,10 +9798,6 @@
     {
         "label": "Florida Institute of Ultrasound Inc",
         "value": "Florida Institute of Ultrasound Inc"
-    },
-    {
-        "label": "Florida International University",
-        "value": "Florida International University"
     },
     {
         "label": "Florida Keys Community College",
