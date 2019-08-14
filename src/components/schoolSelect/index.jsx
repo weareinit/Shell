@@ -53,7 +53,7 @@ class SchoolSelect extends React.Component {
 
     const addDisclaimer = (list) => {
       let message = {
-        label: "List contains more than 50 schools. Please refine your search to see more.",
+        label: "This list contains more than 50 schools. Please refine your search to see more.",
         value: "",
         isDisabled: true
       }
