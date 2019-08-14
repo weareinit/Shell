@@ -1,11 +1,51 @@
 [
     {
+        "label": "Bootcamp Student",
+        "value": "Bootcamp Student"
+    },
+    {
         "label": "Florida International University",
         "value": "Florida International University"
     },
     {
-        "label": "Bootcamp Student",
-        "value": "Bootcamp Student"
+        "label": "Miami Dade College",
+        "value": "Miami Dade College"
+    },
+    {
+        "label": "Broward College",
+        "value": "Broward College"
+    },
+    {
+        "label": "University of Miami",
+        "value": "University of Miami"
+    },
+    {
+        "label": "University of Florida",
+        "value": "University of Florida"
+    },
+    {
+        "label": "Florida State University",
+        "value": "Florida State University"
+    },
+    {
+        "label": "Florida Agricultural and Mechanical University",
+        "value": "Florida Agricultural and Mechanical University"
+    },
+    {
+        "label": "University of South Florida-Main Campus",
+        "value": "University of South Florida-Main Campus"
+    },
+    {
+        "label": "University of Central Florida",
+        "value": "University of Central Florida"
+    },
+    {
+        "label": "Stetson University",
+        "value": "Stetson University"
+    },
+    {
+        "label": "Florida Atlantic University",
+        "value": "Florida Atlantic University"
     },
     {
         "label": "A & W Healthcare Educators",
@@ -3298,10 +3338,6 @@
     {
         "label": "Broome Delaware Tioga BOCES-Practical Nursing Program",
         "value": "Broome Delaware Tioga BOCES-Practical Nursing Program"
-    },
-    {
-        "label": "Broward College",
-        "value": "Broward College"
     },
     {
         "label": "Brown Aveda Institute-Mentor",
@@ -9728,14 +9764,6 @@
         "value": "Florida Academy of Health & Beauty"
     },
     {
-        "label": "Florida Agricultural and Mechanical University",
-        "value": "Florida Agricultural and Mechanical University"
-    },
-    {
-        "label": "Florida Atlantic University",
-        "value": "Florida Atlantic University"
-    },
-    {
         "label": "Florida Barber Academy",
         "value": "Florida Barber Academy"
     },
@@ -9830,10 +9858,6 @@
     {
         "label": "Florida State College at Jacksonville",
         "value": "Florida State College at Jacksonville"
-    },
-    {
-        "label": "Florida State University",
-        "value": "Florida State University"
     },
     {
         "label": "Florida Technical College",
@@ -16617,10 +16641,6 @@
     {
         "label": "Miami Ad School-San Francisco",
         "value": "Miami Ad School-San Francisco"
-    },
-    {
-        "label": "Miami Dade College",
-        "value": "Miami Dade College"
     },
     {
         "label": "Miami Lakes Educational Center",
@@ -25203,10 +25223,6 @@
         "value": "Sterling College"
     },
     {
-        "label": "Stetson University",
-        "value": "Stetson University"
-    },
-    {
         "label": "Stevens Institute of Business & Arts",
         "value": "Stevens Institute of Business & Arts"
     },
@@ -27839,10 +27855,6 @@
         "value": "University of Central Arkansas"
     },
     {
-        "label": "University of Central Florida",
-        "value": "University of Central Florida"
-    },
-    {
         "label": "University of Central Missouri",
         "value": "University of Central Missouri"
     },
@@ -27953,10 +27965,6 @@
     {
         "label": "University of Evansville",
         "value": "University of Evansville"
-    },
-    {
-        "label": "University of Florida",
-        "value": "University of Florida"
     },
     {
         "label": "University of Fort Lauderdale",
@@ -28173,10 +28181,6 @@
     {
         "label": "University of Memphis",
         "value": "University of Memphis"
-    },
-    {
-        "label": "University of Miami",
-        "value": "University of Miami"
     },
     {
         "label": "University of Michigan-Ann Arbor",
@@ -28909,10 +28913,6 @@
     {
         "label": "University of South Dakota",
         "value": "University of South Dakota"
-    },
-    {
-        "label": "University of South Florida-Main Campus",
-        "value": "University of South Florida-Main Campus"
     },
     {
         "label": "University of South Florida-Sarasota-Manatee",
