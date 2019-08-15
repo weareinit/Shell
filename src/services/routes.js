@@ -103,7 +103,7 @@ const login = async (credentials, history, faillureAction) =>
             querries.storeItem(TOKEN, JWT);
             querries.storeItem(ID, shellID);
         }).then(() => {
-            if (querries.isAuthorized(history)) {
+            if (querries.isAuthorized()) {
                 history.push('/');
             }
         })
@@ -156,7 +156,7 @@ const resetPassword = (data, successAction, faillureAction) =>
  */
 const apply = (form, history, nextAction, faillureAction) => {
 
-    const token = querries.isAuthorized(history);
+    const token = querries.isAuthorized();
 
     //converts arr of obj to string
     const arrToString = (arr) => {
@@ -204,8 +204,8 @@ const apply = (form, history, nextAction, faillureAction) => {
  * Get users informations
  * @param {Object} history - react-router history object
  */
-const getUserInfo = async history => {
-    const token = await querries.isAuthorized(history);
+const getUserInfo = async (history) => {
+    const token = await querries.isAuthorized();
     const shellID = await querries.retrieveItem(ID);
 
     return await request({
@@ -216,10 +216,14 @@ const getUserInfo = async history => {
             'Authorization': 'Bearer ' + token
         }
     }).then(resp => {
-        if (resp.data === null) querries.deAuthorize(history)
+        if (resp.data === null) {
+            querries.deAuthorize()
+            history.push(LOGIN)
+        }
         querries.storeItem('userData', JSON.stringify(resp.data));
     }).catch((err) => {
-        querries.deAuthorize(history)
+        querries.deAuthorize()
+        history.push(LOGIN)
     });
 };
 
