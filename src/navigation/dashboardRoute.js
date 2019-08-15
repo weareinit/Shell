@@ -55,6 +55,7 @@ const DashboardRoute = ({ component: Component,history,...rest }) => {
           )
         }
       />
+      {window.scrollTo(0,0)}
     </div>
   )
 }

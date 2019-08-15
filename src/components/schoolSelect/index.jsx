@@ -33,8 +33,14 @@ class SchoolSelect extends React.Component {
     let notIsValid = touched && error
 
     const filterList = (list, input) => {
-      return list.filter(item => 
-        item.label.toLowerCase().includes(input.toLowerCase())
+      return list.filter(item => {
+        let terms = input.split(" ");
+        for (const term of terms) {
+          if(!item.label.toLowerCase().includes(term.toLowerCase()))
+            return false;
+        }
+        return true;
+      }
       )
     };
 
@@ -47,11 +53,11 @@ class SchoolSelect extends React.Component {
 
     const addDisclaimer = (list) => {
       let message = {
-        label: "List contains more than 50 schools. Please refine your search to see more.",
+        label: "This list contains more than 50 schools. Please refine your search to see more.",
         value: "",
         isDisabled: true
       }
-      list.unshift(message);
+      list.push(message);
     }
 
     const loadList = (input) =>
