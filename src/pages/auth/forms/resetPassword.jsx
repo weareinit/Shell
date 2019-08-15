@@ -68,7 +68,7 @@ const ResetPassword = ({ setAuthState }) => {
   return (
     <Formik
       validationSchema={ResetPasswordValidation}
-      initialValues={ResetPasswordInitialValues}
+      initialValues={{...ResetPasswordInitialValues, resetCode: params.code}}
       onSubmit={handleSubmit}
       render={({ touched, errors }) => (
         <Form className='forgot-form'>
@@ -101,7 +101,6 @@ const ResetPassword = ({ setAuthState }) => {
               type='text'
               placeholder='Reset Code'
               error={!!touched.resetCode && errors.resetCode}
-              value={params.code}
             />
           </div>
           <div className='field-div'>
