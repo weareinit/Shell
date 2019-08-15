@@ -204,7 +204,7 @@ const apply = (form, history, nextAction, faillureAction) => {
  * Get users informations
  * @param {Object} history - react-router history object
  */
-const getUserInfo = async () => {
+const getUserInfo = async (history) => {
     const token = await querries.isAuthorized();
     const shellID = await querries.retrieveItem(ID);
 
@@ -216,10 +216,14 @@ const getUserInfo = async () => {
             'Authorization': 'Bearer ' + token
         }
     }).then(resp => {
-        if (resp.data === null) querries.deAuthorize()
+        if (resp.data === null) {
+            querries.deAuthorize()
+            history.push(LOGIN)
+        }
         querries.storeItem('userData', JSON.stringify(resp.data));
     }).catch((err) => {
         querries.deAuthorize()
+        history.push(LOGIN)
     });
 };
 

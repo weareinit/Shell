@@ -2,7 +2,7 @@
  * Dashboard side-menu
  */
 import React, { Component, Fragment } from 'react'
-import { withRouter } from 'react-router'
+import { withRouter, Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/logos/organizer/Icon_Logo.svg'
 import mixed from '../../utils/mixed'
@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons"; //need to pre-load in app.js
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import querries from '../../utils/querries'
+import States from "../../pages/auth/states"
 import './styles.css'
 
 // nav states
@@ -26,6 +27,8 @@ const navSelections = Object.freeze({
   ESSENTIAL: '/essentials',
   SUPPORT: '/support'
 })
+
+const { LOGIN } = States;
 
 class SideBar extends Component {
   constructor (props) {
@@ -122,7 +125,8 @@ class SideBar extends Component {
           <ul id='logout'>
             <li
               onClick={() => {
-                querries.deAuthorize()
+                querries.deAuthorize();
+                this.props.history.push(LOGIN)
               }}
             >
               Logout <FontAwesomeIcon icon='sign-out-alt' />

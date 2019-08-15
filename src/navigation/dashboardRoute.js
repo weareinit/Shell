@@ -18,7 +18,7 @@ const DashboardRoute = ({ component: Component,history,...rest }) => {
  const[data,setData]=useState({});
  
  const getData = async () =>{
-    await services.getUserInfo()
+    await services.getUserInfo(history)
     userData = await JSON.parse(querries.retrieveItem('userData'))
     setData(userData)
     if(userData)
