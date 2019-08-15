@@ -14,7 +14,8 @@ import {
   InlineError,
   BlockError,
   Loading,
-  MultiSelect
+  MultiSelect,
+  SchoolSelect
 } from '../../components'
 import schools from '../../config/data/schools'
 import applicationData from '../../config/data/application'
@@ -214,7 +215,7 @@ const Application = ({ history, userData, refresh }) => {
                 </div>
                 <h2>School Information</h2>
                 <div className='full-container'>
-                  <Select
+                  <SchoolSelect
                     className='application-input'
                     label='School Name *'
                     name='schoolName'

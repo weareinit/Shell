@@ -5,14 +5,14 @@
     },
     {
         "title": "😧 I Made A Mistake On My Application",
-        "description": "It happens! Send us an email to upe@fiu.edu and we’ll get it sorted right away!"
+        "description": "It happens! Send us an email to [upe@fiu.edu](mailto:upe@fiu.edu) and we’ll get it sorted right away!"
     },
     {
         "title": "🐞 I Found A Bug",
-        "description": "Oof... Our junior developers did it again! Feel free to open an issue on our GitHub and we’ll get to work!"
+        "description": "Oof... Our junior developers did it again! Feel free to [open an issue](https://github.com/UPE-FIU/Shell/issues/new) on our GitHub and we’ll get to work!"
     },
     {
         "title": "🧐 I Have Questions",
-        "description": "Contact us on our Discord server or send us an email to upe@fiu.edu"
+        "description": "Contact us on our [Discord server](https://discord.gg/upefiu) or send us an email to [upe@fiu.edu](mailto:upe@fiu.edu)"
     }
 ]
