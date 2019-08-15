@@ -122,7 +122,7 @@ class SideBar extends Component {
           <ul id='logout'>
             <li
               onClick={() => {
-                querries.deAuthorize(this.props.history)
+                querries.deAuthorize()
               }}
             >
               Logout <FontAwesomeIcon icon='sign-out-alt' />

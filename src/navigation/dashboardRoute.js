@@ -18,7 +18,7 @@ const DashboardRoute = ({ component: Component,history,...rest }) => {
  const[data,setData]=useState({});
  
  const getData = async () =>{
-    await services.getUserInfo(history)
+    await services.getUserInfo()
     userData = await JSON.parse(querries.retrieveItem('userData'))
     setData(userData)
     if(userData)
@@ -41,7 +41,7 @@ const DashboardRoute = ({ component: Component,history,...rest }) => {
       <Route
         {...rest}
         render={props =>
-          querries.isAuthorized(props.history) ? (
+          querries.isAuthorized() ? (
           (loading && <div className="dash-modal"><Loading size={50} color='white' /></div>)||
             <Fragment>
             <Navbar fullName={data.firstName} />

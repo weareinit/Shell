@@ -41,9 +41,8 @@ function removeItem(key) {
 
 /**
  * Removes token from local storage then navigate to auth page
- * @param {Object} history - react router history object
  */
-async function deAuthorize(history) {
+async function deAuthorize() {
 	await removeItem(JWT);
 	return;
 }
@@ -52,13 +51,13 @@ async function deAuthorize(history) {
  * returns user token or undefined
  * @param {Object} history - react router history object
  */
-function isAuthorized(history) {
+function isAuthorized() {
 	try {
 		const token = retrieveItem(JWT);
 		return token;
 	} catch (e) {
 		alert('WHOOPS! Looks like you shouldn\'t be here...Please Login');
-		deAuthorize(history);
+		deAuthorize();
 	}
 }
 export default {
