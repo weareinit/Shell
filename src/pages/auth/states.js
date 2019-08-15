@@ -1,13 +1,13 @@
 // Enum auth states
 const States = Object.freeze({
-	LOGIN: 'login',
-	SIGNUP: 'signup',
-	VERIFY_EMAIL: 'verify',
-	FORGOT_PASSWORD: 'forgot',
-	RESET_PASSWORD: 'reset',
-	RESEND_VERIFY_CODE: 'resend',
-	BAD_REQUEST: 'bad',
-	FAILED_REQUEST: 'failed'
+  LOGIN: "/auth",
+  SIGNUP: "/auth/register",
+  VERIFY_EMAIL: "/auth/email-verification",
+  FORGOT_PASSWORD: "/auth/forgot-password",
+  RESET_PASSWORD: "/auth/reset-password",
+  RESEND_VERIFY_CODE: "/auth/resend-email-code",
+  BAD_REQUEST: "bad",
+  FAILED_REQUEST: "failed"
 });
 
 export default States;
