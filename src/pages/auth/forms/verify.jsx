@@ -12,6 +12,7 @@ import {
 } from '../../../utils/validations'
 import services from '../../../services/routes'
 import States from '../states'
+import queryString from "query-string"
 import '../styles.css'
 
 const Verify = ({ setAuthState }) => {
@@ -60,10 +61,13 @@ const Verify = ({ setAuthState }) => {
     setAuthState(RESEND_VERIFY_CODE)
   }
 
+  // Makes query params acessible
+  const params = queryString.parse(window.location.search);
+
   return (
     <Formik
       validationSchema={RegistrationCodeValidation}
-      initialValues={RegistrationCodeInitialValues}
+      initialValues={{...RegistrationCodeInitialValues, verificationCode: params.code}}
       onSubmit={handleSubmit}
       render={({ touched, errors }) => (
         <Form className='success-form'>
