@@ -43,7 +43,7 @@ const getAvatar = (id) => {
  * @param {String} words - text to be be "word cased"
  */
 const wordCase = (words) => {
-    const UNKNOWN = 'Unknwon'
+    const UNKNOWN = 'Unknown'
     if (!words) return UNKNOWN
     else {
         let text = words.toLowerCase().split(' ')

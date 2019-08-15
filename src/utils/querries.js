@@ -1,3 +1,13 @@
+import States from "../pages/auth/states"
+
+//Auth states
+const {LOGIN,
+	SIGNUP,
+	VERIFY_EMAIL,
+	FORGOT_PASSWORD,
+	RESET_PASSWORD,
+	RESEND_VERIFY_CODE } = States;
+
 /**
  * Handles local data management and user token
  */
@@ -31,11 +41,9 @@ function removeItem(key) {
 
 /**
  * Removes token from local storage then navigate to auth page
- * @param {Object} history - react router history object
  */
-async function deAuthorize(history) {
+async function deAuthorize() {
 	await removeItem(JWT);
-	history.push('/auth');
 	return;
 }
 
@@ -43,13 +51,13 @@ async function deAuthorize(history) {
  * returns user token or undefined
  * @param {Object} history - react router history object
  */
-function isAuthorized(history) {
+function isAuthorized() {
 	try {
 		const token = retrieveItem(JWT);
 		return token;
 	} catch (e) {
 		alert('WHOOPS! Looks like you shouldn\'t be here...Please Login');
-		deAuthorize(history);
+		deAuthorize();
 	}
 }
 export default {
