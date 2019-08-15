@@ -39,7 +39,7 @@ const Profile = ({ userData }) => {
         <div className='qr-info'>
           <div className='qr-image-container'>
             <div id='QRcode'>
-              <QRCode size={180} fgColor='#665B50' value={shellID} />
+              <QRCode size={180} fgColor='#665B50' value={shellID} renderAs="svg" level="Q" />
             </div>
           </div>
           <div className='qr-description'>
