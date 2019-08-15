@@ -62,7 +62,7 @@ class SchoolSelect extends React.Component {
 
     const loadList = (input) =>
     {
-      if(input == ''){
+      if(input === ''){
         return initalOptions();
       }
 

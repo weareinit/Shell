@@ -5,13 +5,9 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ReactMarkdown from 'react-markdown'
-import {
-faPlus
-} from "@fortawesome/free-brands-svg-icons"; //need to pre-load in app.js
 import PropTypes from 'prop-types'
 import './styles.css'
 
-/* - a "shell-styled" reuseable card template */
 class Card extends Component {
   constructor (props) {
     super(props)
