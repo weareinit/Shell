@@ -9,6 +9,7 @@ import { withRouter } from "react-router";
 import { Footer, Navbar,Loading } from '../components'
 import querries from '../utils/querries'
 import services from '../services/routes'
+import States from "../pages/auth/states"
 
 const DashboardRoute = ({ component: Component,history,...rest }) => {
  let userData;
@@ -24,13 +25,15 @@ const DashboardRoute = ({ component: Component,history,...rest }) => {
     await setLoading(false)
   }
 
-useEffect(() => {
-  getData();
-},[])
+  const { LOGIN } = States;
 
-if(refetch){
-  getData()
-  setRefetch(false)
+  useEffect(() => {
+    getData();
+  },[])
+
+  if(refetch){
+    getData()
+    setRefetch(false)
   }
 
   return (
@@ -47,10 +50,7 @@ if(refetch){
             </Fragment>
           ) : (
             <Redirect
-              to={{
-                pathname: '/auth',
-                state: { from: props.location }
-              }}
+              to={LOGIN}
             />
           )
         }

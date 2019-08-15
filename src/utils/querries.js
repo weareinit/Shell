@@ -1,3 +1,13 @@
+import States from "../pages/auth/states"
+
+//Auth states
+const {LOGIN,
+	SIGNUP,
+	VERIFY_EMAIL,
+	FORGOT_PASSWORD,
+	RESET_PASSWORD,
+	RESEND_VERIFY_CODE } = States;
+
 /**
  * Handles local data management and user token
  */
@@ -35,7 +45,6 @@ function removeItem(key) {
  */
 async function deAuthorize(history) {
 	await removeItem(JWT);
-	history.push('/auth');
 	return;
 }
 
