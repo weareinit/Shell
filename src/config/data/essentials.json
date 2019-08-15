@@ -1,51 +1,87 @@
 {
     "direction": {
-        "title": "Shellhacks is located at:",
-        "address": "FIU's Ocean Bank Convocation Center 1180 SW 113th Ave, Miami, FL",
+        "description": " Feeling lost at sea? Find information on how to get to ShellHacks and where to park below:",
+        "title": "Venue Address",
+        "venue": "Kovens Conference Center",
+        "school": "Florida International University",
         "directions": [
-            "Direction Here",
-            "Direction Here",
-            "Direction Here",
-            "Direction Here",
-            "Direction Here"
+            "Biscayne Bay Campus",
+            "3000 NE 151st Street",
+            "North Miami, FL 33181",
+            "(305) 919-5000"
+
         ]
     },
+    "Northbound":{
+        "title": "Coming North of FIU BBC",
+        "directions":[
+            "Take I-95 Southbound",
+            "Take exit 16 for NE 203rd Street/Ives Dairy Rd",
+            "Turn left onto NE 203rd Street/Ives Dairy Rd",
+            "Turn right onto US-1 South/Biscayne Blvd",
+            "Turn left on NE 151st Street",
+            "Continue onto Main Rd",
+            "Turn left toward Kovens Conference Center"
+        ]
+
+    },
+    "Southbound":{
+        "title": "Coming South of FIU BBC",
+        "directions":[   
+            "Take I-95 Northbound",
+            "Take exit 10B for NW 135th Street/Opa-Locka Blvd",
+            "Turn right onto NW 135th Street/Opa-Locka Blvd",
+            "Turn left onto FL-909 North",
+            "Turn right onto NE 151 Street",
+            "Continue onto Main Rd",
+            "Turn left toward Kovens Conference Center"
+        ]
+
+    },
+
     "parking": {
         "title": "Parking",
-        "description": "Instructions on how to park and what do upcoming parkers need to know regarding FIU, what they need to bring and travel reimbursements Litter kitter kitty litty little kitten big roar roar feed me mice cat sit like bread. Pur Litter kitter kitty litty little kitten big roar roar feed me mice cat sit like bread. Pur Litter kitter kitty litty"
+        "description": "Parking is available for free in Parking Lot 5. You must register your car upon arrival when you check in (don’t forget your plate number!)"
     },
     "transportation": {
-        "title": "Transportation",
-        "description": "Details on busses and stuff pending information"
+        "title": "Buses",
+        "description": "Buses will be sent to schools with the most registrations (so be sure to spread the word!). Check back later for the list of schools and links to sign up!"
     },
     "shouldBring": {
-        "description": "To make sure everyone’s as comfortable as possible, make sure to bring some essential tools and toiletries for your time at ShellHacks.",
+        "description": "We want everyone feeling fine and sandy at ShellHacks! Here are some items we suggest to bring with you for a great time:",
         "optional": {
-            "title": "Essential Items",
+            "title": "Essentials",
             "items": [
-                "Deodorant",
+                "Backpack",
                 "Laptop & charger",
                 "Phone & charger",
-                "Bag/backpack",
                 "Headphones",
                 "Change of clothes",
+                "Sweater",
                 "Toothbrush & toothpaste",
-                "Sleeping bag/pillow/blanket",
-                "Water bottle"
-
+                "Mouthwash",
+                "Deodorant",
+                "Towel",
+                "Sleeping bag, pillow, blanket",
+                "Water Bottle",
+                "Pen & paper",
+                "Resume"
             ]
         },
         "essential": {
-            "title": "Optional Items",
+            "title": "Optional",
             "items": [
-                "Inflatable pool floaties",
+                "Monitor",
+                "Keyboard & mouse",
+                "USB Drive",
+                "Swimwear",
+                "Sunglasses",
+                "Sunscreen",
+                "Hat",
                 "Earplugs",
                 "Sleeping mask",
-                "USB key",
-                "Keyboard & mouse",
-                "Yoga mat",
-                "Portable speaker",
-                "Pen & paper"
+                "Floaties",
+                "Yoga mat"             
             ]
         }
     },

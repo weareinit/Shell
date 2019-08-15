@@ -53,15 +53,6 @@ const Register = ({ setAuthState }) => {
   services.register(data, setAuthState, submitionFaillure)
   }
 
-  // navigates to forgot password
-  let goToforgot = () => {
-    setAuthState(FORGOT_PASSWORD)
-  }
-
-  // navigates to verify email address
-  let goToVerify = () => {
-    setAuthState(VERIFY_EMAIL)
-  }
   return (
     <Formik
       initialValues={SignUpInitialValues}
@@ -79,7 +70,7 @@ const Register = ({ setAuthState }) => {
                 (touched.confirmPassword && errors.confirmPassword) ||
                 (badRequest &&
                   'Ummm...🤔 That email address is  already in use, try resetting your password') ||
-                (otherFaillure && 'Something went wrong 😕')
+                (otherFaillure && 'Something went wrong 😕... Sure you don\'t already have an account?')
             ]}
             shouldShow={
               !!(touched.firstName && errors.firstName) ||
@@ -128,12 +119,8 @@ const Register = ({ setAuthState }) => {
               name='confirmPassword'
               type='password'
               error={!!touched.confirmPassword && errors.confirmPassword}
-              placeholder='Confirm password'
+              placeholder='Confirm Password'
             />
-          </div>
-          <div className='auth-question-buttons'>
-            <p onClick={goToforgot}>Forgot Password?</p>
-            <p onClick={goToVerify}>Need to Verify Email?</p>
           </div>
           <div className='auth-submit-button-container'>
             <Button

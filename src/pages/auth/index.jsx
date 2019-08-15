@@ -105,14 +105,11 @@ class Auth extends Component {
           <div className='welcome-message'>
             <h2>
               <span role='img' aria-label='waving hands'>
-                👋
+                📬{" "}
               </span>
-              Hi
+              Almost There!
             </h2>
-            <p>
-              If you've already registered, check your Inbox for your email
-              verification code
-            </p>
+            <p>Check your inbox for your verification code</p>
           </div>
         )
       case FORGOT_PASSWORD:
@@ -120,11 +117,11 @@ class Auth extends Component {
           <div className='welcome-message'>
             <h2>
               <span role='img' aria-label='waving hands'>
-                👋
+                😱{" "}
               </span>
-              Hi
+              Oh no!
             </h2>
-            <p>Please fill out the form to reset your password</p>
+            <p>Please enter your email address to reset your password</p>
           </div>
         )
       case RESET_PASSWORD:
@@ -132,11 +129,11 @@ class Auth extends Component {
           <div className='welcome-message'>
             <h2>
               <span role='img' aria-label='waving hands'>
-                👋
+              😌{" "}
               </span>
-              Welcome
+              Almost there!
             </h2>
-            <p>Please fill out the form to reset your password</p>
+            <p>Check your inbox for your reset code</p>
           </div>
         )
       case RESEND_VERIFY_CODE:
@@ -144,13 +141,11 @@ class Auth extends Component {
           <div className='welcome-message'>
             <h2>
               <span role='img' aria-label='waving hands'>
-                👋
+              📬{" "}
               </span>
-              Welcome
+            Almost There!
             </h2>
-            <p>
-              Please enter your email address to get a new verification code
-            </p>
+            <p>Please enter your email address to get a new code</p>
           </div>
         )
 

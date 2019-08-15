@@ -3,7 +3,7 @@
  * This function get triggered everytime user navigates to a dashboard page
  */
 
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, Fragment} from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { withRouter } from "react-router";
 import { Footer, Navbar,Loading } from '../components'
@@ -13,19 +13,25 @@ import services from '../services/routes'
 const DashboardRoute = ({ component: Component,history,...rest }) => {
  let userData;
  const[loading,setLoading]=useState(true);
+ const[refetch,setRefetch]=useState(false);
  const[data,setData]=useState({});
  
-useEffect(() => {
-  const getData = () =>{
-    services.getUserInfo(history)
-    userData = JSON.parse(querries.retrieveItem('userData'))
+ const getData = async () =>{
+    await services.getUserInfo(history)
+    userData = await JSON.parse(querries.retrieveItem('userData'))
     setData(userData)
     if(userData)
-    setLoading(false)
+    await setLoading(false)
   }
-  getData();
 
+useEffect(() => {
+  getData();
 },[])
+
+if(refetch){
+  getData()
+  setRefetch(false)
+  }
 
   return (
     <div className='dashboard-wrapper'>
@@ -34,11 +40,11 @@ useEffect(() => {
         render={props =>
           querries.isAuthorized(props.history) ? (
           (loading && <div className="dash-modal"><Loading size={50} color='white' /></div>)||
-            <>
+            <Fragment>
             <Navbar fullName={data.firstName} />
-            <Component {...props} userData={data} />
+            <Component {...props} refresh={setRefetch} userData={data} />
             <Footer showSocials />
-            </>
+            </Fragment>
           ) : (
             <Redirect
               to={{

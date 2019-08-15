@@ -26,6 +26,14 @@
     font-family: "Montserrat", sans-serif;
 }
 
+.application-container form input[type="date"] {
+    text-transform: uppercase;
+}
+
+.application-container form input[type="file"]::placeholder {
+    text-transform: uppercase;
+}
+
 .application-container h2 {
     margin: 50px 0 5px;
     font-size: var(--sub-heading);
@@ -118,6 +126,10 @@ input[type="date"]:before {
     padding-top: 20px;
 }
 
+.red-border {
+    border: 2px solid red!important;
+}
+
 #mlh {
     margin-bottom: 15px;
 }
@@ -156,7 +168,7 @@ input[type="date"]:before {
     padding: 8.668px;
 }
 
-.submition-modal {
+.submission-modal {
     display: block;
     margin: auto;
     padding: 50px;

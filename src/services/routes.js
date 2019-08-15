@@ -35,7 +35,7 @@ const ID = 'shellID';
  * @param {Function} successAction - executed after a sucessful request
  * @param {Function} faillureAction - executed on request failure
  */
-const register = async(data, successAction, faillureAction) => {
+const register = async (data, successAction, faillureAction) => {
     request({
         method: 'post',
         url: REGISTER_PATH,
@@ -92,24 +92,24 @@ const resendCode = (data, successAction, faillureAction) =>
  * @param {Function} successAction - executed after a sucessful request
  * @param {Function} faillureAction - executed on request failure
  */
-const login = async(credentials, history, faillureAction) =>
+const login = async (credentials, history, faillureAction) =>
     request({
         method: 'post',
         url: LOGIN_PATH,
         data: credentials,
     })
-    .then(resp => {
-        const { shellID, JWT } = resp.data;
-        querries.storeItem(TOKEN, JWT);
-        querries.storeItem(ID, shellID);
-    }).then(() => {
-        if (querries.isAuthorized(history)) {
-            history.push('/');
-        }
-    })
-    .catch((err) => {
-        faillureAction(FAILED_REQUEST);
-    });
+        .then(resp => {
+            const { shellID, JWT } = resp.data;
+            querries.storeItem(TOKEN, JWT);
+            querries.storeItem(ID, shellID);
+        }).then(() => {
+            if (querries.isAuthorized(history)) {
+                history.push('/');
+            }
+        })
+        .catch((err) => {
+            faillureAction(FAILED_REQUEST);
+        });
 
 
 /**
@@ -148,17 +148,38 @@ const resetPassword = (data, successAction, faillureAction) =>
 
 
 /**
- * submits user application
- * @param {Object} data - application form values
- * @param {Function} nextAction - success action
+ * Submits user application
+ * @param {Object} form - application form values
  * @param {Object} history - react router history object
+ * @param {Function} nextAction - success action
+ * @param {Object} faillureAction - executes on faillure
  */
-const apply = (form, history, nextAction) => {
+const apply = (form, history, nextAction, faillureAction) => {
 
     const token = querries.isAuthorized(history);
 
+    //converts arr of obj to string
+    const arrToString = (arr) => {
+        let result;
+        arr.forEach((obj, i) => {
+            i === 0 ? result = obj.value : result += `, ${obj.value}`
+        });
+        return result;
+    }
+
+    form.haveBeenToShell = arrToString(form.haveBeenToShell);
+    form.dietaryRestriction = arrToString(form.dietaryRestriction);
+
+    const setDefaults = () => Object.keys(form).forEach((key) => {
+        if (!form[key])
+            form[key] = "N/A"
+    })
+
+    setDefaults();
     let data = new FormData();
     Object.keys(form).map(key => data.append(key, form[key]));
+
+    console.log(form)
 
     return request({
         method: 'put',
@@ -169,10 +190,11 @@ const apply = (form, history, nextAction) => {
             'Authorization': 'Bearer ' + token
         }
     }).then(resp => {
-        nextAction();
+        nextAction(true);
         return resp;
     }).catch(err => {
-        console.log(err);
+        console.log(err)
+        faillureAction()
     });
 
 
@@ -194,9 +216,11 @@ const getUserInfo = async history => {
             'Authorization': 'Bearer ' + token
         }
     }).then(resp => {
+        if (resp.data === null) querries.deAuthorize(history)
         querries.storeItem('userData', JSON.stringify(resp.data));
-        let data = JSON.parse(querries.retrieveItem('userData'))
-    }).catch((err) => querries.deAuthorize(history));
+    }).catch((err) => {
+        querries.deAuthorize(history)
+    });
 };
 
 export default {

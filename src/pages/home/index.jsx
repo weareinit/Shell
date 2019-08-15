@@ -8,7 +8,8 @@ import { Card } from '../../components'
 import mixed from '../../utils/mixed'
 import './styles.css'
 const Home = ({ userData }) => {
-  let { applicationStatus, firstName, avatar } = userData
+  const { applicationStatus, firstName, avatarID } = userData
+  let avatar = mixed.getAvatar(avatarID);
   return (
     <div className='dashboard-page'>
       <h1>Home</h1>
@@ -18,11 +19,11 @@ const Home = ({ userData }) => {
           <img
             className='home-avatar'
             alt=''
-            src={require(`../../assets/avatars/turtle.png`)}
+            src={require(`../../assets/avatars/${avatar}`)}
           />
           {/* <Avatar className="home-avatar" /> */}
           <div className='user'>
-            <h2>Welcome, {firstName}!</h2>
+            <h2>Welcome, {mixed.wordCase(firstName)}!</h2>
             {/* <h3>Event Points: {score}</h3> */}
           </div>
 
@@ -41,12 +42,12 @@ const Home = ({ userData }) => {
               descStyles={{ margin: 'auto', display: 'block' }}
               description={
                 (applicationStatus.toLowerCase() === 'applied' &&
-                  "Please be patient, we'll be sending out acceptance emails soon") ||
+                  'Fin-tastic! Your application has been received! Look out for a response email soon.') ||
                 (applicationStatus.toLowerCase() === 'accepted' &&
-                  'Make sure to confirm your spot ASAP') ||
+                  'Shell yeah! You’ve been accepted into ShellHacks. Now go and confirm your attendance before the ship sails!') ||
                 (applicationStatus.toLowerCase() === 'confirmed' &&
-                  "You're all set! Can't wait to see you at ShellHacks 😊") ||
-                'Please fill out the application as soon as posible to secure your stop at ShellHacks.'
+                  'Yeah buoy! You’re confirmed for ShellHacks. Sea ya at the shore!') ||
+                'Water you doing? Fill out your application now to be considered for ShellHacks!'
               }
             />
           </div>

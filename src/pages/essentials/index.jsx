@@ -21,27 +21,27 @@ const Essentials = () => {
       <h1>Essentials</h1>
       <div className='essentials-container'>
         <div className='support-description'>
-          <p>Below is a few things we thinks will</p>
+          {/* <p>Below is a few things we thinks will</p> */}
         </div>
         <Card
-          title='Parking and Transportation'
-          // content={ParkingCardContent}
-          content={<p>Details are coming soon</p>}
-          titleIcon='car'
+          title='🚗 Directions & Transportation'
+          content={ParkingCardContent}
+          // content={<p>Details are coming soon</p>}
+          //titleIcon='car'
           {...props}
         />
         <Card
-          title='What should you bring to Shellhacks'
-          titleIcon='suitcase-rolling'
+          title='🧳 What to Bring'
+          //titleIcon='suitcase-rolling'
           content={ImportantItemsCardContent}
           {...props}
         />
-        <Card
-          title='Learning Tracks'
-          titleIcon='laptop'
+        {/* <Card
+          title='💻 Learning Tracks'
+          //titleIcon='laptop'
           content={LearningTracksCardContent}
           {...props}
-        />
+        /> */}
       </div>
     </div>
   )

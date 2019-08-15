@@ -13,3 +13,4 @@ export * from './errorMessage';
 export * from './navbar';
 export * from './switch';
 export * from './loading';
+export * from './multiSelect';

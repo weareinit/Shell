@@ -1,12 +1,12 @@
 export const announcementCardInfo = [
 
-	{
-		title: 'Application is Open!',
-		date: 'Not Dated',
-		description: 'Since InVision is a SaaS product with many features, it’s crucial that users understand the product as soon as possible. This could be why the company focuses on tutorials in its welcome email. The goal is to get customers using the product right away so they’ll discover how it might help with their business.',
-	}, {
-		title: 'Welcome!',
-		date: 'Not Dated',
-		description: 'Since InVision is a SaaS product with many features, it’s crucial that users understand the product as soon as possible. This could be why the company focuses on tutorials in its welcome email. The goal is to get customers using the product right away so they’ll discover how it might help with their business.',
-	},
+    {
+        title: '🥳 Welcome!',
+        date: '08/11 9:00 AM',
+        description: 'Welcome to the ShellHacks Dashboard! Here you can track the status of your application and keep up with announcements from our team. You can also check out essentials for the hackathon, view your profile, and reach out to our team for support. Make sure to keep a close eye on this page!',
+    }, {
+        title: '👩‍💻 Applications Are Open!',
+        date: '08/11 9:00 AM',
+        description: 'Our application inbox is officially open! You can access your application by clicking the link on the sidebar. Make sure to shoot your application our way before the deadline of September 1st. Acceptance decisions will be released shortly after!',
+    }
 ];

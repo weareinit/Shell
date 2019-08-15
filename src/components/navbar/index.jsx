@@ -2,12 +2,19 @@
  * Dashboard side-menu
  */
 import React, { Component, Fragment } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/logos/organizer/Icon_Logo.svg'
 import mixed from '../../utils/mixed'
-
+import {
+  faFacebookSquare,
+  faInstagram,
+  faLinkedin,
+  faTwitterSquare,
+  faDiscord,
+  faGithubSquare
+} from "@fortawesome/free-brands-svg-icons"; //need to pre-load in app.js
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import querries from '../../utils/querries'
 import './styles.css'
 
@@ -56,7 +63,9 @@ class SideBar extends Component {
         </header>
         <div className={`nav ` + (this.state.open ? '' : ' hide')}>
           <div className='desktop-logo'>
-            <Logo id='dashboard-shell' />
+            <Logo className="main-logo" id='dashboard-shell' onClick={()=>{
+            window.open("https://shellhacks.net");
+            }} />
             <h3 className='user'>
               {/* i have no idea why i didn't css this...but hey, too late! */}
               {mixed.wordCase(fullName)} 
@@ -119,7 +128,55 @@ class SideBar extends Component {
               Logout <FontAwesomeIcon icon='sign-out-alt' />
             </li>
           </ul>
-        </div>
+            <span className="social-media-container">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://discord.gg/upefiu"
+              >
+                {" "}
+                <FontAwesomeIcon icon={faDiscord} />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/upefiu/?hl=en"
+              >
+                {" "}
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/upefiu/"
+              >
+                {" "}
+                <FontAwesomeIcon icon={faFacebookSquare} />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/upefiu?lang=en"
+              >
+                <FontAwesomeIcon icon={faTwitterSquare} />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/company/upe-fiu"
+              >
+                {" "}
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/UPE-FIU"
+              >
+                <FontAwesomeIcon icon={faGithubSquare} />
+              </a>
+            </span>
+          </div>
       </Fragment>
     )
   }

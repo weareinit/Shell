@@ -8,28 +8,51 @@ import data from '../../config/data/essentials'
 import './styles.css'
 import tracks from '../../config/data/tracks.json'
 
-let { direction, parking, transportation, shouldBring, tracksDesc } = data
+let { direction, Northbound, Southbound, parking, transportation, shouldBring, tracksDesc } = data
 
 export const ParkingCardContent = (
   <div className='essentials-parking-card-content'>
+    <p>{direction.description}</p>
     <div className='arena-info-container'>
       <div className='arena-maps-image-container'>
         <ZoomableImg
           imageLink={
-            'https://parking.fiu.edu/wp-content/uploads/2018/08/082018-updated-general-tg-map.png'
+          require("../../assets/site/BBC.png")
           }
         />
       </div>
       <div className='parking-content'>
         <p className='essential-item-header'>{direction.title} </p>
         <br />
-        <p>{direction.address}</p>
+        <p>{direction.venue}</p>
+        <p>{direction.school}</p>
         <br />
         {direction.directions.map((item, i) => (
           <p key={i}>{item}</p>
         ))}
       </div>
     </div>
+
+    <div className='arena-info-container'>
+      <div className='parking-content'>
+          <p className='essential-item-header'>{Northbound.title} </p>
+          <br />
+          {Northbound.directions.map((item, i) => (
+            <p key={i}>{item}</p>
+          ))}
+        </div>
+
+        <br/>
+        <br/>
+
+        <div className='parking-content'>
+          <p className='essential-item-header'>{Southbound.title} </p>
+          <br />
+          {Southbound.directions.map((item, i) => (
+            <p key={i}>{item}</p>
+          ))}
+        </div>
+      </div>
 
     <div>
       <br />
@@ -97,7 +120,7 @@ export const LearningTracksCardContent = (
           <img
             className='essentials-holder-circle'
             alt='cirlcePlaceholder'
-            src={data.identifierPath}
+            src={require(`../../assets/tracks/${data.icon}`)}
           />
           <div className='track-details'>
             <p>{data.description}</p>
