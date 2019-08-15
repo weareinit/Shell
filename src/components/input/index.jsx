@@ -14,7 +14,8 @@ const Input = props => {
     type,
     label,
     placeholder,
-    extraStylesClass
+    extraStylesClass,
+    value
   } = props;
 
   return (
@@ -31,6 +32,7 @@ const Input = props => {
         type={type || "text"}
         style={error ? { border: "2px solid red" } : null}
         placeholder={placeholder}
+        value={value}
       />
     </>
   );

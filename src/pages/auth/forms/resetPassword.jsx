@@ -12,6 +12,7 @@ import {
 } from '../../../utils/validations'
 import services from '../../../services/routes'
 import States from '../states'
+import queryString from "query-string"
 import '../styles.css'
 
 const ResetPassword = ({ setAuthState }) => {
@@ -61,6 +62,9 @@ const ResetPassword = ({ setAuthState }) => {
     setAuthState(LOGIN)
   }
 
+  // Makes query params acessible
+  const params = queryString.parse(window.location.search);
+
   return (
     <Formik
       validationSchema={ResetPasswordValidation}
@@ -97,6 +101,7 @@ const ResetPassword = ({ setAuthState }) => {
               type='text'
               placeholder='Reset Code'
               error={!!touched.resetCode && errors.resetCode}
+              value={params.code}
             />
           </div>
           <div className='field-div'>

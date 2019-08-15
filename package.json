@@ -15,6 +15,7 @@
     "moment": "^2.24.0",
     "pm2": "^3.5.1",
     "qrcode.react": "^0.9.3",
+    "query-string": "^6.8.2",
     "react": "^16.8.6",
     "react-addons-update": "^15.6.2",
     "react-dom": "^16.8.6",
