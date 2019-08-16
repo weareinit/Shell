@@ -46,6 +46,10 @@
         }
     ],
     "levelOfStudyData": [{
+            "label": "Bootcamp Student",
+            "value": "Bootcamp Student"
+        },
+        {
             "value": "Freshman",
             "label": "Freshman"
         },
