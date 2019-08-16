@@ -33,15 +33,27 @@ class SchoolSelect extends React.Component {
     let notIsValid = touched && error
 
     const filterList = (list, input) => {
-      return list.filter(item => {
+      let results = list.filter(item => 
+      {
         let terms = input.split(" ");
         for (const term of terms) {
           if(!item.label.toLowerCase().includes(term.toLowerCase()))
             return false;
         }
         return true;
+      });
+
+      if (results.length == 0)
+      {
+        let otherOption = 
+        {
+          label: "Other (Feel free to contact us about adding your school, though!)",
+          value: "Other"
+        }
+        results.push(otherOption);
       }
-      )
+      
+      return results;
     };
 
     const initalOptions = () => {
