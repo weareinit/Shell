@@ -17,9 +17,9 @@
 
 ## Contributors
 
-[@Svilla27](https://github.com/Svilla27)
-[@mrmcpowned](https://github.com/mrmcpowned)
-[@boxslide15](https://github.com/boxslide15)
-[@yasmine0217](https://github.com/yasmine0217)
-[@mrmcpowned](https://github.com/mrmcpowned)
+[@Svilla27](https://github.com/Svilla27)<br/>
+[@mrmcpowned](https://github.com/mrmcpowned)<br/>
+[@boxslide15](https://github.com/boxslide15)<br/>
+[@yasmine0217](https://github.com/yasmine0217)<br/>
+[@mrmcpowned](https://github.com/mrmcpowned)<br/>
 [@Tommy2016x](https://github.com/Tommy2016x)
