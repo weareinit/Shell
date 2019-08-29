@@ -4,11 +4,11 @@
 
 ## Available scripts
 
-`yarn dev` - starts CRA dev server
-`yarn start` - starts production server with pm2
-`yarn stop` - stops pm2 process
-`yarn restart` - restarts pm2 process
-`yarn build` - bundle up react
+`yarn dev` - starts CRA dev server)<br/>
+`yarn start` - starts production server with pm2)<br/>
+`yarn stop` - stops pm2 process)<br/>
+`yarn restart` - restarts pm2 process)<br/>
+`yarn build` - bundle up react)<br/>
 `test` - Runs CRA tests
 
 ## Authors
