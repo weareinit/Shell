@@ -1,174 +1,174 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap");
 :root {
-    /* animation vars */
-    --waves-speed: 3s;
-    /* Colours */
-    --shell-dark-pink: #ff1d8e;
-    --shell-light-pink: #e86ba4;
-    --shell-teal: #22c3d5;
-    --shell-navy: #172a61;
-    --shell-sand: #fbedca;
-    --shell-dark-brown: #665b50;
-    --shell-mid-brown: #8e7a69;
-    --shell-light-brown: #9e8d7d;
-    --shell-gradient: linear-gradient(#22c3d5, #172a61);
-    /* line heights */
-    --line-height-xsmall: 1.5384615em;
-    --line-height-small: 1.25em;
-    --line-height-large: 1.375em;
-    --paragraph-height: 1.5em;
-    /* Mobile */
-    --paragraph: 14px;
-    --sub-heading: 1.4rem;
-    --heading: 1.8rem;
-    --heading-bg: 2rem;
+  /* animation vars */
+  --waves-speed: 3s;
+  /* Colours */
+  --shell-dark-pink: #ff1d8e;
+  --shell-light-pink: #e86ba4;
+  --shell-teal: #22c3d5;
+  --shell-navy: #172a61;
+  --shell-sand: #fbedca;
+  --shell-dark-brown: #665b50;
+  --shell-mid-brown: #8e7a69;
+  --shell-light-brown: #9e8d7d;
+  --shell-gradient: linear-gradient(#22c3d5, #172a61);
+  /* line heights */
+  --line-height-xsmall: 1.5384615em;
+  --line-height-small: 1.25em;
+  --line-height-large: 1.375em;
+  --paragraph-height: 1.5em;
+  /* Mobile */
+  --paragraph: 14px;
+  --sub-heading: 1.4rem;
+  --heading: 1.8rem;
+  --heading-bg: 2rem;
 }
 
 @media screen and (min-width: 800px) {
-    /* Desktop */
-     :root {
-        --paragraph: 1.2rem;
-        --sub-heading: 1.777rem;
-        --heading: 2.369rem;
-        --heading-bg: 3.157rem;
-    }
+  /* Desktop */
+  :root {
+    --paragraph: 1.2rem;
+    --sub-heading: 1.777rem;
+    --heading: 2.369rem;
+    --heading-bg: 3.157rem;
+  }
 }
 
 @media screen and (max-width: 800px) and (min-width: 500px) {
-    /* Tablets */
-     :root {
-        --paragraph: 1.2rem;
-        --sub-heading: 1.777rem;
-        --heading: 2.369rem;
-        --heading-bg: 3.157rem;
-    }
+  /* Tablets */
+  :root {
+    --paragraph: 1.2rem;
+    --sub-heading: 1.777rem;
+    --heading: 2.369rem;
+    --heading-bg: 3.157rem;
+  }
 }
-
 
 /* Containers */
 
 html,
 body {
-    height: 100%;
-    width: 100vw;
-    background: var(--shell-sand);
-    color: white;
+  height: 100%;
+  width: 100vw;
+  background: var(--shell-sand);
+  color: white;
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 section {
-    min-height: 100vh;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 10%;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10%;
 }
 
 ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #c4baa2;
-    opacity: 1;
-    /* Firefox */
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c4baa2;
+  opacity: 1;
+  /* Firefox */
 }
 
 :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #c4baa2;
+  /* Internet Explorer 10-11 */
+  color: #c4baa2;
 }
 
 ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: #c4baa2;
+  /* Microsoft Edge */
+  color: #c4baa2;
 }
 
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 * {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
-
 
 /* contents */
 
 * a:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input {
-    font-weight: 500;
-    color: var(--shell-dark-brown);
+  font-weight: 500;
+  color: var(--shell-dark-brown);
 }
 
 .links {
-    color: var(--shell-sand);
-    text-decoration: underline;
+  color: var(--shell-sand);
+  text-decoration: underline;
 }
 
 h1 {
-    font-size: var(--heading-bg);
-    font-weight: 700;
-    line-height: var(--line-height-small);
+  font-size: var(--heading-bg);
+  font-weight: 700;
+  line-height: var(--line-height-small);
 }
 
 h2 {
-    font-size: var(--heading);
-    font-weight: 700;
-    line-height: var(--line-height-small);
+  font-size: var(--heading);
+  font-weight: 700;
+  line-height: var(--line-height-small);
 }
 
 h3 {
-    font-size: var(--sub-heading);
-    font-weight: 600;
+  font-size: var(--sub-heading);
+  font-weight: 600;
 }
 
 h4 {
-    font-size: var(--paragraph);
-    line-height: var(--paragraph-height);
-    font-weight: 400;
+  font-size: var(--paragraph);
+  line-height: var(--paragraph-height);
+  font-weight: 400;
 }
 
 p {
-    font-size: var(--paragraph);
-    line-height: var(--paragraph-height);
-    font-weight: 500;
+  font-size: var(--paragraph);
+  line-height: var(--paragraph-height);
+  font-weight: 500;
 }
 
 .hover-effect:hover {
-    background-color: var(--shell-dark-pink);
-    color: white;
+  background-color: var(--shell-dark-pink);
+  color: white;
 }
 
 .dashboard-card {
-    background-color: var(--shell-teal);
+  background-color: var(--shell-teal);
 }
 
 .active-dashboard-card {
-    background-color: var(--shell-light-pink);
+  background-color: var(--shell-light-pink);
 }
 
 code {
-    background: #9e8d7d;
-    color: white;
-    border-radius: 5px;
-    white-space: pre-wrap;
-    padding: 1px 5px;
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
+  background: #9e8d7d;
+  color: white;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  padding: 1px 5px;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+    sans-serif;
 }

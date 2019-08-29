@@ -1,7 +1,21 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "shell",
+  "version": "1.0.0",
+  "description": "dashboard for shellhacks 2019",
+  "author": "jehf k. denezaire <jehf.denezaire@gmail.com>",
+  "repository": "https://github.com/UPE-FIU/Shell.git",
+  "license": "MIT",
   "private": true,
+  "main": "server.js",
+  "scripts": {
+    "dev": "react-scripts start",
+    "start": "yarn build && pm2 start",
+    "restart": "yarn build && pm2 restart Dashboard",
+    "stop": "pm2 stop Dashboard",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
@@ -9,6 +23,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "finalhandler": "^1.1.2",
     "formik": "^1.5.1",
     "formik-error-focus": "^1.0.0",
     "google-libphonenumber": "^3.2.3",
@@ -28,14 +46,8 @@
     "react-scroll-horizontal": "^1.6.2",
     "react-select": "^3.0.4",
     "react-spinners": "^0.5.5",
+    "serve-static": "^1.14.1",
     "yup": "^0.27.0"
-  },
-  "scripts": {
-    "deploy": "pm2 start my-app/node_modules/react-scripts/scripts/start.js --name 'Dashboard' --watch",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [

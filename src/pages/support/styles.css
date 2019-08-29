@@ -1,15 +1,14 @@
 .support-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 .support-description {
-    margin: 0 0 50px;
+  margin: 0 0 50px;
 }
 
-.support-container a
-{
-    color: var(--shell-sand)
+.support-container a {
+  color: var(--shell-sand);
 }

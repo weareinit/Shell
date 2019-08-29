@@ -2,26 +2,25 @@
  * Reusable select component using react-select
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import { default as ReactSelect } from 'react-select'
-import { InlineError } from '../errorMessage'
-import './styles.css'
+import React from "react";
+import PropTypes from "prop-types";
+import { default as ReactSelect } from "react-select";
+import { InlineError } from "../errorMessage";
+import "./styles.css";
 
 class MultiSelect extends React.Component {
   handleChange = async value => {
     // call setFieldValue and manually update values.this.props.name
-     if(value === null) 
-     await this.props.onChange(this.props.name, [])
-     else await this.props.onChange(this.props.name, value)
-  }
+    if (value === null) await this.props.onChange(this.props.name, []);
+    else await this.props.onChange(this.props.name, value);
+  };
 
   handleBlur = async () => {
     // call setFieldTouched and manually update touched.this.props.name
-    await this.props.onBlur(this.props.name, true)
-  }
+    await this.props.onBlur(this.props.name, true);
+  };
 
-  render () {
+  render() {
     let {
       options,
       className,
@@ -32,32 +31,32 @@ class MultiSelect extends React.Component {
       touched,
       name,
       defaultValue
-    } = this.props
-    let notIsValid = touched && error
+    } = this.props;
+    let notIsValid = touched && error;
 
     const selectStyles = {
       control: (base, state) => ({
         ...base,
-        padding: '3px',
-        borderWidth: '1px',
-        borderStyle: ' solid ',
-        borderRadius: '8px',
+        padding: "3px",
+        borderWidth: "1px",
+        borderStyle: " solid ",
+        borderRadius: "8px",
         borderColor: state.isFocused
-          ? '#22c3d5'
+          ? "#22c3d5"
           : notIsValid
-            ? 'red'
-            : 'var(--shell-sand)',
+          ? "red"
+          : "var(--shell-sand)",
         // overwrittes hover style
-        '&:hover': {
+        "&:hover": {
           borderColor: state.isFocused
-            ? '#22c3d5'
+            ? "#22c3d5"
             : notIsValid
-              ? 'red'
-              : 'var(--shell-sand)'
+            ? "red"
+            : "var(--shell-sand)"
         },
-        placeholder: { color: 'red' }
+        placeholder: { color: "red" }
       })
-    }
+    };
 
     return (
       <>
@@ -68,7 +67,7 @@ class MultiSelect extends React.Component {
           labelName={name}
         />
         <ReactSelect
-          classNamePrefix='react-select'
+          classNamePrefix="react-select"
           styles={selectStyles}
           onChange={this.handleChange}
           onBlur={this.handleBlur}
@@ -81,7 +80,7 @@ class MultiSelect extends React.Component {
           name={name}
         />
       </>
-    )
+    );
   }
 }
 
@@ -93,6 +92,6 @@ MultiSelect.propTypes = {
   onBlur: PropTypes.func,
   setValue: PropTypes.func,
   placeholder: PropTypes.string
-}
+};
 
-export { MultiSelect }
+export { MultiSelect };

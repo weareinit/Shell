@@ -11,7 +11,7 @@ class BlockError extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shouldShow: false,
+      shouldShow: false
     };
   }
 
@@ -45,7 +45,7 @@ BlockError.propTypes = {
   shouldShow: PropTypes.bool.isRequired,
   errors: PropTypes.array.isRequired,
   children: PropTypes.element,
-  extraStylesClass: PropTypes.string,
+  extraStylesClass: PropTypes.string
 };
 
 const InlineError = ({ shouldShow, extraStylesClass, error, label, name }) => {
@@ -68,7 +68,7 @@ InlineError.propTypes = {
   error: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string,
-  extraStylesClass: PropTypes.string,
+  extraStylesClass: PropTypes.string
 };
 
 export { BlockError, InlineError };

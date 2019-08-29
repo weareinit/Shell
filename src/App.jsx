@@ -2,12 +2,12 @@
  * Main component
  */
 
-import React, { Component, Fragment } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import Navigation from './navigation'
-import './css/App.css'
+import React, { Component, Fragment } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Navigation from "./navigation";
+import "./css/App.css";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faFacebookSquare,
   faInstagram,
@@ -15,8 +15,8 @@ import {
   faTwitter,
   faDiscord,
   faTwitterSquare,
-  faGithubSquare,
-} from '@fortawesome/free-brands-svg-icons'
+  faGithubSquare
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faCheck,
   faSignOutAlt,
@@ -27,8 +27,8 @@ import {
   faSpinner,
   faTimes,
   faPlus,
-  faMinus,
-} from '@fortawesome/free-solid-svg-icons'
+  faMinus
+} from "@fortawesome/free-solid-svg-icons";
 
 // preloading icons
 library.add(
@@ -48,9 +48,8 @@ library.add(
   faSpinner,
   faTimes,
   faPlus,
-  faMinus,
-)
-
+  faMinus
+);
 
 class App extends Component {
   render() {
@@ -60,8 +59,8 @@ class App extends Component {
           <Navigation />
         </BrowserRouter>
       </Fragment>
-    )
+    );
   }
 }
 
-export default App
+export default App;

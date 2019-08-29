@@ -1,14 +1,14 @@
 .react-select__placeholder {
-    color: #c5bba3 !important;
-    font-weight: 500;
+  color: #c5bba3 !important;
+  font-weight: 500;
 }
 
 .react-select__menu {
-    font-weight: 500;
-    color: var(--shell-dark-brown);
+  font-weight: 500;
+  color: var(--shell-dark-brown);
 }
 
 .css-1uccc91-singleValue {
-    font-weight: 500;
-    color: var(--shell-mid-brown) !important;
+  font-weight: 500;
+  color: var(--shell-mid-brown) !important;
 }
