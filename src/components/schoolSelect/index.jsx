@@ -2,24 +2,23 @@
  * select component for schools using react-select
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import { default as AsyncSelect } from 'react-select/async'
-import { InlineError } from '../errorMessage'
-import './styles.css'
+import React from "react";
+import PropTypes from "prop-types";
+import { default as AsyncSelect } from "react-select/async";
+import { InlineError } from "../errorMessage";
 
 class SchoolSelect extends React.Component {
   handleChange = async value => {
     // call setFieldValue and manually update values.this.props.name
-    await this.props.onChange(this.props.name, value.value)
-  }
+    await this.props.onChange(this.props.name, value.value);
+  };
 
   handleBlur = async () => {
     // call setFieldTouched and manually update touched.this.props.name
-    await this.props.onBlur(this.props.name, true)
-  }
+    await this.props.onBlur(this.props.name, true);
+  };
 
-  render () {
+  render() {
     let {
       options,
       className,
@@ -29,99 +28,96 @@ class SchoolSelect extends React.Component {
       error,
       touched,
       name
-    } = this.props
-    let notIsValid = touched && error
+    } = this.props;
+    let notIsValid = touched && error;
 
     const filterList = (list, input) => {
-      let results = list.filter(item => 
-      {
+      let results = list.filter(item => {
         let terms = input.split(" ");
         for (const term of terms) {
-          if(!item.label.toLowerCase().includes(term.toLowerCase()))
+          if (!item.label.toLowerCase().includes(term.toLowerCase()))
             return false;
         }
         return true;
       });
 
-      if (results.length == 0)
-      {
-        let otherOption = 
-        {
-          label: "Other (Feel free to contact us about adding your school, though!)",
+      if (results.length == 0) {
+        let otherOption = {
+          label:
+            "Other (Feel free to contact us about adding your school, though!)",
           value: "Other"
-        }
+        };
         results.push(otherOption);
       }
-      
+
       return results;
     };
 
     const initalOptions = () => {
-      let initialList = options.slice(0,51)
+      let initialList = options.slice(0, 51);
       addDisclaimer(initialList);
 
       return initialList;
     };
 
-    const addDisclaimer = (list) => {
+    const addDisclaimer = list => {
       let message = {
-        label: "This list contains more than 50 schools. Please refine your search to see more.",
+        label:
+          "This list contains more than 50 schools. Please refine your search to see more.",
         value: "",
         isDisabled: true
-      }
+      };
       list.push(message);
-    }
+    };
 
-    const loadList = (input) =>
-    {
-      if(input === ''){
+    const loadList = input => {
+      if (input === "") {
         return initalOptions();
       }
 
       let list = filterList(options, input);
-      if(list.length > 50)
-      {
-        list = list.slice(0,51);
+      if (list.length > 50) {
+        list = list.slice(0, 51);
         addDisclaimer(list);
       }
       return list;
-    }
+    };
 
     const promiseOptions = inputValue =>
       new Promise(resolve => {
         setTimeout(() => {
           resolve(loadList(inputValue));
         }, 1000);
-    });
+      });
 
     const selectStyles = {
       control: (base, state) => ({
         ...base,
-        padding: '3px',
-        borderWidth: '1px',
-        borderStyle: ' solid ',
-        borderRadius: '8px',
+        padding: "3px",
+        borderWidth: "1px",
+        borderStyle: " solid ",
+        borderRadius: "8px",
         borderColor: state.isFocused
-          ? '#22c3d5'
+          ? "#22c3d5"
           : notIsValid
-            ? 'red'
-            : 'var(--shell-sand)',
+          ? "red"
+          : "var(--shell-sand)",
         // overwrittes hover style
-        '&:hover': {
+        "&:hover": {
           borderColor: state.isFocused
-            ? '#22c3d5'
+            ? "#22c3d5"
             : notIsValid
-              ? 'red'
-              : 'var(--shell-sand)'
+            ? "red"
+            : "var(--shell-sand)"
         },
-        placeholder: { color: 'red' }
+        placeholder: { color: "red" }
       }),
       option: (base, state) => ({
-        ...base, 
-        color: state.isDisabled ? 'rgba(255,0,0,.5)' : base.color,
-        fontWeight: state.isDisabled ? 'bold' : base.fontWeight
+        ...base,
+        color: state.isDisabled ? "rgba(255,0,0,.5)" : base.color,
+        fontWeight: state.isDisabled ? "bold" : base.fontWeight
       })
-    }
+    };
 
     return (
       <>
@@ -132,7 +128,7 @@ class SchoolSelect extends React.Component {
           labelName={name}
         />
         <AsyncSelect
-          classNamePrefix='react-select'
+          classNamePrefix="react-select"
           styles={selectStyles}
           onChange={this.handleChange}
           onBlur={this.handleBlur}
@@ -144,7 +140,7 @@ class SchoolSelect extends React.Component {
           name={name}
         />
       </>
-    )
+    );
   }
 }
 
@@ -156,6 +152,6 @@ SchoolSelect.propTypes = {
   onBlur: PropTypes.func,
   setValue: PropTypes.func,
   placeholder: PropTypes.string
-}
+};
 
-export { SchoolSelect }
+export { SchoolSelect };

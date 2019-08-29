@@ -1,30 +1,30 @@
 .submit-button {
-    width: 100%;
-    max-width: 280px;
-    padding: 12.5555px;
-    margin-bottom: 25px;
-    border-radius: 40px;
-    border: none;
-    font-size: 100%;
-    font-weight: 600;
-    color: white;
-    background-color: var(--shell-dark-brown);
+  width: 100%;
+  max-width: 280px;
+  padding: 12.5555px;
+  margin-bottom: 25px;
+  border-radius: 40px;
+  border: none;
+  font-size: 100%;
+  font-weight: 600;
+  color: white;
+  background-color: var(--shell-dark-brown);
 }
 
 .submit-button p {
-    font-weight: 900;
-    text-transform: capitalize;
+  font-weight: 900;
+  text-transform: capitalize;
 }
 
 .submit-button:hover {
-    cursor: pointer;
-    background: var(--shell-mid-brown);
+  cursor: pointer;
+  background: var(--shell-mid-brown);
 }
 
 .card-button h3,
 .card-button h4 {
-    line-height: 130%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+  line-height: 130%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }

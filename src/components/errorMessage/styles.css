@@ -1,43 +1,43 @@
 .error-message {
-    background-color: #e86b6b;
-    color: white;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    width: 100%;
-    margin: 25px 0;
-    font-family: "Montserrat", sans-serif;
-    font-size: 100%;
-    box-shadow: 0 0 3px 0.2px var(--shell-sand);
+  background-color: #e86b6b;
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+  margin: 25px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%;
+  box-shadow: 0 0 3px 0.2px var(--shell-sand);
 }
 
 .error-message li {
-    width: 100%;
-    list-style-position: inside;
-    line-height: 130%;
-    display: inline-flex;
-    align-items: center;
+  width: 100%;
+  list-style-position: inside;
+  line-height: 130%;
+  display: inline-flex;
+  align-items: center;
 }
 
 .error-message li svg {
-    margin: 5px;
+  margin: 5px;
 }
 
 .inline-error-message {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .inline-error-message p {
-    color: rgb(251, 62, 68);
-    font-size: 14px;
-    font-weight: 600;
+  color: rgb(251, 62, 68);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .inline-error-message label {
-    font-size: var(--paragraph);
+  font-size: var(--paragraph);
 }

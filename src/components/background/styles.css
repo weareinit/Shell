@@ -1,142 +1,142 @@
 #wave-background-objects {
-    background: var(--shell-sand);
-    display: block;
-    position: absolute;
-    z-index: 0;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
+  background: var(--shell-sand);
+  display: block;
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 .wave-child {
-    position: absolute;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    z-index: 10;
-    overflow-y: auto;
-    overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  z-index: 10;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .decor {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
 }
 
 #seat1 {
-    left: 0;
-    width: 400px;
+  left: 0;
+  width: 400px;
 }
 
 #seat2 {
-    right: 0;
-    width: 320px;
+  right: 0;
+  width: 320px;
 }
 
 #shore {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 1920px;
-    min-width: 100%;
-    z-index: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1920px;
+  min-width: 100%;
+  z-index: 0;
 }
 
 #wetsand,
 #surf {
-    position: relative;
+  position: relative;
 }
 
-#wetsand>*,
-#surf>* {
-    position: absolute;
-    bottom: -57px;
-    left: 0;
-    min-width: 100%;
+#wetsand > *,
+#surf > * {
+  position: absolute;
+  bottom: -57px;
+  left: 0;
+  min-width: 100%;
 }
 
 @keyframes wetsand3 {
-    from {
-        bottom: -10px;
-    }
-    to {
-        bottom: -5px;
-    }
+  from {
+    bottom: -10px;
+  }
+  to {
+    bottom: -5px;
+  }
 }
 
 #wetsand3 {
-    animation: wetsand3 var(--waves-speed) ease 1.6s infinite alternate;
-    bottom: -5px;
+  animation: wetsand3 var(--waves-speed) ease 1.6s infinite alternate;
+  bottom: -5px;
 }
 
 @keyframes wetsand2 {
-    from {
-        bottom: -70px;
-    }
-    to {
-        bottom: -10px;
-    }
+  from {
+    bottom: -70px;
+  }
+  to {
+    bottom: -10px;
+  }
 }
 
 #wetsand2 {
-    animation: wetsand2 var(--waves-speed) ease 1.5s infinite alternate;
-    bottom: -70px;
+  animation: wetsand2 var(--waves-speed) ease 1.5s infinite alternate;
+  bottom: -70px;
 }
 
 @keyframes wetsand1 {
-    from {
-        bottom: -90px;
-    }
-    to {
-        bottom: -1px;
-    }
+  from {
+    bottom: -90px;
+  }
+  to {
+    bottom: -1px;
+  }
 }
 
 #wetsand1 {
-    animation: wetsand1 var(--waves-speed) ease 1.2s infinite alternate;
-    bottom: -10px;
+  animation: wetsand1 var(--waves-speed) ease 1.2s infinite alternate;
+  bottom: -10px;
 }
 
 @keyframes surf3 {
-    from {
-        bottom: -80px;
-    }
-    to {
-        bottom: 5px;
-    }
+  from {
+    bottom: -80px;
+  }
+  to {
+    bottom: 5px;
+  }
 }
 
 #surf3 {
-    animation: surf3 var(--waves-speed) ease 0.5s infinite alternate;
-    bottom: -15px;
+  animation: surf3 var(--waves-speed) ease 0.5s infinite alternate;
+  bottom: -15px;
 }
 
 @keyframes surf2 {
-    from {
-        bottom: -150px;
-    }
-    to {
-        bottom: -5px;
-    }
+  from {
+    bottom: -150px;
+  }
+  to {
+    bottom: -5px;
+  }
 }
 
 #surf2 {
-    animation: surf2 var(--waves-speed) ease 0.3s infinite alternate;
-    bottom: -50px;
+  animation: surf2 var(--waves-speed) ease 0.3s infinite alternate;
+  bottom: -50px;
 }
 
 @keyframes surf1 {
-    from {
-        bottom: -200px;
-    }
-    to {
-        bottom: 0px;
-    }
+  from {
+    bottom: -200px;
+  }
+  to {
+    bottom: 0px;
+  }
 }
 
 #surf1 {
-    animation: surf1 var(--waves-speed) ease 0s infinite alternate;
-    bottom: -50px;
-    z-index: 2;
+  animation: surf1 var(--waves-speed) ease 0s infinite alternate;
+  bottom: -50px;
+  z-index: 2;
 }

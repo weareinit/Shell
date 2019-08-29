@@ -2,23 +2,23 @@
  * Renders after a successful registration
  */
 
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Formik, Form } from 'formik'
-import { Input, Button, BlockError } from '../../../components'
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Formik, Form } from "formik";
+import { Input, Button, BlockError } from "../../../components";
 import {
   RegistrationCodeValidation,
   RegistrationCodeInitialValues
-} from '../../../utils/validations'
-import services from '../../../services/routes'
-import States from '../states'
-import queryString from "query-string"
-import '../styles.css'
+} from "../../../utils/validations";
+import services from "../../../services/routes";
+import States from "../states";
+import queryString from "query-string";
+import "../styles.css";
 
 const Verify = ({ setAuthState }) => {
-  const { BAD_REQUEST, FAILED_REQUEST, LOGIN, RESEND_VERIFY_CODE } = States
-  const [otherFaillure, setOtherFaillure] = useState(false)
-  const [badRequest, setBadRequest] = useState(false)
+  const { BAD_REQUEST, FAILED_REQUEST, LOGIN, RESEND_VERIFY_CODE } = States;
+  const [otherFaillure, setOtherFaillure] = useState(false);
+  const [badRequest, setBadRequest] = useState(false);
 
   /**
    * Shows error for 15 secs on submittion faillures
@@ -26,18 +26,18 @@ const Verify = ({ setAuthState }) => {
    */
   const submitionFaillure = problem => {
     if (problem === BAD_REQUEST) {
-      setBadRequest(true)
+      setBadRequest(true);
       setTimeout(() => {
-        setBadRequest(false)
-      }, 15000) // remove error from screen
+        setBadRequest(false);
+      }, 15000); // remove error from screen
     }
     if (problem === FAILED_REQUEST) {
-      setOtherFaillure(true)
+      setOtherFaillure(true);
       setTimeout(() => {
-        setOtherFaillure(false)
-      }, 15000) // remove error from screen
+        setOtherFaillure(false);
+      }, 15000); // remove error from screen
     }
-  }
+  };
 
   /**
    * submits form values
@@ -47,19 +47,19 @@ const Verify = ({ setAuthState }) => {
     let data = {
       emailConfirmationToken: values.verificationCode,
       email: values.email
-    }
-    services.verifyEmail(data, setAuthState, submitionFaillure)
-  }
+    };
+    services.verifyEmail(data, setAuthState, submitionFaillure);
+  };
 
   // navigates to login
   const goToLogin = () => {
-    setAuthState(LOGIN)
-  }
+    setAuthState(LOGIN);
+  };
 
   // navigates to resend code
   const goToResend = () => {
-    setAuthState(RESEND_VERIFY_CODE)
-  }
+    setAuthState(RESEND_VERIFY_CODE);
+  };
 
   // Makes query params acessible
   const params = queryString.parse(window.location.search);
@@ -67,11 +67,14 @@ const Verify = ({ setAuthState }) => {
   return (
     <Formik
       validationSchema={RegistrationCodeValidation}
-      initialValues={{...RegistrationCodeInitialValues, verificationCode: params.code}}
+      initialValues={{
+        ...RegistrationCodeInitialValues,
+        verificationCode: params.code
+      }}
       onSubmit={handleSubmit}
       render={({ touched, errors }) => (
-        <Form className='success-form'>
-          <div className='welcome-message'>
+        <Form className="success-form">
+          <div className="welcome-message">
             <h1>Verify Email</h1>
           </div>
           <BlockError
@@ -80,7 +83,7 @@ const Verify = ({ setAuthState }) => {
                 errors.verificationCode ||
                 (badRequest &&
                   "Ummm...🤔 Something's with the information you provided") ||
-                (otherFaillure && 'Something went wrong 😕')
+                (otherFaillure && "Something went wrong 😕")
             ]}
             shouldShow={
               !!(errors.email && touched.email) ||
@@ -89,40 +92,40 @@ const Verify = ({ setAuthState }) => {
               otherFaillure
             }
           />
-          <div className='field-div'>
+          <div className="field-div">
             <Input
-              name='email'
-              type='eamil'
-              placeholder='Email Address'
+              name="email"
+              type="eamil"
+              placeholder="Email Address"
               error={!!touched.email && errors.email}
             />
           </div>
-          <div className='field-div'>
+          <div className="field-div">
             <Input
-              name='verificationCode'
-              type='text'
-              placeholder='Email Verification Code'
+              name="verificationCode"
+              type="text"
+              placeholder="Email Verification Code"
               error={!!touched.verificationCode && errors.verificationCode}
             />
           </div>
-          <div className='auth-submit-button-container'>
+          <div className="auth-submit-button-container">
             <Button
-              title='Activate Account'
-              type='submits'
-              id='register-success'
-              extraStyles='auth-button-extra-styles'
+              title="Activate Account"
+              type="submits"
+              id="register-success"
+              extraStyles="auth-button-extra-styles"
             />
           </div>
-          <div className='auth-question-buttons'>
+          <div className="auth-question-buttons">
             <p onClick={goToResend}>Need a New Code?</p>
             <p onClick={goToLogin}>Go Back to Login</p>
           </div>
         </Form>
       )}
     />
-  )
-}
+  );
+};
 Verify.propType = {
   setAuthState: PropTypes.func.isRequired
-}
-export default Verify
+};
+export default Verify;

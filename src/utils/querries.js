@@ -1,18 +1,20 @@
-import States from "../pages/auth/states"
+import States from "../pages/auth/states";
 
 //Auth states
-const {LOGIN,
-	SIGNUP,
-	VERIFY_EMAIL,
-	FORGOT_PASSWORD,
-	RESET_PASSWORD,
-	RESEND_VERIFY_CODE } = States;
+const {
+  LOGIN,
+  SIGNUP,
+  VERIFY_EMAIL,
+  FORGOT_PASSWORD,
+  RESET_PASSWORD,
+  RESEND_VERIFY_CODE
+} = States;
 
 /**
  * Handles local data management and user token
  */
 
-const JWT = 'JWT';
+const JWT = "JWT";
 
 /**
  * append a value with assigned key to USER in local storage
@@ -20,7 +22,7 @@ const JWT = 'JWT';
  * @param {Any} value - value to be stored
  */
 function storeItem(key, value) {
-	localStorage.setItem(key, value);
+  localStorage.setItem(key, value);
 }
 
 /**
@@ -28,7 +30,7 @@ function storeItem(key, value) {
  * @param {String} key - retriving value key
  */
 function retrieveItem(key) {
-	return localStorage.getItem(key);
+  return localStorage.getItem(key);
 }
 
 /**
@@ -36,15 +38,15 @@ function retrieveItem(key) {
  * @param {String} key - key of value to be deleted
  */
 function removeItem(key) {
-	return localStorage.removeItem(key);
+  return localStorage.removeItem(key);
 }
 
 /**
  * Removes token from local storage then navigate to auth page
  */
 async function deAuthorize() {
-	await removeItem(JWT);
-	return;
+  await removeItem(JWT);
+  return;
 }
 
 /**
@@ -52,18 +54,18 @@ async function deAuthorize() {
  * @param {Object} history - react router history object
  */
 function isAuthorized() {
-	try {
-		const token = retrieveItem(JWT);
-		return token;
-	} catch (e) {
-		alert('WHOOPS! Looks like you shouldn\'t be here...Please Login');
-		deAuthorize();
-	}
+  try {
+    const token = retrieveItem(JWT);
+    return token;
+  } catch (e) {
+    alert("WHOOPS! Looks like you shouldn't be here...Please Login");
+    deAuthorize();
+  }
 }
 export default {
-	storeItem,
-	retrieveItem,
-	removeItem,
-	isAuthorized,
-	deAuthorize,
+  storeItem,
+  retrieveItem,
+  removeItem,
+  isAuthorized,
+  deAuthorize
 };

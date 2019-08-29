@@ -1,89 +1,86 @@
 {
-    "direction": {
-        "description": " Feeling lost at sea? Find information on how to get to ShellHacks and where to park below:",
-        "title": "Venue Address",
-        "venue": "Kovens Conference Center",
-        "school": "Florida International University",
-        "directions": [
-            "Biscayne Bay Campus",
-            "3000 NE 151st Street",
-            "North Miami, FL 33181",
-            "(305) 919-5000"
+  "direction": {
+    "description": " Feeling lost at sea? Find information on how to get to ShellHacks and where to park below:",
+    "title": "Venue Address",
+    "venue": "Kovens Conference Center",
+    "school": "Florida International University",
+    "directions": [
+      "Biscayne Bay Campus",
+      "3000 NE 151st Street",
+      "North Miami, FL 33181",
+      "(305) 919-5000"
+    ]
+  },
+  "Northbound": {
+    "title": "Coming North of FIU BBC",
+    "directions": [
+      "Take I-95 Southbound",
+      "Take exit 16 for NE 203rd Street/Ives Dairy Rd",
+      "Turn left onto NE 203rd Street/Ives Dairy Rd",
+      "Turn right onto US-1 South/Biscayne Blvd",
+      "Turn left on NE 151st Street",
+      "Continue onto Main Rd",
+      "Turn left toward Kovens Conference Center"
+    ]
+  },
+  "Southbound": {
+    "title": "Coming South of FIU BBC",
+    "directions": [
+      "Take I-95 Northbound",
+      "Take exit 10B for NW 135th Street/Opa-Locka Blvd",
+      "Turn right onto NW 135th Street/Opa-Locka Blvd",
+      "Turn left onto FL-909 North",
+      "Turn right onto NE 151 Street",
+      "Continue onto Main Rd",
+      "Turn left toward Kovens Conference Center"
+    ]
+  },
 
-        ]
+  "parking": {
+    "title": "Parking",
+    "description": "Parking is available for free in Parking Lot 5. You must register your car upon arrival when you check in (don’t forget your plate number!)"
+  },
+  "transportation": {
+    "title": "Buses",
+    "description": "Buses will be sent to schools with the most registrations (so be sure to spread the word!). Check back later for the list of schools and links to sign up!"
+  },
+  "shouldBring": {
+    "description": "We want everyone feeling fine and sandy at ShellHacks! Here are some items we suggest to bring with you for a great time:",
+    "optional": {
+      "title": "Essentials",
+      "items": [
+        "Backpack",
+        "Laptop & charger",
+        "Phone & charger",
+        "Headphones",
+        "Change of clothes",
+        "Sweater",
+        "Toothbrush & toothpaste",
+        "Mouthwash",
+        "Deodorant",
+        "Towel",
+        "Sleeping bag, pillow, blanket",
+        "Water Bottle",
+        "Pen & paper",
+        "Resume"
+      ]
     },
-    "Northbound":{
-        "title": "Coming North of FIU BBC",
-        "directions":[
-            "Take I-95 Southbound",
-            "Take exit 16 for NE 203rd Street/Ives Dairy Rd",
-            "Turn left onto NE 203rd Street/Ives Dairy Rd",
-            "Turn right onto US-1 South/Biscayne Blvd",
-            "Turn left on NE 151st Street",
-            "Continue onto Main Rd",
-            "Turn left toward Kovens Conference Center"
-        ]
-
-    },
-    "Southbound":{
-        "title": "Coming South of FIU BBC",
-        "directions":[   
-            "Take I-95 Northbound",
-            "Take exit 10B for NW 135th Street/Opa-Locka Blvd",
-            "Turn right onto NW 135th Street/Opa-Locka Blvd",
-            "Turn left onto FL-909 North",
-            "Turn right onto NE 151 Street",
-            "Continue onto Main Rd",
-            "Turn left toward Kovens Conference Center"
-        ]
-
-    },
-
-    "parking": {
-        "title": "Parking",
-        "description": "Parking is available for free in Parking Lot 5. You must register your car upon arrival when you check in (don’t forget your plate number!)"
-    },
-    "transportation": {
-        "title": "Buses",
-        "description": "Buses will be sent to schools with the most registrations (so be sure to spread the word!). Check back later for the list of schools and links to sign up!"
-    },
-    "shouldBring": {
-        "description": "We want everyone feeling fine and sandy at ShellHacks! Here are some items we suggest to bring with you for a great time:",
-        "optional": {
-            "title": "Essentials",
-            "items": [
-                "Backpack",
-                "Laptop & charger",
-                "Phone & charger",
-                "Headphones",
-                "Change of clothes",
-                "Sweater",
-                "Toothbrush & toothpaste",
-                "Mouthwash",
-                "Deodorant",
-                "Towel",
-                "Sleeping bag, pillow, blanket",
-                "Water Bottle",
-                "Pen & paper",
-                "Resume"
-            ]
-        },
-        "essential": {
-            "title": "Optional",
-            "items": [
-                "Monitor",
-                "Keyboard & mouse",
-                "USB Drive",
-                "Swimwear",
-                "Sunglasses",
-                "Sunscreen",
-                "Hat",
-                "Earplugs",
-                "Sleeping mask",
-                "Floaties",
-                "Yoga mat"             
-            ]
-        }
-    },
-    "tracksDesc": "Do you love tinkering with databases, but aren’t really sure how the front-end works? Or maybe all you’ve ever done is Java, but you really want to work with microcontrollers? At ShellHacks, we offer learning tracks for everyone to learn new skills in any field they’re interested in!"
+    "essential": {
+      "title": "Optional",
+      "items": [
+        "Monitor",
+        "Keyboard & mouse",
+        "USB Drive",
+        "Swimwear",
+        "Sunglasses",
+        "Sunscreen",
+        "Hat",
+        "Earplugs",
+        "Sleeping mask",
+        "Floaties",
+        "Yoga mat"
+      ]
+    }
+  },
+  "tracksDesc": "Do you love tinkering with databases, but aren’t really sure how the front-end works? Or maybe all you’ve ever done is Java, but you really want to work with microcontrollers? At ShellHacks, we offer learning tracks for everyone to learn new skills in any field they’re interested in!"
 }

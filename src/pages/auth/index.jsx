@@ -27,7 +27,6 @@ class Auth extends Component {
     };
 
     this.setAuthState = this.setAuthState.bind(this);
-    console.log(this.state.currentState);
   }
 
   componentDidMount() {
