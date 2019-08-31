@@ -1,41 +1,32 @@
-[{
-        "title": "Front-end",
-        "icon": "front.svg",
-        "description": "Learn the technical and creative skills of User-Interfaces and User-Experience on web and mobile platforms",
-        "techs": [
-            "Name of chosen technologies coming soon"
-        ]
-    },
-    {
-        "title": "Back-end",
-        "icon": "back.svg",
-        "description": "Learn about the underlying systems that power the applications you interact with daily",
-        "techs": [
-            "Name of chosen technologies coming soon"
-        ]
-    },
-    {
-        "title": "Hardware",
-        "icon": "hard.svg",
-        "description": "Get down to the wire and learn about microcontrollers, IoT devices like the raspberry pi, and be creative with computers that can affect the physical world",
-        "techs": [
-            "Name of chosen technologies coming soon"
-        ]
-    },
-    {
-        "title": "Data Science",
-        "icon": "ai.svg",
-        "description": "Experience first-hand the power of what AI and statistical analysis can achieve, build off of existing models, and understand the fundamental concepts of machine learning",
-        "techs": [
-            "Name of chosen technologies coming soon"
-        ]
-    },
-    {
-        "title": "IT/Cybersecurity",
-        "icon": "it.svg",
-        "description": "Become versed in the realm of cloud computing, traditional and datacenter-level scalable hosting, and grasp the wonders of hacking and cybersecurity",
-        "techs": [
-            "Name of chosen technologies coming soon"
-        ]
-    }
+[
+  {
+    "title": "Front-end",
+    "icon": "front.svg",
+    "description": "Learn the technical and creative skills of User-Interfaces and User-Experience on web and mobile platforms",
+    "techs": ["Name of chosen technologies coming soon"]
+  },
+  {
+    "title": "Back-end",
+    "icon": "back.svg",
+    "description": "Learn about the underlying systems that power the applications you interact with daily",
+    "techs": ["Name of chosen technologies coming soon"]
+  },
+  {
+    "title": "Hardware",
+    "icon": "hard.svg",
+    "description": "Get down to the wire and learn about microcontrollers, IoT devices like the raspberry pi, and be creative with computers that can affect the physical world",
+    "techs": ["Name of chosen technologies coming soon"]
+  },
+  {
+    "title": "Data Science",
+    "icon": "ai.svg",
+    "description": "Experience first-hand the power of what AI and statistical analysis can achieve, build off of existing models, and understand the fundamental concepts of machine learning",
+    "techs": ["Name of chosen technologies coming soon"]
+  },
+  {
+    "title": "IT/Cybersecurity",
+    "icon": "it.svg",
+    "description": "Become versed in the realm of cloud computing, traditional and datacenter-level scalable hosting, and grasp the wonders of hacking and cybersecurity",
+    "techs": ["Name of chosen technologies coming soon"]
+  }
 ]

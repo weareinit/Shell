@@ -1,43 +1,25 @@
 # :shell: Shell
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/503f67159e4144b9b025cffdd57f141d)](https://app.codacy.com/app/Jehfkemsy/Web-ShellHacks?utm_source=github.com&utm_medium=referral&utm_content=UPE-FIU/Web-ShellHacks&utm_campaign=Badge_Grade_Settings)
-
 - Dashboard for Shellhacks 2019
-  <br/>
-  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available scripts
 
-In the project directory, you can run:
+`yarn dev` - starts CRA dev server)<br/>
+`yarn start` - starts production server with pm2)<br/>
+`yarn stop` - stops pm2 process)<br/>
+`yarn restart` - restarts pm2 process)<br/>
+`yarn build` - bundle up react)<br/>
+`test` - Runs CRA tests
 
-### `yarn start`
+## Authors
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[@Jehfkemsy](https://github.com/jehfkemsy)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Contributors
 
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-### Missing Features
-[] Integrate Push Notification with backend
+[@Svilla27](https://github.com/Svilla27)<br/>
+[@mrmcpowned](https://github.com/mrmcpowned)<br/>
+[@boxslide15](https://github.com/boxslide15)<br/>
+[@yasmine0217](https://github.com/yasmine0217)<br/>
+[@mrmcpowned](https://github.com/mrmcpowned)<br/>
+[@Tommy2016x](https://github.com/Tommy2016x)

@@ -1,93 +1,94 @@
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .profile-user {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    margin: 50px 0 150px;
-    /*temp*/
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 50px 0 150px;
+  /*temp*/
 }
 
 .profile-user-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .avatar-container {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .avatar-container img {
-    height: 10em;
-    width: 10em;
+  height: 10em;
+  width: 10em;
 }
 
 .qr-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .qr-info img {
-    height: 10em;
-    height: 10em;
+  height: 10em;
+  height: 10em;
 }
 
 .qr-image-container {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    padding: 15px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
 }
 
 .qr-description {
-    width: 50%;
+  width: 50%;
 }
 
 .profile-container h3 {
-    font-size: var(--paragraph);
+  font-size: var(--paragraph);
 }
 
 #avatar {
-    width: 30%;
+  width: 30%;
 }
 
 #QRcode {
     background: white;
     padding: 10px 0;
+
 }
 
 @media screen and (max-width: 500px) {
-    .qr-info {
-        flex-direction: column-reverse;
-    }
-    .profile-user-info {
-        margin: 25px 0 0;
-    }
-    .profile-user {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 50px 0 80px;
-        align-items: center;
-        text-align: center;
-    }
-    .qr-description {
-        width: 100%;
-        text-align: center;
-    }
-    .qr-image-container {
-        margin: 25px 0 0;
-    }
+  .qr-info {
+    flex-direction: column-reverse;
+  }
+  .profile-user-info {
+    margin: 25px 0 0;
+  }
+  .profile-user {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0 80px;
+    align-items: center;
+    text-align: center;
+  }
+  .qr-description {
+    width: 100%;
+    text-align: center;
+  }
+  .qr-image-container {
+    margin: 25px 0 0;
+  }
 }

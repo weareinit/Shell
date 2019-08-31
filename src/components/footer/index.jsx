@@ -11,9 +11,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer-container">
-        <div className="footer-content">
-          {/* add contents here */}
-        </div>
+        <div className="footer-content">{/* add contents here */}</div>
       </div>
     );
   }

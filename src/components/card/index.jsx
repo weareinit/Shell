@@ -2,26 +2,25 @@
  * Reusable card component
  */
 
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import ReactMarkdown from 'react-markdown'
-import PropTypes from 'prop-types'
-import './styles.css'
+import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactMarkdown from "react-markdown";
+import PropTypes from "prop-types";
+import "./styles.css";
 
 class Card extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      clicked: false,
-
-    }
+      clicked: false
+    };
   }
 
   handleClick = () => {
-    this.setState({ clicked: !this.state.clicked })
-  }
+    this.setState({ clicked: !this.state.clicked });
+  };
 
-  render () {
+  render() {
     let {
       title,
       description,
@@ -32,43 +31,48 @@ class Card extends Component {
       titleIcon,
       descStyles,
       isMarkdown
-    } = this.props
+    } = this.props;
 
     let cardContent = description ? (
       isMarkdown ? (
         <ReactMarkdown source={description} />
       ) : (
         <p style={descStyles}>{description}</p>
-        )
+      )
     ) : (
       content
-    )
-    let currenStyle = this.state.clicked ? activeClassName : styleClassName
+    );
+    let currenStyle = this.state.clicked ? activeClassName : styleClassName;
 
     return (
-      <div className='card-container'>
+      <div className="card-container">
         <div
-          className={'card-button ' + currenStyle}
+          className={"card-button " + currenStyle}
           onClick={this.handleClick}
         >
-          <div style={{display:"flex"}}> 
-           {titleIcon && <FontAwesomeIcon icon={titleIcon} />}
+          <div style={{ display: "flex" }}>
+            {titleIcon && <FontAwesomeIcon icon={titleIcon} />}
+            <div>
+              <h3>{title}</h3>
+              <p>{date}</p>
+            </div>
+          </div>
           <div>
-          <h3>{title}</h3>
-          <p>{date}</p>
+            {this.state.clicked ? (
+              <FontAwesomeIcon icon={"minus"} />
+            ) : (
+              <FontAwesomeIcon icon={"plus"} />
+            )}
           </div>
-          </div>
-        <div>{this.state.clicked? <FontAwesomeIcon icon={"minus"} /> : <FontAwesomeIcon icon={"plus"} />}</div> 
         </div>
         <div
-          className='card-content'
-          style={this.state.clicked ? { display: 'flex' } : { display: 'none' }}
+          className="card-content"
+          style={this.state.clicked ? { display: "flex" } : { display: "none" }}
         >
           {cardContent}
         </div>
-
       </div>
-    )
+    );
   }
 }
 
@@ -80,6 +84,6 @@ Card.propTypes = {
   content: PropTypes.elementType,
   date: PropTypes.string,
   isMarkdown: PropTypes.bool
-}
+};
 
-export { Card }
+export { Card };

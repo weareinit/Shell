@@ -1,63 +1,63 @@
 .home {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home h4 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .home-avatar {
-    height: 180px;
-    width: 180px;
-    /* margin: 10px; */
+  height: 180px;
+  width: 180px;
+  /* margin: 10px; */
 }
 
 .application-status {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 30px 0 80px;
-    text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px 0 80px;
+  text-align: center;
 }
 
 .home-announcements {
-    width: inherit;
+  width: inherit;
 }
 
 .application-status-button {
-    background-color: rgb(243, 84, 84);
+  background-color: rgb(243, 84, 84);
 }
 
 .active-application-status-button {
-    background-color: var(--shell-teal);
+  background-color: var(--shell-teal);
 }
 
 .user-info {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user-info .user {
-    text-align: center;
-    color: white;
-    line-height: 130%;
+  text-align: center;
+  color: white;
+  line-height: 130%;
 }
 
 .applactions-status-accepted {
-    background: #7ca87c;
+  background: #7ca87c;
 }
 
 .applactions-status-applied {
-    background: #ddc38b;
+  background: #ddc38b;
 }
 
 .applactions-status-confirmed {
-    background-color: var(--shell-teal);
+  background-color: var(--shell-teal);
 }

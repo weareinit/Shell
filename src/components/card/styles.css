@@ -1,35 +1,35 @@
 .card-container {
-    padding: 12.5555px 0;
+  padding: 12.5555px 0;
 }
 
 .card-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 25px;
-    border-radius: 10px;
-    font: var(--sub-heading);
-    font-size: 2em;
-    color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 25px;
+  border-radius: 10px;
+  font: var(--sub-heading);
+  font-size: 2em;
+  color: white;
 }
 
 .card-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .card-content {
-    padding: 12.5555px;
-    text-align: left;
+  padding: 12.5555px;
+  text-align: left;
 }
 
 @media screen and (max-width: 500px) {
-    .card-button {
-        padding: 20px;
-    }
-    .card-button h3,
-    .card-button h4 {
-        font-size: var(--paragraph);
-    }
+  .card-button {
+    padding: 20px;
+  }
+  .card-button h3,
+  .card-button h4 {
+    font-size: var(--paragraph);
+  }
 }

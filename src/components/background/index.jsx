@@ -59,7 +59,7 @@ class WaveBackground extends Component {
 }
 
 WaveBackground.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element.isRequired
 };
 
 export { WaveBackground };

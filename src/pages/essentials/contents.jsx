@@ -2,16 +2,24 @@
  * Essentials page contaents
  */
 
-import React from 'react'
-import { ZoomableImg } from '../../components'
-import data from '../../config/data/essentials'
-import './styles.css'
-import tracks from '../../config/data/tracks.json'
+import React from "react";
+import { ZoomableImg } from "../../components";
+import data from "../../config/data/essentials";
+import "./styles.css";
+import tracks from "../../config/data/tracks.json";
 
-let { direction, Northbound, Southbound, parking, transportation, shouldBring, tracksDesc } = data
+let {
+  direction,
+  Northbound,
+  Southbound,
+  parking,
+  transportation,
+  shouldBring,
+  tracksDesc
+} = data;
 
 export const ParkingCardContent = (
-  <div className='essentials-parking-card-content'>
+  <div className="essentials-parking-card-content">
     <p>More info soon to come!</p>
     {/* <div className='arena-info-container'>
       <div className='arena-maps-image-container'>
@@ -69,17 +77,17 @@ export const ParkingCardContent = (
       <p>{transportation.description}</p>
     </div> */}
   </div>
-)
+);
 
-const { description, essential, optional } = shouldBring
+const { description, essential, optional } = shouldBring;
 export const ImportantItemsCardContent = (
-  <div className='essentials-items-card-content'>
+  <div className="essentials-items-card-content">
     {/* description */}
-    <p style={{ margin: '25px 0 50px' }}>{description}</p>
-    <div className='essential-lists-container'>
+    <p style={{ margin: "25px 0 50px" }}>{description}</p>
+    <div className="essential-lists-container">
       {/* optional items */}
-      <div className='essential-card'>
-        <p className='essential-item-header'>{optional.title}</p>
+      <div className="essential-card">
+        <p className="essential-item-header">{optional.title}</p>
         <ul>
           {optional.items.map((item, i) => (
             <li key={i}>
@@ -89,8 +97,8 @@ export const ImportantItemsCardContent = (
         </ul>
       </div>
       {/* essential items */}
-      <div className='essential-card'>
-        <p className='essential-item-header'>{essential.title}</p>
+      <div className="essential-card">
+        <p className="essential-item-header">{essential.title}</p>
         <ul>
           {essential.items.map((item, i) => (
             <li key={i}>
@@ -101,28 +109,28 @@ export const ImportantItemsCardContent = (
       </div>
     </div>
   </div>
-)
+);
 
 export const LearningTracksCardContent = (
-  <div className='learning-tracks-container'>
-    <div style={{ margin: '25px 0 50px' }}>
+  <div className="learning-tracks-container">
+    <div style={{ margin: "25px 0 50px" }}>
       <p>{tracksDesc}</p>
     </div>
     {tracks.map((data, i) => (
       <div key={i}>
         <p
-          className='essential-item-header'
-          style={{ textAlign: 'center', width: '40%' }}
+          className="essential-item-header"
+          style={{ textAlign: "center", width: "40%" }}
         >
           {data.title}
         </p>
-        <div className='track-overview'>
+        <div className="track-overview">
           <img
-            className='essentials-holder-circle'
-            alt='cirlcePlaceholder'
+            className="essentials-holder-circle"
+            alt="cirlcePlaceholder"
             src={require(`../../assets/tracks/${data.icon}`)}
           />
-          <div className='track-details'>
+          <div className="track-details">
             <p>{data.description}</p>
             <ul>
               {data.techs.map((tech, i) => (
@@ -149,4 +157,4 @@ export const LearningTracksCardContent = (
       </div>
     ))}
   </div>
-)
+);

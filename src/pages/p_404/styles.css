@@ -1,24 +1,24 @@
 .no-match {
-    padding: 40px;
-    text-align: center;
-    color: var(--shell-dark-brown);
-    margin: auto;
+  padding: 40px;
+  text-align: center;
+  color: var(--shell-dark-brown);
+  margin: auto;
 }
 
 .no-match h1 {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .no-match p,
 .link {
-    font-weight: bold;
-    color: var(--shell-light-brown);
+  font-weight: bold;
+  color: var(--shell-light-brown);
 }
 
 .link {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .link:hover {
-    color: var(--shell-light-pink) !important;
+  color: var(--shell-light-pink) !important;
 }

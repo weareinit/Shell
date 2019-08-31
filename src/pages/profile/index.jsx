@@ -9,7 +9,7 @@ import './styles.css'
 import { ZoomableImg } from '../../components';
 
 const Profile = ({ userData }) => {
-  let { shellID, avatarID, firstName, lastName, major, schoolName } = userData
+  let { shellID, avatarID, firstName, lastName, major, schoolName } = userData;
   let avatar = mixed.getAvatar(avatarID);
 
   const transparentPixel = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
@@ -25,20 +25,20 @@ const Profile = ({ userData }) => {
 
 
   return (
-    <div className='dashboard-page'>
+    <div className="dashboard-page">
       <h1>Profile</h1>
-      <div className='profile-container'>
-        <div className='profile-user'>
-          <div className='avatar-container'>
+      <div className="profile-container">
+        <div className="profile-user">
+          <div className="avatar-container">
             <h3>Avatar</h3>
             <br />
             <img
-              className='holder-circle'
-              alt='qrPlaceholder'
+              className="holder-circle"
+              alt="qrPlaceholder"
               src={require(`../../assets/avatars/${avatar}`)}
             />
           </div>
-          <div className='profile-user-info'>
+          <div className="profile-user-info">
             <h3>Full Name</h3>
             <p>{firstName && mixed.wordCase(`${firstName} ${lastName}`)}</p>
             <br />
@@ -49,7 +49,6 @@ const Profile = ({ userData }) => {
             <p>{mixed.wordCase(schoolName)}</p>
           </div>
         </div>
-
         <div className='qr-info'>
           <div className='qr-image-container'>
             <div id='QRcode'>
@@ -64,17 +63,19 @@ const Profile = ({ userData }) => {
               />
             </div>
           </div>
-          <div className='qr-description'>
+          <div className="qr-description">
             <h3>Shell ID</h3>
             <br />
             <p>
-              Use your Shell ID to check-in and get your meals! Pull up the dashboard or take a screenshot with your shell-phone to access it later
+              Use your Shell ID to check-in and get your meals! Pull up the
+              dashboard or take a screenshot with your shell-phone to access it
+              later
             </p>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
