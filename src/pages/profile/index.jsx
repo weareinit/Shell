@@ -2,14 +2,28 @@
  * user profile page
  */
 
-import React from "react";
-import QRCode from "qrcode.react";
-import mixed from "../../utils/mixed";
-import "./styles.css";
+import React, { useState, useEffect } from 'react'
+import QRCode from 'qrcode.react'
+import mixed from '../../utils/mixed'
+import './styles.css'
+import { ZoomableImg } from '../../components';
 
 const Profile = ({ userData }) => {
   let { shellID, avatarID, firstName, lastName, major, schoolName } = userData;
   let avatar = mixed.getAvatar(avatarID);
+
+  const transparentPixel = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+  const [qrData, setQrData] = useState(transparentPixel);
+
+  useEffect(() => {
+    if(qrData == transparentPixel){
+      setQrData("data:image/svg+xml;base64," + 
+        btoa(new XMLSerializer().serializeToString(document.getElementById("shell-qr")))
+      )
+    }
+  });
+
+
   return (
     <div className="dashboard-page">
       <h1>Profile</h1>
@@ -35,16 +49,17 @@ const Profile = ({ userData }) => {
             <p>{mixed.wordCase(schoolName)}</p>
           </div>
         </div>
-
-        <div className="qr-info">
-          <div className="qr-image-container">
-            <div id="QRcode">
-              <QRCode
-                size={180}
-                fgColor="#665B50"
-                value={shellID}
-                renderAs="svg"
-                level="Q"
+        <div className='qr-info'>
+          <div className='qr-image-container'>
+            <div id='QRcode'>
+              <QRCode size={180} id="shell-qr" fgColor='#665B50' value={shellID} renderAs="svg" level="Q" style={{display: "none"}}/>
+              <ZoomableImg
+                imageLink={qrData}
+                styleOverride={{
+                  overlay: {
+                    backgroundColor: 'rgba(255, 255, 255, 1)'
+                  }
+                }}
               />
             </div>
           </div>
