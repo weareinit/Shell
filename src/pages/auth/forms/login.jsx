@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router";
 import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
-import { Input, Button, BlockError, ButtonLoader } from "../../../components";
+import { Input, Button, BlockError, ReCAPTCHA } from "../../../components";
 import {
   LogInValidation,
   LoginInitialValues
@@ -52,7 +52,7 @@ const Login = ({ history, setAuthState }) => {
   };
 
   // navigates to forgot password
-  let goToforgot = () => {
+  let goToForgot = () => {
     setAuthState(FORGOT_PASSWORD);
   };
 
@@ -66,13 +66,14 @@ const Login = ({ history, setAuthState }) => {
       initialValues={LoginInitialValues}
       validationSchema={LogInValidation}
       onSubmit={handleSubmit}
-      render={({ touched, errors }) => (
+      render={({ touched, errors, values, setFieldValue }) => (
         <Form className="auth-form">
           <BlockError
             errors={[
               // one error at a time
               (touched.email && errors.email) ||
                 (touched.password && errors.password) ||
+                errors.captcha ||
                 (badRequest &&
                   "Oof! Something is wrong with those credentials 😬") ||
                 (otherFaillure &&
@@ -81,6 +82,7 @@ const Login = ({ history, setAuthState }) => {
             shouldShow={
               !!(touched.email && errors.email) ||
               !!(touched.password && errors.password) ||
+              !!(touched.captcha && errors.captcha) ||
               badRequest ||
               otherFaillure
             }
@@ -101,6 +103,12 @@ const Login = ({ history, setAuthState }) => {
               error={!!touched.password && errors.password}
             />
           </div>
+          <div className="field-div" style={{ margin: "15px 0" }}>
+            <ReCAPTCHA
+              shouldShow={values.email && values.password}
+              onChange={key => setFieldValue("captcha", key)}
+            />
+          </div>
           <div className="auth-submit-button-container">
             <Button
               type="submit"
@@ -110,7 +118,7 @@ const Login = ({ history, setAuthState }) => {
             />
           </div>
           <div className="auth-question-buttons">
-            <p onClick={goToforgot}>Forgot Password</p>
+            <p onClick={goToForgot}>Forgot Password</p>
             <p onClick={goToVerify}>Verify Email</p>
           </div>
         </Form>

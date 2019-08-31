@@ -25,12 +25,16 @@ const LogInValidation = Yup.object().shape({
     .required("Required"),
   password: Yup.string()
     .min(6, "Password is too short")
-    .required("Required")
+    .required("Required"),
+  captcha: Yup.string("Please complete CAPTCHA challenge").required(
+    "Please complete CAPTCHA challenge"
+  )
 });
 
 const LoginInitialValues = {
   email: "",
-  password: ""
+  password: "",
+  captcha: ""
 };
 
 // Signup validation
