@@ -55,6 +55,9 @@ const Profile = ({ userData }) => {
               <QRCode size={180} id="shell-qr" fgColor='#665B50' value={shellID} renderAs="svg" level="Q" style={{display: "none"}}/>
               <ZoomableImg
                 imageLink={qrData}
+                extraStyles={{
+                  width: "unset"
+                }}
                 styleOverride={{
                   overlay: {
                     backgroundColor: 'rgba(255, 255, 255, 1)'

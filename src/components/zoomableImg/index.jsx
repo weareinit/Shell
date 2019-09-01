@@ -8,12 +8,11 @@ import ImageZoom from "react-medium-image-zoom";
 const ZoomableImg = ({extraStyles, imageLink, styleOverride})=>{
   return (
     <ImageZoom
-      style={extraStyles || {}}
       image={{
         src: imageLink,
         alt: "image",
         className: "img",
-        style: { width: "100%" }
+        style: { width: "100%", ...extraStyles }
       }}
       defaultStyles={{
         zoomContainer: {},
