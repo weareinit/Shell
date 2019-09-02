@@ -25,16 +25,12 @@ const LogInValidation = Yup.object().shape({
     .required("Required"),
   password: Yup.string()
     .min(6, "Password is too short")
-    .required("Required"),
-  captcha: Yup.string("Please complete CAPTCHA challenge").required(
-    "Please complete CAPTCHA challenge"
-  )
+    .required("Required")
 });
 
 const LoginInitialValues = {
   email: "",
-  password: "",
-  captcha: ""
+  password: ""
 };
 
 // Signup validation
@@ -53,7 +49,10 @@ const SignUpValidation = Yup.object().shape({
     .required("Required"),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password"), ""], "Passwords Must Match")
-    .required("Required")
+    .required("Required"),
+  captcha: Yup.string("Please complete CAPTCHA challenge")
+    .nullable()
+    .required("Please complete CAPTCHA challenge")
 });
 
 const SignUpInitialValues = {
@@ -61,7 +60,8 @@ const SignUpInitialValues = {
   lastName: "",
   email: "",
   password: "",
-  confirmPassword: ""
+  confirmPassword: "",
+  captcha: null
 };
 
 // Validates user verification form

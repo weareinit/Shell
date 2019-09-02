@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router";
 import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
-import { Input, Button, BlockError, ReCAPTCHA } from "../../../components";
+import { Input, Button, BlockError } from "../../../components";
 import {
   LogInValidation,
   LoginInitialValues
@@ -101,12 +101,6 @@ const Login = ({ history, setAuthState }) => {
               type="password"
               placeholder="Password"
               error={!!touched.password && errors.password}
-            />
-          </div>
-          <div className="field-div" style={{ margin: "15px 0" }}>
-            <ReCAPTCHA
-              shouldShow={values.email && values.password}
-              onChange={key => setFieldValue("captcha", key)}
             />
           </div>
           <div className="auth-submit-button-container">
