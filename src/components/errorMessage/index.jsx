@@ -1,66 +1,63 @@
 /**
- *  Reusable error message wrapper
+ *  Reusable error message components
  */
 
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles.css";
 
-class BlockError extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shouldShow: false
-    };
-  }
+/**
+ * Displays a block error
+ * as a list of orrors
+ */
+const BlockError = ({ shouldShow, extraStylesClass, children, errors }) =>
+  shouldShow ? (
+    <div className={`error-message ${extraStylesClass || ""}`}>
+      {children || (
+        <ul>
+          {errors.map((error, i) => (
+            <li key={i}>
+              <FontAwesomeIcon icon="exclamation-circle" /> <p>{error}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  ) : (
+    <></>
+  );
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    return nextProps.shouldShow === prevState.shouldShow
-      ? {}
-      : { shouldShow: nextProps.shouldShow };
-  }
+BlockError.defaultProps = {
+  shouldShow: false
+};
 
-  render() {
-    let { extraStylesClass, children, errors } = this.props;
-
-    if (this.state.shouldShow)
-      return (
-        <div className={`error-message ${extraStylesClass || ""}`}>
-          {children || (
-            <ul>
-              {errors.map((error, i) => (
-                <li key={i}>
-                  <FontAwesomeIcon icon="exclamation-circle" /> <p>{error}</p>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      );
-    else return <></>;
-  }
-}
 BlockError.propTypes = {
   shouldShow: PropTypes.bool.isRequired,
   errors: PropTypes.array.isRequired,
   children: PropTypes.element,
-  extraStylesClass: PropTypes.string
+  className: PropTypes.string
 };
 
-const InlineError = ({ shouldShow, extraStylesClass, error, label, name }) => {
-  return (
-    <div className={`inline-error-message ${extraStylesClass || ""}`}>
-      {label && <label htmlFor={name}>{label}</label>}
-      {shouldShow &&
-        (error && (
-          <p>
-            <FontAwesomeIcon icon="exclamation-circle" />
-            {error}
-          </p>
-        ))}
-    </div>
-  );
+/**
+ * Displays an error on the
+ * same line as the label
+ */
+const InlineError = ({ shouldShow, className, error, label, name }) => (
+  <div className={`inline-error-message ${className || ""}`}>
+    {label && <label htmlFor={name}>{label}</label>}
+    {shouldShow &&
+      (error && (
+        <p>
+          <FontAwesomeIcon icon="exclamation-circle" />
+          {error}
+        </p>
+      ))}
+  </div>
+);
+
+InlineError.defaultProps = {
+  shouldShow: false
 };
 
 InlineError.propTypes = {
@@ -68,7 +65,7 @@ InlineError.propTypes = {
   error: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string,
-  extraStylesClass: PropTypes.string
+  className: PropTypes.string
 };
 
 export { BlockError, InlineError };

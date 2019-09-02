@@ -15,3 +15,4 @@ export * from "./switch";
 export * from "./loading";
 export * from "./multiSelect";
 export * from "./schoolSelect";
+export * from "./reCAPTCHA";

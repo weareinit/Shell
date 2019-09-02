@@ -5,7 +5,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
-import { Button, Input, BlockError } from "../../../components";
+import { Button, Input, BlockError, ReCAPTCHA } from "../../../components";
 import {
   SignUpValidation,
   SignUpInitialValues
@@ -47,7 +47,8 @@ const Register = ({ setAuthState }) => {
       firstName: values.firstName,
       lastName: values.lastName,
       email: values.email,
-      password: values.password
+      password: values.password,
+      captcha: values.captcha
     };
 
     services.register(data, setAuthState, submitionFaillure);
@@ -58,7 +59,7 @@ const Register = ({ setAuthState }) => {
       initialValues={SignUpInitialValues}
       validationSchema={SignUpValidation}
       onSubmit={handleSubmit}
-      render={({ touched, errors }) => (
+      render={({ touched, errors, values, setFieldValue }) => (
         <Form className="auth-form">
           <BlockError
             errors={[
@@ -68,6 +69,12 @@ const Register = ({ setAuthState }) => {
                 (touched.email && errors.email) ||
                 (touched.password && errors.password) ||
                 (touched.confirmPassword && errors.confirmPassword) ||
+                (values.firstName && // this is messy
+                  values.lastName &&
+                  values.email &&
+                  values.password &&
+                  values.confirmPassword &&
+                  errors.captcha) ||
                 (badRequest &&
                   "Ummm...🤔 That email address is  already in use, try resetting your password") ||
                 (otherFaillure &&
@@ -79,6 +86,14 @@ const Register = ({ setAuthState }) => {
               !!(touched.email && errors.email) ||
               !!(touched.password && errors.password) ||
               !!(touched.confirmPassword && errors.confirmPassword) ||
+              (!!(
+                values.firstName && // this is hell...literally...don't judge me
+                values.lastName && // this was written by Tommy or Maurice... not Jehf
+                values.email &&
+                values.password &&
+                values.confirmPassword
+              ) &&
+                errors.captcha) ||
               badRequest ||
               otherFaillure
             }
@@ -121,6 +136,18 @@ const Register = ({ setAuthState }) => {
               type="password"
               error={!!touched.confirmPassword && errors.confirmPassword}
               placeholder="Confirm Password"
+            />
+          </div>
+          <div className="field-div" style={{ margin: "15px 0" }}>
+            <ReCAPTCHA
+              shouldShow={
+                values.firstName &&
+                values.lastName &&
+                values.email &&
+                values.password &&
+                values.confirmPassword
+              }
+              onChange={key => setFieldValue("captcha", key)}
             />
           </div>
           <div className="auth-submit-button-container">
