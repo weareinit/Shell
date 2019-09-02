@@ -13,18 +13,20 @@ const Button = ({
   styleId,
   extraStyles,
   lableStyle,
-  type
+  type,
+  ...rest
 }) => {
-  const buttonClicked = () => {
+  const handleClick = () => {
     if (action) action(id);
   };
 
   return (
     <button
       type={type}
-      onClick={buttonClicked}
+      onClick={handleClick}
       className={`submit-button ${extraStyles || ""}`}
       id={styleId || ""}
+      {...rest}
     >
       <p className={lableStyle || ""}>{title}</p>
     </button>

@@ -549,8 +549,9 @@ const Application = ({ history, userData, refresh }) => {
                     onChange={onChange}
                   />
                   <label htmlFor="sponsor-promo--field">
-                    I would like information, tips, and offers about ShellHacks
-                    and other sponsor related products and services
+                    I agree to receive information about ShellHacks and sponsor
+                    related content such as job opportunities, products, and
+                    services
                   </label>
                 </p>
                 <br />

@@ -74,6 +74,7 @@ class Select extends React.Component {
           setValue={value}
           placeholder={placeholder}
           name={name}
+          isSearchable={false}
         />
       </>
     );

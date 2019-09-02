@@ -1,7 +1,11 @@
 export default {
-  // API settings
+  // ReCAPTCH API public key
+  RECAPTCHA_PUBLIC_KEY: "6LcF_bUUAAAAADof3tbysY395DplBlG7Zt8HFNyJ",
+  CAPTCHA_PATH: "recaptcha",
+
+  // API routes
   API_URL: "https://api.shellhacks.net/",
-  DEV_API_URL: "http://localhost:3000",
+  // API_URL: "http://localhost:3000",
   REGISTER_PATH: "application",
   VERIFY_EMAIL_PATH: "application/confirmation",
   RESEND_CODE_PATH: "application/resend",
@@ -13,7 +17,7 @@ export default {
   READ_USER_PATH: "application/readOne",
   APPLY_PATH: "application/apply",
 
-  // sockets
+  // Sockets
   CONNECTION_URL: "http://localhost:3000",
   NOTIFICATION_EVENT: "notification"
 };

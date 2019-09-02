@@ -7,13 +7,7 @@ import querries from "../utils/querries";
 import apiRoutes from "../config/APIs";
 import States from "../pages/auth/states";
 
-const {
-  VERIFY_EMAIL,
-  LOGIN,
-  RESET_PASSWORD,
-  BAD_REQUEST,
-  FAILED_REQUEST
-} = States;
+const { VERIFY_EMAIL, LOGIN, RESET_PASSWORD, FAILED_REQUEST } = States;
 
 const {
   REGISTER_PATH,
@@ -32,10 +26,10 @@ const ID = "shellID";
 /**
  * submits user account registration form
  * @param {Object} data - registration form
- * @param {Function} successAction - executed after a sucessful request
- * @param {Function} faillureAction - executed on request failure
+ * @param {Function} successAction - executes after a sucessful request
+ * @param {Function} faillureAction - executes on request failure
  */
-const register = async (data, successAction, faillureAction) => {
+const register = async (data, successAction, faillureAction) =>
   request({
     method: "post",
     url: REGISTER_PATH,
@@ -48,13 +42,12 @@ const register = async (data, successAction, faillureAction) => {
       //need to add better error handling on these
       faillureAction(FAILED_REQUEST);
     });
-};
 
 /**
  * Resquest send verification code to user email address
  * @param {Object} data - contains user email address string
- * @param {Function} successAction - executed after a sucessful request
- * @param {Function} faillureAction - executed on request failure
+ * @param {Function} successAction - executes after a sucessful request
+ * @param {Function} faillureAction - executes on request failure
  */
 const verifyEmail = (data, successAction, faillureAction) =>
   request({
@@ -72,8 +65,8 @@ const verifyEmail = (data, successAction, faillureAction) =>
 /**
  * Resquest to send user a new email verification code
  * @param {Object} data - wraps user email
- * @param {Function} successAction - executed after a sucessful request
- * @param {Function} faillureAction - executed on request failure
+ * @param {Function} successAction - executes after a sucessful request
+ * @param {Function} faillureAction - executes on request failure
  */
 const resendCode = (data, successAction, faillureAction) =>
   request({
@@ -91,10 +84,10 @@ const resendCode = (data, successAction, faillureAction) =>
 /**
  * login user then navigate to dashboard
  * @param {Object} credentials - username and  password
- * @param {Function} successAction - executed after a sucessful request
- * @param {Function} faillureAction - executed on request failure
+ * @param {Function} successAction - executes after a sucessful request
+ * @param {Function} faillureAction - executes on request failure
  */
-const login = async (credentials, history, faillureAction) =>
+const login = (credentials, history, faillureAction) =>
   request({
     method: "post",
     url: LOGIN_PATH,
@@ -117,8 +110,8 @@ const login = async (credentials, history, faillureAction) =>
 /**
  * Submits user email validation code
  * @param {Object} data - contains user email address
- * @param {Function} successAction - executed after a sucessful request
- * @param {Function} faillureAction - executed on request failure
+ * @param {Function} successAction - executes after a sucessful request
+ * @param {Function} faillureAction - executes on request failure
  */
 const forgotPassword = (data, successAction, faillureAction) =>
   request({
@@ -136,8 +129,8 @@ const forgotPassword = (data, successAction, faillureAction) =>
 /**
  * Resquests to updates user password
  * @param {Object} data - email and reset token
- * @param {Function} successAction - executed after a sucessful request
- * @param {Function} faillureAction - executed on request failure
+ * @param {Function} successAction - executes after a sucessful request
+ * @param {Function} faillureAction - executes on request failure
  */
 const resetPassword = (data, successAction, faillureAction) =>
   request({
@@ -162,10 +155,10 @@ const resetPassword = (data, successAction, faillureAction) =>
 const apply = (form, history, nextAction, faillureAction) => {
   const token = querries.isAuthorized();
 
-  //converts arr of obj to string
-  const arrToString = arr => {
+  // Converts array of obj to string list of keys
+  const arrToString = array => {
     let result;
-    arr.forEach((obj, i) => {
+    array.forEach((obj, i) => {
       i === 0 ? (result = obj.value) : (result += `, ${obj.value}`);
     });
     return result;
@@ -182,8 +175,6 @@ const apply = (form, history, nextAction, faillureAction) => {
   setDefaults();
   let data = new FormData();
   Object.keys(form).map(key => data.append(key, form[key]));
-
-  console.log(form);
 
   return request({
     method: "put",
@@ -212,7 +203,7 @@ const getUserInfo = async history => {
   const token = await querries.isAuthorized();
   const shellID = await querries.retrieveItem(ID);
 
-  return await request({
+  return request({
     method: "post",
     url: READ_USER_PATH,
     data: { shellID },
