@@ -10,6 +10,7 @@ s;
 const PORT = process.env.PORT || 3005;
 
 proxy_server.use(cors());
+
 // Removes trailling slashes from  url
 // https://stackoverflow.com/questions/41948228/how-to-remove-trailing-slash-in-react-router-urls
 proxy_server.use(function(req, res, next) {
