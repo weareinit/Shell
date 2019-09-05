@@ -1,0 +1,15 @@
+.mentor-page {
+  background: var(--shell-gradient);
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5% 10%;
+  position: relative;
+}
+
+.mentor-explanation {
+  text-align: center;
+  font-weight: 600;
+}

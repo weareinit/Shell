@@ -211,6 +211,59 @@ const ApplicationInitialValues = {
   mlhAffiliation: false
 };
 
+// Mentor form validation
+const mentorValidation = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, "First Name is too Short")
+    .required("Required"),
+  lastName: Yup.string()
+    .min(2, "Last Name is too Short")
+    .required("Required"),
+  email: Yup.string()
+    .email("Email is not valid")
+    .required("Required"),
+  phoneNumber: Yup.string()
+    .trim()
+    .min(10, "Phone Number is too short")
+    .required("Required")
+    .matches(phoneRegExp, "Phone number is not valid"),
+  organization: Yup.string()
+    .min(2, "Last Name is too Short")
+    .required("Required"),
+  mentored: Yup.string()
+    .min(2, "Last Name is too Short")
+    .required("Required"),
+  skills: Yup.array()
+    .required("Required")
+    .nullable(),
+  elaborate: Yup.string()
+    .min(2, "Last Name is too Short")
+    .required("Required"),
+  shirtSize: Yup.string().required("Required"),
+  availibity: Yup.string().required("Required"),
+  mlhCOC: Yup.boolean()
+    .oneOf([true], "Must agree to MLH Code of Conduct")
+    .required("Required"),
+  captcha: Yup.string("Please complete CAPTCHA challenge")
+    .nullable()
+    .required("Please complete CAPTCHA challenge")
+});
+
+const mentorInitialValues = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phoneNumber: "",
+  organization: "",
+  mentored: "",
+  skills: "",
+  elaborate: "",
+  shirtSize: "",
+  availibity: "",
+  mlhCOC: false,
+  captcha: ""
+};
+
 export {
   LogInValidation,
   LoginInitialValues,
@@ -223,5 +276,7 @@ export {
   ForgotPasswordValidation,
   ForgotPasswordInitialValues,
   ApplicationValidation,
-  ApplicationInitialValues
+  ApplicationInitialValues,
+  mentorInitialValues,
+  mentorValidation
 };

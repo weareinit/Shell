@@ -17,6 +17,8 @@ export default {
   READ_USER_PATH: "application/readOne",
   APPLY_PATH: "application/apply",
 
+  MENTOR_PATH: "mentor",
+
   // Sockets
   CONNECTION_URL: "http://localhost:3000",
   NOTIFICATION_EVENT: "notification"

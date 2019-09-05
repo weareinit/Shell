@@ -10,6 +10,7 @@ import Support from "../pages/support";
 import Essentials from "../pages/essentials";
 import Profile from "../pages/profile";
 import Auth from "../pages/auth";
+import Mentor from "../pages/mentor";
 import NoMatch from "../pages/p_404";
 
 import DashboardRoute from "./dashboardRoute";
@@ -35,6 +36,7 @@ class Navigation extends Component {
         <DashboardRoute exact path="/essentials" component={Essentials} />
         <DashboardRoute exact path="/support" component={Support} />
         <DashboardRoute exact path="/application" component={Application} />
+        <Route exact path="/mentor" component={Mentor} />
         <Route exact path={LOGIN} component={Auth} />
         <Route exact path={SIGNUP} component={Auth} />
         <Route exact path={VERIFY_EMAIL} component={Auth} />

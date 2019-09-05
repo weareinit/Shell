@@ -4,6 +4,7 @@
 
 import request from "./request";
 import querries from "../utils/querries";
+import mixed from "../utils/mixed";
 import apiRoutes from "../config/APIs";
 import States from "../pages/auth/states";
 
@@ -17,7 +18,8 @@ const {
   RESET_PASSWORD_PATH,
   READ_USER_PATH,
   APPLY_PATH,
-  RESEND_CODE_PATH
+  RESEND_CODE_PATH,
+  MENTOR_PATH
 } = apiRoutes;
 
 const TOKEN = "JWT";
@@ -155,17 +157,8 @@ const resetPassword = (data, successAction, faillureAction) =>
 const apply = (form, history, nextAction, faillureAction) => {
   const token = querries.isAuthorized();
 
-  // Converts array of obj to string list of keys
-  const arrToString = array => {
-    let result;
-    array.forEach((obj, i) => {
-      i === 0 ? (result = obj.value) : (result += `, ${obj.value}`);
-    });
-    return result;
-  };
-
-  form.haveBeenToShell = arrToString(form.haveBeenToShell);
-  form.dietaryRestriction = arrToString(form.dietaryRestriction);
+  form.haveBeenToShell = mixed.arrToString(form.haveBeenToShell);
+  form.dietaryRestriction = mixed.arrToString(form.dietaryRestriction);
 
   const setDefaults = () =>
     Object.keys(form).forEach(key => {
@@ -224,6 +217,34 @@ const getUserInfo = async history => {
     });
 };
 
+/**
+ * Submits user application
+ * @param {Object} form - mentor application form values
+ * @param {Function} nextAction - success action
+ * @param {Object} faillureAction - executes on faillure
+ */
+const mentor = (form, nextAction, faillureAction) => {
+  const { skills, availability } = form;
+  form.skills = mixed.arrToString(skills);
+  form.availability = mixed.arrToString(availability);
+
+  let data = new FormData();
+  Object.keys(form).map(key => data.append(key, form[key]));
+
+  return request({
+    method: "put",
+    url: MENTOR_PATH,
+    data
+  })
+    .then(resp => {
+      nextAction(true);
+      return resp;
+    })
+    .catch(err => {
+      console.log(err);
+      faillureAction();
+    });
+};
 export default {
   login,
   register,
@@ -232,5 +253,6 @@ export default {
   forgotPassword,
   resetPassword,
   apply,
-  getUserInfo
+  getUserInfo,
+  mentor
 };
