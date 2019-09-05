@@ -61,4 +61,13 @@ const wordCase = words => {
   }
 };
 
-export default { getMessage, getAvatar, wordCase };
+// Converts array of obj to string list of keys
+const arrToString = array => {
+  let result;
+  array.forEach((obj, i) => {
+    i === 0 ? (result = obj.value) : (result += `, ${obj.value}`);
+  });
+  return result;
+};
+
+export default { getMessage, getAvatar, wordCase, arrToString };

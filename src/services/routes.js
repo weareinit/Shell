@@ -4,6 +4,7 @@
 
 import request from "./request";
 import querries from "../utils/querries";
+import mixed from "../utils/mixed";
 import apiRoutes from "../config/APIs";
 import States from "../pages/auth/states";
 
@@ -17,7 +18,8 @@ const {
   RESET_PASSWORD_PATH,
   READ_USER_PATH,
   APPLY_PATH,
-  RESEND_CODE_PATH
+  RESEND_CODE_PATH,
+  MENTOR_PATH
 } = apiRoutes;
 
 const TOKEN = "JWT";
@@ -155,17 +157,8 @@ const resetPassword = (data, successAction, faillureAction) =>
 const apply = (form, history, nextAction, faillureAction) => {
   const token = querries.isAuthorized();
 
-  // Converts array of obj to string list of keys
-  const arrToString = array => {
-    let result;
-    array.forEach((obj, i) => {
-      i === 0 ? (result = obj.value) : (result += `, ${obj.value}`);
-    });
-    return result;
-  };
-
-  form.haveBeenToShell = arrToString(form.haveBeenToShell);
-  form.dietaryRestriction = arrToString(form.dietaryRestriction);
+  form.haveBeenToShell = mixed.arrToString(form.haveBeenToShell);
+  form.dietaryRestriction = mixed.arrToString(form.dietaryRestriction);
 
   const setDefaults = () =>
     Object.keys(form).forEach(key => {
@@ -224,6 +217,39 @@ const getUserInfo = async history => {
     });
 };
 
+/**
+ * Submits user application
+ * @param {Object} form - mentor application form values
+ * @param {Function} nextAction - success action
+ * @param {Object} faillureAction - executes on faillure
+ */
+const mentor = (form, faillureAction, successAction) => {
+  // need this cuz the form object is still refencing the
+  // form values and messes with the form on faillure
+  const data = Object.assign({}, form);
+
+  const { skills, availability } = data;
+  data.skills = mixed.arrToString(skills);
+  data.availability = mixed.arrToString(availability);
+
+  return request({
+    method: "post",
+    url: MENTOR_PATH,
+    data
+  })
+    .then(resp => {
+      successAction();
+    })
+    .catch(err => {
+      if (err.data) {
+        const strErr = JSON.stringify(err.data);
+        faillureAction(strErr);
+      } else {
+        const strErr = JSON.stringify(err.data.err);
+        faillureAction(strErr);
+      }
+    });
+};
 export default {
   login,
   register,
@@ -232,5 +258,6 @@ export default {
   forgotPassword,
   resetPassword,
   apply,
-  getUserInfo
+  getUserInfo,
+  mentor
 };
