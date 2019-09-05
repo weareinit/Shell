@@ -25,7 +25,7 @@ const mentoredData = [
   { label: "Yes", value: "Yes" },
   { label: "No", value: "No" }
 ];
-const availibityData = [
+const availabilityData = [
   { label: "Friday Night, September 20", value: "Friday Night, September 20" },
   {
     label: "Saturday Morning, September 21",
@@ -69,6 +69,15 @@ const Mentor = ({ history }) => {
   const [isErrored, setIsErrored] = useState(false);
   const [submittingWithError, setSubmittingWithError] = useState(false);
   const [submittionState, setSubmittionState] = useState("Submitting...");
+  const [details, setDetails] = useState("");
+
+  // ....
+  const successAction = () => {
+    setLoading(false);
+    setSubmittionState("Submitted");
+    setSubmittingWithError(false); // calling this here because there's a weird bug with it which i won't be fixing ...
+    // ^^ temp fix
+  };
 
   // Displays error when submitting with bad inputs
   const setInputError = () => {
@@ -80,10 +89,11 @@ const Mentor = ({ history }) => {
   };
 
   // Displays error message
-  const faillure = () => {
+  const faillure = err => {
     setLoading(false);
     setIsErrored(true);
-
+    setDetails(err);
+    setSubmittionState("Failed");
     setTimeout(() => {
       setIsErrored(false);
     }, 10000);
@@ -94,29 +104,46 @@ const Mentor = ({ history }) => {
    * @param {Object} - form data
    */
   const handleSubmit = values => {
-    alert(JSON.stringify(values));
     setLoading(true);
-    const apply = async () => await services.apply(values, faillure);
+    const apply = async () =>
+      await services.mentor(values, faillure, successAction);
     apply();
   };
 
   let status = () =>
-    (loading && (
-      <div className="dashboard-page application-overlay">
+    (submittionState === "Submitted" && (
+      <div className="dashboard-page application-overlay negative-margin">
         <div className="submission-modal">
           <h1>{submittionState}</h1>
-          <Loading size={30} color="white" />
+          <p>You have successfully registered to be a mentor.</p>
+          <br />
+          <p>Feel free to close this window...</p>
+          <FontAwesomeIcon
+            style={{ margin: "auto", display: "block" }}
+            icon="check"
+            size="5x"
+          />
+        </div>
+      </div>
+    )) ||
+    (loading && (
+      <div className="dashboard-page application-overlay negative-margin">
+        <div className="submission-modal">
+          <h1>{submittionState}</h1>
+          <Loading size={40} color="white" />
         </div>
       </div>
     )) ||
     (isErrored && (
-      <div className="dashboard-page application-overlay">
-        <div className="submission-modal">
-          <h1>Failed</h1>
+      <div className="dashboard-page application-overlay negative-margin">
+        <div className="submission-modal failed">
+          <h1>{submittionState}</h1>
+          <p>{details}</p>
+          <p> If this error persist, contact us at upe@fiu.edu</p>
           <FontAwesomeIcon
             style={{ margin: "auto", display: "block" }}
             icon="times"
-            size="5x"
+            size="7x"
           />
         </div>
       </div>
@@ -124,6 +151,7 @@ const Mentor = ({ history }) => {
 
   return (
     <div className="mentor-page">
+      {status()}
       <h1>Become a Mentor!</h1>
       <br />
       <p className="mentor-explanation">
@@ -301,15 +329,15 @@ const Mentor = ({ history }) => {
                 <MultiSelect
                   className="application-input"
                   label="Select the days you would be available for mentoring *"
-                  name="availibity"
-                  id="availibity"
+                  name="availability"
+                  id="availability"
                   placeholder="Select all that apply"
-                  value={values.availibity}
+                  value={values.availability}
                   onBlur={setFieldTouched}
                   onChange={setFieldValue}
-                  touched={touched.availibity}
-                  error={errors.availibity}
-                  options={availibityData}
+                  touched={touched.availability}
+                  error={errors.availability}
+                  options={availabilityData}
                   defaultValue={[]}
                 />
               </div>
@@ -363,7 +391,7 @@ const Mentor = ({ history }) => {
                       values.phoneNumer &&
                       values.organization,
                     values.mentored && values.elaborate,
-                    values.shirtSize && values.availibity)
+                    values.shirtSize && values.availability)
                   }
                   onChange={key => setFieldValue("captcha", key)}
                 />

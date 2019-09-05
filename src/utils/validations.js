@@ -240,7 +240,7 @@ const mentorValidation = Yup.object().shape({
     .min(2, "Last Name is too Short")
     .required("Required"),
   shirtSize: Yup.string().required("Required"),
-  availibity: Yup.string().required("Required"),
+  availability: Yup.string().required("Required"),
   mlhCOC: Yup.boolean()
     .oneOf([true], "Must agree to MLH Code of Conduct")
     .required("Required"),
@@ -256,10 +256,10 @@ const mentorInitialValues = {
   phoneNumber: "",
   organization: "",
   mentored: "",
-  skills: "",
+  skills: [],
   elaborate: "",
   shirtSize: "",
-  availibity: "",
+  availability: [],
   mlhCOC: false,
   captcha: ""
 };

@@ -13,3 +13,15 @@
   text-align: center;
   font-weight: 600;
 }
+
+.negative-margin {
+  margin-top: -5%;
+}
+
+.submission-modal {
+  text-align: center;
+}
+
+.submission-modal .failed {
+  color: #fd0404;
+}

@@ -223,26 +223,31 @@ const getUserInfo = async history => {
  * @param {Function} nextAction - success action
  * @param {Object} faillureAction - executes on faillure
  */
-const mentor = (form, nextAction, faillureAction) => {
-  const { skills, availability } = form;
-  form.skills = mixed.arrToString(skills);
-  form.availability = mixed.arrToString(availability);
+const mentor = (form, faillureAction, successAction) => {
+  // need this cuz the form object is still refencing the
+  // form values and messes with the form on faillure
+  const data = Object.assign({}, form);
 
-  let data = new FormData();
-  Object.keys(form).map(key => data.append(key, form[key]));
+  const { skills, availability } = data;
+  data.skills = mixed.arrToString(skills);
+  data.availability = mixed.arrToString(availability);
 
   return request({
-    method: "put",
+    method: "post",
     url: MENTOR_PATH,
     data
   })
     .then(resp => {
-      nextAction(true);
-      return resp;
+      successAction();
     })
     .catch(err => {
-      console.log(err);
-      faillureAction();
+      if (err.data) {
+        const strErr = JSON.stringify(err.data);
+        faillureAction(strErr);
+      } else {
+        const strErr = JSON.stringify(err.data.err);
+        faillureAction(strErr);
+      }
     });
 };
 export default {
