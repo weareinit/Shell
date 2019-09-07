@@ -12,6 +12,7 @@
 .mentor-explanation {
   text-align: center;
   font-weight: 600;
+  max-width: 600px;
 }
 
 .negative-margin {

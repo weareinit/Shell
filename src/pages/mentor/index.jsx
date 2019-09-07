@@ -155,10 +155,8 @@ const Mentor = ({ history }) => {
       <h1>Become a Mentor!</h1>
       <br />
       <p className="mentor-explanation">
-        Poop on grasses. Tuxedo cats always looking dapper bring your owner a
-        dead bird have a lot of grump in yourself because you can't forget to be
-        grumpy and not be like king grumpy cat and small kitty warm kitty little
-        balls of fur
+        Apply to help guide student to bring their awesome ideas to life at
+        ShellHacks by filling out the form below.
       </p>
       <br />
       <br />
