@@ -220,17 +220,16 @@ const getUserInfo = async history => {
 /**
  * Submits user application
  * @param {Object} form - mentor application form values
- * @param {Function} nextAction - success action
+ * @param {Function} successAction - success action
  * @param {Object} faillureAction - executes on faillure
  */
-const mentor = (form, faillureAction, successAction) => {
-  // need this cuz the form object is still refencing the
-  // form values and messes with the form on faillure
-  const data = Object.assign({}, form);
-
-  const { skills, availability } = data;
-  data.skills = mixed.arrToString(skills);
-  data.availability = mixed.arrToString(availability);
+const mentor = (form, successAction, faillureAction) => {
+  const { skills, availability } = form;
+  form.skills = mixed.arrToString(skills);
+  form.availability = mixed.arrToString(availability);
+  if (!form.organization) form.organization = "N/A";
+  let data = new FormData();
+  Object.keys(form).map(key => data.append(key, form[key]));
 
   return request({
     method: "post",

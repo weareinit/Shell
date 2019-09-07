@@ -227,17 +227,14 @@ const mentorValidation = Yup.object().shape({
     .min(10, "Phone Number is too short")
     .required("Required")
     .matches(phoneRegExp, "Phone number is not valid"),
-  organization: Yup.string()
-    .min(2, "Last Name is too Short")
-    .required("Required"),
+  organization: Yup.string(),
   mentored: Yup.string()
-    .min(2, "Last Name is too Short")
     .required("Required"),
   skills: Yup.array()
     .required("Required")
     .nullable(),
   elaborate: Yup.string()
-    .min(2, "Last Name is too Short")
+    .min(6, "Please add more details")
     .required("Required"),
   shirtSize: Yup.string().required("Required"),
   availability: Yup.string().required("Required"),

@@ -14,6 +14,7 @@ const Button = ({
   extraStyles,
   lableStyle,
   type,
+  disable,
   ...rest
 }) => {
   const handleClick = () => {
@@ -27,6 +28,7 @@ const Button = ({
       className={`submit-button ${extraStyles || ""}`}
       id={styleId || ""}
       {...rest}
+      disabled={disable}
     >
       <p className={lableStyle || ""}>{title}</p>
     </button>
