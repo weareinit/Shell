@@ -2,13 +2,13 @@
   "direction": {
     "description": " Feeling lost at sea? Find information on how to get to ShellHacks and where to park below:",
     "title": "Venue Address",
-    "venue": "Kovens Conference Center",
+    "venue": "Ernest R. Graham University Center",
     "school": "Florida International University",
+    "campus": "Modesto A. Maidique Campus",
     "directions": [
-      "Biscayne Bay Campus",
-      "3000 NE 151st Street",
-      "North Miami, FL 33181",
-      "(305) 919-5000"
+      "11200 S.W. 8th Street",
+      "Miami, Florida 33199",
+      "+1 (305) 348-2297"
     ]
   },
   "Northbound": {
