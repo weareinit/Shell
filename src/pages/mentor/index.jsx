@@ -155,7 +155,7 @@ const Mentor = ({ history }) => {
       <h1>🦑 Mentor at ShellHacks</h1>
       <br />
       <p className="mentor-explanation">
-      Help students bring their awesome ideas to life!
+        Help students bring their awesome ideas to life!
       </p>
       <br />
       <br />
@@ -220,8 +220,8 @@ const Mentor = ({ history }) => {
               </div>
               <div className="full-container">
                 <InlineError
-                  shouldShow={!!touched.resume && errors.resume}
-                  error={errors.resume}
+                  shouldShow={!!touched.phoneNumber && errors.phoneNumber}
+                  error={errors.phoneNumber}
                   label="Phone Number *"
                   name="phoneNumber"
                 />
@@ -233,7 +233,7 @@ const Mentor = ({ history }) => {
                   placeholder="+1 (786)-000-0000"
                   onValueChange={e => setFieldValue("phoneNumber", e.value)}
                   style={
-                    !!touched.phoneNumer && errors.phoneNumer
+                    !!touched.phoneNumber && errors.phoneNumber
                       ? { border: "2px solid red" }
                       : null
                   }
@@ -291,7 +291,7 @@ const Mentor = ({ history }) => {
                   options={mentoredData}
                 />
               </div>
-              
+
               <div className="full-container">
                 <Select
                   className="application-input"
