@@ -139,7 +139,7 @@ const Mentor = ({ history }) => {
         <div className="submission-modal failed">
           <h1>{submittionState}</h1>
           <p>{details}</p>
-          <p> If this error persist, contact us at upe@fiu.edu</p>
+          <p> If this error persists, contact us at upe@fiu.edu</p>
           <FontAwesomeIcon
             style={{ margin: "auto", display: "block" }}
             icon="times"
@@ -152,11 +152,10 @@ const Mentor = ({ history }) => {
   return (
     <div className="mentor-page">
       {status()}
-      <h1>Become a Mentor!</h1>
+      <h1>🦑 Mentor at ShellHacks</h1>
       <br />
       <p className="mentor-explanation">
-        Apply to help guide student to bring their awesome ideas to life at
-        ShellHacks by filling out the form below.
+      Help students bring their awesome ideas to life!
       </p>
       <br />
       <br />
@@ -251,6 +250,31 @@ const Mentor = ({ history }) => {
                   errorVal={errors.organization}
                 />
               </div>
+
+              <div className="full-container">
+                <InlineError
+                  shouldShow={errors.elaborate && touched.elaborate}
+                  error={errors.elaborate}
+                  label="What technologies do you know?* "
+                />
+                <Field
+                  name="elaborate"
+                  render={({ field, form: { touched, errors } }) => (
+                    <textarea
+                      {...field}
+                      className="application-input text-input"
+                      rows="4"
+                      placeholder="ExpressJS, ReactJS, Pytorch, Python, Raspberry Pi..."
+                      style={
+                        !!errors.elaborate && touched.elaborate
+                          ? { border: "2px solid red" }
+                          : null
+                      }
+                    />
+                  )}
+                />
+              </div>
+
               <div className="full-container">
                 <Select
                   className="application-input"
@@ -267,29 +291,7 @@ const Mentor = ({ history }) => {
                   options={mentoredData}
                 />
               </div>
-              <div className="full-container">
-                <InlineError
-                  shouldShow={errors.elaborate && touched.elaborate}
-                  error={errors.elaborate}
-                  label="What technologies do you know? "
-                />
-                <Field
-                  name="elaborate"
-                  render={({ field, form: { touched, errors } }) => (
-                    <textarea
-                      {...field}
-                      className="application-input text-input"
-                      rows="4"
-                      placeholder="ExpressJS, ReactJS, Pytorch, Python, Rasberry Pi..."
-                      style={
-                        !!errors.elaborate && touched.elaborate
-                          ? { border: "2px solid red" }
-                          : null
-                      }
-                    />
-                  )}
-                />
-              </div>
+              
               <div className="full-container">
                 <Select
                   className="application-input"
