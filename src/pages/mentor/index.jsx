@@ -139,7 +139,7 @@ const Mentor = ({ history }) => {
         <div className="submission-modal failed">
           <h1>{submittionState}</h1>
           <p>{details}</p>
-          <p> If this error persist, contact us at upe@fiu.edu</p>
+          <p> If this error persists, contact us at upe@fiu.edu</p>
           <FontAwesomeIcon
             style={{ margin: "auto", display: "block" }}
             icon="times"
@@ -152,11 +152,10 @@ const Mentor = ({ history }) => {
   return (
     <div className="mentor-page">
       {status()}
-      <h1>Become a Mentor!</h1>
+      <h1>🦑 Mentor at ShellHacks</h1>
       <br />
       <p className="mentor-explanation">
-        Apply to help guide student to bring their awesome ideas to life at
-        ShellHacks by filling out the form below.
+        Help students bring their awesome ideas to life!
       </p>
       <br />
       <br />
@@ -221,8 +220,8 @@ const Mentor = ({ history }) => {
               </div>
               <div className="full-container">
                 <InlineError
-                  shouldShow={!!touched.resume && errors.resume}
-                  error={errors.resume}
+                  shouldShow={!!touched.phoneNumber && errors.phoneNumber}
+                  error={errors.phoneNumber}
                   label="Phone Number *"
                   name="phoneNumber"
                 />
@@ -234,7 +233,7 @@ const Mentor = ({ history }) => {
                   placeholder="+1 (786)-000-0000"
                   onValueChange={e => setFieldValue("phoneNumber", e.value)}
                   style={
-                    !!touched.phoneNumer && errors.phoneNumer
+                    !!touched.phoneNumber && errors.phoneNumber
                       ? { border: "2px solid red" }
                       : null
                   }
@@ -245,12 +244,37 @@ const Mentor = ({ history }) => {
                   className="application-input"
                   name="organization"
                   type="text"
-                  label="What company or organization are you affiliated with? *"
+                  label="What company or organization are you affiliated with? "
                   placeholder="Florida International University"
                   error={!!touched.organization && !!errors.organization}
                   errorVal={errors.organization}
                 />
               </div>
+
+              <div className="full-container">
+                <InlineError
+                  shouldShow={errors.elaborate && touched.elaborate}
+                  error={errors.elaborate}
+                  label="What technologies do you know? * "
+                />
+                <Field
+                  name="elaborate"
+                  render={({ field, form: { touched, errors } }) => (
+                    <textarea
+                      {...field}
+                      className="application-input text-input"
+                      rows="4"
+                      placeholder="ExpressJS, ReactJS, Pytorch, Python, Raspberry Pi..."
+                      style={
+                        !!errors.elaborate && touched.elaborate
+                          ? { border: "2px solid red" }
+                          : null
+                      }
+                    />
+                  )}
+                />
+              </div>
+
               <div className="full-container">
                 <Select
                   className="application-input"
@@ -267,29 +291,7 @@ const Mentor = ({ history }) => {
                   options={mentoredData}
                 />
               </div>
-              <div className="full-container">
-                <InlineError
-                  shouldShow={errors.elaborate && touched.elaborate}
-                  error={errors.elaborate}
-                  label="What technologies do you know? "
-                />
-                <Field
-                  name="elaborate"
-                  render={({ field, form: { touched, errors } }) => (
-                    <textarea
-                      {...field}
-                      className="application-input text-input"
-                      rows="4"
-                      placeholder="ExpressJS, ReactJS, Pytorch, Python, Rasberry Pi..."
-                      style={
-                        !!errors.elaborate && touched.elaborate
-                          ? { border: "2px solid red" }
-                          : null
-                      }
-                    />
-                  )}
-                />
-              </div>
+
               <div className="full-container">
                 <Select
                   className="application-input"
