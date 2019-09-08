@@ -244,7 +244,7 @@ const Mentor = ({ history }) => {
                   className="application-input"
                   name="organization"
                   type="text"
-                  label="What company or organization are you affiliated with? *"
+                  label="What company or organization are you affiliated with? "
                   placeholder="Florida International University"
                   error={!!touched.organization && !!errors.organization}
                   errorVal={errors.organization}
@@ -255,7 +255,7 @@ const Mentor = ({ history }) => {
                 <InlineError
                   shouldShow={errors.elaborate && touched.elaborate}
                   error={errors.elaborate}
-                  label="What technologies do you know?* "
+                  label="What technologies do you know? * "
                 />
                 <Field
                   name="elaborate"
