@@ -20,13 +20,11 @@ let {
 
 export const ParkingCardContent = (
   <div className="essentials-parking-card-content">
-
-    <div className='arena-info-container'>
-      <div className='arena-maps-image-container'>
+    <div className="arena-info-container">
+      <div className="arena-maps-image-container">
         <ZoomableImg
-          imageLink={
-          require("../../assets/site/ShellMap.png")
-          }
+          zoomContainer={{ zIndex: 1000 }}
+          imageLink={require("../../assets/site/ShellMap.png")}
         />
       </div>
       <div className="parking-content">
@@ -47,14 +45,14 @@ export const ParkingCardContent = (
     <div>
       <br />
       <br />
-      <p className='essential-item-header'>{parking.title}</p>
+      <p className="essential-item-header">{parking.title}</p>
       <br />
       <p>{parking.description}</p>
       <br />
       <br />
     </div>
     <div>
-      <p className='essential-item-header'>{transportation.title}</p>
+      <p className="essential-item-header">{transportation.title}</p>
       <br />
       <p>{transportation.description}</p>
     </div>
