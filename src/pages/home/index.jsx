@@ -75,7 +75,7 @@ const Home = ({ refresh, userData }) => {
                 (applicationStatus.toLowerCase() === "applied" &&
                   "Fin-tastic! Your application has been received! Look out for a response email soon.") ||
                 (applicationStatus.toLowerCase() === "accepted" &&
-                  "Shell yeah! You’ve been accepted into ShellHacks. Now go and confirm your attendance before the ship sails!") ||
+                  "Shell yeah! You’ve been accepted into ShellHacks. Now look below and confirm your attendance before the ship sails!") ||
                 (applicationStatus.toLowerCase() === "confirmed" &&
                   "Yeah buoy! You’re confirmed for ShellHacks. Sea ya at the shore!") ||
                 (applicationStatus.toLowerCase() === "accepted" &&
