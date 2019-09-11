@@ -20,26 +20,28 @@ let {
 
 export const ParkingCardContent = (
   <div className="essentials-parking-card-content">
-    <p>More info soon to come!</p>
-    {/* <div className='arena-info-container'>
-      <div className='arena-maps-image-container'>
+    <div className="arena-info-container">
+      <div className="arena-maps-image-container">
         <ZoomableImg
           imageLink={
-          require("../../assets/site/BBC.png")
+            "https://i.pinimg.com/originals/5f/5a/f7/5f5af7ef794a6ccf8de2cc4effaf5d9f.jpg"
           }
         />
       </div>
-      <div className='parking-content'>
-        <p className='essential-item-header'>{direction.title} </p>
+      <div className="parking-content">
+        <p className="essential-item-header">{direction.title} </p>
         <br />
         <p>{direction.venue}</p>
+        <br />
         <p>{direction.school}</p>
+        <br />
+        <p>{direction.campus}</p>
         <br />
         {direction.directions.map((item, i) => (
           <p key={i}>{item}</p>
         ))}
       </div>
-    </div> */}
+    </div>
 
     {/* <div className='arena-info-container'>
       <div className='parking-content'>

@@ -2,15 +2,47 @@
  * Home Page
  */
 
-import React from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import announcementCardInfo from "../../config/data/home";
-import { Card } from "../../components";
+import { Card, Button, Loading } from "../../components";
 import mixed from "../../utils/mixed";
+import routes from "../../services/routes";
 import "./styles.css";
 
-const Home = ({ userData }) => {
-  const { applicationStatus, firstName, avatarID } = userData;
+const Home = ({ refresh, userData }) => {
+  const { applicationStatus, firstName, avatarID, email } = userData;
   let avatar = mixed.getAvatar(avatarID);
+  const [loading, setLoading] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
+  const [err, setErr] = useState(null);
+
+  /**
+   * Submits confirmation
+   */
+  const confirmAsync = async () => {
+    setLoading(true);
+
+    let success = () => {
+      setLoading(false);
+      setConfirmed(true);
+      setTimeout(() => {
+        setConfirmed(false);
+        refresh(true);
+      }, 4000);
+    };
+
+    let faillure = error => {
+      setLoading(false);
+      setErr(error);
+      setTimeout(() => {
+        setErr(null);
+        refresh(true);
+      }, 4000);
+    };
+    await routes.confirm(email, success, faillure);
+  };
+
   return (
     <div className="dashboard-page">
       <h1>Home</h1>
@@ -22,10 +54,8 @@ const Home = ({ userData }) => {
             alt=""
             src={require(`../../assets/avatars/${avatar}`)}
           />
-          {/* <Avatar className="home-avatar" /> */}
           <div className="user">
             <h2>Welcome, {mixed.wordCase(firstName)}!</h2>
-            {/* <h3>Event Points: {score}</h3> */}
           </div>
 
           <div className="application-status">
@@ -39,7 +69,7 @@ const Home = ({ userData }) => {
                   "applactions-status-accepted") ||
                 (applicationStatus.toLowerCase() === "confirmed" &&
                   "applactions-status-confirmed")}`}
-              title={mixed.wordCase(applicationStatus)}
+              title={mixed.wordCase(applicationStatus) }
               descStyles={{ margin: "auto", display: "block" }}
               description={
                 (applicationStatus.toLowerCase() === "applied" &&
@@ -48,11 +78,58 @@ const Home = ({ userData }) => {
                   "Shell yeah! You’ve been accepted into ShellHacks. Now go and confirm your attendance before the ship sails!") ||
                 (applicationStatus.toLowerCase() === "confirmed" &&
                   "Yeah buoy! You’re confirmed for ShellHacks. Sea ya at the shore!") ||
+                (applicationStatus.toLowerCase() === "accepted" &&
+                  "Confirm your spot at ASAP") ||
+                (applicationStatus.toLowerCase() === "confirmed" &&
+                  "You are all set, can't wait to see you at ShellHacks!") ||
                 "Water you doing? Fill out your application now to be considered for ShellHacks!"
               }
             />
           </div>
         </div>
+        {applicationStatus.toLowerCase() === "accepted" && (
+          <div
+            style={{
+              margin: "25px 0 80px",
+              minWidth: "70px",
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column"
+            }}
+          >
+            {(loading && <Loading size={30} color="white" />) ||
+              (confirmed && (
+                <div className="submission-modal">
+                  <h1>Confirmed!</h1>
+                  <FontAwesomeIcon
+                    style={{ margin: "auto", display: "block" }}
+                    icon="check"
+                    size="5x"
+                  />
+                </div>
+              )) ||
+              (err && (
+                <div className="submission-modal">
+                  <h1>Failed</h1>
+                  <p>{err}</p>
+                  <br />
+                  <FontAwesomeIcon
+                    style={{ margin: "auto", display: "block" }}
+                    icon="times"
+                    size="5x"
+                  />
+                </div>
+              )) || (
+                <>
+                  <p style={{ marginBottom: 25, textAlign: "center" }}>
+                    You have been accepted to ShellHacks! <br />
+                    Click on the button below to confirm your spot
+                  </p>
+                  <Button title="Confirm Now!" action={confirmAsync} />
+                </>
+              )}
+          </div>
+        )}
 
         {/* announcements */}
         <div className="home-announcements">
