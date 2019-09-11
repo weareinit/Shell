@@ -23,9 +23,8 @@ export const ParkingCardContent = (
     <div className="arena-info-container">
       <div className="arena-maps-image-container">
         <ZoomableImg
-          imageLink={
-            "https://i.pinimg.com/originals/5f/5a/f7/5f5af7ef794a6ccf8de2cc4effaf5d9f.jpg"
-          }
+          zoomContainer={{ zIndex: 1000 }}
+          imageLink={require("../../assets/site/ShellMap.png")}
         />
       </div>
       <div className="parking-content">
@@ -43,41 +42,20 @@ export const ParkingCardContent = (
       </div>
     </div>
 
-    {/* <div className='arena-info-container'>
-      <div className='parking-content'>
-          <p className='essential-item-header'>{Northbound.title} </p>
-          <br />
-          {Northbound.directions.map((item, i) => (
-            <p key={i}>{item}</p>
-          ))}
-        </div>
-
-        <br/>
-        <br/>
-
-        <div className='parking-content'>
-          <p className='essential-item-header'>{Southbound.title} </p>
-          <br />
-          {Southbound.directions.map((item, i) => (
-            <p key={i}>{item}</p>
-          ))}
-        </div>
-      </div> */}
-
-    {/* <div>
+    <div>
       <br />
       <br />
-      <p className='essential-item-header'>{parking.title}</p>
+      <p className="essential-item-header">{parking.title}</p>
       <br />
       <p>{parking.description}</p>
       <br />
       <br />
-    </div> */}
-    {/* <div>
-      <p className='essential-item-header'>{transportation.title}</p>
+    </div>
+    <div>
+      <p className="essential-item-header">{transportation.title}</p>
       <br />
       <p>{transportation.description}</p>
-    </div> */}
+    </div>
   </div>
 );
 
