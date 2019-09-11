@@ -20,6 +20,7 @@ let {
 
 export const ParkingCardContent = (
   <div className="essentials-parking-card-content">
+
     <div className='arena-info-container'>
       <div className='arena-maps-image-container'>
         <ZoomableImg
@@ -28,11 +29,14 @@ export const ParkingCardContent = (
           }
         />
       </div>
-      <div className='parking-content'>
-        <p className='essential-item-header'>{direction.title} </p>
+      <div className="parking-content">
+        <p className="essential-item-header">{direction.title} </p>
         <br />
         <p>{direction.venue}</p>
+        <br />
         <p>{direction.school}</p>
+        <br />
+        <p>{direction.campus}</p>
         <br />
         {direction.directions.map((item, i) => (
           <p key={i}>{item}</p>

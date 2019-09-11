@@ -19,7 +19,8 @@ const {
   READ_USER_PATH,
   APPLY_PATH,
   RESEND_CODE_PATH,
-  MENTOR_PATH
+  MENTOR_PATH,
+  CONFIRM_PATH
 } = apiRoutes;
 
 const TOKEN = "JWT";
@@ -249,6 +250,33 @@ const mentor = (form, successAction, faillureAction) => {
       }
     });
 };
+
+/**
+ * Confirms user is attending
+ * @param {Object} data - contains user email address
+ * @param {Function} successAction - executes after a sucessful request
+ * @param {Function} faillureAction - executes on request failure
+ */
+const confirm = async (email, successAction, faillureAction) => {
+  const token = await querries.isAuthorized();
+
+  return request({
+    method: "put",
+    url: CONFIRM_PATH,
+    data: { email },
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  })
+    .then(resp => {
+      console.log(resp);
+      if (resp.success) successAction();
+    })
+    .catch(err => {
+      faillureAction(err.data);
+    });
+};
+
 export default {
   login,
   register,
@@ -258,5 +286,6 @@ export default {
   resetPassword,
   apply,
   getUserInfo,
-  mentor
+  mentor,
+  confirm
 };
