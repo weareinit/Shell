@@ -2,47 +2,23 @@
   "direction": {
     "description": " Feeling lost at sea? Find information on how to get to ShellHacks and where to park below:",
     "title": "Venue Address",
-    "venue": "Kovens Conference Center",
+    "venue": "Ernest R. Graham University Center (GC)",
     "school": "Florida International University",
     "directions": [
-      "Biscayne Bay Campus",
-      "3000 NE 151st Street",
-      "North Miami, FL 33181",
-      "(305) 919-5000"
-    ]
-  },
-  "Northbound": {
-    "title": "Coming North of FIU BBC",
-    "directions": [
-      "Take I-95 Southbound",
-      "Take exit 16 for NE 203rd Street/Ives Dairy Rd",
-      "Turn left onto NE 203rd Street/Ives Dairy Rd",
-      "Turn right onto US-1 South/Biscayne Blvd",
-      "Turn left on NE 151st Street",
-      "Continue onto Main Rd",
-      "Turn left toward Kovens Conference Center"
-    ]
-  },
-  "Southbound": {
-    "title": "Coming South of FIU BBC",
-    "directions": [
-      "Take I-95 Northbound",
-      "Take exit 10B for NW 135th Street/Opa-Locka Blvd",
-      "Turn right onto NW 135th Street/Opa-Locka Blvd",
-      "Turn left onto FL-909 North",
-      "Turn right onto NE 151 Street",
-      "Continue onto Main Rd",
-      "Turn left toward Kovens Conference Center"
+      "Modesto A. Maidique Campus",
+      "10955 SW 15th Ln",
+      "Miami, FL 33199",
+      "(305) 348-2297"
     ]
   },
 
   "parking": {
     "title": "Parking",
-    "description": "Parking is available for free in Parking Lot 5. You must register your car upon arrival when you check in (don’t forget your plate number!)"
+    "description": "Parking is available for free in Parking Lot 33. You must register your car upon arrival when you check in (don’t forget your plate number!)"
   },
   "transportation": {
     "title": "Buses",
-    "description": "Buses will be sent to schools with the most registrations (so be sure to spread the word!). Check back later for the list of schools and links to sign up!"
+    "description": "Buses will be sent to University of South Florida, University of Florida, and University of Central Florida"
   },
   "shouldBring": {
     "description": "We want everyone feeling fine and sandy at ShellHacks! Here are some items we suggest to bring with you for a great time:",
@@ -71,9 +47,6 @@
         "Monitor",
         "Keyboard & mouse",
         "USB Drive",
-        "Swimwear",
-        "Sunglasses",
-        "Sunscreen",
         "Hat",
         "Earplugs",
         "Sleeping mask",

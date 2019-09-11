@@ -20,12 +20,11 @@ let {
 
 export const ParkingCardContent = (
   <div className="essentials-parking-card-content">
-    <p>More info soon to come!</p>
-    {/* <div className='arena-info-container'>
+    <div className='arena-info-container'>
       <div className='arena-maps-image-container'>
         <ZoomableImg
           imageLink={
-          require("../../assets/site/BBC.png")
+          require("../../assets/site/ShellMap.png")
           }
         />
       </div>
@@ -39,30 +38,9 @@ export const ParkingCardContent = (
           <p key={i}>{item}</p>
         ))}
       </div>
-    </div> */}
+    </div>
 
-    {/* <div className='arena-info-container'>
-      <div className='parking-content'>
-          <p className='essential-item-header'>{Northbound.title} </p>
-          <br />
-          {Northbound.directions.map((item, i) => (
-            <p key={i}>{item}</p>
-          ))}
-        </div>
-
-        <br/>
-        <br/>
-
-        <div className='parking-content'>
-          <p className='essential-item-header'>{Southbound.title} </p>
-          <br />
-          {Southbound.directions.map((item, i) => (
-            <p key={i}>{item}</p>
-          ))}
-        </div>
-      </div> */}
-
-    {/* <div>
+    <div>
       <br />
       <br />
       <p className='essential-item-header'>{parking.title}</p>
@@ -70,12 +48,12 @@ export const ParkingCardContent = (
       <p>{parking.description}</p>
       <br />
       <br />
-    </div> */}
-    {/* <div>
+    </div>
+    <div>
       <p className='essential-item-header'>{transportation.title}</p>
       <br />
       <p>{transportation.description}</p>
-    </div> */}
+    </div>
   </div>
 );
 
