@@ -250,7 +250,22 @@ const Mentor = ({ history }) => {
                   errorVal={errors.organization}
                 />
               </div>
-
+              <div className="full-container">
+                <MultiSelect
+                  className="application-input"
+                  label="What skills do you have that would be great to mentor for? *"
+                  id="skills"
+                  name="skills"
+                  placeholder="Select all that apply"
+                  onChange={setFieldValue}
+                  value={values.skills}
+                  onBlur={setFieldTouched}
+                  touched={touched.skills}
+                  error={errors.skills}
+                  options={skillsData}
+                  defaultValue={[]}
+                />
+              </div>
               <div className="full-container">
                 <InlineError
                   shouldShow={errors.elaborate && touched.elaborate}
@@ -309,22 +324,6 @@ const Mentor = ({ history }) => {
                 />
               </div>
 
-              <div className="full-container">
-                <MultiSelect
-                  className="application-input"
-                  label="What skills do you have that would be great to mentor for? *"
-                  id="skills"
-                  name="skills"
-                  placeholder="Select all that apply"
-                  onChange={setFieldValue}
-                  value={values.skills}
-                  onBlur={setFieldTouched}
-                  touched={touched.skills}
-                  error={errors.skills}
-                  options={skillsData}
-                  defaultValue={[]}
-                />
-              </div>
               <div className="full-container">
                 <MultiSelect
                   className="application-input"
