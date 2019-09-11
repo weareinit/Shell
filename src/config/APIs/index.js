@@ -5,7 +5,7 @@ export default {
 
   // API routes
   API_URL: "https://api.shellhacks.net/",
-//   API_URL: "http://localhost:3000",
+  //   API_URL: "http://localhost:3000",
   REGISTER_PATH: "application",
   VERIFY_EMAIL_PATH: "application/confirmation",
   RESEND_CODE_PATH: "application/resend",
@@ -16,6 +16,7 @@ export default {
 
   READ_USER_PATH: "application/readOne",
   APPLY_PATH: "application/apply",
+  CONFIRM_PATH: "application/confirm",
 
   MENTOR_PATH: "mentor",
 
