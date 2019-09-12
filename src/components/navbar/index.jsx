@@ -92,7 +92,7 @@ class SideBar extends Component {
             >
               <Link to={HOME}>Home</Link>
             </li>
-            <li
+            {/* <li
               className={`nav-item ${(this.state.currSelection ===
                 APPLICATION &&
                 "nav-item-selected") ||
@@ -100,7 +100,7 @@ class SideBar extends Component {
               onClick={this.toggle}
             >
               <Link to={APPLICATION}>Application</Link>
-            </li>
+            </li> */}
             <li
               className={`nav-item ${(this.state.currSelection === ESSENTIAL &&
                 "nav-item-selected") ||

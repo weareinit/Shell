@@ -35,7 +35,7 @@ class Navigation extends Component {
         <DashboardRoute exact path="/profile" component={Profile} />
         <DashboardRoute exact path="/essentials" component={Essentials} />
         <DashboardRoute exact path="/support" component={Support} />
-        <DashboardRoute exact path="/application" component={Application} />
+        {/* <DashboardRoute exact path="/application" component={Application} /> */}
         <Route exact path="/mentor" component={Mentor} />
         <Route exact path={LOGIN} component={Auth} />
         <Route exact path={SIGNUP} component={Auth} />
