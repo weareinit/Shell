@@ -1,4 +1,4 @@
-# :shell: Shell
+# :shell: Shell [![Shellhacks](https://hackathon.badge.pw/shellhacks)](https://shellhacks.net)
 
 - Dashboard for Shellhacks 2019
 
