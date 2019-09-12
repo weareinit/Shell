@@ -20,7 +20,8 @@ const {
   APPLY_PATH,
   RESEND_CODE_PATH,
   MENTOR_PATH,
-  CONFIRM_PATH
+  CONFIRM_PATH,
+  CANT_GO_PATH
 } = apiRoutes;
 
 const TOKEN = "JWT";
@@ -277,6 +278,26 @@ const confirm = async (email, successAction, faillureAction) => {
     });
 };
 
+const cantGo = async (email, successAction, faillureAction) => {
+  const token = await querries.isAuthorized();
+
+  return request({
+    method: "put",
+    url: CANT_GO_PATH,
+    data: { email },
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  })
+    .then(resp => {
+      console.log(resp);
+      if (resp.success) successAction();
+    })
+    .catch(err => {
+      faillureAction(err.data);
+    });
+};
+
 export default {
   login,
   register,
@@ -287,5 +308,6 @@ export default {
   apply,
   getUserInfo,
   mentor,
-  confirm
+  confirm,
+  cantGo
 };
