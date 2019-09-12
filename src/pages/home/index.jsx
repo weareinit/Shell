@@ -15,6 +15,7 @@ const Home = ({ refresh, userData }) => {
   let avatar = mixed.getAvatar(avatarID);
   const [loading, setLoading] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
+  const [cantGo, setCantGo] = useState(false);
   const [err, setErr] = useState(null);
 
   /**
@@ -41,6 +42,29 @@ const Home = ({ refresh, userData }) => {
       }, 4000);
     };
     await routes.confirm(email, success, faillure);
+  };
+
+  const cantGoAsync = async () => {
+    setLoading(true);
+
+    let success = () => {
+      setLoading(false);
+      setCantGo(true);
+      setTimeout(() => {
+        setCantGo(false);
+        refresh(true);
+      }, 4000);
+    };
+
+    let faillure = error => {
+      setLoading(false);
+      setErr(error);
+      setTimeout(() => {
+        setErr(null);
+        refresh(true);
+      }, 4000);
+    };
+    await routes.cantGo(email, success, faillure);
   };
 
   return (
@@ -82,6 +106,8 @@ const Home = ({ refresh, userData }) => {
                   "Confirm your spot at ASAP") ||
                 (applicationStatus.toLowerCase() === "confirmed" &&
                   "You are all set, can't wait to see you at ShellHacks!") ||
+                (applicationStatus.toLowerCase() === "can't go" &&
+                "Sad you can't make it, be sure to apply again next year!") ||
                 "Water you doing? Fill out your application now to be considered for ShellHacks!"
               }
             />
@@ -108,6 +134,16 @@ const Home = ({ refresh, userData }) => {
                   />
                 </div>
               )) ||
+              (cantGo && (
+                <div className="submission-modal">
+                  <h1>You can't go :(</h1>
+                  <FontAwesomeIcon
+                    style={{ margin: "auto", display: "block" }}
+                    icon="times"
+                    size="5x"
+                  />
+                </div>
+              )) ||
               (err && (
                 <div className="submission-modal">
                   <h1>Failed</h1>
@@ -123,9 +159,10 @@ const Home = ({ refresh, userData }) => {
                 <>
                   <p style={{ marginBottom: 25, textAlign: "center" }}>
                     You have been accepted to ShellHacks! <br />
-                    Click on the button below to confirm your spot
+                    Click on the button below to confirm your spot or notify us if you can't go
                   </p>
                   <Button title="Confirm Now!" action={confirmAsync} />
+                  <Button title="I Can't Go! :(" action={cantGoAsync} />
                 </>
               )}
           </div>

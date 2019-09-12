@@ -17,6 +17,7 @@ export default {
   READ_USER_PATH: "application/readOne",
   APPLY_PATH: "application/apply",
   CONFIRM_PATH: "application/confirm",
+  CANT_GO_PATH: "application/cant_go",
 
   MENTOR_PATH: "mentor",
 
