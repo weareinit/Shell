@@ -21,6 +21,15 @@
         "review",
         "doc"
       ]
+    },
+    {
+      "login": "lfhernan",
+      "name": "Luis Hernandez",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7514088?v=4",
+      "profile": "https://github.com/lfhernan",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
