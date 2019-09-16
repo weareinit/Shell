@@ -1,5 +1,5 @@
 # :shell: Shell
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
 - Dashboard for Shellhacks 2019
 
@@ -26,6 +26,7 @@
   <tr>
     <td align="center"><a href="https://upe.cs.fiu.edu"><img src="https://avatars0.githubusercontent.com/u/32716551?v=4" width="100px;" alt="Jehf Denezaire"/><br /><sub><b>Jehf Denezaire</b></sub></a><br /><a href="https://github.com/upe-fiu/Shell/commits?author=Jehfkemsy" title="Code">💻</a> <a href="https://github.com/upe-fiu/Shell/issues?q=author%3AJehfkemsy" title="Bug reports">🐛</a> <a href="#review-Jehfkemsy" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/upe-fiu/Shell/commits?author=Jehfkemsy" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/lfhernan"><img src="https://avatars1.githubusercontent.com/u/7514088?v=4" width="100px;" alt="Luis Hernandez"/><br /><sub><b>Luis Hernandez</b></sub></a><br /><a href="https://github.com/upe-fiu/Shell/commits?author=lfhernan" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Svilla27"><img src="https://avatars3.githubusercontent.com/u/43285453?v=4" width="100px;" alt="Steven Villa"/><br /><sub><b>Steven Villa</b></sub></a><br /><a href="https://github.com/upe-fiu/Shell/commits?author=Svilla27" title="Code">💻</a></td>
   </tr>
 </table>
 
