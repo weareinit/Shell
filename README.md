@@ -1,5 +1,5 @@
 # :shell: Shell
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 
 - Dashboard for Shellhacks 2019
 
@@ -28,6 +28,7 @@
     <td align="center"><a href="https://github.com/lfhernan"><img src="https://avatars1.githubusercontent.com/u/7514088?v=4" width="100px;" alt="Luis Hernandez"/><br /><sub><b>Luis Hernandez</b></sub></a><br /><a href="https://github.com/upe-fiu/Shell/commits?author=lfhernan" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Svilla27"><img src="https://avatars3.githubusercontent.com/u/43285453?v=4" width="100px;" alt="Steven Villa"/><br /><sub><b>Steven Villa</b></sub></a><br /><a href="https://github.com/upe-fiu/Shell/commits?author=Svilla27" title="Code">💻</a></td>
     <td align="center"><a href="http://mrmcpowned.com"><img src="https://avatars2.githubusercontent.com/u/5028527?v=4" width="100px;" alt="Christopher Rodriguez"/><br /><sub><b>Christopher Rodriguez</b></sub></a><br /><a href="https://github.com/upe-fiu/Shell/commits?author=mrmcpowned" title="Code">💻</a> <a href="https://github.com/upe-fiu/Shell/issues?q=author%3Amrmcpowned" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/yasmine0217"><img src="https://avatars3.githubusercontent.com/u/26018436?v=4" width="100px;" alt="Yasmine Abdrabo"/><br /><sub><b>Yasmine Abdrabo</b></sub></a><br /><a href="https://github.com/upe-fiu/Shell/commits?author=yasmine0217" title="Code">💻</a> <a href="#content-yasmine0217" title="Content">🖋</a></td>
   </tr>
 </table>
 
