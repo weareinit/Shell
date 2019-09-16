@@ -1,5 +1,5 @@
 
-# :shell: Shell [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-) [![Shellhacks](https://hackathon.badge.pw/shellhacks)](https://shellhacks.net)
+# :shell: Shell [![Shellhacks](https://hackathon.badge.pw/shellhacks)](https://shellhacks.net) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-) 
 
 - Dashboard for Shellhacks 2019
 ---
@@ -14,7 +14,6 @@
 
 ## Contributors
 
-[@Svilla27](https://github.com/Svilla27)<br/>
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
