@@ -59,6 +59,16 @@
         "code",
         "content"
       ]
+    },
+    {
+      "login": "Tommy2016x",
+      "name": "Tommy Carrascal",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29385045?v=4",
+      "profile": "http://tommycarrascal.me/",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7
