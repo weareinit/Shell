@@ -104,6 +104,7 @@ const Mentor = ({ history }) => {
    * @param {Object} - form data
    */
   const handleSubmit = values => {
+    console.log(values)
     setLoading(true);
     const apply = async () =>
       await services.mentor(values, faillure, successAction);
