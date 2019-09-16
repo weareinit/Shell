@@ -1,8 +1,7 @@
-# :shell: Shell
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+# :shell: Shell [![Shellhacks](https://hackathon.badge.pw/shellhacks)](https://shellhacks.net) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-) 
 
 - Dashboard for Shellhacks 2019
-
+---
 ## Available scripts
 
 `yarn dev` - starts CRA dev server)<br/>
@@ -12,13 +11,8 @@
 `yarn build` - bundle up react)<br/>
 `test` - Runs CRA tests
 
-## Authors
-
-[@Jehfkemsy](https://github.com/jehfkemsy)
-
 ## Contributors
 
-[@Svilla27](https://github.com/Svilla27)<br/>
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -36,8 +30,3 @@
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-[@mrmcpowned](https://github.com/mrmcpowned)<br/>
-[@boxslide15](https://github.com/boxslide15)<br/>
-[@yasmine0217](https://github.com/yasmine0217)<br/>
-[@mrmcpowned](https://github.com/mrmcpowned)<br/>
-[@Tommy2016x](https://github.com/Tommy2016x)
