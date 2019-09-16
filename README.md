@@ -1,8 +1,8 @@
-# :shell: Shell
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+# :shell: Shell [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-) [![Shellhacks](https://hackathon.badge.pw/shellhacks)](https://shellhacks.net)
 
 - Dashboard for Shellhacks 2019
-
+---
 ## Available scripts
 
 `yarn dev` - starts CRA dev server)<br/>
@@ -11,10 +11,6 @@
 `yarn restart` - restarts pm2 process)<br/>
 `yarn build` - bundle up react)<br/>
 `test` - Runs CRA tests
-
-## Authors
-
-[@Jehfkemsy](https://github.com/jehfkemsy)
 
 ## Contributors
 
@@ -31,8 +27,3 @@
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-[@mrmcpowned](https://github.com/mrmcpowned)<br/>
-[@boxslide15](https://github.com/boxslide15)<br/>
-[@yasmine0217](https://github.com/yasmine0217)<br/>
-[@mrmcpowned](https://github.com/mrmcpowned)<br/>
-[@Tommy2016x](https://github.com/Tommy2016x)
