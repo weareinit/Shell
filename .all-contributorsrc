@@ -21,6 +21,54 @@
         "review",
         "doc"
       ]
+    },
+    {
+      "login": "lfhernan",
+      "name": "Luis Hernandez",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7514088?v=4",
+      "profile": "https://github.com/lfhernan",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Svilla27",
+      "name": "Steven Villa",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/43285453?v=4",
+      "profile": "https://github.com/Svilla27",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mrmcpowned",
+      "name": "Christopher Rodriguez",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5028527?v=4",
+      "profile": "http://mrmcpowned.com",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "yasmine0217",
+      "name": "Yasmine Abdrabo",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26018436?v=4",
+      "profile": "https://github.com/yasmine0217",
+      "contributions": [
+        "code",
+        "content"
+      ]
+    },
+    {
+      "login": "Tommy2016x",
+      "name": "Tommy Carrascal",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29385045?v=4",
+      "profile": "http://tommycarrascal.me/",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7
