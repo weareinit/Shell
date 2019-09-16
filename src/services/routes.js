@@ -227,16 +227,17 @@ const getUserInfo = async history => {
  */
 const mentor = (form, successAction, faillureAction) => {
   const { skills, availability } = form;
+
   form.skills = mixed.arrToString(skills);
   form.availability = mixed.arrToString(availability);
   if (!form.organization) form.organization = "N/A";
-  let data = new FormData();
-  Object.keys(form).map(key => data.append(key, form[key]));
+
+  console.log(form);
 
   return request({
     method: "post",
     url: MENTOR_PATH,
-    data
+    data: form
   })
     .then(resp => {
       successAction();
@@ -278,6 +279,12 @@ const confirm = async (email, successAction, faillureAction) => {
     });
 };
 
+/**
+ * Mark user as not going
+ * @param {Object} data - contains user email address
+ * @param {Function} successAction - executes after a sucessful request
+ * @param {Function} faillureAction - executes on request failure
+ */
 const cantGo = async (email, successAction, faillureAction) => {
   const token = await querries.isAuthorized();
 
