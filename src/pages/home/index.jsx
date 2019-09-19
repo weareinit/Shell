@@ -87,40 +87,36 @@ const Home = ({ refresh, userData }) => {
             <Card
               activeClassName="active-application-status-button"
               styleClassName={`application-status-button ${(applicationStatus.toLowerCase() ===
-                "applied" &&
-                "applactions-status-applied") ||
-                (applicationStatus.toLowerCase() === "accepted" &&
-                  "applactions-status-accepted") ||
-                (applicationStatus.toLowerCase() === "confirmed" &&
-                  "applactions-status-confirmed")}`}
-              title={mixed.wordCase(applicationStatus) }
+                "confirmed" &&
+                "applactions-status-confirmed") ||
+                "red-background"}`}
+              title={
+                applicationStatus.toLowerCase() === "confirmed"
+                  ? mixed.wordCase(applicationStatus)
+                  : "Expired"
+              }
               descStyles={{ margin: "auto", display: "block" }}
               description={
-                (applicationStatus.toLowerCase() === "applied" &&
-                  "Fin-tastic! Your application has been received! Look out for a response email soon.") ||
-                (applicationStatus.toLowerCase() === "accepted" &&
-                  "Shell yeah! You’ve been accepted into ShellHacks. Now look below and confirm your attendance before the ship sails!") ||
                 (applicationStatus.toLowerCase() === "confirmed" &&
                   "Yeah buoy! You’re confirmed for ShellHacks. Sea ya at the shore!") ||
-                (applicationStatus.toLowerCase() === "accepted" &&
-                  "Confirm your spot at ASAP") ||
-                (applicationStatus.toLowerCase() === "confirmed" &&
-                  "You are all set, can't wait to see you at ShellHacks!") ||
-                (applicationStatus.toLowerCase() === "can't go" &&
-                "Sad you can't make it, be sure to apply again next year!") ||
-                "Water you doing? Fill out your application now to be considered for ShellHacks!"
+                "The wave turned into a tsunami 😢"
               }
             />
           </div>
         </div>
-        {applicationStatus.toLowerCase() === "accepted" && (
+
+        {/* ... */}
+        {applicationStatus.toLowerCase() !== "confirmed" && (
           <div
             style={{
               margin: "25px 0 80px",
               minWidth: "70px",
               display: "flex",
               alignItems: "center",
-              flexDirection: "column"
+              flexDirection: "column",
+              padding:"25px",
+              backgroundColor:"white",
+              borderRadius:"10px"
             }}
           >
             {(loading && <Loading size={30} color="white" />) ||
@@ -130,16 +126,6 @@ const Home = ({ refresh, userData }) => {
                   <FontAwesomeIcon
                     style={{ margin: "auto", display: "block" }}
                     icon="check"
-                    size="5x"
-                  />
-                </div>
-              )) ||
-              (cantGo && (
-                <div className="submission-modal">
-                  <h1>You can't go :(</h1>
-                  <FontAwesomeIcon
-                    style={{ margin: "auto", display: "block" }}
-                    icon="times"
                     size="5x"
                   />
                 </div>
@@ -157,17 +143,21 @@ const Home = ({ refresh, userData }) => {
                 </div>
               )) || (
                 <>
-                  <p style={{ marginBottom: 25, textAlign: "center" }}>
-                    You have been accepted to ShellHacks! <br />
-                    Click on the button below to confirm your spot or notify us if you can't go
-                  </p>
-                  <Button title="Confirm Now!" action={confirmAsync} />
-                  <Button title="I Can't Go! :(" action={cantGoAsync} />
+                  <h3
+                    style={{
+                      marginBottom: 25,
+                      textAlign: "center",
+                      color: "#ed6565"
+                    }}
+                  >
+                    Unfortunately we've reached acceptance capacity, but we hope
+                    to see you next year.
+                  </h3>
                 </>
               )}
           </div>
         )}
-
+        {/* ... */}
         {/* announcements */}
         <div className="home-announcements">
           <h3>Announcements</h3>
