@@ -67,10 +67,13 @@ const Profile = ({ userData }) => {
             </div>
           </div>
           <div className="qr-description">
-            <h3>Shell ID</h3>
+            <h3>Shell ID™</h3>
+            <br/>
+            <code style={{fontSize: "1.5em"}}>{shellID.toUpperCase()}</code>
+            <br />
             <br />
             <p>
-              Use your Shell ID to check-in and get your meals! Pull up the
+              Use your Shell ID™ to check-in and get your meals! Pull up the
               dashboard or take a screenshot with your shell-phone to access it
               later
             </p>
